@@ -299,9 +299,9 @@ Este documento contiene informacion de los 9 partidos politicos principales anal
 
 ### 8.4 AMPAYs
 
-*Ninguno detectado*
-
-> **Nota de auditoria:** AMPAY-008 fue detectado automaticamente pero eliminado durante la auditoria manual por interpretacion incorrecta de votos.
+| ID | Categoria | Confianza | Promesa | Contradiccion |
+|----|-----------|-----------|---------|---------------|
+| AMPAY-006 | justicia | MEDIUM | Convocar referendum para Asamblea Popular Constituyente | Voto NO en ley que fortalece mecanismos de reforma constitucional (PL 644) |
 
 ---
 
@@ -365,12 +365,12 @@ Este documento contiene informacion de los 9 partidos politicos principales anal
 | Peru Libre | 1 | AMPAY-005 (MEDIUM) |
 | Somos Peru | 1 | AMPAY-004 (HIGH) |
 | Alianza Progreso | 0 | - |
-| Juntos Peru | 0 | - |
+| Juntos Peru | 1 | AMPAY-006 (MEDIUM) |
 | Avanza Pais | 0 | - |
 | Podemos Peru | 0 | - |
 | Partido Morado | 0 | - |
 
-> **Nota:** AMPAY-006, AMPAY-007 (Alianza Progreso) y AMPAY-008 (Juntos Peru) fueron eliminados durante la auditoria manual por interpretacion incorrecta de votos. Total final: 6 AMPAYs.
+> **Nota:** AMPAY-006 y AMPAY-007 (Alianza Progreso, numeracion original pre-auditoria) fueron eliminados durante la auditoria manual por interpretacion incorrecta de votos. Total final: 6 AMPAYs.
 
 ---
 

@@ -214,7 +214,7 @@ RAZON: Conexion semantica debil. Investigar infraestructura no es lo mismo que o
 | **AMPAYs finales confirmados** | **6** |
 | Tasa de falsos positivos (validacion) | 65.2% |
 
-> **Nota de auditoria:** De los 8 AMPAYs aprobados en validacion cruzada, 2 fueron posteriormente eliminados durante la auditoria manual final (AMPAY-006 y AMPAY-007 de Alianza para el Progreso, y AMPAY-008 de Juntos por el Peru) por interpretacion incorrecta de votos. El total final confirmado es 6 AMPAYs.
+> **Nota de auditoria:** De los 8 AMPAYs aprobados en validacion cruzada, 2 fueron posteriormente eliminados durante la auditoria manual final (AMPAY-006 y AMPAY-007 de Alianza para el Progreso, numeracion original pre-auditoria) por interpretacion incorrecta de votos. El total final confirmado es 6 AMPAYs.
 
 ### 6.2 Razones de Rechazo
 

@@ -138,7 +138,7 @@ A minimum of 3 relevant laws is required. Both searches run independently; eithe
 | MEDIUM | >= 60% contradiction + 3-4 laws |
 | LOW | 40-59% contradiction (rejected) |
 
-**Results:** 23 auto-detected → 8 approved after cross-validation → 6 final after manual audit (2 removed: AMPAY-006/007 from Alianza para el Progreso and AMPAY-008 from Juntos por el Peru, for incorrect vote interpretation). False positive rate: 65.2% before validation.
+**Results:** 23 auto-detected → 8 approved after cross-validation → 6 final after manual audit (2 removed: AMPAY-006/007 from Alianza para el Progreso, original pre-audit numbering, for incorrect vote interpretation). False positive rate: 65.2% before validation.
 
 See: [AMPAY_DETECTION.md](docs/methodology/AMPAY_DETECTION.md), [CROSS_VALIDATION.md](docs/methodology/CROSS_VALIDATION.md)
 
