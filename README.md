@@ -4,20 +4,20 @@
 
 ---
 
-**Political Transparency Engine for Peru 2026 Elections**
+**Political Transparency Platform for Peru 2026 Elections**
 
-*Compare party promises against congressional voting records. Detect contradictions. Find your political match.*
+*Take a political quiz. Discover which party matches your views. See if they kept their promises — or got caught in an AMPAY.*
 
+[![Live App](https://img.shields.io/badge/Live-ampayperu.com-FF4136?style=for-the-badge&logo=vercel&logoColor=white)](https://ampayperu.com)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
-[![Claude API](https://img.shields.io/badge/Claude_API-Anthropic-cc785c?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6IiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==&logoColor=white)](https://docs.anthropic.com/)
-[![Gemini API](https://img.shields.io/badge/Gemini_API-Google-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![Data](https://img.shields.io/badge/Votes-2%2C226-green?style=for-the-badge)](data/02_output/votes_categorized.json)
 [![AMPAYs](https://img.shields.io/badge/AMPAYs_Found-6-red?style=for-the-badge)](data/02_output/ampays.json)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/JDRV-space/ampay-data/pulls)
 
-[Live App](https://ampayperu.com) · [Features](#features) · [Data Pipeline](#data-pipeline) · [Key Algorithms](#key-algorithms) · [Methodology](#methodology) · [Documentation](#documentation) · [License](#license)
+[Live App](https://ampayperu.com) · [Platform Features](#platform-features) · [AMPAYs Found](#ampays-found-6) · [Data Pipeline](#data-pipeline) · [Key Algorithms](#key-algorithms) · [Methodology](#methodology) · [Documentation](#documentation) · [License](#license)
 
 </div>
 
@@ -27,26 +27,57 @@
 
 ## What is AMPAY?
 
-AMPAY is an open-source political transparency engine that compares what Peruvian political parties **promised** in their campaign platforms (2021 & 2026) against how they **actually voted** in Congress (2021-2024). It detects **contradictions** ("AMPAYs") — verifiable cases where a party voted against its own promises.
+AMPAY is a political transparency platform for Peru's 2026 elections. It combines a **political quiz** that matches voters to parties, a **promise audit system** that tracks whether parties kept their 2021 commitments, and an **AMPAY detection engine** that finds verifiable contradictions where parties voted against their own campaign promises.
 
-**Live frontend:** [ampayperu.com](https://ampayperu.com)
+**Live at [ampayperu.com](https://ampayperu.com)**
 
-This repository contains the **data pipeline, analysis scripts, LLM prompts, and methodology documentation**. The frontend is deployed separately.
+This repository contains the **data pipeline, analysis engine, LLM prompts, output datasets, and 41 methodology documents** that power the platform. The frontend consumes JSON outputs from `data/02_output/`.
 
 ---
 
-## Features
+## Platform Features
 
-| Feature | Description | Output |
-|---------|-------------|--------|
-| **AMPAY Detection** | Dual-search (direct + inverse) contradiction detection across 9 parties | `ampays.json` — 6 confirmed AMPAYs |
-| **Political Quiz** | Manhattan distance + coverage blended scoring to match voters to parties | `quiz_statements.json` — 15 questions |
-| **Vote Categorization** | 2,226 congressional votes classified into 15 policy categories via LLM | `votes_categorized.json` |
-| **Parliament Aggregation** | 289,000 individual congress member votes aggregated to party-level positions | `votes_by_party.json` |
-| **Voting Patterns** | Monthly voting trends by category per party (sparkline data) | `party_patterns.json` |
-| **Promise Extraction** | LLM-powered extraction of 345 measurable promises from 18 campaign PDFs | `data/01_input/promises/` |
-| **Cross-Validation** | Multi-step human validation pipeline (23 candidates → 6 confirmed) | `AMPAY_CONFIRMED_2021.json` |
-| **Quiz Validation** | Monte Carlo simulation with 2M tests (100% believer precision) | `quiz_validation_results.json` |
+### Political Quiz
+`/quiz` · 15 policy questions · 9 parties · Manhattan distance scoring
+
+Users answer 15 policy statements (agree/neutral/disagree) covering taxation, security, labor, energy, social issues, healthcare, and governance. Two calibration questions position the user on economic (left-center-right) and social (conservative-moderate-progressive) axes. Results show percentage compatibility with all 9 parties, split into "within your profile" and full ranking.
+
+**Validated:** 2 million Monte Carlo simulations (seed=42). 100% believer precision — users who answer exactly like a party always get that party as #1.
+
+### AMPAY Contradictions
+`/ampays` · 6 confirmed cases · Evidence-backed
+
+Each AMPAY displays the original promise (with JNE PDF page citation), the related congressional votes, the party's actual voting position, and a reasoning chain explaining the contradiction. Confidence levels (HIGH/MEDIUM) based on number of laws and semantic connection strength.
+
+### Party Profiles
+`/partidos/[slug]` · 9 parties · Promise fulfillment tracking
+
+Detailed profiles for each party showing ideological positioning, 2026 presidential candidate, congressional seat count, policy positions across 15 categories (+1/0/-1 coding), and promise fulfillment rates (kept/broken/partial/no data).
+
+### Voting Records by Topic
+`/por-tema/[category]` · 2,226 votes · 15 categories
+
+Browse all congressional votes (2021-2024) filtered by policy topic. For each vote: date, result (approved/rejected), and a party-by-party breakdown showing who voted yes, no, abstained, or was absent. Filters for vote type (substantive/declarative/procedural) and year.
+
+### Promise Audit
+`/auditoria` · 345 promises · 9 parties · 2021 vs actual voting
+
+Side-by-side comparison of what parties promised in their 2021 JNE-registered campaign platforms versus how they actually voted in Congress over 3 years. Links promises to specific laws and votes.
+
+### Statistics Dashboard
+`/stats` · Voting patterns · Sparklines · Cohesion indices
+
+Aggregated charts showing party voting patterns by category, monthly trends (36 months of sparkline data), vote categorization distribution, AMPAY frequency by party, and party cohesion indices (0.71-0.94 range).
+
+### 2026 Proposals
+`/propuestas-2026` · 9 parties · JNE-registered platforms
+
+All parties' 2026 campaign promises extracted from official JNE platform documents, organized by policy category.
+
+### Data Download
+`/descargar` · JSON + CSV · Open data
+
+Download all datasets: quiz statements with party positions, classified congressional votes, AMPAY contradictions, party patterns, and per-party analysis reports.
 
 ---
 
@@ -160,7 +191,7 @@ percentage = final_score × 100
 | Parties | 9 |
 | Max distance | 30 |
 
-**Ideological filter:** Two additional ranking questions (economic axis, social axis) filter display results into "within your profile" vs "others" — does not affect distance calculation.
+**Ideological filter:** Two additional calibration questions (economic axis, social axis) filter display results into "within your profile" vs "others" — does not affect distance calculation.
 
 **Validation:** 2M Monte Carlo simulations (seed=42). 1M believer tests = 100% precision. 1M random tests = balance ratio 2.72:1.
 
@@ -182,22 +213,7 @@ Three-tier classification pipeline:
 
 See: [VOTE_CATEGORIZATION.md](docs/methodology/VOTE_CATEGORIZATION.md)
 
-### 4. Vote Filtering (Substantive vs Procedural)
-
-Filters non-substantive votes before analysis:
-
-| Type | Count | Percentage |
-|------|-------|------------|
-| Substantive | 2,226 | 62.4% |
-| Procedural | 847 | 23.8% |
-| Declarative | 497 | 13.9% |
-| **Total** | **3,570** | 100% |
-
-Exclusion keywords: *orden del dia, cuestion previa, declarar de interes nacional*, etc. Inclusion overrides: *ley, proyecto de ley, presupuesto*, etc. Special cases (censure motions, investigative committees) = SUBSTANTIVE.
-
-See: [VOTE_FILTERING.md](docs/methodology/VOTE_FILTERING.md)
-
-### 5. Parliament Aggregation (Individual → Party)
+### 4. Parliament Aggregation (Individual → Party)
 
 Converts ~289,000 individual congress member votes into party-level positions:
 
@@ -210,49 +226,19 @@ SI > NO → "SI"  |  NO > SI → "NO"  |  SI = NO → "DIVIDED"  |  0 present �
 
 See: [PARLIAMENT_AGGREGATION.md](docs/methodology/PARLIAMENT_AGGREGATION.md)
 
-### 6. Party Position Coding (+1/0/-1)
+---
 
-Codes party positions on quiz questions from 2026 campaign platforms:
+## Tech Stack
 
-| Code | Meaning | Source |
-|------|---------|--------|
-| +1 | Explicit support | Clear commitment language in JNE plan |
-| 0 | Silence or ambiguity | No mention or vague language |
-| -1 | Explicit opposition | Clear opposition language in JNE plan |
-
-Silence = 0, justified via Manifesto Project (MARPOR) methodology. Questions with total consensus (all 9 parties = +1) are removed.
-
-See: [PARTY_POSITION_CODING.md](docs/methodology/PARTY_POSITION_CODING.md)
-
-### 7. Promise Extraction Pipeline
-
-Extracts measurable promises from JNE-registered campaign PDFs:
-
-| Step | Method |
-|------|--------|
-| PDF detection | Native text vs scanned |
-| Text extraction | PyMuPDF (native) / Tesseract OCR (scanned) / Claude API (fallback) |
-| Quality validation | Legibility threshold > 80% |
-| Promise classification | Strong verbs (*implementaremos, crearemos*) vs weak (*promoveremos, fomentaremos*) |
-
-**Results:** 372 extracted → 345 validated (94.2%). 9 parties, 2021 + 2026 plans.
-
-See: [PROMISE_EXTRACTION.md](docs/methodology/PROMISE_EXTRACTION.md)
-
-### 8. Sparkline Calculation
-
-Computes voting patterns per party per category per month:
-
-```
-%SI = SI_votes / (SI_votes + NO_votes) × 100
-```
-
-- Period: 2021-08 to 2024-07 (36 months)
-- Excludes declarative, procedural, and justicia category votes
-- 8-level bar mapping (0-12.5% to 87.5-100%)
-- Color coding: red (<40%), yellow (40-60%), green (>60%)
-
-See: [SPARKLINE_CALCULATION.md](docs/methodology/SPARKLINE_CALCULATION.md)
+| Layer | Technology |
+|-------|-----------|
+| Frontend | Next.js 14 (App Router) + Tailwind CSS + shadcn/ui |
+| Data Pipeline | Python 3.10+ |
+| LLM (extraction) | Claude API (Anthropic) |
+| LLM (classification) | Gemini API (Google) |
+| Validation | 2M Monte Carlo simulations |
+| Hosting | Vercel |
+| Data Sources | JNE (promises) + OpenPolitica (votes) |
 
 ---
 
@@ -280,7 +266,7 @@ ampay/
 │       ├── quiz_validation_results.json # Quiz validation results (2M tests)
 │       ├── votes_categorized.json       # 2,226 classified votes
 │       ├── votes_by_party.json          # Per-vote party breakdown
-│       ├── party_patterns.json          # Voting % by category/month
+│       ├── party_patterns.json          # Voting patterns (sparklines)
 │       ├── analysis_by_party/           # Per-party detailed analysis (9 files)
 │       └── PROMISE_AUDIT_REPORT.md      # Promise extraction audit report
 │
@@ -309,6 +295,26 @@ ampay/
 ├── DATA_DISCLAIMER.md                   # Critical data coverage limitations
 └── LICENSE                              # MIT
 ```
+
+---
+
+## By the Numbers
+
+| Metric | Value |
+|--------|-------|
+| Parties analyzed | 9 |
+| Campaign PDFs processed | 18 (2021 + 2026) |
+| Promises extracted | 345 (validated) |
+| Congressional votes classified | 2,226 (substantive) |
+| Individual votes aggregated | ~289,000 |
+| AMPAYs confirmed | 6 |
+| False positive rejection rate | 65.2% |
+| Quiz questions | 15 + 2 calibration |
+| Policy categories | 15 |
+| Monte Carlo validation tests | 2,000,000 |
+| Believer precision | 100% |
+| Voting pattern months | 36 (2021-08 to 2024-07) |
+| Documentation files | 41 |
 
 ---
 
