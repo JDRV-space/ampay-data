@@ -148,7 +148,7 @@ Voting Advice Applications (VAAs) are online tools designed to help voters disco
 ## References
 
 For all academic references and sources used in AMPAY, see the centralized document:
-[Bibliography and Sources](/referencia/fuentes)
+[Bibliography and Sources](../reference/SOURCES_BIBLIOGRAPHY.md)
 
 ---
 

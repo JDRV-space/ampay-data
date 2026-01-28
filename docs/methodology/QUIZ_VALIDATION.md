@@ -259,7 +259,7 @@ The algorithm was evaluated under different scenarios to verify its robustness:
 
 ## Limitations
 
-1. **Party positions:** This validation assumes that positions were correctly extracted (see [PROMISE_EXTRACTION.md](/docs/methodology/PROMISE_EXTRACTION.md))
+1. **Party positions:** This validation assumes that positions were correctly extracted (see [PROMISE_EXTRACTION.md](PROMISE_EXTRACTION.md))
 2. **External validation:** Review by academic or electoral observation institutions is invited
 
 ---

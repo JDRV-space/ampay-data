@@ -303,7 +303,7 @@ When clicking on a party, display:
 ## References
 
 For all academic references and sources used in AMPAY, see the centralized document:
-[Bibliography and Sources](/referencia/fuentes)
+[Bibliography and Sources](../reference/SOURCES_BIBLIOGRAPHY.md)
 
 ---
 

@@ -641,4 +641,4 @@ Use `_embedded` flag or `_links` (HATEOAS) for API responses.
 ## 5. References
 
 For all academic references and sources used in AMPAY, see the centralized document:
-[Bibliography and Sources](/referencia/fuentes)
+[Bibliography and Sources](../reference/SOURCES_BIBLIOGRAPHY.md)

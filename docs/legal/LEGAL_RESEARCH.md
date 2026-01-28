@@ -429,4 +429,4 @@ Despite the documentary protections, certain risks cannot be entirely eliminated
 ## References
 
 For all academic references and sources used in AMPAY, please consult the centralized document:
-[Bibliography and Sources](/referencia/fuentes)
+[Bibliography and Sources](../reference/SOURCES_BIBLIOGRAPHY.md)
