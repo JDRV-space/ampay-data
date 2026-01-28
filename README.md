@@ -2,11 +2,7 @@
 
 # AMPAY
 
----
-
-**Political Transparency Platform for Peru 2026 Elections**
-
-*Take a political quiz. Discover which party matches your views. See if they kept their promises — or got caught in an AMPAY.*
+Political transparency platform for Peru 2026 elections. Take a political quiz, discover which party matches your views, and see if they kept their promises or got caught in an AMPAY.
 
 [![Live App](https://img.shields.io/badge/Live-ampayperu.com-FF4136?style=for-the-badge&logo=vercel&logoColor=white)](https://ampayperu.com)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
@@ -21,9 +17,7 @@
 
 </div>
 
----
-
-> **AMPAY** — *Porque las promesas se cumplen o se AMPAYan.*
+> **AMPAY**: Porque las promesas se cumplen o se AMPAYan.
 
 ## What is AMPAY?
 
@@ -33,7 +27,6 @@ AMPAY is a political transparency platform for Peru's 2026 elections. It combine
 
 This repository contains the **data pipeline, analysis engine, LLM prompts, output datasets, and 41 methodology documents** that power the platform. The frontend consumes JSON outputs from `data/02_output/`.
 
----
 
 ## Platform Features
 
@@ -42,7 +35,7 @@ This repository contains the **data pipeline, analysis engine, LLM prompts, outp
 
 Users answer 15 policy statements (agree/neutral/disagree) covering taxation, security, labor, energy, social issues, healthcare, and governance. Two calibration questions position the user on economic (left-center-right) and social (conservative-moderate-progressive) axes. Results show percentage compatibility with all 9 parties, split into "within your profile" and full ranking.
 
-**Validated:** 2 million Monte Carlo simulations (seed=42). 100% believer precision — users who answer exactly like a party always get that party as #1.
+**Validated:** 2 million Monte Carlo simulations (seed=42). 100% believer precision: users who answer exactly like a party always get that party as #1.
 
 ### AMPAY Contradictions
 `/ampays` · 6 confirmed cases · Evidence-backed
@@ -79,7 +72,6 @@ All parties' 2026 campaign promises extracted from official JNE platform documen
 
 Download all datasets: quiz statements with party positions, classified congressional votes, AMPAY contradictions, party patterns, and per-party analysis reports.
 
----
 
 ## AMPAYs Found: 6
 
@@ -97,7 +89,6 @@ Download all datasets: quiz statements with party positions, classified congress
 
 > **Data coverage:** 2021-07-26 to 2024-07-26 (~60% of term). See [DATA_DISCLAIMER.md](DATA_DISCLAIMER.md).
 
----
 
 ## Data Pipeline
 
@@ -142,11 +133,10 @@ The `prompts/` directory contains the exact prompts used in each LLM-powered pha
 
 | Prompt | Pipeline Phase | LLM |
 |--------|---------------|-----|
-| [`extract_promises.md`](prompts/extract_promises.md) | 1.2 — Promise Extraction | Claude |
-| [`classify_vote.md`](prompts/classify_vote.md) | 1.3 — Vote Classification | Gemini |
-| [`detect_contradiction.md`](prompts/detect_contradiction.md) | 1.4 — AMPAY Detection | Claude |
+| [`extract_promises.md`](prompts/extract_promises.md) | 1.2 Promise Extraction | Claude |
+| [`classify_vote.md`](prompts/classify_vote.md) | 1.3 Vote Classification | Gemini |
+| [`detect_contradiction.md`](prompts/detect_contradiction.md) | 1.4 AMPAY Detection | Claude |
 
----
 
 ## Key Algorithms
 
@@ -191,7 +181,7 @@ percentage = final_score × 100
 | Parties | 9 |
 | Max distance | 30 |
 
-**Ideological filter:** Two additional calibration questions (economic axis, social axis) filter display results into "within your profile" vs "others" — does not affect distance calculation.
+**Ideological filter:** Two additional calibration questions (economic axis, social axis) filter display results into "within your profile" vs "others". This does not affect distance calculation.
 
 **Validation:** 2M Monte Carlo simulations (seed=42). 1M believer tests = 100% precision. 1M random tests = balance ratio 2.72:1.
 
@@ -222,11 +212,10 @@ Position = majority(SI, NO) excluding abstentions/absences
 SI > NO → "SI"  |  NO > SI → "NO"  |  SI = NO → "DIVIDED"  |  0 present → "AUSENTE"
 ```
 
-**Cohesion index:** `|SI - NO| / (SI + NO)` — ranges from 0.71 (Partido Morado, least cohesive) to 0.94 (Renovacion Popular, most cohesive).
+**Cohesion index:** `|SI - NO| / (SI + NO)`, ranges from 0.71 (Partido Morado, least cohesive) to 0.94 (Renovacion Popular, most cohesive).
 
 See: [PARLIAMENT_AGGREGATION.md](docs/methodology/PARLIAMENT_AGGREGATION.md)
 
----
 
 ## Tech Stack
 
@@ -240,7 +229,6 @@ See: [PARLIAMENT_AGGREGATION.md](docs/methodology/PARLIAMENT_AGGREGATION.md)
 | Hosting | Vercel |
 | Data Sources | JNE (promises) + OpenPolitica (votes) |
 
----
 
 ## Architecture
 
@@ -296,7 +284,6 @@ ampay/
 └── LICENSE                              # MIT
 ```
 
----
 
 ## By the Numbers
 
@@ -316,7 +303,6 @@ ampay/
 | Voting pattern months | 36 (2021-08 to 2024-07) |
 | Documentation files | 41 |
 
----
 
 ## Methodology
 
@@ -324,7 +310,7 @@ Full methodology documentation is in [`docs/methodology/`](docs/methodology/) (1
 
 | Document | Description |
 |----------|-------------|
-| [METHODOLOGY_V4_DUAL_SEARCH.md](docs/methodology/METHODOLOGY_V4_DUAL_SEARCH.md) | Master methodology — dual-search AMPAY detection |
+| [METHODOLOGY_V4_DUAL_SEARCH.md](docs/methodology/METHODOLOGY_V4_DUAL_SEARCH.md) | Master methodology, dual-search AMPAY detection |
 | [AMPAY_DETECTION.md](docs/methodology/AMPAY_DETECTION.md) | Contradiction detection algorithm (v5, confidence levels) |
 | [QUIZ_ALGORITHM.md](docs/methodology/QUIZ_ALGORITHM.md) | Political quiz scoring (Manhattan + coverage blend v3.3) |
 | [VOTE_CATEGORIZATION.md](docs/methodology/VOTE_CATEGORIZATION.md) | 15-category vote classification system |
@@ -338,7 +324,6 @@ Full methodology documentation is in [`docs/methodology/`](docs/methodology/) (1
 | [QUIZ_VALIDATION.md](docs/methodology/QUIZ_VALIDATION.md) | Quiz algorithm Monte Carlo validation (2M simulations) |
 | [VERSION_HISTORY.md](docs/methodology/VERSION_HISTORY.md) | Methodology evolution (v1 → v5) |
 
----
 
 ## Documentation
 
@@ -388,7 +373,6 @@ Full methodology documentation is in [`docs/methodology/`](docs/methodology/) (1
 | [URL_VERIFICATION_REPORT.md](docs/reference/URL_VERIFICATION_REPORT.md) | URL verification and link audit report |
 | [DECISIONS.md](docs/decisions/DECISIONS.md) | Architecture and design decisions |
 
----
 
 ## Data Sources
 
@@ -398,7 +382,6 @@ Full methodology documentation is in [`docs/methodology/`](docs/methodology/) (1
 | Party promises (2021) | 9 parties, 345 validated promises | [JNE Plataforma Historica](https://plataformahistorico.jne.gob.pe/) |
 | Party promises (2026) | 9 parties | [JNE Plataforma Electoral](https://plataformaelectoral.jne.gob.pe/) |
 
----
 
 ## Getting Started
 
@@ -452,18 +435,15 @@ All pipeline outputs are in `data/02_output/`:
 | `analysis_by_party/` | 1.9 MB | 9 per-party detailed analysis reports |
 | `PROMISE_AUDIT_REPORT.md` | 9 KB | Promise extraction audit report |
 
----
 
 ## License
 
 [MIT](LICENSE)
 
----
-
 <div align="center">
 
-**AMPAY** — Porque las promesas se cumplen o se AMPAYan.
+**AMPAY**: Porque las promesas se cumplen o se AMPAYan.
 
-*A project by [JDRV-space](https://github.com/JDRV-space)*
+A project by [JDRV-space](https://github.com/JDRV-space)
 
 </div>
