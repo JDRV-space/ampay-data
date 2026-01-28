@@ -195,7 +195,7 @@ percentage = final_score × 100
 
 **Validation:** 2M Monte Carlo simulations (seed=42). 1M believer tests = 100% precision. 1M random tests = balance ratio 2.72:1.
 
-See: [QUIZ_ALGORITHM.md](docs/methodology/QUIZ_ALGORITHM.md), [VALIDACION_ALGORITMO_QUIZ.md](docs/methodology/VALIDACION_ALGORITMO_QUIZ.md)
+See: [QUIZ_ALGORITHM.md](docs/methodology/QUIZ_ALGORITHM.md), [QUIZ_VALIDATION.md](docs/methodology/QUIZ_VALIDATION.md)
 
 ### 3. Vote Categorization (15-Category System)
 
@@ -335,7 +335,7 @@ Full methodology documentation is in [`docs/methodology/`](docs/methodology/) (1
 | [PARTY_POSITION_CODING.md](docs/methodology/PARTY_POSITION_CODING.md) | Party position coding system (+1/0/-1 from PDFs) |
 | [SPARKLINE_CALCULATION.md](docs/methodology/SPARKLINE_CALCULATION.md) | Voting pattern sparkline computation |
 | [DATA_PIPELINE_FLOWS.md](docs/methodology/DATA_PIPELINE_FLOWS.md) | Technical 5-phase pipeline documentation |
-| [VALIDACION_ALGORITMO_QUIZ.md](docs/methodology/VALIDACION_ALGORITMO_QUIZ.md) | Quiz algorithm Monte Carlo validation (2M simulations) |
+| [QUIZ_VALIDATION.md](docs/methodology/QUIZ_VALIDATION.md) | Quiz algorithm Monte Carlo validation (2M simulations) |
 | [VERSION_HISTORY.md](docs/methodology/VERSION_HISTORY.md) | Methodology evolution (v1 → v5) |
 
 ---

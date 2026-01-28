@@ -1,7 +1,7 @@
 # PDF Text Extraction for LLM Processing - Research Report
 
 **Date:** 2026-01-21
-**Use Case:** JNE Planes de Gobierno (Peruvian government PDFs)
+**Use Case:** JNE Government Plans (Peruvian government PDFs)
 **Document Types:** Native text PDFs, scanned PDFs, mixed documents
 
 ---
@@ -373,7 +373,7 @@ import os
 
 class PlanDeGobiernoExtractor:
     """
-    Complete pipeline for extracting Peruvian government PDFs
+    Complete pipeline for extracting Peruvian government plan PDFs
     """
 
     def __init__(self, tesseract_lang='spa'):
@@ -500,7 +500,7 @@ if __name__ == "__main__":
 
 ## 7. Recommendations Summary
 
-### For JNE Planes de Gobierno:
+### For JNE Government Plans:
 
 1. **Start with PyMuPDF** - Fast, handles most native PDFs
 2. **Auto-detect scanned pages** - Use heuristic above
@@ -522,7 +522,7 @@ brew install tesseract tesseract-lang poppler
 
 ---
 
-## Referencias
+## References
 
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)

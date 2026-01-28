@@ -145,10 +145,10 @@ Voting Advice Applications (VAAs) are online tools designed to help voters disco
 
 *   The methodology and algorithms used by VAAs should be transparent and publicly accessible. This allows for academic scrutiny and builds trust with users.
 
-## Referencias
+## References
 
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)
 
 ---
 

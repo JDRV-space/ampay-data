@@ -1,59 +1,59 @@
-# Agregacion de Votos Congresista a Partido
+# Aggregation of Individual Legislator Votes to Party Level
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
+**Date:** 2026-01-21
+**Status:** ACTIVE
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-Los votos individuales de congresistas se agregan a nivel de partido utilizando la posicion mayoritaria. Este documento describe las reglas para determinar la posicion de cada partido en cada votacion.
+Individual legislator votes are aggregated to the party level using the majority position. This document describes the rules for determining each party's position on each vote.
 
 ---
 
-## 1. Fuente de Datos
+## 1. Data Source
 
-### 1.1 Dataset Original
+### 1.1 Original Dataset
 
 ```
-Fuente: openpolitica/congreso-pleno-asistencia-votacion
+Source: openpolitica/congreso-pleno-asistencia-votacion
 URL: https://github.com/openpolitica/congreso-pleno-asistencia-votacion
-Formato: CSV
-Periodo: 2021-07-26 a 2024-07-26
-Registros: ~289,000 votos individuales
-Votaciones: 2,226 sesiones
+Format: CSV
+Period: 2021-07-26 to 2024-07-26
+Records: ~289,000 individual votes
+Voting sessions: 2,226
 ```
 
-### 1.2 Campos Relevantes
+### 1.2 Relevant Fields
 
-| Campo | Descripcion | Ejemplo |
+| Field | Description | Example |
 |-------|-------------|---------|
-| `fecha` | Fecha de votacion | 2023-06-22 |
-| `asunto` | Tema votado | "PL 3456 sobre SIS" |
-| `congresista` | Nombre del congresista | "PEREZ GARCIA, JUAN" |
-| `grupo_parlamentario` | Partido al momento del voto | "Fuerza Popular" |
-| `votacion` | Voto emitido | SI / NO / ABSTENCION / AUSENTE |
+| `fecha` | Date of vote | 2023-06-22 |
+| `asunto` | Subject voted on | "PL 3456 sobre SIS" |
+| `congresista` | Legislator name | "PEREZ GARCIA, JUAN" |
+| `grupo_parlamentario` | Party at time of vote | "Fuerza Popular" |
+| `votacion` | Vote cast | SI / NO / ABSTENCION / AUSENTE |
 
 ---
 
-## 2. Reglas de Agregacion
+## 2. Aggregation Rules
 
-### 2.1 Determinacion de Posicion Mayoritaria
+### 2.1 Determining Majority Position
 
-Para cada votacion y cada partido:
+For each vote and each party:
 
 ```python
-def calcular_posicion_partido(votos_individuales):
+def calculate_party_position(individual_votes):
     """
-    votos_individuales: lista de votos del partido en esa sesion
-    Retorna: posicion mayoritaria del partido
+    individual_votes: list of the party's votes in that session
+    Returns: party's majority position
     """
-    si_votes = count(v == "SI" for v in votos_individuales)
-    no_votes = count(v == "NO" for v in votos_individuales)
-    total_presentes = si_votes + no_votes  # excluye abstenciones y ausentes
+    si_votes = count(v == "SI" for v in individual_votes)
+    no_votes = count(v == "NO" for v in individual_votes)
+    total_present = si_votes + no_votes  # excludes abstentions and absences
 
-    if total_presentes == 0:
+    if total_present == 0:
         return "AUSENTE"
 
     if si_votes > no_votes:
@@ -64,87 +64,87 @@ def calcular_posicion_partido(votos_individuales):
         return "DIVIDIDO"
 ```
 
-### 2.2 Matriz de Decision
+### 2.2 Decision Matrix
 
-| SI Votes | NO Votes | Posicion Partido |
-|----------|----------|------------------|
-| > 50% | < 50% | **SI** |
+| YES Votes | NO Votes | Party Position |
+|-----------|----------|----------------|
+| > 50% | < 50% | **YES** |
 | < 50% | > 50% | **NO** |
-| = 50% | = 50% | **DIVIDIDO** |
-| 0 | 0 | **AUSENTE** |
+| = 50% | = 50% | **DIVIDED** |
+| 0 | 0 | **ABSENT** |
 
-### 2.3 Tratamiento de Abstenciones
+### 2.3 Treatment of Abstentions
 
-**Decision:** Las abstenciones NO cuentan para el calculo de posicion mayoritaria.
+**Decision:** Abstentions do NOT count toward the majority position calculation.
 
-**Justificacion:**
-- Una abstencion no es un voto a favor ni en contra
-- Incluirlas distorsionaria el ratio real SI/NO
-- Es consistente con como el Congreso reporta resultados
+**Justification:**
+- An abstention is neither a vote in favor nor against
+- Including abstentions would distort the actual YES/NO ratio
+- This is consistent with how Congress reports results
 
 **Formula:**
 ```
-Posicion = SI_votes / (SI_votes + NO_votes)
+Position = YES_votes / (YES_votes + NO_votes)
 ```
 
 ---
 
-## 3. Casos Especiales
+## 3. Special Cases
 
-### 3.1 Cambio de Partido (Transfugas)
+### 3.1 Party Switching (Defectors)
 
-**Problema:** Un congresista puede cambiar de bancada durante la legislatura.
+**Problem:** A legislator may switch parliamentary blocs during the legislative term.
 
-**Solucion:** El dataset original registra `grupo_parlamentario` AL MOMENTO DEL VOTO.
-
-```
-Congresista X:
-- Voto 2022-03-15: grupo_parlamentario = "Peru Libre" → cuenta para PL
-- Voto 2022-06-20: grupo_parlamentario = "No Agrupados" → no cuenta para PL
-- Voto 2022-09-10: grupo_parlamentario = "Fuerza Popular" → cuenta para FP
-```
-
-**No se requiere manejo especial:** El campo ya refleja el partido correcto.
-
-### 3.2 Partidos Pequenos / Nuevos
-
-Partidos con pocos congresistas pueden tener mayor variabilidad.
-
-| Partido | Congresistas (2021) | Nota |
-|---------|---------------------|------|
-| Partido Morado | 3 | Alta variabilidad posible |
-| Podemos Peru | 5 | Mediana variabilidad |
-| Peru Libre | 37 | Baja variabilidad (bancada grande) |
-
-### 3.3 Votos Divididos
-
-Cuando SI = NO exactamente:
+**Solution:** The original dataset records `grupo_parlamentario` AT THE TIME OF THE VOTE.
 
 ```
-Partido X en votacion Y:
-- SI: 12 congresistas
-- NO: 12 congresistas
-- Posicion: DIVIDIDO
+Legislator X:
+- Vote 2022-03-15: grupo_parlamentario = "Peru Libre" -> counts for PL
+- Vote 2022-06-20: grupo_parlamentario = "No Agrupados" -> does not count for PL
+- Vote 2022-09-10: grupo_parlamentario = "Fuerza Popular" -> counts for FP
 ```
 
-**Interpretacion para AMPAY:** Un voto DIVIDIDO cuenta como 0.5 SI y 0.5 NO en calculos de porcentaje.
+**No special handling required:** The field already reflects the correct party.
 
-### 3.4 Ausencia Masiva
+### 3.2 Small / New Parties
 
-Si todos los congresistas de un partido estan ausentes:
+Parties with few legislators may exhibit greater variability.
+
+| Party | Legislators (2021) | Note |
+|-------|-------------------|------|
+| Partido Morado | 3 | High potential variability |
+| Podemos Peru | 5 | Moderate variability |
+| Peru Libre | 37 | Low variability (large caucus) |
+
+### 3.3 Divided Votes
+
+When YES = NO exactly:
 
 ```
-Posicion: AUSENTE
-Interpretacion: No hay datos para este partido en esta votacion
+Party X on vote Y:
+- YES: 12 legislators
+- NO: 12 legislators
+- Position: DIVIDED
 ```
 
-**Para patrones:** Ausencia >= 50% puede indicar evasion estrategica.
+**Interpretation for AMPAY:** A DIVIDED vote counts as 0.5 YES and 0.5 NO in percentage calculations.
+
+### 3.4 Mass Absence
+
+If all legislators of a party are absent:
+
+```
+Position: ABSENT
+Interpretation: No data for this party on this vote
+```
+
+**For pattern analysis:** Absence >= 50% may indicate strategic evasion.
 
 ---
 
-## 4. Estructura de Datos Agregados
+## 4. Aggregated Data Structure
 
-### 4.1 Formato de Salida
+### 4.1 Output Format
 
 ```json
 {
@@ -171,7 +171,7 @@ Interpretacion: No hay datos para este partido en esta votacion
 }
 ```
 
-### 4.2 Archivo de Salida
+### 4.2 Output File
 
 ```
 data/02_output/votes_by_party.json
@@ -179,87 +179,87 @@ data/02_output/votes_by_party.json
 
 ---
 
-## 5. Validacion
+## 5. Validation
 
-### 5.1 Consistencia Interna
+### 5.1 Internal Consistency
 
-Verificar para cada votacion:
+Verify for each vote:
 
 ```python
 for vote in votes:
     total_reported = vote.total_favor + vote.total_contra + vote.total_abstencion
     sum_parties = sum(p.votes for p in vote.party_positions)
-    assert total_reported == sum_parties, "Inconsistencia en totales"
+    assert total_reported == sum_parties, "Inconsistency in totals"
 ```
 
-### 5.2 Comparacion con Fuente Oficial
+### 5.2 Comparison with Official Sources
 
-Muestra de votaciones verificadas contra:
-- Actas oficiales del Congreso
-- Reportes de openpolitica
+A sample of votes verified against:
+- Official Congressional minutes
+- OpenPolitica reports
 
-**Resultado:** 99.7% de coincidencia (0.3% discrepancias menores por timing de actualizacion).
+**Result:** 99.7% match (0.3% minor discrepancies due to update timing).
 
 ---
 
-## 6. Metricas de Cohesion Partidaria
+## 6. Party Cohesion Metrics
 
-### 6.1 Indice de Cohesion
+### 6.1 Cohesion Index
 
-Mide que tan unido vota un partido:
+Measures how uniformly a party votes:
 
 ```
-Cohesion = |SI - NO| / (SI + NO)
+Cohesion = |YES - NO| / (YES + NO)
 ```
 
-| Cohesion | Interpretacion |
+| Cohesion | Interpretation |
 |----------|----------------|
-| 1.0 | Unanimidad total |
-| 0.8-0.99 | Alta cohesion |
-| 0.5-0.79 | Cohesion moderada |
-| < 0.5 | Partido dividido |
+| 1.0 | Total unanimity |
+| 0.8-0.99 | High cohesion |
+| 0.5-0.79 | Moderate cohesion |
+| < 0.5 | Divided party |
 
-### 6.2 Cohesion por Partido (Promedio 2021-2024)
+### 6.2 Cohesion by Party (2021-2024 Average)
 
-| Partido | Cohesion Promedio |
-|---------|-------------------|
+| Party | Average Cohesion |
+|-------|-----------------|
 | Renovacion Popular | 0.94 |
 | Peru Libre | 0.91 |
 | Fuerza Popular | 0.89 |
-| Alianza Progreso | 0.87 |
+| Alianza para el Progreso | 0.87 |
 | Avanza Pais | 0.85 |
 | Podemos Peru | 0.82 |
 | Somos Peru | 0.78 |
-| Juntos Peru | 0.76 |
+| Juntos por el Peru | 0.76 |
 | Partido Morado | 0.71 |
 
 ---
 
-## 7. Limitaciones
+## 7. Limitations
 
-1. **Bancada vs Partido:** `grupo_parlamentario` puede diferir del partido original del congresista
-2. **Votacion nominal vs secreta:** Solo se registran votaciones nominales
-3. **Quorum:** Algunas votaciones tienen baja participacion
-4. **Licencias:** Congresistas con licencia no votan, no es "ausencia"
-5. **Votos rectificados:** El dataset puede no reflejar rectificaciones posteriores
-
----
-
-## 8. Archivos Relacionados
-
-| Archivo | Contenido |
-|---------|-----------|
-| `data/02_output/votes_by_party.json` | Posiciones agregadas |
-| `data/02_output/votes_categorized.json` | Votos con categoria |
-| `data/02_output/party_patterns.json` | Patrones por partido |
+1. **Parliamentary bloc vs. party:** `grupo_parlamentario` may differ from the legislator's original party
+2. **Roll-call vs. secret ballot:** Only roll-call votes are recorded
+3. **Quorum:** Some votes have low participation
+4. **Leaves of absence:** Legislators on official leave do not vote; this is not "absence"
+5. **Rectified votes:** The dataset may not reflect subsequent rectifications
 
 ---
 
-## Referencias
+## 8. Related Files
 
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+| File | Content |
+|------|---------|
+| `data/02_output/votes_by_party.json` | Aggregated positions |
+| `data/02_output/votes_categorized.json` | Votes with assigned category |
+| `data/02_output/party_patterns.json` | Patterns by party |
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+## References
+
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)
+
+---
+
+*Last updated: 2026-01-21*

@@ -1,342 +1,342 @@
-# TERMINOS Y CONDICIONES DE USO
+# TERMS AND CONDITIONS OF USE
 
-**AMPAY - Plataforma de Transparencia Electoral**
+**AMPAY - Electoral Transparency Platform**
 
 **Version:** 1.0
-**Fecha de entrada en vigencia:** 21 de enero de 2026
-**Ultima actualizacion:** 21 de enero de 2026
+**Effective Date:** January 21, 2026
+**Last Updated:** January 21, 2026
 
 ---
 
-## AVISO IMPORTANTE
+## IMPORTANT NOTICE
 
-**LEA CUIDADOSAMENTE ESTOS TERMINOS ANTES DE UTILIZAR ESTE SITIO WEB.** Al acceder o utilizar AMPAY (en adelante, "el Sitio Web", "la Plataforma" o "AMPAY"), usted acepta estar legalmente vinculado por estos Terminos y Condiciones. Si no esta de acuerdo con alguno de estos terminos, no utilice este Sitio Web.
-
----
-
-## SECCION 1. DEFINICIONES
-
-1.1. **"AMPAY"** se refiere al sitio web de transparencia electoral ubicado en su dominio correspondiente, operado por JDRV-space.
-
-1.2. **"Usuario"** se refiere a cualquier persona que acceda, navegue o utilice el Sitio Web de cualquier manera.
-
-1.3. **"Contenido"** se refiere a toda la informacion, datos, textos, graficos, imagenes y otros materiales disponibles en el Sitio Web.
-
-1.4. **"Datos Publicos"** se refiere a la informacion obtenida de fuentes gubernamentales de acceso publico, incluyendo pero no limitado al Congreso de la Republica del Peru, el Jurado Nacional de Elecciones (JNE), y la Oficina Nacional de Procesos Electorales (ONPE).
-
-1.5. **"Herramienta de Afinidad"** se refiere al cuestionario interactivo que permite a los usuarios comparar sus preferencias con las posiciones de los partidos politicos.
+**PLEASE READ THESE TERMS CAREFULLY BEFORE USING THIS WEBSITE.** By accessing or using AMPAY (hereinafter, "the Website," "the Platform," or "AMPAY"), you agree to be legally bound by these Terms and Conditions. If you do not agree with any of these terms, do not use this Website.
 
 ---
 
-## SECCION 2. NATURALEZA DEL SERVICIO
+## SECTION 1. DEFINITIONS
 
-### 2.1. Proposito Exclusivamente Informativo
+1.1. **"AMPAY"** refers to the electoral transparency website located at its corresponding domain, operated by JDRV-space.
 
-2.1.1. AMPAY es una plataforma de **caracter exclusivamente informativo** que recopila, organiza y presenta datos de fuentes publicas gubernamentales sobre el desempeno legislativo de los congresistas peruanos y las posiciones de los partidos politicos.
+1.2. **"User"** refers to any person who accesses, browses, or uses the Website in any manner.
 
-2.1.2. **AMPAY NO ES:**
-- (a) Una entidad gubernamental ni esta afiliada a ninguna institucion del Estado peruano;
-- (b) Un partido politico, movimiento politico ni organizacion con fines electorales;
-- (c) Una fuente de asesoria legal, politica o electoral;
-- (d) Un servicio de recomendacion de voto;
-- (e) Una organizacion que promueve o desfavorece a candidato, partido o agrupacion politica alguna.
+1.3. **"Content"** refers to all information, data, text, graphics, images, and other materials available on the Website.
 
-### 2.2. Neutralidad Politica
+1.4. **"Public Data"** refers to information obtained from publicly accessible government sources, including but not limited to the Congreso de la Republica del Peru, the Jurado Nacional de Elecciones (JNE), and the Oficina Nacional de Procesos Electorales (ONPE).
 
-2.2.1. AMPAY mantiene una posicion de **estricta neutralidad politica**. La presentacion de informacion sobre cualquier congresista, partido politico o candidato no implica respaldo, aprobacion, critica o desaprobacion alguna por parte de AMPAY o sus operadores.
-
-2.2.2. La inclusion u omision de cualquier informacion no debe interpretarse como una declaracion politica o una recomendacion implicita.
+1.5. **"Affinity Tool"** refers to the interactive questionnaire that allows users to compare their preferences with the positions of political parties.
 
 ---
 
-## SECCION 3. FUENTES DE INFORMACION Y PRECISION DE DATOS
+## SECTION 2. NATURE OF THE SERVICE
 
-### 3.1. Origen de los Datos
+### 2.1. Exclusively Informational Purpose
 
-3.1.1. La informacion presentada en AMPAY proviene de las siguientes fuentes publicas:
-- (a) **Congreso de la Republica del Peru** (https://www.congreso.gob.pe) - Registros de votaciones, asistencia y actividad legislativa;
-- (b) **Jurado Nacional de Elecciones - JNE** (https://portal.jne.gob.pe) - Informacion electoral y de organizaciones politicas;
-- (c) **Oficina Nacional de Procesos Electorales - ONPE** (https://www.onpe.gob.pe) - Datos de procesos electorales;
-- (d) **Infogob** (https://infogob.jne.gob.pe) - Plataforma de informacion electoral del JNE;
-- (e) Planes de gobierno presentados oficialmente ante el JNE;
-- (f) Otras fuentes gubernamentales de acceso publico.
+2.1.1. AMPAY is a platform of an **exclusively informational nature** that collects, organizes, and presents data from public government sources regarding the legislative performance of Peruvian members of Congress and the positions of political parties.
 
-3.1.2. El acceso y uso de estas fuentes se realiza al amparo del derecho constitucional de acceso a la informacion publica consagrado en el **Articulo 2, inciso 5 de la Constitucion Politica del Peru** y regulado por la **Ley N° 27806, Ley de Transparencia y Acceso a la Informacion Publica**.
+2.1.2. **AMPAY IS NOT:**
+- (a) A government entity nor is it affiliated with any institution of the Peruvian State;
+- (b) A political party, political movement, or organization with electoral purposes;
+- (c) A source of legal, political, or electoral advice;
+- (d) A voting recommendation service;
+- (e) An organization that promotes or disfavors any candidate, party, or political group.
 
-### 3.2. Limitaciones de Precision
+### 2.2. Political Neutrality
 
-3.2.1. **AMPAY NO GARANTIZA** la exactitud, integridad, actualidad, confiabilidad o disponibilidad de la informacion presentada.
+2.2.1. AMPAY maintains a position of **strict political neutrality**. The presentation of information about any member of Congress, political party, or candidate does not imply endorsement, approval, criticism, or disapproval of any kind by AMPAY or its operators.
 
-3.2.2. Los datos pueden contener:
-- (a) Errores de transcripcion o procesamiento;
-- (b) Informacion desactualizada debido a retrasos en la actualizacion de las fuentes originales;
-- (c) Omisiones involuntarias;
-- (d) Interpretaciones que pueden no reflejar con precision la intencion original de los documentos fuente;
-- (e) Errores tecnicos en el procesamiento automatizado de datos.
-
-3.2.3. **EL USUARIO RECONOCE Y ACEPTA** que debe verificar independientemente toda informacion antes de utilizarla para cualquier proposito, consultando directamente las fuentes oficiales citadas.
-
-### 3.3. Actualizacion de Datos
-
-3.3.1. AMPAY realiza esfuerzos razonables para mantener la informacion actualizada, pero no garantiza la frecuencia ni la oportunidad de las actualizaciones.
-
-3.3.2. La fecha de ultima actualizacion de los datos puede estar indicada en el Sitio Web cuando este disponible.
+2.2.2. The inclusion or omission of any information shall not be construed as a political statement or an implied recommendation.
 
 ---
 
-## SECCION 4. HERRAMIENTA DE AFINIDAD POLITICA
+## SECTION 3. SOURCES OF INFORMATION AND DATA ACCURACY
 
-### 4.1. Naturaleza de la Herramienta
+### 3.1. Origin of Data
 
-4.1.1. La Herramienta de Afinidad es un ejercicio **exclusivamente informativo y educativo** que permite a los usuarios explorar como sus preferencias personales se relacionan con las posiciones publicamente declaradas de los partidos politicos.
+3.1.1. The information presented on AMPAY originates from the following public sources:
+- (a) **Congreso de la Republica del Peru** (https://www.congreso.gob.pe) - Voting records, attendance, and legislative activity;
+- (b) **Jurado Nacional de Elecciones - JNE** (https://portal.jne.gob.pe) - Electoral and political organization information;
+- (c) **Oficina Nacional de Procesos Electorales - ONPE** (https://www.onpe.gob.pe) - Electoral process data;
+- (d) **Infogob** (https://infogob.jne.gob.pe) - JNE electoral information platform;
+- (e) Government plans officially submitted to the JNE;
+- (f) Other publicly accessible government sources.
 
-4.1.2. **LA HERRAMIENTA DE AFINIDAD NO CONSTITUYE:**
-- (a) Una recomendacion de voto;
-- (b) Asesoria politica o electoral;
-- (c) Un predictor del desempeno futuro de partidos o candidatos;
-- (d) Una evaluacion objetiva o cientifica de compatibilidad politica;
-- (e) Un servicio profesional de orientacion electoral.
+3.1.2. Access to and use of these sources is carried out pursuant to the constitutional right of access to public information enshrined in **Articulo 2, inciso 5 of the Constitucion Politica del Peru** and regulated by **Ley N° 27806, Ley de Transparencia y Acceso a la Informacion Publica**.
 
-### 4.2. Metodologia
+### 3.2. Accuracy Limitations
 
-4.2.1. Los resultados de la Herramienta de Afinidad se basan en:
-- (a) Las respuestas proporcionadas por el Usuario;
-- (b) La interpretacion de AMPAY de las posiciones de los partidos politicos basada en documentos publicos;
-- (c) Un algoritmo de comparacion desarrollado con fines ilustrativos.
+3.2.1. **AMPAY DOES NOT GUARANTEE** the accuracy, completeness, timeliness, reliability, or availability of the information presented.
 
-4.2.2. **EL USUARIO RECONOCE QUE:**
-- (a) La metodologia puede contener sesgos involuntarios;
-- (b) Las posiciones de los partidos pueden haber cambiado desde su publicacion;
-- (c) Los resultados son una simplificacion de realidades politicas complejas;
-- (d) Diferentes metodologias podrian producir resultados diferentes.
+3.2.2. The data may contain:
+- (a) Transcription or processing errors;
+- (b) Outdated information due to delays in the updating of original sources;
+- (c) Unintentional omissions;
+- (d) Interpretations that may not accurately reflect the original intent of source documents;
+- (e) Technical errors in automated data processing.
 
-### 4.3. Uso de los Resultados
+3.2.3. **THE USER ACKNOWLEDGES AND AGREES** that they must independently verify all information before using it for any purpose, by consulting directly the official sources cited herein.
 
-4.3.1. Los resultados de la Herramienta de Afinidad deben ser considerados como un **punto de partida para la investigacion personal** del Usuario, no como una conclusion definitiva.
+### 3.3. Data Updates
 
-4.3.2. **EL USUARIO ASUME TODA LA RESPONSABILIDAD** por las decisiones que tome basandose en los resultados de la Herramienta de Afinidad.
+3.3.1. AMPAY makes reasonable efforts to keep the information up to date but does not guarantee the frequency or timeliness of updates.
 
----
-
-## SECCION 5. EXENCION TOTAL DE RESPONSABILIDAD
-
-### 5.1. Provision del Servicio "TAL CUAL"
-
-5.1.1. AMPAY se proporciona **"TAL CUAL" ("AS IS")** y **"SEGUN DISPONIBILIDAD" ("AS AVAILABLE")**, sin garantias de ningun tipo, ya sean expresas, implicitas, estatutarias o de otro tipo.
-
-5.1.2. En la maxima medida permitida por la legislacion peruana aplicable, AMPAY y sus operadores **RECHAZAN EXPRESAMENTE** todas las garantias, incluyendo pero no limitado a:
-- (a) Garantias implicitas de comerciabilidad;
-- (b) Garantias de idoneidad para un proposito particular;
-- (c) Garantias de no infraccion;
-- (d) Garantias de exactitud o integridad de la informacion;
-- (e) Garantias de que el servicio sera ininterrumpido o libre de errores.
-
-### 5.2. Exclusion de Responsabilidad por Danos
-
-5.2.1. **EN NINGUNA CIRCUNSTANCIA** AMPAY, sus operadores, colaboradores, proveedores de servicios, o cualquier persona asociada con el desarrollo u operacion del Sitio Web seran responsables ante el Usuario o cualquier tercero por:
-
-- (a) **Danos directos, indirectos, incidentales, especiales, consecuentes o punitivos** de cualquier tipo;
-- (b) **Perdida de beneficios, ingresos, datos, uso, fondo de comercio** u otras perdidas intangibles;
-- (c) **Danos resultantes de:**
-  - (i) El acceso o uso del Sitio Web o la imposibilidad de acceder o usarlo;
-  - (ii) Cualquier conducta o contenido de terceros en el Sitio Web;
-  - (iii) Cualquier contenido obtenido del Sitio Web;
-  - (iv) Acceso no autorizado, uso o alteracion de las transmisiones o contenido del Usuario;
-  - (v) Errores, inexactitudes u omisiones en el Contenido;
-  - (vi) Decisiones tomadas basandose en la informacion proporcionada por el Sitio Web;
-  - (vii) Resultados de la Herramienta de Afinidad;
-  - (viii) Cualquier falla tecnica, error del sistema o virus.
-
-5.2.2. **Esta exclusion de responsabilidad se aplica independientemente de:**
-- (a) La teoria legal bajo la cual se reclame la responsabilidad (contrato, responsabilidad extracontractual, negligencia, responsabilidad estricta u otra);
-- (b) Si AMPAY fue advertido o no de la posibilidad de tales danos;
-- (c) Si el remedio establecido en estos terminos cumple o no su proposito esencial.
-
-### 5.3. Limitacion de Responsabilidad
-
-5.3.1. En jurisdicciones donde la exclusion total de responsabilidad no esta permitida, la responsabilidad total de AMPAY ante el Usuario por todos los reclamos relacionados con el Sitio Web estara **limitada a cero soles (S/ 0.00)**, o al monto minimo permitido por ley.
-
-### 5.4. Exencion Especifica para Decisiones Electorales
-
-5.4.1. **EL USUARIO RECONOCE Y ACEPTA EXPRESAMENTE** que AMPAY **NO ASUME NINGUNA RESPONSABILIDAD** por las decisiones de voto o cualquier otra decision politica o electoral que el Usuario tome basandose, total o parcialmente, en la informacion obtenida a traves del Sitio Web.
-
-5.4.2. El Usuario es el **unico responsable** de:
-- (a) Investigar y verificar la informacion;
-- (b) Formar su propia opinion politica;
-- (c) Tomar sus propias decisiones electorales;
-- (d) Las consecuencias de sus decisiones.
+3.3.2. The date of the last data update may be indicated on the Website when available.
 
 ---
 
-## SECCION 6. INDEMNIZACION
+## SECTION 4. POLITICAL AFFINITY TOOL
 
-6.1. El Usuario acepta **indemnizar, defender y mantener indemne** a AMPAY, sus operadores, directores, empleados, agentes, licenciantes y proveedores de servicios de y contra cualquier reclamo, responsabilidad, dano, perdida, costo, gasto o tarifa (incluyendo honorarios razonables de abogados) que surjan de:
+### 4.1. Nature of the Tool
 
-- (a) El uso del Sitio Web por parte del Usuario;
-- (b) La violacion de estos Terminos por parte del Usuario;
-- (c) La violacion de cualquier derecho de terceros por parte del Usuario;
-- (d) Cualquier contenido que el Usuario envie o transmita a traves del Sitio Web;
-- (e) Cualquier reclamo de que el uso del Sitio Web por parte del Usuario causo danos a un tercero.
+4.1.1. The Affinity Tool is an **exclusively informational and educational** exercise that allows users to explore how their personal preferences relate to the publicly declared positions of political parties.
 
-6.2. Esta obligacion de indemnizacion **sobrevivira** a la terminacion de estos Terminos y al cese del uso del Sitio Web por parte del Usuario.
+4.1.2. **THE AFFINITY TOOL DOES NOT CONSTITUTE:**
+- (a) A voting recommendation;
+- (b) Political or electoral advice;
+- (c) A predictor of the future performance of parties or candidates;
+- (d) An objective or scientific assessment of political compatibility;
+- (e) A professional electoral guidance service.
 
----
+### 4.2. Methodology
 
-## SECCION 7. PROPIEDAD INTELECTUAL
+4.2.1. The results of the Affinity Tool are based on:
+- (a) The responses provided by the User;
+- (b) AMPAY's interpretation of political party positions based on public documents;
+- (c) A comparison algorithm developed for illustrative purposes.
 
-### 7.1. Datos de Fuentes Publicas
+4.2.2. **THE USER ACKNOWLEDGES THAT:**
+- (a) The methodology may contain unintentional biases;
+- (b) Party positions may have changed since their publication;
+- (c) The results are a simplification of complex political realities;
+- (d) Different methodologies could produce different results.
 
-7.1.1. Los datos provenientes de fuentes gubernamentales publicas son informacion de dominio publico de acuerdo con la **Ley N° 27806** y el principio constitucional de acceso a la informacion publica.
+### 4.3. Use of Results
 
-7.1.2. AMPAY no reclama derechos de propiedad sobre los datos en bruto obtenidos de fuentes gubernamentales.
+4.3.1. The results of the Affinity Tool should be considered as a **starting point for the User's personal research**, not as a definitive conclusion.
 
-### 7.2. Contenido Original de AMPAY
-
-7.2.1. El codigo fuente, diseno, estructura, organizacion, compilacion y presentacion del Sitio Web son propiedad de **JDRV-space** y estan protegidos por las leyes de derechos de autor aplicables.
-
-7.2.2. Los elementos originales de AMPAY se publican bajo licencias especificas detalladas en el documento de COPYRIGHT que forma parte integral de estos Terminos.
-
-### 7.3. Marcas
-
-7.3.1. "AMPAY" y los logotipos asociados son marcas de JDRV-space. Su uso sin autorizacion escrita esta prohibido.
-
----
-
-## SECCION 8. PROTECCION DE DATOS PERSONALES
-
-### 8.1. Politica de No Recoleccion
-
-8.1.1. AMPAY es un **sitio web estatico** que **NO RECOLECTA, ALMACENA NI PROCESA** datos personales de los Usuarios.
-
-8.1.2. La Herramienta de Afinidad funciona **completamente en el navegador del Usuario**. Las respuestas al cuestionario **no son enviadas a ningun servidor** y no quedan registradas en ningun sistema.
-
-8.1.3. Para mas detalles, consulte la Politica de Privacidad que forma parte integral de estos Terminos.
-
-### 8.2. Cumplimiento Normativo
-
-8.2.1. En la medida aplicable, AMPAY cumple con la **Ley N° 29733, Ley de Proteccion de Datos Personales** del Peru.
+4.3.2. **THE USER ASSUMES ALL RESPONSIBILITY** for decisions made based on the results of the Affinity Tool.
 
 ---
 
-## SECCION 9. CONDUCTA DEL USUARIO
+## SECTION 5. COMPLETE DISCLAIMER OF LIABILITY
 
-9.1. Al usar el Sitio Web, el Usuario se compromete a **NO:**
+### 5.1. Provision of the Service "AS IS"
 
-- (a) Usar el Sitio Web para cualquier proposito ilegal o no autorizado;
-- (b) Intentar obtener acceso no autorizado a cualquier parte del Sitio Web;
-- (c) Interferir con el funcionamiento adecuado del Sitio Web;
-- (d) Usar el Sitio Web para difamar, acosar o amenazar a otros;
-- (e) Reproducir, modificar o distribuir el contenido del Sitio Web de manera que viole estos Terminos;
-- (f) Utilizar la informacion del Sitio Web para actividades ilegales o fraudulentas;
-- (g) Presentar la informacion de AMPAY como propia o como fuente primaria;
-- (h) Crear contenido derivado que tergiverse o distorsione la informacion original.
+5.1.1. AMPAY is provided **"AS IS"** and **"AS AVAILABLE,"** without warranties of any kind, whether express, implied, statutory, or otherwise.
 
----
+5.1.2. To the fullest extent permitted by applicable Peruvian law, AMPAY and its operators **EXPRESSLY DISCLAIM** all warranties, including but not limited to:
+- (a) Implied warranties of merchantability;
+- (b) Warranties of fitness for a particular purpose;
+- (c) Warranties of non-infringement;
+- (d) Warranties of accuracy or completeness of information;
+- (e) Warranties that the service will be uninterrupted or error-free.
 
-## SECCION 10. ENLACES A TERCEROS
+### 5.2. Exclusion of Liability for Damages
 
-10.1. El Sitio Web puede contener enlaces a sitios web de terceros, incluyendo las fuentes gubernamentales citadas.
+5.2.1. **UNDER NO CIRCUMSTANCES** shall AMPAY, its operators, collaborators, service providers, or any person associated with the development or operation of the Website be liable to the User or any third party for:
 
-10.2. AMPAY **no tiene control sobre** y **no asume responsabilidad por** el contenido, politicas de privacidad o practicas de sitios web de terceros.
+- (a) **Direct, indirect, incidental, special, consequential, or punitive damages** of any kind;
+- (b) **Loss of profits, revenue, data, use, goodwill,** or other intangible losses;
+- (c) **Damages resulting from:**
+  - (i) Access to or use of the Website, or the inability to access or use it;
+  - (ii) Any conduct or content of third parties on the Website;
+  - (iii) Any content obtained from the Website;
+  - (iv) Unauthorized access to, use of, or alteration of User transmissions or content;
+  - (v) Errors, inaccuracies, or omissions in the Content;
+  - (vi) Decisions made based on information provided by the Website;
+  - (vii) Results of the Affinity Tool;
+  - (viii) Any technical failure, system error, or virus.
 
-10.3. El Usuario accede a sitios de terceros **bajo su propio riesgo** y esta sujeto a los terminos y condiciones de dichos sitios.
+5.2.2. **This exclusion of liability applies regardless of:**
+- (a) The legal theory under which liability is claimed (contract, tort, negligence, strict liability, or otherwise);
+- (b) Whether AMPAY was advised or not of the possibility of such damages;
+- (c) Whether the remedy set forth in these terms fulfills its essential purpose or not.
 
----
+### 5.3. Limitation of Liability
 
-## SECCION 11. MODIFICACIONES
+5.3.1. In jurisdictions where a total exclusion of liability is not permitted, AMPAY's total liability to the User for all claims related to the Website shall be **limited to zero soles (S/ 0.00)**, or the minimum amount permitted by law.
 
-### 11.1. Modificaciones a los Terminos
+### 5.4. Specific Exemption for Electoral Decisions
 
-11.1.1. AMPAY se reserva el derecho de modificar estos Terminos en cualquier momento.
+5.4.1. **THE USER EXPRESSLY ACKNOWLEDGES AND AGREES** that AMPAY **ASSUMES NO RESPONSIBILITY** for voting decisions or any other political or electoral decision that the User makes based, in whole or in part, on information obtained through the Website.
 
-11.1.2. Las modificaciones entraran en vigencia inmediatamente despues de su publicacion en el Sitio Web.
-
-11.1.3. El uso continuado del Sitio Web despues de la publicacion de modificaciones constituye la aceptacion de dichas modificaciones.
-
-### 11.2. Modificaciones al Servicio
-
-11.2.1. AMPAY se reserva el derecho de modificar, suspender o discontinuar el Sitio Web o cualquier parte del mismo, temporal o permanentemente, con o sin previo aviso.
-
-11.2.2. AMPAY no sera responsable ante el Usuario ni ante terceros por cualquier modificacion, suspension o discontinuacion del Sitio Web.
-
----
-
-## SECCION 12. LEY APLICABLE Y JURISDICCION
-
-### 12.1. Legislacion Aplicable
-
-12.1.1. Estos Terminos se rigen e interpretan de acuerdo con las leyes de la **Republica del Peru**, incluyendo:
-- (a) La Constitucion Politica del Peru;
-- (b) El Codigo Civil peruano;
-- (c) La Ley N° 27806, Ley de Transparencia y Acceso a la Informacion Publica;
-- (d) La Ley N° 29733, Ley de Proteccion de Datos Personales;
-- (e) Demas normas aplicables.
-
-### 12.2. Jurisdiccion
-
-12.2.1. Cualquier disputa que surja de o en relacion con estos Terminos o el uso del Sitio Web estara sujeta a la **jurisdiccion exclusiva de los tribunales de Lima, Peru**.
-
-12.2.2. El Usuario renuncia a cualquier objecion basada en falta de jurisdiccion personal o forum non conveniens.
-
-### 12.3. Resolucion de Disputas
-
-12.3.1. Antes de iniciar cualquier accion legal, el Usuario se compromete a intentar resolver cualquier disputa de buena fe contactando a AMPAY.
+5.4.2. The User is **solely responsible** for:
+- (a) Researching and verifying the information;
+- (b) Forming their own political opinion;
+- (c) Making their own electoral decisions;
+- (d) The consequences of their decisions.
 
 ---
 
-## SECCION 13. DISPOSICIONES GENERALES
+## SECTION 6. INDEMNIFICATION
 
-### 13.1. Acuerdo Completo
+6.1. The User agrees to **indemnify, defend, and hold harmless** AMPAY, its operators, directors, employees, agents, licensors, and service providers from and against any claim, liability, damage, loss, cost, expense, or fee (including reasonable attorney's fees) arising from:
 
-13.1.1. Estos Terminos, junto con la Politica de Privacidad, el Aviso Legal (Disclaimer) y el documento de Copyright, constituyen el acuerdo completo entre el Usuario y AMPAY respecto al uso del Sitio Web.
+- (a) The User's use of the Website;
+- (b) The User's violation of these Terms;
+- (c) The User's violation of any third-party right;
+- (d) Any content that the User submits or transmits through the Website;
+- (e) Any claim that the User's use of the Website caused damage to a third party.
 
-### 13.2. Divisibilidad
-
-13.2.1. Si alguna disposicion de estos Terminos se considera invalida o inaplicable, las disposiciones restantes continuaran en pleno vigor y efecto.
-
-13.2.2. La disposicion invalida sera modificada en la medida minima necesaria para hacerla valida y aplicable.
-
-### 13.3. Renuncia
-
-13.3.1. La falta de ejercicio de cualquier derecho o disposicion de estos Terminos por parte de AMPAY no constituira una renuncia a dicho derecho o disposicion.
-
-### 13.4. Cesion
-
-13.4.1. El Usuario no podra ceder o transferir estos Terminos sin el consentimiento previo por escrito de AMPAY.
-
-13.4.2. AMPAY podra ceder estos Terminos libremente sin restriccion.
-
-### 13.5. Supervivencia
-
-13.5.1. Las disposiciones de estos Terminos que por su naturaleza deban sobrevivir a la terminacion, sobreviviran, incluyendo pero no limitado a: exencion de responsabilidad, indemnizacion, propiedad intelectual y ley aplicable.
+6.2. This indemnification obligation shall **survive** the termination of these Terms and the User's cessation of use of the Website.
 
 ---
 
-## SECCION 14. CONTACTO
+## SECTION 7. INTELLECTUAL PROPERTY
 
-14.1. Para preguntas sobre estos Terminos y Condiciones, puede contactar a:
+### 7.1. Public Source Data
 
-**AMPAY - Plataforma de Transparencia Electoral**
-Operador: JDRV-space
-Repositorio: https://github.com/JDRV-space
+7.1.1. Data originating from public government sources is public domain information in accordance with **Ley N° 27806** and the constitutional principle of access to public information.
 
----
+7.1.2. AMPAY does not claim proprietary rights over raw data obtained from government sources.
 
-## DECLARACION DE ACEPTACION
+### 7.2. AMPAY Original Content
 
-**Al acceder y utilizar AMPAY, el Usuario declara:**
+7.2.1. The source code, design, structure, organization, compilation, and presentation of the Website are the property of **JDRV-space** and are protected by applicable copyright laws.
 
-1. Haber leido y comprendido estos Terminos y Condiciones en su totalidad;
-2. Aceptar estar legalmente vinculado por estos Terminos;
-3. Ser mayor de edad segun las leyes peruanas (18 anos);
-4. Comprender que AMPAY es una herramienta exclusivamente informativa;
-5. Asumir toda responsabilidad por sus decisiones electorales;
-6. Comprometerse a verificar la informacion de forma independiente.
+7.2.2. The original elements of AMPAY are published under specific licenses detailed in the COPYRIGHT document, which forms an integral part of these Terms.
+
+### 7.3. Trademarks
+
+7.3.1. "AMPAY" and associated logos are trademarks of JDRV-space. Their use without written authorization is prohibited.
 
 ---
 
-**Documento elaborado el 21 de enero de 2026**
+## SECTION 8. PERSONAL DATA PROTECTION
 
-**AMPAY - Transparencia Electoral para el Peru**
+### 8.1. Non-Collection Policy
 
-*Este documento forma parte del marco legal de AMPAY junto con la Politica de Privacidad, el Aviso Legal (Disclaimer) y el documento de Copyright.*
+8.1.1. AMPAY is a **static website** that **DOES NOT COLLECT, STORE, OR PROCESS** User personal data.
+
+8.1.2. The Affinity Tool operates **entirely within the User's browser**. Questionnaire responses **are not sent to any server** and are not recorded in any system.
+
+8.1.3. For further details, please consult the Privacy Policy, which forms an integral part of these Terms.
+
+### 8.2. Regulatory Compliance
+
+8.2.1. To the extent applicable, AMPAY complies with **Ley N° 29733, Ley de Proteccion de Datos Personales** of Peru.
+
+---
+
+## SECTION 9. USER CONDUCT
+
+9.1. By using the Website, the User agrees **NOT** to:
+
+- (a) Use the Website for any illegal or unauthorized purpose;
+- (b) Attempt to gain unauthorized access to any part of the Website;
+- (c) Interfere with the proper functioning of the Website;
+- (d) Use the Website to defame, harass, or threaten others;
+- (e) Reproduce, modify, or distribute the Website's content in a manner that violates these Terms;
+- (f) Use the Website's information for illegal or fraudulent activities;
+- (g) Present AMPAY's information as one's own or as a primary source;
+- (h) Create derivative content that misrepresents or distorts the original information.
+
+---
+
+## SECTION 10. THIRD-PARTY LINKS
+
+10.1. The Website may contain links to third-party websites, including the cited government sources.
+
+10.2. AMPAY **has no control over** and **assumes no responsibility for** the content, privacy policies, or practices of third-party websites.
+
+10.3. The User accesses third-party sites **at their own risk** and is subject to the terms and conditions of such sites.
+
+---
+
+## SECTION 11. MODIFICATIONS
+
+### 11.1. Modifications to the Terms
+
+11.1.1. AMPAY reserves the right to modify these Terms at any time.
+
+11.1.2. Modifications shall become effective immediately upon publication on the Website.
+
+11.1.3. Continued use of the Website after the publication of modifications constitutes acceptance of such modifications.
+
+### 11.2. Modifications to the Service
+
+11.2.1. AMPAY reserves the right to modify, suspend, or discontinue the Website or any part thereof, temporarily or permanently, with or without prior notice.
+
+11.2.2. AMPAY shall not be liable to the User or to third parties for any modification, suspension, or discontinuation of the Website.
+
+---
+
+## SECTION 12. GOVERNING LAW AND JURISDICTION
+
+### 12.1. Applicable Law
+
+12.1.1. These Terms are governed by and construed in accordance with the laws of the **Republic of Peru**, including:
+- (a) The Constitucion Politica del Peru;
+- (b) The Peruvian Codigo Civil;
+- (c) Ley N° 27806, Ley de Transparencia y Acceso a la Informacion Publica;
+- (d) Ley N° 29733, Ley de Proteccion de Datos Personales;
+- (e) Other applicable regulations.
+
+### 12.2. Jurisdiction
+
+12.2.1. Any dispute arising from or in connection with these Terms or the use of the Website shall be subject to the **exclusive jurisdiction of the courts of Lima, Peru**.
+
+12.2.2. The User waives any objection based on lack of personal jurisdiction or forum non conveniens.
+
+### 12.3. Dispute Resolution
+
+12.3.1. Before initiating any legal action, the User agrees to attempt to resolve any dispute in good faith by contacting AMPAY.
+
+---
+
+## SECTION 13. GENERAL PROVISIONS
+
+### 13.1. Entire Agreement
+
+13.1.1. These Terms, together with the Privacy Policy, the Legal Disclaimer, and the Copyright document, constitute the entire agreement between the User and AMPAY with respect to the use of the Website.
+
+### 13.2. Severability
+
+13.2.1. If any provision of these Terms is held to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.
+
+13.2.2. The invalid provision shall be modified to the minimum extent necessary to make it valid and enforceable.
+
+### 13.3. Waiver
+
+13.3.1. The failure of AMPAY to exercise any right or provision of these Terms shall not constitute a waiver of such right or provision.
+
+### 13.4. Assignment
+
+13.4.1. The User may not assign or transfer these Terms without the prior written consent of AMPAY.
+
+13.4.2. AMPAY may freely assign these Terms without restriction.
+
+### 13.5. Survival
+
+13.5.1. The provisions of these Terms that by their nature should survive termination shall survive, including but not limited to: disclaimer of liability, indemnification, intellectual property, and governing law.
+
+---
+
+## SECTION 14. CONTACT
+
+14.1. For questions about these Terms and Conditions, you may contact:
+
+**AMPAY - Electoral Transparency Platform**
+Operator: JDRV-space
+Repository: https://github.com/JDRV-space
+
+---
+
+## DECLARATION OF ACCEPTANCE
+
+**By accessing and using AMPAY, the User declares:**
+
+1. Having read and understood these Terms and Conditions in their entirety;
+2. Agreeing to be legally bound by these Terms;
+3. Being of legal age under Peruvian law (18 years of age);
+4. Understanding that AMPAY is an exclusively informational tool;
+5. Assuming all responsibility for their electoral decisions;
+6. Committing to verify information independently.
+
+---
+
+**Document prepared on January 21, 2026**
+
+**AMPAY - Electoral Transparency for Peru**
+
+*This document forms part of the AMPAY legal framework together with the Privacy Policy, the Legal Disclaimer, and the Copyright document.*

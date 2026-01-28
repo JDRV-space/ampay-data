@@ -1,386 +1,386 @@
-# Perfiles de Partidos Politicos
+# Political Party Profiles
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
+**Date:** 2026-01-21
+**Status:** ACTIVE
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-Este documento contiene informacion de los 9 partidos politicos principales analizados en AMPAY, incluyendo sus posiciones ideologicas, candidatos 2026, y estadisticas de votacion.
+This document contains information on the 9 major political parties analyzed in AMPAY, including their ideological positions, 2026 candidates, and voting statistics.
 
 ---
 
 ## 1. Fuerza Popular
 
-### 1.1 Informacion General
+### 1.1 General Information
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
 | **Slug** | `fuerza_popular` |
-| **Abreviatura** | FP |
-| **Candidato 2026** | Keiko Fujimori |
-| **Escanos 2021** | 24 |
-| **Color** | #FF6B00 (Naranja) |
+| **Abbreviation** | FP |
+| **2026 Candidate** | Keiko Fujimori |
+| **2021 Seats** | 24 |
+| **Color** | #FF6B00 (Orange) |
 
-### 1.2 Posicion Ideologica
+### 1.2 Ideological Position
 
-| Eje | Posicion |
-|-----|----------|
-| Economico | Derecha (libre mercado) |
-| Social | Moderado |
+| Axis | Position |
+|------|----------|
+| Economic | Right (free market) |
+| Social | Moderate |
 
-### 1.3 Estadisticas de Votacion (2021-2024)
+### 1.3 Voting Statistics (2021-2024)
 
-| Categoria | % SI | Interpretacion |
-|-----------|------|----------------|
-| economia | 94.2% | Muy alto apoyo |
-| seguridad | 96.2% | Muy alto apoyo |
-| salud | 93.1% | Alto apoyo |
-| educacion | 91.3% | Alto apoyo |
-| empleo | 89.2% | Alto apoyo |
+| Category | % YES | Interpretation |
+|----------|-------|----------------|
+| economia | 94.2% | Very high support |
+| seguridad | 96.2% | Very high support |
+| salud | 93.1% | High support |
+| educacion | 91.3% | High support |
+| empleo | 89.2% | High support |
 
 ### 1.4 AMPAYs
 
-| ID | Promesa | Confianza |
-|----|---------|-----------|
-| AMPAY-001 | Universalidad tributaria | HIGH |
+| ID | Promise | Confidence |
+|----|---------|------------|
+| AMPAY-001 | Tax universality | HIGH |
 
 ---
 
 ## 2. Peru Libre
 
-### 2.1 Informacion General
+### 2.1 General Information
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
 | **Slug** | `peru_libre` |
-| **Abreviatura** | PL |
-| **Candidato 2026** | Vladimir Cerron |
-| **Escanos 2021** | 37 |
-| **Color** | #FF0000 (Rojo) |
+| **Abbreviation** | PL |
+| **2026 Candidate** | Vladimir Cerron |
+| **2021 Seats** | 37 |
+| **Color** | #FF0000 (Red) |
 
-### 2.2 Posicion Ideologica
+### 2.2 Ideological Position
 
-| Eje | Posicion |
-|-----|----------|
-| Economico | Izquierda (estatismo) |
-| Social | Conservador |
+| Axis | Position |
+|------|----------|
+| Economic | Left (statism) |
+| Social | Conservative |
 
-### 2.3 Estadisticas de Votacion (2021-2024)
+### 2.3 Voting Statistics (2021-2024)
 
-| Categoria | % SI | Interpretacion |
-|-----------|------|----------------|
-| economia | 87.5% | Alto apoyo |
-| seguridad | 89.3% | Alto apoyo |
-| salud | 91.2% | Alto apoyo |
-| educacion | 90.8% | Alto apoyo |
-| empleo | 88.1% | Alto apoyo |
+| Category | % YES | Interpretation |
+|----------|-------|----------------|
+| economia | 87.5% | High support |
+| seguridad | 89.3% | High support |
+| salud | 91.2% | High support |
+| educacion | 90.8% | High support |
+| empleo | 88.1% | High support |
 
 ### 2.4 AMPAYs
 
-| ID | Promesa | Confianza |
-|----|---------|-----------|
-| AMPAY-005 | Eliminacion exoneraciones | MEDIUM |
+| ID | Promise | Confidence |
+|----|---------|------------|
+| AMPAY-005 | Elimination of tax exemptions | MEDIUM |
 
 ---
 
 ## 3. Renovacion Popular
 
-### 3.1 Informacion General
+### 3.1 General Information
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
 | **Slug** | `renovacion_popular` |
-| **Abreviatura** | RP |
-| **Candidato 2026** | Rafael Lopez Aliaga |
-| **Escanos 2021** | 13 |
-| **Color** | #0066CC (Azul) |
+| **Abbreviation** | RP |
+| **2026 Candidate** | Rafael Lopez Aliaga |
+| **2021 Seats** | 13 |
+| **Color** | #0066CC (Blue) |
 
-### 3.2 Posicion Ideologica
+### 3.2 Ideological Position
 
-| Eje | Posicion |
-|-----|----------|
-| Economico | Derecha (conservador fiscal) |
-| Social | Conservador (pro-familia tradicional) |
+| Axis | Position |
+|------|----------|
+| Economic | Right (fiscal conservative) |
+| Social | Conservative (pro-traditional family) |
 
-### 3.3 Estadisticas de Votacion (2021-2024)
+### 3.3 Voting Statistics (2021-2024)
 
-| Categoria | % SI | Interpretacion |
-|-----------|------|----------------|
-| economia | 92.1% | Alto apoyo |
-| seguridad | 94.8% | Muy alto apoyo |
-| salud | 90.5% | Alto apoyo |
-| educacion | 89.7% | Alto apoyo |
-| empleo | 87.3% | Alto apoyo |
+| Category | % YES | Interpretation |
+|----------|-------|----------------|
+| economia | 92.1% | High support |
+| seguridad | 94.8% | Very high support |
+| salud | 90.5% | High support |
+| educacion | 89.7% | High support |
+| empleo | 87.3% | High support |
 
 ### 3.4 AMPAYs
 
-| ID | Promesa | Confianza |
-|----|---------|-----------|
-| AMPAY-002 | Eliminar regimenes tributarios | HIGH |
-| AMPAY-003 | Fomentar valor agregado exportaciones | HIGH |
+| ID | Promise | Confidence |
+|----|---------|------------|
+| AMPAY-002 | Eliminate tax regimes | HIGH |
+| AMPAY-003 | Promote export value-added | HIGH |
 
 ---
 
 ## 4. Avanza Pais
 
-### 4.1 Informacion General
+### 4.1 General Information
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
 | **Slug** | `avanza_pais` |
-| **Abreviatura** | AP |
-| **Candidato 2026** | Jose Williams |
-| **Escanos 2021** | 7 |
-| **Color** | #00AA00 (Verde) |
+| **Abbreviation** | AP |
+| **2026 Candidate** | Jose Williams |
+| **2021 Seats** | 7 |
+| **Color** | #00AA00 (Green) |
 
-### 4.2 Posicion Ideologica
+### 4.2 Ideological Position
 
-| Eje | Posicion |
-|-----|----------|
-| Economico | Derecha (liberal) |
-| Social | Moderado |
+| Axis | Position |
+|------|----------|
+| Economic | Right (liberal) |
+| Social | Moderate |
 
-### 4.3 Estadisticas de Votacion (2021-2024)
+### 4.3 Voting Statistics (2021-2024)
 
-| Categoria | % SI | Interpretacion |
-|-----------|------|----------------|
-| economia | 93.4% | Alto apoyo |
-| seguridad | 95.1% | Muy alto apoyo |
-| salud | 91.8% | Alto apoyo |
-| educacion | 90.2% | Alto apoyo |
-| empleo | 88.7% | Alto apoyo |
+| Category | % YES | Interpretation |
+|----------|-------|----------------|
+| economia | 93.4% | High support |
+| seguridad | 95.1% | Very high support |
+| salud | 91.8% | High support |
+| educacion | 90.2% | High support |
+| empleo | 88.7% | High support |
 
 ### 4.4 AMPAYs
 
-*Ninguno detectado*
+*None detected*
 
 ---
 
 ## 5. Alianza para el Progreso
 
-### 5.1 Informacion General
+### 5.1 General Information
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
 | **Slug** | `alianza_progreso` |
-| **Abreviatura** | APP |
-| **Candidato 2026** | Cesar Acuna |
-| **Escanos 2021** | 15 |
-| **Color** | #FFCC00 (Amarillo) |
+| **Abbreviation** | APP |
+| **2026 Candidate** | Cesar Acuna |
+| **2021 Seats** | 15 |
+| **Color** | #FFCC00 (Yellow) |
 
-### 5.2 Posicion Ideologica
+### 5.2 Ideological Position
 
-| Eje | Posicion |
-|-----|----------|
-| Economico | Centro (empresarial-social) |
-| Social | Moderado |
+| Axis | Position |
+|------|----------|
+| Economic | Center (business-social) |
+| Social | Moderate |
 
-### 5.3 Estadisticas de Votacion (2021-2024)
+### 5.3 Voting Statistics (2021-2024)
 
-| Categoria | % SI | Interpretacion |
-|-----------|------|----------------|
-| economia | 91.2% | Alto apoyo |
-| seguridad | 93.5% | Alto apoyo |
-| salud | 92.1% | Alto apoyo |
-| educacion | 94.3% | Muy alto apoyo |
-| empleo | 89.5% | Alto apoyo |
+| Category | % YES | Interpretation |
+|----------|-------|----------------|
+| economia | 91.2% | High support |
+| seguridad | 93.5% | High support |
+| salud | 92.1% | High support |
+| educacion | 94.3% | Very high support |
+| empleo | 89.5% | High support |
 
 ### 5.4 AMPAYs
 
-*Ninguno detectado*
+*None detected*
 
-> **Nota de auditoria:** AMPAY-006 y AMPAY-007 fueron detectados automaticamente pero eliminados durante la auditoria manual por interpretacion incorrecta de votos.
+> **Audit note:** AMPAY-006 and AMPAY-007 were automatically detected but removed during the manual audit due to incorrect vote interpretation.
 
 ---
 
 ## 6. Somos Peru
 
-### 6.1 Informacion General
+### 6.1 General Information
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
 | **Slug** | `somos_peru` |
-| **Abreviatura** | SP |
-| **Candidato 2026** | George Forsyth |
-| **Escanos 2021** | 5 |
-| **Color** | #990099 (Morado) |
+| **Abbreviation** | SP |
+| **2026 Candidate** | George Forsyth |
+| **2021 Seats** | 5 |
+| **Color** | #990099 (Purple) |
 
-### 6.2 Posicion Ideologica
+### 6.2 Ideological Position
 
-| Eje | Posicion |
-|-----|----------|
-| Economico | Centro (pragmatico) |
-| Social | Moderado |
+| Axis | Position |
+|------|----------|
+| Economic | Center (pragmatic) |
+| Social | Moderate |
 
-### 6.3 Estadisticas de Votacion (2021-2024)
+### 6.3 Voting Statistics (2021-2024)
 
-| Categoria | % SI | Interpretacion |
-|-----------|------|----------------|
-| economia | 89.3% | Alto apoyo |
-| seguridad | 91.7% | Alto apoyo |
-| salud | 90.4% | Alto apoyo |
-| educacion | 88.9% | Alto apoyo |
-| empleo | 86.2% | Alto apoyo |
+| Category | % YES | Interpretation |
+|----------|-------|----------------|
+| economia | 89.3% | High support |
+| seguridad | 91.7% | High support |
+| salud | 90.4% | High support |
+| educacion | 88.9% | High support |
+| empleo | 86.2% | High support |
 
 ### 6.4 AMPAYs
 
-| ID | Promesa | Confianza |
-|----|---------|-----------|
-| AMPAY-004 | Reducir gasto corriente 2% PBI | HIGH |
+| ID | Promise | Confidence |
+|----|---------|------------|
+| AMPAY-004 | Reduce current expenditure by 2% of GDP | HIGH |
 
 ---
 
 ## 7. Podemos Peru
 
-### 7.1 Informacion General
+### 7.1 General Information
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
 | **Slug** | `podemos_peru` |
-| **Abreviatura** | PP |
-| **Candidato 2026** | Jose Luna Galvez |
-| **Escanos 2021** | 5 |
-| **Color** | #FF3399 (Rosa) |
+| **Abbreviation** | PP |
+| **2026 Candidate** | Jose Luna Galvez |
+| **2021 Seats** | 5 |
+| **Color** | #FF3399 (Pink) |
 
-### 7.2 Posicion Ideologica
+### 7.2 Ideological Position
 
-| Eje | Posicion |
-|-----|----------|
-| Economico | Derecha (pro-empresa) |
-| Social | Moderado |
+| Axis | Position |
+|------|----------|
+| Economic | Right (pro-business) |
+| Social | Moderate |
 
-### 7.3 Estadisticas de Votacion (2021-2024)
+### 7.3 Voting Statistics (2021-2024)
 
-| Categoria | % SI | Interpretacion |
-|-----------|------|----------------|
-| economia | 90.8% | Alto apoyo |
-| seguridad | 92.4% | Alto apoyo |
-| salud | 89.7% | Alto apoyo |
-| educacion | 91.5% | Alto apoyo |
-| empleo | 87.9% | Alto apoyo |
+| Category | % YES | Interpretation |
+|----------|-------|----------------|
+| economia | 90.8% | High support |
+| seguridad | 92.4% | High support |
+| salud | 89.7% | High support |
+| educacion | 91.5% | High support |
+| empleo | 87.9% | High support |
 
 ### 7.4 AMPAYs
 
-*Ninguno detectado*
+*None detected*
 
 ---
 
 ## 8. Juntos por el Peru
 
-### 8.1 Informacion General
+### 8.1 General Information
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
 | **Slug** | `juntos_peru` |
-| **Abreviatura** | JP |
-| **Candidato 2026** | Roberto Sanchez |
-| **Escanos 2021** | 5 |
-| **Color** | #CC0000 (Rojo oscuro) |
+| **Abbreviation** | JP |
+| **2026 Candidate** | Roberto Sanchez |
+| **2021 Seats** | 5 |
+| **Color** | #CC0000 (Dark Red) |
 
-### 8.2 Posicion Ideologica
+### 8.2 Ideological Position
 
-| Eje | Posicion |
-|-----|----------|
-| Economico | Izquierda (progresista) |
-| Social | Progresista |
+| Axis | Position |
+|------|----------|
+| Economic | Left (progressive) |
+| Social | Progressive |
 
-### 8.3 Estadisticas de Votacion (2021-2024)
+### 8.3 Voting Statistics (2021-2024)
 
-| Categoria | % SI | Interpretacion |
-|-----------|------|----------------|
-| economia | 85.2% | Alto apoyo |
-| seguridad | 87.8% | Alto apoyo |
-| salud | 92.6% | Alto apoyo |
-| educacion | 91.3% | Alto apoyo |
-| empleo | 89.4% | Alto apoyo |
+| Category | % YES | Interpretation |
+|----------|-------|----------------|
+| economia | 85.2% | High support |
+| seguridad | 87.8% | High support |
+| salud | 92.6% | High support |
+| educacion | 91.3% | High support |
+| empleo | 89.4% | High support |
 
 ### 8.4 AMPAYs
 
-| ID | Categoria | Confianza | Promesa | Contradiccion |
-|----|-----------|-----------|---------|---------------|
-| AMPAY-006 | justicia | MEDIUM | Convocar referendum para Asamblea Popular Constituyente | Voto NO en ley que fortalece mecanismos de reforma constitucional (PL 644) |
+| ID | Category | Confidence | Promise | Contradiction |
+|----|----------|------------|---------|---------------|
+| AMPAY-006 | justicia | MEDIUM | Call a referendum for a Popular Constituent Assembly | Voted NO on a bill strengthening constitutional reform mechanisms (PL 644) |
 
 ---
 
 ## 9. Partido Morado
 
-### 9.1 Informacion General
+### 9.1 General Information
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
 | **Slug** | `partido_morado` |
-| **Abreviatura** | PM |
-| **Candidato 2026** | Mesias Guevara |
-| **Escanos 2021** | 3 |
-| **Color** | #6600CC (Morado) |
+| **Abbreviation** | PM |
+| **2026 Candidate** | Mesias Guevara |
+| **2021 Seats** | 3 |
+| **Color** | #6600CC (Purple) |
 
-### 9.2 Posicion Ideologica
+### 9.2 Ideological Position
 
-| Eje | Posicion |
-|-----|----------|
-| Economico | Centro (economia mixta) |
-| Social | Progresista (derechos civiles) |
+| Axis | Position |
+|------|----------|
+| Economic | Center (mixed economy) |
+| Social | Progressive (civil rights) |
 
-### 9.3 Estadisticas de Votacion (2021-2024)
+### 9.3 Voting Statistics (2021-2024)
 
-| Categoria | % SI | Interpretacion |
-|-----------|------|----------------|
-| economia | 88.1% | Alto apoyo |
-| seguridad | 85.6% | Alto apoyo |
-| salud | 91.2% | Alto apoyo |
-| educacion | 93.4% | Alto apoyo |
-| empleo | 86.8% | Alto apoyo |
+| Category | % YES | Interpretation |
+|----------|-------|----------------|
+| economia | 88.1% | High support |
+| seguridad | 85.6% | High support |
+| salud | 91.2% | High support |
+| educacion | 93.4% | High support |
+| empleo | 86.8% | High support |
 
 ### 9.4 AMPAYs
 
-*Ninguno detectado*
+*None detected*
 
 ---
 
-## 10. Resumen Comparativo
+## 10. Comparative Summary
 
-### 10.1 Posiciones en Ejes
+### 10.1 Axis Positions
 
-| Partido | Eje Economico | Eje Social |
-|---------|---------------|------------|
-| Peru Libre | Izquierda | Conservador |
-| Juntos Peru | Izquierda | Progresista |
-| Partido Morado | Centro | Progresista |
-| Somos Peru | Centro | Moderado |
-| Alianza Progreso | Centro | Moderado |
-| Fuerza Popular | Derecha | Moderado |
-| Podemos Peru | Derecha | Moderado |
-| Avanza Pais | Derecha | Moderado |
-| Renovacion Popular | Derecha | Conservador |
+| Party | Economic Axis | Social Axis |
+|-------|---------------|-------------|
+| Peru Libre | Left | Conservative |
+| Juntos por el Peru | Left | Progressive |
+| Partido Morado | Center | Progressive |
+| Somos Peru | Center | Moderate |
+| Alianza para el Progreso | Center | Moderate |
+| Fuerza Popular | Right | Moderate |
+| Podemos Peru | Right | Moderate |
+| Avanza Pais | Right | Moderate |
+| Renovacion Popular | Right | Conservative |
 
-### 10.2 AMPAYs por Partido
+### 10.2 AMPAYs by Party
 
-| Partido | AMPAYs | Mas Grave |
-|---------|--------|-----------|
+| Party | AMPAYs | Most Severe |
+|-------|--------|-------------|
 | Renovacion Popular | 2 | AMPAY-002 (HIGH) |
 | Fuerza Popular | 1 | AMPAY-001 (HIGH) |
 | Peru Libre | 1 | AMPAY-005 (MEDIUM) |
 | Somos Peru | 1 | AMPAY-004 (HIGH) |
-| Alianza Progreso | 0 | - |
-| Juntos Peru | 1 | AMPAY-006 (MEDIUM) |
+| Alianza para el Progreso | 0 | - |
+| Juntos por el Peru | 1 | AMPAY-006 (MEDIUM) |
 | Avanza Pais | 0 | - |
 | Podemos Peru | 0 | - |
 | Partido Morado | 0 | - |
 
-> **Nota:** AMPAY-006 y AMPAY-007 (Alianza Progreso, numeracion original pre-auditoria) fueron eliminados durante la auditoria manual por interpretacion incorrecta de votos. Total final: 6 AMPAYs.
+> **Note:** AMPAY-006 and AMPAY-007 (Alianza para el Progreso, original pre-audit numbering) were removed during the manual audit due to incorrect vote interpretation. Final total: 6 AMPAYs.
 
 ---
 
-## 11. Notas Metodologicas
+## 11. Methodological Notes
 
-- Posiciones ideologicas basadas en planes de gobierno y comportamiento de votacion
-- Porcentajes de votacion calculados sobre votos sustantivos 2021-2024
-- AMPAYs verificados manualmente con nivel de confianza asignado
-- Escanos corresponden a composicion inicial (julio 2021)
+- Ideological positions are based on governance plans and voting behavior
+- Voting percentages are calculated from substantive votes for the 2021-2024 period
+- AMPAYs were manually verified with an assigned confidence level
+- Seat counts correspond to the initial composition (July 2021)
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+*Last updated: 2026-01-21*

@@ -89,10 +89,10 @@ Standard VAA approach:
 - Optional importance weighting (2x)
 ```
 
-## Referencias
+## References
 
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)
 
 ---
 

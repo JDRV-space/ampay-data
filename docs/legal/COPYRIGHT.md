@@ -1,342 +1,342 @@
-# AVISO DE DERECHOS DE AUTOR Y LICENCIAS
+# COPYRIGHT AND LICENSING NOTICE
 
-**AMPAY - Plataforma de Transparencia Electoral**
+**AMPAY - Electoral Transparency Platform**
 
 **Version:** 1.0
-**Fecha de entrada en vigencia:** 21 de enero de 2026
-**Ultima actualizacion:** 22 de enero de 2026
+**Effective Date:** January 21, 2026
+**Last Updated:** January 22, 2026
 
 ---
 
-## SECCION 1. RESUMEN DE LICENCIAS
+## SECTION 1. LICENSE SUMMARY
 
-| Componente | Titular | Licencia | Notas |
-|------------|---------|----------|-------|
-| Codigo fuente | JDRV-space / JDRV-space | Propiedad exclusiva | Todos los derechos reservados |
-| Datos gubernamentales | Dominio publico | N/A | Ley 27806 - Acceso a informacion publica |
-| Contenido original (textos, graficos) | JDRV-space / JDRV-space | CC BY 4.0 | Atribucion requerida |
-| Estructura de base de datos | JDRV-space / JDRV-space | ODbL 1.0 | Compartir igual |
-| Documentacion | JDRV-space / JDRV-space | CC BY 4.0 | Atribucion requerida |
+| Component | Rights Holder | License | Notes |
+|-----------|---------------|---------|-------|
+| Source code | JDRV-space / JDRV-space | Proprietary | All rights reserved |
+| Government data | Public domain | N/A | Ley 27806 - Access to public information |
+| Original content (text, graphics) | JDRV-space / JDRV-space | CC BY 4.0 | Attribution required |
+| Database structure | JDRV-space / JDRV-space | ODbL 1.0 | Share-alike |
+| Documentation | JDRV-space / JDRV-space | CC BY 4.0 | Attribution required |
 
 ---
 
-## SECCION 2. PROPIEDAD DEL CODIGO FUENTE
+## SECTION 2. SOURCE CODE OWNERSHIP
 
-### 2.1. Titular de los Derechos
+### 2.1. Rights Holder
 
-2.1.1. El codigo fuente de AMPAY es propiedad de **JDRV-space / JDRV-space**.
+2.1.1. The source code of AMPAY is the property of **JDRV-space / JDRV-space**.
 
-2.1.2. El codigo fuente incluye, pero no se limita a:
-- (a) Archivos HTML, CSS y JavaScript;
-- (b) Logica de la aplicacion web;
-- (c) Algoritmos de la Herramienta de Afinidad;
-- (d) Scripts de procesamiento de datos;
-- (e) Configuraciones y archivos de construccion.
+2.1.2. The source code includes, but is not limited to:
+- (a) HTML, CSS, and JavaScript files;
+- (b) Web application logic;
+- (c) Affinity Tool algorithms;
+- (d) Data processing scripts;
+- (e) Configuration and build files.
 
-### 2.2. Propiedad Exclusiva
+### 2.2. Exclusive Ownership
 
-2.2.1. El codigo fuente de AMPAY es **propiedad exclusiva** de JDRV-space / JDRV-space. Todos los derechos reservados.
+2.2.1. The AMPAY source code is the **exclusive property** of JDRV-space / JDRV-space. All rights reserved.
 
-2.2.2. **Aviso de Copyright:**
+2.2.2. **Copyright Notice:**
 
 ```
 © 2026 JDRV-space / JDRV-space
-TODOS LOS DERECHOS RESERVADOS
+ALL RIGHTS RESERVED
 
-El codigo fuente, algoritmos, disenos y arquitectura de AMPAY son propiedad
-exclusiva de JDRV-space / JDRV-space.
+The source code, algorithms, designs, and architecture of AMPAY are the exclusive
+property of JDRV-space / JDRV-space.
 
-Queda prohibida la reproduccion, distribucion, modificacion, descompilacion,
-ingenieria inversa o cualquier uso no autorizado del codigo fuente sin el
-consentimiento expreso y por escrito del titular.
+Reproduction, distribution, modification, decompilation, reverse engineering, or
+any unauthorized use of the source code without the express written consent of the
+rights holder is strictly prohibited.
 
-El uso no autorizado de este software puede constituir una violacion de las
-leyes de propiedad intelectual aplicables y estara sujeto a acciones legales.
+Unauthorized use of this software may constitute a violation of applicable
+intellectual property laws and shall be subject to legal action.
 ```
 
-### 2.3. Derechos Reservados
+### 2.3. Reserved Rights
 
-2.3.1. **Queda expresamente prohibido:**
-- (a) **Copiar** el codigo fuente total o parcialmente;
-- (b) **Modificar** o crear obras derivadas;
-- (c) **Distribuir** o compartir el codigo;
-- (d) **Descompilar** o realizar ingenieria inversa;
-- (e) **Sublicenciar** o transferir derechos;
-- (f) **Usar comercialmente** sin autorizacion.
+2.3.1. **The following are expressly prohibited:**
+- (a) **Copying** the source code in whole or in part;
+- (b) **Modifying** or creating derivative works;
+- (c) **Distributing** or sharing the code;
+- (d) **Decompiling** or reverse engineering;
+- (e) **Sublicensing** or transferring rights;
+- (f) **Using commercially** without authorization.
 
-### 2.4. Uso Permitido
+### 2.4. Permitted Use
 
-2.4.1. Se permite unicamente:
-- (a) Acceder y usar la plataforma AMPAY a traves de la interfaz web publica;
-- (b) Compartir enlaces a la plataforma para fines informativos.
+2.4.1. The following uses are exclusively permitted:
+- (a) Accessing and using the AMPAY platform through the public web interface;
+- (b) Sharing links to the platform for informational purposes.
 
-### 2.5. Exclusion de Garantia
+### 2.5. Disclaimer of Warranty
 
-2.5.1. El software se proporciona "TAL CUAL", sin garantia de ningun tipo.
+2.5.1. The software is provided "AS IS," without warranty of any kind.
 
-2.5.2. Los autores no seran responsables por ningun reclamo, dano u otra responsabilidad derivada del uso del software.
+2.5.2. The authors shall not be liable for any claim, damage, or other liability arising from the use of the software.
 
 ---
 
-## SECCION 3. DATOS GUBERNAMENTALES - DOMINIO PUBLICO
+## SECTION 3. GOVERNMENT DATA - PUBLIC DOMAIN
 
-### 3.1. Naturaleza de los Datos
+### 3.1. Nature of the Data
 
-3.1.1. AMPAY utiliza datos obtenidos de fuentes gubernamentales peruanas de acceso publico:
+3.1.1. AMPAY uses data obtained from publicly accessible Peruvian government sources:
 - (a) Congreso de la Republica del Peru;
 - (b) Jurado Nacional de Elecciones (JNE);
 - (c) Oficina Nacional de Procesos Electorales (ONPE);
 - (d) Plataforma Nacional de Datos Abiertos (PNDA).
 
-### 3.2. Base Legal para el Uso
+### 3.2. Legal Basis for Use
 
-3.2.1. El uso de estos datos esta amparado por:
+3.2.1. The use of this data is supported by:
 
 **Constitucion Politica del Peru - Articulo 2, inciso 5:**
-> "Toda persona tiene derecho a solicitar sin expresion de causa la informacion que requiera y a recibirla de cualquier entidad publica, en el plazo legal, con el costo que suponga el pedido."
+> "Every person has the right to request, without stating a reason, any information they require and to receive it from any public entity, within the legally established timeframe, at the cost entailed by the request."
 
 **Ley N° 27806 - Ley de Transparencia y Acceso a la Informacion Publica:**
-- Articulo 3: Presuncion de publicidad de la informacion estatal
-- Articulo 7: Derecho de acceso sin necesidad de expresar motivo
+- Articulo 3: Presumption of publicity of state information
+- Articulo 7: Right of access without the need to state a reason
 
-### 3.3. Estatus de Dominio Publico
+### 3.3. Public Domain Status
 
-3.3.1. Los datos gubernamentales factuales (votaciones, fechas, nombres de funcionarios, resultados electorales) constituyen **informacion de dominio publico**.
+3.3.1. Factual government data (voting records, dates, names of public officials, election results) constitutes **public domain information**.
 
-3.3.2. AMPAY **no reclama derechos de propiedad** sobre los datos en bruto obtenidos de fuentes gubernamentales.
+3.3.2. AMPAY **does not claim proprietary rights** over raw data obtained from government sources.
 
-3.3.3. Cualquier persona puede acceder a estos mismos datos directamente desde las fuentes oficiales citadas.
+3.3.3. Any person may access the same data directly from the official sources cited herein.
 
 ### 3.4. Plataforma Nacional de Datos Abiertos (PNDA)
 
-3.4.1. Cuando los datos provienen de la PNDA (https://www.datosabiertos.gob.pe), generalmente estan disponibles bajo licencias abiertas como la **Open Data Commons Attribution License (ODC-By)** o la **Open Database License (ODbL)**.
+3.4.1. When data originates from the PNDA (https://www.datosabiertos.gob.pe), it is generally available under open licenses such as the **Open Data Commons Attribution License (ODC-By)** or the **Open Database License (ODbL)**.
 
-3.4.2. En tales casos, respetamos y cumplimos con los terminos de las licencias correspondientes.
+3.4.2. In such cases, we respect and comply with the terms of the applicable licenses.
 
 ---
 
-## SECCION 4. CONTENIDO ORIGINAL - CREATIVE COMMONS
+## SECTION 4. ORIGINAL CONTENT - CREATIVE COMMONS
 
-### 4.1. Alcance del Contenido Original
+### 4.1. Scope of Original Content
 
-4.1.1. El "contenido original" de AMPAY incluye:
-- (a) Textos explicativos redactados por AMPAY;
-- (b) Diseno grafico y elementos visuales creados para el sitio;
-- (c) Documentacion del proyecto;
-- (d) Preguntas de la Herramienta de Afinidad;
-- (e) Metodologia y criterios de categorizacion.
+4.1.1. The "original content" of AMPAY includes:
+- (a) Explanatory texts authored by AMPAY;
+- (b) Graphic design and visual elements created for the site;
+- (c) Project documentation;
+- (d) Affinity Tool questions;
+- (e) Methodology and categorization criteria.
 
-### 4.2. Licencia Creative Commons Attribution 4.0 International (CC BY 4.0)
+### 4.2. Creative Commons Attribution 4.0 International License (CC BY 4.0)
 
-4.2.1. El contenido original de AMPAY se distribuye bajo la licencia **CC BY 4.0**.
+4.2.1. The original content of AMPAY is distributed under the **CC BY 4.0** license.
 
-4.2.2. **Usted es libre de:**
-- (a) **Compartir** - copiar y redistribuir el material en cualquier medio o formato;
-- (b) **Adaptar** - remezclar, transformar y construir a partir del material para cualquier proposito, incluso comercialmente.
+4.2.2. **You are free to:**
+- (a) **Share** - copy and redistribute the material in any medium or format;
+- (b) **Adapt** - remix, transform, and build upon the material for any purpose, including commercially.
 
-4.2.3. **Bajo los siguientes terminos:**
-- (a) **Atribucion** - Debe dar credito de manera adecuada, proporcionar un enlace a la licencia e indicar si se han realizado cambios.
+4.2.3. **Under the following terms:**
+- (a) **Attribution** - You must give appropriate credit, provide a link to the license, and indicate if changes were made.
 
-4.2.4. **Texto de atribucion sugerido:**
+4.2.4. **Suggested attribution text:**
 ```
-Contenido de AMPAY (https://ampay.pe)
-utilizado bajo licencia CC BY 4.0
+Content from AMPAY (https://ampay.pe)
+used under CC BY 4.0 license
 (https://creativecommons.org/licenses/by/4.0/)
 ```
 
-### 4.3. Enlace a la Licencia Completa
+### 4.3. Link to Full License
 
-4.3.1. Texto legal completo: https://creativecommons.org/licenses/by/4.0/legalcode
+4.3.1. Full legal text: https://creativecommons.org/licenses/by/4.0/legalcode
 
-4.3.2. Resumen legible: https://creativecommons.org/licenses/by/4.0/
-
----
-
-## SECCION 5. BASE DE DATOS - OPEN DATABASE LICENSE
-
-### 5.1. Estructura de la Base de Datos
-
-5.1.1. La **estructura, organizacion y compilacion** de los datos de AMPAY (como base de datos) se distribuye bajo la **Open Database License (ODbL) 1.0**.
-
-5.1.2. Esto se aplica a:
-- (a) La seleccion y disposicion de los datos;
-- (b) Los esquemas de datos;
-- (c) La categorizacion y clasificacion desarrollada por AMPAY.
-
-### 5.2. Derechos y Obligaciones bajo ODbL
-
-5.2.1. **Usted es libre de:**
-- (a) **Compartir** - Copiar, distribuir y usar la base de datos;
-- (b) **Crear** - Producir trabajos a partir de la base de datos;
-- (c) **Adaptar** - Modificar, transformar y construir sobre la base de datos.
-
-5.2.2. **Siempre que:**
-- (a) **Atribuya** - Mencione la fuente de los datos;
-- (b) **Comparta Igual** - Si distribuye publicamente trabajos adaptados, debe hacerlo bajo ODbL o una licencia compatible;
-- (c) **Mantenga Abierto** - Si redistribuye la base de datos o una version adaptada, debe ofrecer acceso a la misma.
-
-### 5.3. Enlace a la Licencia
-
-5.3.1. Texto completo: https://opendatacommons.org/licenses/odbl/1-0/
+4.3.2. Human-readable summary: https://creativecommons.org/licenses/by/4.0/
 
 ---
 
-## SECCION 6. REQUISITOS DE ATRIBUCION
+## SECTION 5. DATABASE - OPEN DATABASE LICENSE
 
-### 6.1. Como Atribuir AMPAY
+### 5.1. Database Structure
 
-6.1.1. Si utiliza contenido o datos de AMPAY, proporcione la siguiente atribucion:
+5.1.1. The **structure, organization, and compilation** of AMPAY data (as a database) is distributed under the **Open Database License (ODbL) 1.0**.
 
-**Formato minimo:**
+5.1.2. This applies to:
+- (a) The selection and arrangement of data;
+- (b) Data schemas;
+- (c) The categorization and classification developed by AMPAY.
+
+### 5.2. Rights and Obligations under ODbL
+
+5.2.1. **You are free to:**
+- (a) **Share** - Copy, distribute, and use the database;
+- (b) **Create** - Produce works from the database;
+- (c) **Adapt** - Modify, transform, and build upon the database.
+
+5.2.2. **Provided that you:**
+- (a) **Attribute** - Cite the source of the data;
+- (b) **Share-Alike** - If you publicly distribute adapted works, you must do so under the ODbL or a compatible license;
+- (c) **Keep Open** - If you redistribute the database or an adapted version, you must provide access to it.
+
+### 5.3. Link to License
+
+5.3.1. Full text: https://opendatacommons.org/licenses/odbl/1-0/
+
+---
+
+## SECTION 6. ATTRIBUTION REQUIREMENTS
+
+### 6.1. How to Attribute AMPAY
+
+6.1.1. If you use content or data from AMPAY, please provide the following attribution:
+
+**Minimum format:**
 ```
-Fuente: AMPAY (https://ampay.pe)
+Source: AMPAY (https://ampay.pe)
 ```
 
-**Formato completo (recomendado):**
+**Full format (recommended):**
 ```
-Datos de AMPAY - Plataforma de Transparencia Electoral
-Desarrollado por JDRV-space / JDRV-space
-© 2026 Todos los derechos reservados (codigo)
-Contenido bajo CC BY 4.0 / Base de datos bajo ODbL 1.0
-Datos originales de: Congreso de la Republica, JNE, ONPE
+Data from AMPAY - Electoral Transparency Platform
+Developed by JDRV-space / JDRV-space
+© 2026 All rights reserved (code)
+Content under CC BY 4.0 / Database under ODbL 1.0
+Original data from: Congreso de la Republica, JNE, ONPE
 ```
 
-### 6.2. Como Atribuir las Fuentes Gubernamentales
+### 6.2. How to Attribute Government Sources
 
-6.2.1. Si reutiliza los datos gubernamentales compilados por AMPAY, ademas de atribuir a AMPAY, debe citar las fuentes originales:
+6.2.1. If you reuse government data compiled by AMPAY, in addition to attributing AMPAY, you must cite the original sources:
 
 **Congreso de la Republica del Peru:**
 ```
-Congreso de la Republica del Peru. (2026). [Titulo del dataset].
-Recuperado de https://www.congreso.gob.pe el [fecha de acceso].
+Congreso de la Republica del Peru. (2026). [Dataset title].
+Retrieved from https://www.congreso.gob.pe on [access date].
 ```
 
 **Jurado Nacional de Elecciones:**
 ```
-Jurado Nacional de Elecciones (JNE). (2026). [Titulo del dataset].
-Infogob. Recuperado de https://infogob.jne.gob.pe el [fecha de acceso].
+Jurado Nacional de Elecciones (JNE). (2026). [Dataset title].
+Infogob. Retrieved from https://infogob.jne.gob.pe on [access date].
 ```
 
 **ONPE:**
 ```
-Oficina Nacional de Procesos Electorales (ONPE). (2026). [Titulo del dataset].
-Recuperado de https://www.onpe.gob.pe el [fecha de acceso].
+Oficina Nacional de Procesos Electorales (ONPE). (2026). [Dataset title].
+Retrieved from https://www.onpe.gob.pe on [access date].
 ```
 
 ---
 
-## SECCION 7. USO NO PERMITIDO
+## SECTION 7. PROHIBITED USE
 
-### 7.1. Restricciones
+### 7.1. Restrictions
 
-7.1.1. **Esta prohibido:**
+7.1.1. **The following are prohibited:**
 
-- (a) **Copiar o reproducir el codigo fuente** sin autorizacion;
-- (b) **Presentar AMPAY como propio** sin la debida atribucion;
-- (c) **Usar la marca "AMPAY"** de manera que sugiera afiliacion o respaldo oficial sin autorizacion;
-- (d) **Tergiversar la informacion** de manera que perjudique a terceros;
-- (e) **Eliminar o alterar** los avisos de copyright o licencia;
-- (f) **Usar el proyecto para actividades ilegales**;
-- (g) **Crear versiones que aparenten ser oficiales** pero contengan informacion alterada o falsa.
+- (a) **Copying or reproducing the source code** without authorization;
+- (b) **Presenting AMPAY as your own** without proper attribution;
+- (c) **Using the "AMPAY" trademark** in a manner that suggests official affiliation or endorsement without authorization;
+- (d) **Misrepresenting information** in a way that causes harm to third parties;
+- (e) **Removing or altering** copyright or license notices;
+- (f) **Using the project for illegal activities**;
+- (g) **Creating versions that appear to be official** but contain altered or false information.
 
-### 7.2. Uso de la Marca AMPAY
+### 7.2. Use of the AMPAY Trademark
 
-7.2.1. El nombre "AMPAY" y los logotipos asociados son marcas de JDRV-space / JDRV-space.
+7.2.1. The name "AMPAY" and associated logos are trademarks of JDRV-space / JDRV-space.
 
-7.2.2. El uso de la marca requiere autorizacion escrita, excepto para:
-- (a) Referencias editoriales o periodisticas;
-- (b) Atribucion de fuente;
-- (c) Enlaces al proyecto oficial.
-
----
-
-## SECCION 8. CONTRIBUCIONES
-
-### 8.1. Contribuciones de Terceros
-
-8.1.1. Las contribuciones al proyecto (contenido, traducciones) estan sujetas a los siguientes terminos:
-
-8.1.2. Al contribuir, usted:
-- (a) Otorga a JDRV-space / JDRV-space una licencia perpetua, mundial, no exclusiva, gratuita y sublicenciable para usar, modificar y distribuir su contribucion;
-- (b) Declara que es el autor original o tiene autorizacion para contribuir el material;
-- (c) Acepta que su contribucion se distribuira bajo las mismas licencias del proyecto.
-
-### 8.2. Reconocimiento de Contribuidores
-
-8.2.1. Los contribuidores seran reconocidos, salvo que soliciten lo contrario.
+7.2.2. Use of the trademark requires written authorization, except for:
+- (a) Editorial or journalistic references;
+- (b) Source attribution;
+- (c) Links to the official project.
 
 ---
 
-## SECCION 9. LIMITACION DE RESPONSABILIDAD
+## SECTION 8. CONTRIBUTIONS
 
-### 9.1. Sin Garantias
+### 8.1. Third-Party Contributions
 
-9.1.1. Todo el contenido, codigo y datos de AMPAY se proporcionan "TAL CUAL" y "SEGUN DISPONIBILIDAD", sin garantias de ningun tipo.
+8.1.1. Contributions to the project (content, translations) are subject to the following terms:
 
-9.1.2. JDRV-space / JDRV-space no garantiza:
-- (a) La exactitud, integridad o actualidad de la informacion;
-- (b) Que el software este libre de errores;
-- (c) La idoneidad para cualquier proposito particular.
+8.1.2. By contributing, you:
+- (a) Grant JDRV-space / JDRV-space a perpetual, worldwide, non-exclusive, royalty-free, sublicensable license to use, modify, and distribute your contribution;
+- (b) Represent that you are the original author or have authorization to contribute the material;
+- (c) Agree that your contribution will be distributed under the same licenses as the project.
 
-### 9.2. Exclusion de Responsabilidad
+### 8.2. Contributor Recognition
 
-9.2.1. En ninguna circunstancia JDRV-space / JDRV-space sera responsable por danos de ningun tipo derivados del uso del codigo, contenido o datos de AMPAY.
-
----
-
-## SECCION 10. CONTACTO
-
-10.1. Para consultas sobre derechos de autor y licencias:
-
-**AMPAY - Plataforma de Transparencia Electoral**
-Titular: JDRV-space / JDRV-space
-Sitio web: https://ampay.pe
-
-10.2. Para solicitudes de uso de marca o licencias especiales, contacte a traves del formulario de contacto en la plataforma.
+8.2.1. Contributors will be recognized unless they request otherwise.
 
 ---
 
-## SECCION 11. RESUMEN VISUAL
+## SECTION 9. LIMITATION OF LIABILITY
+
+### 9.1. No Warranties
+
+9.1.1. All content, code, and data of AMPAY are provided "AS IS" and "AS AVAILABLE," without warranties of any kind.
+
+9.1.2. JDRV-space / JDRV-space does not warrant:
+- (a) The accuracy, completeness, or timeliness of the information;
+- (b) That the software will be free of errors;
+- (c) Fitness for any particular purpose.
+
+### 9.2. Exclusion of Liability
+
+9.2.1. Under no circumstances shall JDRV-space / JDRV-space be liable for damages of any kind arising from the use of the code, content, or data of AMPAY.
+
+---
+
+## SECTION 10. CONTACT
+
+10.1. For inquiries regarding copyright and licensing:
+
+**AMPAY - Electoral Transparency Platform**
+Rights Holder: JDRV-space / JDRV-space
+Website: https://ampay.pe
+
+10.2. For trademark use requests or special licensing, please contact us through the contact form on the platform.
+
+---
+
+## SECTION 11. VISUAL SUMMARY
 
 ```
 +--------------------------------------------------+
 |                    AMPAY                          |
-|      © 2026 JDRV-space - Todos los derechos       |
+|      © 2026 JDRV-space - All rights reserved      |
 +--------------------------------------------------+
 |                                                   |
-|  CODIGO FUENTE                                    |
-|  [PROPIEDAD EXCLUSIVA]                            |
-|  - Todos los derechos reservados                  |
-|  - Uso no autorizado prohibido                    |
+|  SOURCE CODE                                      |
+|  [EXCLUSIVE PROPERTY]                             |
+|  - All rights reserved                            |
+|  - Unauthorized use prohibited                    |
 |                                                   |
-|  CONTENIDO ORIGINAL                               |
+|  ORIGINAL CONTENT                                 |
 |  [CC BY 4.0]                                      |
-|  - Uso con atribucion requerida                   |
+|  - Attribution required                           |
 |                                                   |
-|  BASE DE DATOS (estructura)                       |
+|  DATABASE (structure)                             |
 |  [ODbL 1.0]                                       |
-|  - Compartir igual                                |
+|  - Share-alike                                    |
 |                                                   |
-|  DATOS GUBERNAMENTALES                            |
-|  [Dominio Publico - Ley 27806]                    |
-|  - Acceso publico garantizado                     |
-|  - Citar fuente original                          |
+|  GOVERNMENT DATA                                  |
+|  [Public Domain - Ley 27806]                      |
+|  - Public access guaranteed                       |
+|  - Cite original source                           |
 |                                                   |
 +--------------------------------------------------+
 ```
 
 ---
 
-**Documento elaborado el 21 de enero de 2026**
-**Actualizado el 22 de enero de 2026**
+**Document prepared on January 21, 2026**
+**Updated on January 22, 2026**
 
-**AMPAY - Transparencia Electoral para el Peru**
+**AMPAY - Electoral Transparency for Peru**
 
-*Este documento forma parte del marco legal de AMPAY junto con los Terminos y Condiciones, la Politica de Privacidad y el Aviso Legal (Disclaimer).*
+*This document forms part of the AMPAY legal framework together with the Terms and Conditions, the Privacy Policy, and the Legal Disclaimer.*
 
 ---
 
-## Referencias
+## References
 
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+For all academic references and sources used in AMPAY, please consult the centralized document:
+[Bibliography and Sources](/referencia/fuentes)

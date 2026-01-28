@@ -1,276 +1,276 @@
-# POLITICA DE PRIVACIDAD
+# PRIVACY POLICY
 
-**AMPAY - Plataforma de Transparencia Electoral**
+**AMPAY - Electoral Transparency Platform**
 
 **Version:** 1.0
-**Fecha de entrada en vigencia:** 21 de enero de 2026
-**Ultima actualizacion:** 21 de enero de 2026
+**Effective Date:** January 21, 2026
+**Last Updated:** January 21, 2026
 
 ---
 
-## RESUMEN EJECUTIVO
+## EXECUTIVE SUMMARY
 
-**AMPAY no recolecta datos personales.** Este sitio web es una plataforma estatica que no utiliza cookies, no rastrea usuarios, no requiere registro y no almacena ninguna informacion personal. La presente Politica de Privacidad se proporciona para cumplir con las mejores practicas de transparencia y con la normativa peruana aplicable.
+**AMPAY does not collect personal data.** This website is a static platform that does not use cookies, does not track users, does not require registration, and does not store any personal information. This Privacy Policy is provided in compliance with transparency best practices and applicable Peruvian regulations.
 
 ---
 
-## SECCION 1. INTRODUCCION Y ALCANCE
+## SECTION 1. INTRODUCTION AND SCOPE
 
-### 1.1. Proposito de esta Politica
+### 1.1. Purpose of this Policy
 
-1.1.1. Esta Politica de Privacidad describe las practicas de AMPAY (en adelante, "el Sitio Web", "la Plataforma" o "nosotros") respecto a la informacion de los usuarios (en adelante, "usted" o "Usuario").
+1.1.1. This Privacy Policy describes the practices of AMPAY (hereinafter, "the Website," "the Platform," or "we") with respect to user information (hereinafter, "you" or "User").
 
-1.1.2. AMPAY esta comprometido con la proteccion de la privacidad de los Usuarios y opera bajo el principio de **minimizacion de datos**: no recolectamos informacion que no sea absolutamente necesaria para proporcionar el servicio.
+1.1.2. AMPAY is committed to protecting User privacy and operates under the principle of **data minimization**: we do not collect information that is not absolutely necessary to provide the service.
 
-### 1.2. Marco Legal Aplicable
+### 1.2. Applicable Legal Framework
 
-1.2.1. Esta Politica se elabora en cumplimiento de:
+1.2.1. This Policy is prepared in compliance with:
 - (a) **Ley N° 29733** - Ley de Proteccion de Datos Personales del Peru;
-- (b) **Decreto Supremo N° 003-2013-JUS** - Reglamento de la Ley de Proteccion de Datos Personales;
-- (c) **Decreto Supremo N° 016-2024-JUS** - Nuevo Reglamento (vigente desde marzo 2025);
-- (d) **Articulo 2, inciso 6 de la Constitucion Politica del Peru** - Derecho a la intimidad personal y familiar.
+- (b) **Decreto Supremo N° 003-2013-JUS** - Regulation of the Personal Data Protection Law;
+- (c) **Decreto Supremo N° 016-2024-JUS** - New Regulation (effective March 2025);
+- (d) **Articulo 2, inciso 6 of the Constitucion Politica del Peru** - Right to personal and family privacy.
 
-### 1.3. Ambito de Aplicacion
+### 1.3. Scope of Application
 
-1.3.1. Esta Politica se aplica a todos los Usuarios que accedan al Sitio Web, independientemente de su ubicacion geografica.
+1.3.1. This Policy applies to all Users who access the Website, regardless of their geographic location.
 
-1.3.2. Esta Politica forma parte integral de los Terminos y Condiciones de uso del Sitio Web.
+1.3.2. This Policy forms an integral part of the Terms and Conditions of use of the Website.
 
 ---
 
-## SECCION 2. DATOS QUE NO RECOLECTAMOS
+## SECTION 2. DATA WE DO NOT COLLECT
 
-### 2.1. Declaracion de No Recoleccion
+### 2.1. Declaration of Non-Collection
 
-2.1.1. **AMPAY NO RECOLECTA, ALMACENA, PROCESA NI COMPARTE** ningun tipo de dato personal de los Usuarios, incluyendo pero no limitado a:
+2.1.1. **AMPAY DOES NOT COLLECT, STORE, PROCESS, OR SHARE** any type of User personal data, including but not limited to:
 
-| Categoria | Ejemplos | Recolectamos? |
-|-----------|----------|---------------|
-| Datos de identificacion | Nombre, DNI, direccion | **NO** |
-| Datos de contacto | Correo electronico, telefono | **NO** |
-| Datos de ubicacion | Direccion IP, geolocalizacion | **NO** |
-| Datos de navegacion | Paginas visitadas, tiempo en el sitio | **NO** |
-| Datos de dispositivo | Tipo de navegador, sistema operativo | **NO** |
-| Datos biometricos | Huellas, reconocimiento facial | **NO** |
-| Datos financieros | Tarjetas de credito, cuentas bancarias | **NO** |
-| Preferencias politicas | Respuestas al cuestionario | **NO** |
-| Credenciales de acceso | Usuarios, contrasenas | **NO** |
+| Category | Examples | Do We Collect? |
+|----------|----------|----------------|
+| Identification data | Name, national ID, address | **NO** |
+| Contact data | Email, phone number | **NO** |
+| Location data | IP address, geolocation | **NO** |
+| Browsing data | Pages visited, time on site | **NO** |
+| Device data | Browser type, operating system | **NO** |
+| Biometric data | Fingerprints, facial recognition | **NO** |
+| Financial data | Credit cards, bank accounts | **NO** |
+| Political preferences | Questionnaire responses | **NO** |
+| Access credentials | Usernames, passwords | **NO** |
 
-### 2.2. Ausencia de Cuentas de Usuario
+### 2.2. Absence of User Accounts
 
-2.2.1. AMPAY **no requiere ni permite** la creacion de cuentas de usuario.
+2.2.1. AMPAY **does not require or allow** the creation of user accounts.
 
-2.2.2. No existe sistema de registro, inicio de sesion ni autenticacion.
+2.2.2. There is no registration, login, or authentication system.
 
-2.2.3. No almacenamos credenciales de ningun tipo.
+2.2.3. We do not store credentials of any kind.
 
-### 2.3. Ausencia de Cookies
+### 2.3. Absence of Cookies
 
-2.3.1. AMPAY **no utiliza cookies** de ningun tipo, incluyendo:
-- (a) Cookies de sesion;
-- (b) Cookies persistentes;
-- (c) Cookies de terceros;
-- (d) Cookies de seguimiento o analitica;
-- (e) Cookies publicitarias.
+2.3.1. AMPAY **does not use cookies** of any type, including:
+- (a) Session cookies;
+- (b) Persistent cookies;
+- (c) Third-party cookies;
+- (d) Tracking or analytics cookies;
+- (e) Advertising cookies.
 
-2.3.2. No utilizamos tecnologias similares a las cookies, tales como:
-- (a) Web beacons o pixel tags;
-- (b) Local storage o session storage para datos de seguimiento;
-- (c) Fingerprinting de dispositivo;
-- (d) Identificadores unicos.
+2.3.2. We do not use technologies similar to cookies, such as:
+- (a) Web beacons or pixel tags;
+- (b) Local storage or session storage for tracking data;
+- (c) Device fingerprinting;
+- (d) Unique identifiers.
 
-### 2.4. Ausencia de Analitica y Rastreo
+### 2.4. Absence of Analytics and Tracking
 
-2.4.1. AMPAY **no utiliza** servicios de analitica web, incluyendo pero no limitado a:
+2.4.1. AMPAY **does not use** web analytics services, including but not limited to:
 - (a) Google Analytics;
 - (b) Facebook Pixel;
-- (c) Hotjar, Mixpanel u otras herramientas de analitica;
-- (d) Herramientas de A/B testing que rastreen usuarios.
+- (c) Hotjar, Mixpanel, or other analytics tools;
+- (d) A/B testing tools that track users.
 
-2.4.2. No monitoreamos ni registramos el comportamiento de navegacion de los Usuarios.
-
----
-
-## SECCION 3. HERRAMIENTA DE AFINIDAD POLITICA
-
-### 3.1. Procesamiento Local
-
-3.1.1. La Herramienta de Afinidad (el cuestionario de compatibilidad politica) funciona **completamente en el navegador del Usuario** utilizando tecnologia JavaScript del lado del cliente.
-
-3.1.2. **Las respuestas del Usuario al cuestionario:**
-- (a) **NO son enviadas** a ningun servidor;
-- (b) **NO son almacenadas** en ninguna base de datos;
-- (c) **NO son procesadas** fuera del dispositivo del Usuario;
-- (d) **NO son compartidas** con terceros;
-- (e) **Se eliminan automaticamente** al cerrar la pagina o el navegador.
-
-### 3.2. Funcionamiento Tecnico
-
-3.2.1. El proceso de la Herramienta de Afinidad es el siguiente:
-
-1. El Usuario responde las preguntas en su navegador;
-2. Las respuestas se procesan localmente mediante JavaScript;
-3. El algoritmo de comparacion se ejecuta en el dispositivo del Usuario;
-4. Los resultados se muestran en pantalla;
-5. Al cerrar o recargar la pagina, todos los datos se eliminan de la memoria del navegador.
-
-3.2.2. **No existe transmision de datos** entre el navegador del Usuario y los servidores de AMPAY durante el uso de la Herramienta de Afinidad.
-
-### 3.3. Uso de Almacenamiento Local
-
-3.3.1. AMPAY puede utilizar el almacenamiento local del navegador (localStorage o sessionStorage) **unicamente** para:
-- (a) Guardar temporalmente las respuestas del cuestionario durante la sesion activa del Usuario, si el Usuario asi lo desea;
-- (b) Permitir que el Usuario retome el cuestionario si cierra accidentalmente la pagina.
-
-3.3.2. Cualquier dato guardado en el almacenamiento local:
-- (a) Permanece **exclusivamente** en el dispositivo del Usuario;
-- (b) **Nunca es transmitido** a servidores externos;
-- (c) Puede ser **eliminado por el Usuario** en cualquier momento limpiando los datos del navegador;
-- (d) **No es accesible** para AMPAY ni para terceros.
+2.4.2. We do not monitor or record User browsing behavior.
 
 ---
 
-## SECCION 4. INFORMACION SOBRE FIGURAS PUBLICAS
+## SECTION 3. POLITICAL AFFINITY TOOL
 
-### 4.1. Datos de Congresistas y Politicos
+### 3.1. Local Processing
 
-4.1.1. AMPAY presenta informacion sobre congresistas, candidatos y partidos politicos. Esta informacion:
-- (a) Proviene de **fuentes publicas gubernamentales** (Congreso, JNE, ONPE);
-- (b) Constituye **informacion de interes publico** sobre figuras publicas;
-- (c) Esta amparada por el derecho de acceso a la informacion publica (Articulo 2, inciso 5 de la Constitucion);
-- (d) No incluye datos de la vida privada de estas personas.
+3.1.1. The Affinity Tool (the political compatibility questionnaire) operates **entirely within the User's browser** using client-side JavaScript technology.
 
-### 4.2. Base Legal para el Tratamiento
+3.1.2. **The User's responses to the questionnaire:**
+- (a) **Are NOT sent** to any server;
+- (b) **Are NOT stored** in any database;
+- (c) **Are NOT processed** outside the User's device;
+- (d) **Are NOT shared** with third parties;
+- (e) **Are automatically deleted** when the page or browser is closed.
 
-4.2.1. El tratamiento de datos de figuras publicas en AMPAY se fundamenta en:
+### 3.2. Technical Operation
+
+3.2.1. The Affinity Tool process is as follows:
+
+1. The User answers the questions in their browser;
+2. The responses are processed locally via JavaScript;
+3. The comparison algorithm runs on the User's device;
+4. The results are displayed on screen;
+5. Upon closing or reloading the page, all data is deleted from browser memory.
+
+3.2.2. **There is no data transmission** between the User's browser and AMPAY's servers during use of the Affinity Tool.
+
+### 3.3. Use of Local Storage
+
+3.3.1. AMPAY may use the browser's local storage (localStorage or sessionStorage) **solely** for:
+- (a) Temporarily saving questionnaire responses during the User's active session, if the User so chooses;
+- (b) Allowing the User to resume the questionnaire if the page is accidentally closed.
+
+3.3.2. Any data saved in local storage:
+- (a) Remains **exclusively** on the User's device;
+- (b) **Is never transmitted** to external servers;
+- (c) May be **deleted by the User** at any time by clearing browser data;
+- (d) **Is not accessible** to AMPAY or to third parties.
+
+---
+
+## SECTION 4. INFORMATION ABOUT PUBLIC FIGURES
+
+### 4.1. Data on Members of Congress and Politicians
+
+4.1.1. AMPAY presents information about members of Congress, candidates, and political parties. This information:
+- (a) Originates from **public government sources** (Congress, JNE, ONPE);
+- (b) Constitutes **information of public interest** about public figures;
+- (c) Is protected by the right of access to public information (Articulo 2, inciso 5 of the Constitucion);
+- (d) Does not include data pertaining to the private lives of these individuals.
+
+### 4.2. Legal Basis for Processing
+
+4.2.1. The processing of public figure data on AMPAY is based on:
 - (a) **Ley N° 27806** - Ley de Transparencia y Acceso a la Informacion Publica;
-- (b) **Interes publico** en la transparencia electoral y el escrutinio democratico;
-- (c) La naturaleza **publica** de la actividad de los funcionarios electos;
-- (d) La excepcion para **fuentes accesibles al publico** contemplada en la Ley N° 29733.
+- (b) **Public interest** in electoral transparency and democratic scrutiny;
+- (c) The **public** nature of the activities of elected officials;
+- (d) The exception for **publicly accessible sources** set forth in Ley N° 29733.
 
-### 4.3. Limitaciones
+### 4.3. Limitations
 
-4.3.1. AMPAY **no publica**:
-- (a) Informacion sobre la vida privada de los politicos;
-- (b) Datos sensibles no relacionados con su funcion publica;
-- (c) Informacion de familiares o asociados que no sean figuras publicas;
-- (d) Direcciones personales, numeros de telefono privados u otros datos de contacto personal.
-
----
-
-## SECCION 5. SERVICIOS DE TERCEROS
-
-### 5.1. Alojamiento Web
-
-5.1.1. AMPAY puede estar alojado en servicios de terceros (como GitHub Pages, Vercel, Netlify u otros). Estos proveedores pueden recopilar informacion tecnica automaticamente (como direcciones IP) de acuerdo con sus propias politicas de privacidad.
-
-5.1.2. AMPAY **no tiene control** sobre las practicas de recoleccion de datos de estos proveedores de infraestructura.
-
-5.1.3. Se recomienda al Usuario consultar las politicas de privacidad del proveedor de alojamiento correspondiente.
-
-### 5.2. Enlaces Externos
-
-5.2.1. AMPAY contiene enlaces a sitios web externos, principalmente fuentes gubernamentales (Congreso, JNE, ONPE).
-
-5.2.2. Cuando el Usuario hace clic en un enlace externo, sale del Sitio Web de AMPAY y esta sujeto a las politicas de privacidad del sitio de destino.
-
-5.2.3. AMPAY **no es responsable** de las practicas de privacidad de sitios externos.
+4.3.1. AMPAY **does not publish**:
+- (a) Information about the private lives of politicians;
+- (b) Sensitive data unrelated to their public function;
+- (c) Information about family members or associates who are not public figures;
+- (d) Personal addresses, private telephone numbers, or other personal contact data.
 
 ---
 
-## SECCION 6. SEGURIDAD
+## SECTION 5. THIRD-PARTY SERVICES
 
-### 6.1. Medidas de Seguridad
+### 5.1. Web Hosting
 
-6.1.1. Aunque AMPAY no recolecta datos personales, implementamos medidas de seguridad para proteger la integridad del Sitio Web:
-- (a) Uso de protocolo HTTPS para conexiones cifradas;
-- (b) Codigo fuente abierto y auditable;
-- (c) Actualizaciones regulares de seguridad.
+5.1.1. AMPAY may be hosted on third-party services (such as GitHub Pages, Vercel, Netlify, or others). These providers may automatically collect technical information (such as IP addresses) in accordance with their own privacy policies.
 
-### 6.2. Limitaciones
+5.1.2. AMPAY **has no control** over the data collection practices of these infrastructure providers.
 
-6.2.1. Ningun sistema conectado a Internet es completamente seguro. AMPAY no puede garantizar la seguridad absoluta de las conexiones al Sitio Web.
+5.1.3. Users are encouraged to consult the privacy policies of the applicable hosting provider.
 
----
+### 5.2. External Links
 
-## SECCION 7. DERECHOS DEL USUARIO
+5.2.1. AMPAY contains links to external websites, primarily government sources (Congress, JNE, ONPE).
 
-### 7.1. Derechos ARCO
+5.2.2. When the User clicks on an external link, they leave the AMPAY Website and are subject to the privacy policies of the destination site.
 
-7.1.1. La Ley N° 29733 otorga a los titulares de datos personales los derechos ARCO (Acceso, Rectificacion, Cancelacion y Oposicion).
-
-7.1.2. Dado que AMPAY **no recolecta ni almacena datos personales** de los Usuarios, estos derechos **no son aplicables** en la practica en relacion con el uso del Sitio Web, ya que no existen datos sobre los cuales ejercerlos.
-
-### 7.2. Derecho a la Informacion
-
-7.2.1. El Usuario tiene derecho a conocer las practicas de privacidad de AMPAY, derecho que se satisface mediante la presente Politica de Privacidad.
-
-### 7.3. Consultas
-
-7.3.1. Si el Usuario tiene preguntas sobre sus derechos o sobre esta Politica, puede contactarnos a traves de los canales indicados en la Seccion 10.
+5.2.3. AMPAY **is not responsible** for the privacy practices of external sites.
 
 ---
 
-## SECCION 8. MENORES DE EDAD
+## SECTION 6. SECURITY
 
-8.1. AMPAY no esta dirigido a menores de edad (menores de 18 anos segun la legislacion peruana).
+### 6.1. Security Measures
 
-8.2. No recolectamos intencionalmente informacion de menores.
+6.1.1. Although AMPAY does not collect personal data, we implement security measures to protect the integrity of the Website:
+- (a) Use of the HTTPS protocol for encrypted connections;
+- (b) Open-source and auditable code;
+- (c) Regular security updates.
 
-8.3. Dado que AMPAY no recolecta datos personales de ningun Usuario, esta proteccion se cumple por defecto.
+### 6.2. Limitations
 
----
-
-## SECCION 9. CAMBIOS A ESTA POLITICA
-
-### 9.1. Modificaciones
-
-9.1.1. AMPAY se reserva el derecho de modificar esta Politica de Privacidad en cualquier momento.
-
-9.1.2. Las modificaciones entraran en vigencia inmediatamente despues de su publicacion en el Sitio Web.
-
-9.1.3. La fecha de "ultima actualizacion" al inicio del documento reflejara la fecha de la revision mas reciente.
-
-### 9.2. Notificacion de Cambios
-
-9.2.1. Dado que no recolectamos informacion de contacto, no podemos notificar directamente a los Usuarios sobre cambios. Se recomienda revisar esta Politica periodicamente.
-
-9.2.2. El uso continuado del Sitio Web despues de la publicacion de cambios constituye la aceptacion de la Politica modificada.
+6.2.1. No system connected to the internet is completely secure. AMPAY cannot guarantee the absolute security of connections to the Website.
 
 ---
 
-## SECCION 10. CONTACTO
+## SECTION 7. USER RIGHTS
 
-10.1. Para preguntas, comentarios o inquietudes sobre esta Politica de Privacidad, puede contactar a:
+### 7.1. ARCO Rights
 
-**AMPAY - Plataforma de Transparencia Electoral**
-Operador: JDRV-space
-Repositorio: https://github.com/JDRV-space
+7.1.1. Ley N° 29733 grants holders of personal data the ARCO rights (Access, Rectification, Cancellation, and Opposition).
 
-10.2. Haremos nuestro mejor esfuerzo para responder a las consultas en un plazo razonable.
+7.1.2. Given that AMPAY **does not collect or store personal data** from Users, these rights **are not applicable** in practice in relation to the use of the Website, as there is no data over which to exercise them.
 
----
+### 7.2. Right to Information
 
-## SECCION 11. AUTORIDAD DE PROTECCION DE DATOS
+7.2.1. The User has the right to know the privacy practices of AMPAY, a right that is satisfied by this Privacy Policy.
 
-11.1. La autoridad competente en materia de proteccion de datos personales en Peru es la **Autoridad Nacional de Proteccion de Datos Personales (ANPDP)**, adscrita al Ministerio de Justicia y Derechos Humanos.
+### 7.3. Inquiries
 
-11.2. Informacion de contacto de la ANPDP:
-- Sitio web: https://www.gob.pe/anpd
-- Direccion: Scipiion Llona 350, Miraflores, Lima, Peru
-
-11.3. Los usuarios pueden presentar reclamos ante la ANPDP si consideran que sus derechos han sido vulnerados, aunque dado que AMPAY no recolecta datos personales, tales situaciones no deberian surgir del uso de este Sitio Web.
+7.3.1. If the User has questions about their rights or about this Policy, they may contact us through the channels indicated in Section 10.
 
 ---
 
-## DECLARACION FINAL
+## SECTION 8. MINORS
 
-**AMPAY reafirma su compromiso con la privacidad de los Usuarios.** Nuestro modelo de operacion como sitio web estatico sin recoleccion de datos garantiza que la informacion personal de los Usuarios permanece bajo su exclusivo control.
+8.1. AMPAY is not directed at minors (persons under 18 years of age under Peruvian law).
+
+8.2. We do not intentionally collect information from minors.
+
+8.3. Given that AMPAY does not collect personal data from any User, this protection is met by default.
 
 ---
 
-**Documento elaborado el 21 de enero de 2026**
+## SECTION 9. CHANGES TO THIS POLICY
 
-**AMPAY - Transparencia Electoral para el Peru**
+### 9.1. Modifications
 
-*Este documento forma parte del marco legal de AMPAY junto con los Terminos y Condiciones, el Aviso Legal (Disclaimer) y el documento de Copyright.*
+9.1.1. AMPAY reserves the right to modify this Privacy Policy at any time.
+
+9.1.2. Modifications shall become effective immediately upon publication on the Website.
+
+9.1.3. The "last updated" date at the beginning of this document will reflect the date of the most recent revision.
+
+### 9.2. Notification of Changes
+
+9.2.1. Since we do not collect contact information, we are unable to directly notify Users of changes. Users are encouraged to review this Policy periodically.
+
+9.2.2. Continued use of the Website after the publication of changes constitutes acceptance of the modified Policy.
+
+---
+
+## SECTION 10. CONTACT
+
+10.1. For questions, comments, or concerns about this Privacy Policy, you may contact:
+
+**AMPAY - Electoral Transparency Platform**
+Operator: JDRV-space
+Repository: https://github.com/JDRV-space
+
+10.2. We will make our best effort to respond to inquiries within a reasonable timeframe.
+
+---
+
+## SECTION 11. DATA PROTECTION AUTHORITY
+
+11.1. The competent authority for personal data protection in Peru is the **Autoridad Nacional de Proteccion de Datos Personales (ANPDP)**, attached to the Ministerio de Justicia y Derechos Humanos.
+
+11.2. Contact information for the ANPDP:
+- Website: https://www.gob.pe/anpd
+- Address: Scipiion Llona 350, Miraflores, Lima, Peru
+
+11.3. Users may file complaints with the ANPDP if they believe their rights have been violated, although given that AMPAY does not collect personal data, such situations should not arise from the use of this Website.
+
+---
+
+## FINAL DECLARATION
+
+**AMPAY reaffirms its commitment to User privacy.** Our operating model as a static website with no data collection ensures that Users' personal information remains under their exclusive control.
+
+---
+
+**Document prepared on January 21, 2026**
+
+**AMPAY - Electoral Transparency for Peru**
+
+*This document forms part of the AMPAY legal framework together with the Terms and Conditions, the Legal Disclaimer, and the Copyright document.*

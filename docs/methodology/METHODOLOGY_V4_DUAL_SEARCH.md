@@ -1,164 +1,164 @@
-# Metodología de Detección AMPAY v4
-## Búsqueda Dual: Directa + Inversa
+# AMPAY Detection Methodology v4
+## Dual Search: Direct + Inverse
 
-**Versión:** 4.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
-**Reemplaza:** v3 (solo directa)
-
----
-
-## INFORMACIÓN CRÍTICA
-
-**Falla de v3:** Solo buscaba leyes que APOYARAN la promesa, verificaba si el partido votó NO.
-**Problema:** A veces no existen leyes de apoyo, o el partido vota SÍ en todas ellas.
-**Corrección v4:** TAMBIÉN buscar leyes que CONTRADIGAN la promesa, verificar si el partido votó SÍ.
+**Version:** 4.0
+**Date:** 2026-01-21
+**Status:** ACTIVE
+**Supersedes:** v3 (direct only)
 
 ---
 
-## LAS DOS BÚSQUEDAS
+## CRITICAL INFORMATION
 
-### BÚSQUEDA A: Directa (v3)
-```
-Promesa: "X"
-Pregunta: ¿Votó el partido NO en leyes que IMPLEMENTARÍAN X?
-AMPAY si: >= 60% votos NO en leyes de implementación
-```
-
-### BÚSQUEDA B: Inversa (NUEVA)
-```
-Promesa: "X"
-Pregunta: ¿Votó el partido SÍ en leyes que CONTRADECIRÍAN X?
-AMPAY si: >= 60% votos SÍ en leyes contradictorias
-```
-
-**Ambas búsquedas deben ejecutarse para cada promesa.**
+**v3 Failure:** Only searched for laws that SUPPORTED the promise, then checked whether the party voted NO.
+**Problem:** Sometimes no supporting laws exist, or the party voted YES on all of them.
+**v4 Fix:** ALSO search for laws that CONTRADICT the promise, and check whether the party voted YES.
 
 ---
 
-## EJEMPLO: FP-2021-005
+## THE TWO SEARCHES
 
-**Promesa:** "Implementar reforma tributaria con principio de universalidad"
+### SEARCH A: Direct (v3)
+```
+Promise: "X"
+Question: Did the party vote NO on laws that WOULD IMPLEMENT X?
+AMPAY if: >= 60% NO votes on implementing laws
+```
 
-### Búsqueda A (Directa):
-- Leyes que implementan "universalidad" (eliminando exoneraciones): **0 encontradas**
-- Resultado: DATOS INSUFICIENTES
+### SEARCH B: Inverse (NEW)
+```
+Promise: "X"
+Question: Did the party vote YES on laws that WOULD CONTRADICT X?
+AMPAY if: >= 60% YES votes on contradictory laws
+```
 
-### Búsqueda B (Inversa):
-- Leyes que CONTRADICEN "universalidad" (extendiendo exoneraciones): **4 encontradas**
-  - PL 3740: Prorrogar apéndices IGV
-  - PL 3195: Prorrogar devolución IGV mineras/hidrocarburos (x2 votos)
-  - PL 6473: Prorrogar exoneración mercado valores
-- FP votó SÍ en: **4/4 = 100%**
-- Resultado: **AMPAY (INVERSO)**
-
-### Veredicto Final: AMPAY
-- Búsqueda directa: Datos insuficientes
-- Búsqueda inversa: 100% contradicción
-- Combinado: AMPAY confirmado vía inversa
+**Both searches must be executed for each promise.**
 
 ---
 
-## PASOS DE LA METODOLOGÍA
+## EXAMPLE: FP-2021-005
 
-### PASO 1: Extraer Palabras Clave de la Promesa
+**Promise:** "Implement tax reform based on the principle of universality"
+
+### Search A (Direct):
+- Laws implementing "universality" (eliminating exemptions): **0 found**
+- Result: INSUFFICIENT DATA
+
+### Search B (Inverse):
+- Laws that CONTRADICT "universality" (extending exemptions): **4 found**
+  - PL 3740: Extend IGV appendices
+  - PL 3195: Extend IGV refund for mining/hydrocarbons (x2 votes)
+  - PL 6473: Extend securities market exemption
+- FP voted YES on: **4/4 = 100%**
+- Result: **AMPAY (INVERSE)**
+
+### Final Verdict: AMPAY
+- Direct search: Insufficient data
+- Inverse search: 100% contradiction
+- Combined: AMPAY confirmed via inverse search
+
+---
+
+## METHODOLOGY STEPS
+
+### STEP 1: Extract Keywords from the Promise
 ```
-Promesa: "Formalizar MYPES"
-Palabras clave: mype, micro empresa, formalizar
+Promise: "Formalize MSMEs"
+Keywords: mype, micro empresa, formalizar
 ```
 
-### PASO 2: Definir Leyes de Apoyo vs Leyes Contradictorias
+### STEP 2: Define Supporting Laws vs. Contradictory Laws
 
-**Leyes de apoyo (para búsqueda Directa):**
-- Leyes que AYUDARÍAN a lograr la promesa
-- Ejemplo: Programas de formalización MYPE, beneficios tributarios MYPE
+**Supporting laws (for Direct search):**
+- Laws that WOULD HELP achieve the promise
+- Example: MSME formalization programs, MSME tax benefits
 
-**Leyes contradictorias (para búsqueda Inversa):**
-- Leyes que PERJUDICARÍAN o IMPEDIRÍAN la promesa
-- Ejemplo: Más regulación para pequeñas empresas, impuestos a MYPES
+**Contradictory laws (for Inverse search):**
+- Laws that WOULD HINDER or PREVENT the promise
+- Example: Additional regulation for small businesses, taxes on MSMEs
 
-### PASO 3: Buscar Leyes Específicas
+### STEP 3: Search for Specific Laws
 
 ```bash
-# Directa: Leyes que apoyan la promesa
-jq '.votes[] | select(.asunto | contains("PALABRA_CLAVE_APOYO"))'
+# Direct: Laws that support the promise
+jq '.votes[] | select(.asunto | contains("SUPPORT_KEYWORD"))'
 
-# Inversa: Leyes que contradicen la promesa
-jq '.votes[] | select(.asunto | contains("PALABRA_CLAVE_CONTRADICCION"))'
+# Inverse: Laws that contradict the promise
+jq '.votes[] | select(.asunto | contains("CONTRADICTION_KEYWORD"))'
 ```
 
-### PASO 4: Verificar Posición del Partido en CADA Ley
+### STEP 4: Verify the Party's Position on EACH Law
 
-Para cada ley específica encontrada:
-- Directa: Verificar si el partido votó NO (bloqueando su propia promesa)
-- Inversa: Verificar si el partido votó SÍ (apoyando la contradicción)
+For each specific law found:
+- Direct: Check whether the party voted NO (blocking its own promise)
+- Inverse: Check whether the party voted YES (supporting the contradiction)
 
-### PASO 5: Calcular Proporciones
+### STEP 5: Calculate Ratios
 
-**Proporción directa:**
+**Direct ratio:**
 ```
-Votos NO en leyes de apoyo / Total leyes de apoyo
->= 60% = AMPAY (DIRECTO)
-```
-
-**Proporción inversa:**
-```
-Votos SÍ en leyes contradictorias / Total leyes contradictorias
->= 60% = AMPAY (INVERSO)
+NO votes on supporting laws / Total supporting laws
+>= 60% = AMPAY (DIRECT)
 ```
 
-### PASO 6: Veredicto Final
+**Inverse ratio:**
+```
+YES votes on contradictory laws / Total contradictory laws
+>= 60% = AMPAY (INVERSE)
+```
 
-| Directa | Inversa | Veredicto |
-|---------|---------|-----------|
-| AMPAY | AMPAY | AMPAY (fuerte) |
-| AMPAY | NO | AMPAY (directo) |
-| NO | AMPAY | AMPAY (inverso) |
+### STEP 6: Final Verdict
+
+| Direct | Inverse | Verdict |
+|--------|---------|---------|
+| AMPAY | AMPAY | AMPAY (strong) |
+| AMPAY | NO | AMPAY (direct) |
+| NO | AMPAY | AMPAY (inverse) |
 | NO | NO | NO AMPAY |
-| INSUF | AMPAY | AMPAY (inverso) |
-| AMPAY | INSUF | AMPAY (directo) |
-| INSUF | INSUF | DATOS INSUFICIENTES |
+| INSUF | AMPAY | AMPAY (inverse) |
+| AMPAY | INSUF | AMPAY (direct) |
+| INSUF | INSUF | INSUFFICIENT DATA |
 
 ---
 
-## PARES DE PALABRAS CLAVE POR TIPO DE PROMESA
+## KEYWORD PAIRS BY PROMISE TYPE
 
-### Promesas Tributarias
-| Tipo de Promesa | Palabras Clave de Apoyo | Palabras Clave Contradictorias |
-|-----------------|-------------------------|--------------------------------|
-| Universalidad | eliminar exoneración, derogar beneficio | prorrogar, extender exoneración, régimen especial |
-| Simplificación | simplificar, unificar | nuevo impuesto, nuevo régimen |
-| Reducir impuestos | reducir, eliminar impuesto | aumentar, crear impuesto |
+### Tax Promises
+| Promise Type | Supporting Keywords | Contradictory Keywords |
+|--------------|---------------------|------------------------|
+| Universality | eliminar exoneracion, derogar beneficio | prorrogar, extender exoneracion, regimen especial |
+| Simplification | simplificar, unificar | nuevo impuesto, nuevo regimen |
+| Reduce taxes | reducir, eliminar impuesto | aumentar, crear impuesto |
 
-### Promesas Sociales
-| Tipo de Promesa | Palabras Clave de Apoyo | Palabras Clave Contradictorias |
-|-----------------|-------------------------|--------------------------------|
-| Reducir pobreza | programa social, bono, subsidio | recortar, eliminar programa |
-| Proteger trabajadores | derechos laborales, salario mínimo | flexibilizar, tercerizar |
-| Formalizar MYPES | formalizar, mype, micro empresa | fiscalizar mype, sancionar informal |
+### Social Promises
+| Promise Type | Supporting Keywords | Contradictory Keywords |
+|--------------|---------------------|------------------------|
+| Reduce poverty | programa social, bono, subsidio | recortar, eliminar programa |
+| Protect workers | derechos laborales, salario minimo | flexibilizar, tercerizar |
+| Formalize MSMEs | formalizar, mype, micro empresa | fiscalizar mype, sancionar informal |
 
-### Promesas Ambientales
-| Tipo de Promesa | Palabras Clave de Apoyo | Palabras Clave Contradictorias |
-|-----------------|-------------------------|--------------------------------|
-| Proteger ambiente | protección ambiental, conservar | exonerar minería, prorrogar formalización minera |
-| Reducir conflictos | diálogo, consulta previa | acelerar concesión, simplificar EIA |
+### Environmental Promises
+| Promise Type | Supporting Keywords | Contradictory Keywords |
+|--------------|---------------------|------------------------|
+| Protect environment | proteccion ambiental, conservar | exonerar mineria, prorrogar formalizacion minera |
+| Reduce conflicts | dialogo, consulta previa | acelerar concesion, simplificar EIA |
 
 ---
 
-## UMBRALES AMPAY
+## AMPAY THRESHOLDS
 
-| Proporción | Estado |
-|------------|--------|
+| Ratio | Status |
+|-------|--------|
 | >= 60% | **AMPAY** |
-| 40-59% | **AMPAY POTENCIAL** |
+| 40-59% | **POTENTIAL AMPAY** |
 | < 40% | **NO AMPAY** |
-| < 3 leyes encontradas | **DATOS INSUFICIENTES** |
+| < 3 laws found | **INSUFFICIENT DATA** |
 
-**Nota:** Aplicar los mismos umbrales tanto para búsquedas Directas como Inversas.
+**Note:** The same thresholds apply to both Direct and Inverse searches.
 
 ---
 
-## FORMATO DE SALIDA
+## OUTPUT FORMAT
 
 ```json
 {
@@ -198,45 +198,45 @@ Votos SÍ en leyes contradictorias / Total leyes contradictorias
 
 ---
 
-## LISTA DE VERIFICACIÓN
+## VERIFICATION CHECKLIST
 
-Antes de marcar AMPAY:
+Before flagging an AMPAY:
 
-- [ ] ¿Buscamos leyes ESPECÍFICAS (no agregación por categoría)?
-- [ ] ¿Ejecutamos AMBAS búsquedas Directa e Inversa?
-- [ ] ¿Verificamos la posición del partido en CADA ley específica?
-- [ ] ¿Verificamos que la ley realmente apoya/contradice la promesa (no solo coincidencia de palabras clave)?
-- [ ] ¿Es la proporción >= 60%?
-
----
-
-## COMPARACIÓN: v3 vs v4
-
-| Aspecto | v3 | v4 |
-|---------|----|----|
-| Dirección de búsqueda | Solo directa | Directa + Inversa |
-| Pregunta formulada | ¿Votaron NO en leyes de apoyo? | TAMBIÉN: ¿Votaron SÍ en leyes contradictorias? |
-| Detecta | Oposición activa | Oposición activa + Contradicción activa |
-| Resultado FP-2021-005 | DATOS INSUFICIENTES | **AMPAY (inverso)** |
+- [ ] Did we search for SPECIFIC laws (not category aggregation)?
+- [ ] Did we execute BOTH Direct and Inverse searches?
+- [ ] Did we verify the party's position on EACH specific law?
+- [ ] Did we verify that the law truly supports/contradicts the promise (not just a keyword match)?
+- [ ] Is the ratio >= 60%?
 
 ---
 
-## ARCHIVOS
+## COMPARISON: v3 vs v4
 
-- v2 (obsoleto): `METHODOLOGY_V2_DEPRECATED.md`
-- v3 (superado): `METHODOLOGY_V3.md`
-- v4 (actual): `METHODOLOGY_V4.md`
-- Línea base de categorías: `CATEGORY_VOTING_PATTERNS.md`
-
----
-
-## PRIMER AMPAY ENCONTRADO
-
-**FP-2021-005:** "Implementar reforma tributaria con principio de universalidad"
-- **Tipo:** AMPAY INVERSO
-- **Evidencia:** Votó SÍ en 4/4 leyes que extienden tratamiento tributario especial
-- **Validación:** Perú Libre votó NO en las mismas leyes (consistente con su promesa anti-exoneración)
+| Aspect | v3 | v4 |
+|--------|----|----|
+| Search direction | Direct only | Direct + Inverse |
+| Question asked | Did they vote NO on supporting laws? | ALSO: Did they vote YES on contradictory laws? |
+| Detects | Active opposition | Active opposition + Active contradiction |
+| FP-2021-005 result | INSUFFICIENT DATA | **AMPAY (inverse)** |
 
 ---
 
-**FIN DE METODOLOGÍA v4**
+## FILES
+
+- v2 (deprecated): `METHODOLOGY_V2_DEPRECATED.md`
+- v3 (superseded): `METHODOLOGY_V3.md`
+- v4 (current): `METHODOLOGY_V4.md`
+- Category baseline: `CATEGORY_VOTING_PATTERNS.md`
+
+---
+
+## FIRST AMPAY FOUND
+
+**FP-2021-005:** "Implement tax reform based on the principle of universality"
+- **Type:** INVERSE AMPAY
+- **Evidence:** Voted YES on 4/4 laws extending special tax treatment
+- **Validation:** Peru Libre voted NO on the same laws (consistent with their anti-exemption promise)
+
+---
+
+**END OF METHODOLOGY v4**

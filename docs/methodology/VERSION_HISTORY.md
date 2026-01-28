@@ -1,340 +1,340 @@
-# Historial de Versiones de la Metodologia
+# Methodology Version History
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
+**Date:** 2026-01-21
+**Status:** ACTIVE
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-Este documento registra la evolucion de la metodologia AMPAY desde v1 hasta v5, incluyendo los problemas identificados en cada version y las soluciones implementadas.
+This document records the evolution of the AMPAY methodology from v1 through v5, including the problems identified in each version and the solutions implemented.
 
 ---
 
-## 1. Vision General de Versiones
+## 1. Version Overview
 
 ```
 v1 ──────► v2 ──────► v3 ──────► v4 ──────► v5
-(Fallida)  (Fallida)  (Mejorada) (Mejorada) (Actual)
+(Failed)   (Failed)   (Improved) (Improved) (Current)
 
-Ene 2026   Ene 2026   Ene 2026   Ene 2026   Ene 2026
+Jan 2026   Jan 2026   Jan 2026   Jan 2026   Jan 2026
 ```
 
-| Version | Estado | Problema Principal | Solucion |
-|---------|--------|-------------------|----------|
-| v1 | DESCARTADA | Comparacion voto-por-voto sin patron | Agregacion por categoria |
-| v2 | DESCARTADA | Agregacion pierde especificidad | Busqueda por keywords |
-| v3 | SUPERADA | Solo busqueda directa | Agregar busqueda inversa |
-| v4 | SUPERADA | Sin sistema de confianza | Agregar niveles de confianza |
-| v5 | **ACTIVA** | - | - |
+| Version | Status | Main Problem | Solution |
+|---------|--------|-------------|----------|
+| v1 | DISCARDED | Vote-by-vote comparison with no pattern | Category aggregation |
+| v2 | DISCARDED | Aggregation loses specificity | Keyword-based search |
+| v3 | SUPERSEDED | Direct search only | Add inverse search |
+| v4 | SUPERSEDED | No confidence system | Add confidence levels |
+| v5 | **ACTIVE** | - | - |
 
 ---
 
-## 2. Version 1 (Descartada)
+## 2. Version 1 (Discarded)
 
-### 2.1 Descripcion
+### 2.1 Description
 
-Primera aproximacion: comparar cada promesa con cada voto individualmente.
+First approach: compare each promise with each vote individually.
 
-### 2.2 Metodologia
-
-```
-Para cada promesa:
-  Para cada voto:
-    Si voto.asunto contiene promesa.keywords:
-      Si partido voto NO:
-        Marcar como contradiccion
-```
-
-### 2.3 Problemas Identificados
-
-| Problema | Ejemplo | Impacto |
-|----------|---------|---------|
-| **Sin patron** | 1 voto NO en 50 relacionados = AMPAY? | Falsos positivos masivos |
-| **Sin umbral** | Cualquier NO contaba | Sensibilidad excesiva |
-| **Match literal** | "salud" matcheaba todo | Ruido |
-
-### 2.4 Resultados
+### 2.2 Methodology
 
 ```
-AMPAYs detectados: 200+
-AMPAYs validos: ~5
+For each promise:
+  For each vote:
+    If vote.asunto contains promise.keywords:
+      If party voted NO:
+        Flag as contradiction
+```
+
+### 2.3 Identified Problems
+
+| Problem | Example | Impact |
+|---------|---------|--------|
+| **No pattern** | 1 NO vote out of 50 related = AMPAY? | Massive false positives |
+| **No threshold** | Any NO counted | Excessive sensitivity |
+| **Literal matching** | "salud" (health) matched everything | Noise |
+
+### 2.4 Results
+
+```
+AMPAYs detected: 200+
+Valid AMPAYs: ~5
 Precision: ~2.5%
 ```
 
 ### 2.5 Decision
 
-**DESCARTADA** - Demasiados falsos positivos, inutilizable.
+**DISCARDED** -- Too many false positives, unusable.
 
 ---
 
-## 3. Version 2 (Descartada)
+## 3. Version 2 (Discarded)
 
-### 3.1 Descripcion
+### 3.1 Description
 
-Agregar todos los votos por categoria y calcular porcentaje NO.
+Aggregate all votes by category and calculate the percentage of NO votes.
 
-### 3.2 Metodologia
+### 3.2 Methodology
 
 ```
-Para cada promesa:
-  categoria = promesa.categoria
-  votos_categoria = filtrar(votos, categoria == promesa.categoria)
+For each promise:
+  category = promise.category
+  category_votes = filter(votes, category == promise.category)
 
-  si_total = sum(votos_categoria.si)
-  no_total = sum(votos_categoria.no)
+  total_yes = sum(category_votes.yes)
+  total_no = sum(category_votes.no)
 
-  pct_no = no_total / (si_total + no_total)
+  pct_no = total_no / (total_yes + total_no)
 
-  Si pct_no >= 60%:
+  If pct_no >= 60%:
     AMPAY
 ```
 
-### 3.3 Problemas Identificados
+### 3.3 Identified Problems
 
-| Problema | Ejemplo | Impacto |
-|----------|---------|---------|
-| **Agregacion excesiva** | Promesa "hospital X" vs todas las leyes de salud | Pierde especificidad |
-| **Votos irrelevantes** | Promesa fiscal especifica diluida en 100 votos fiscales | Falsos negativos |
-| **Patron general != promesa especifica** | 90% SI en salud pero NO en la ley especifica | AMPAYs perdidos |
+| Problem | Example | Impact |
+|---------|---------|--------|
+| **Excessive aggregation** | Promise "hospital X" vs. all health laws | Loses specificity |
+| **Irrelevant votes** | Specific fiscal promise diluted across 100 fiscal votes | False negatives |
+| **General pattern != specific promise** | 90% YES on health but NO on the specific law | Missed AMPAYs |
 
-### 3.4 Ejemplo de Fallo
+### 3.4 Example of Failure
 
 ```
-Promesa: "Implementar reforma tributaria con universalidad"
-Categoria: fiscal
+Promise: "Implement tax reform based on universality"
+Category: fiscal
 
-Resultado v2:
-- Votos fiscales: 143
-- FP: 93.7% SI
-- Veredicto: NO AMPAY
+v2 Result:
+- Fiscal votes: 143
+- FP: 93.7% YES
+- Verdict: NO AMPAY
 
-Realidad:
-- FP voto SI en 6/6 leyes que CONTRADICEN universalidad
-- Deberia ser AMPAY
+Reality:
+- FP voted YES on 6/6 laws that CONTRADICT universality
+- Should be AMPAY
 ```
 
 ### 3.5 Decision
 
-**DESCARTADA** - Agregacion por categoria pierde informacion critica.
+**DISCARDED** -- Category aggregation loses critical information.
 
 ---
 
-## 4. Version 3 (Superada)
+## 4. Version 3 (Superseded)
 
-### 4.1 Descripcion
+### 4.1 Description
 
-Buscar leyes ESPECIFICAS relacionadas con cada promesa usando keywords extraidos.
+Search for SPECIFIC laws related to each promise using extracted keywords.
 
-### 4.2 Metodologia
+### 4.2 Methodology
 
 ```
-Para cada promesa:
-  keywords = extraer_keywords(promesa.texto)
+For each promise:
+  keywords = extract_keywords(promise.text)
 
-  leyes_especificas = buscar(votos, keywords)
+  specific_laws = search(votes, keywords)
 
-  Para cada ley en leyes_especificas:
-    Verificar posicion del partido
+  For each law in specific_laws:
+    Verify party position
 
-  Si >= 60% NO:
+  If >= 60% NO:
     AMPAY
 ```
 
-### 4.3 Mejoras sobre v2
+### 4.3 Improvements over v2
 
-| Aspecto | v2 | v3 |
-|---------|----|----|
-| Granularidad | Por categoria | Por ley especifica |
-| Matching | Categoria unica | Keywords multiples |
-| Precision | Baja | Media |
+| Aspect | v2 | v3 |
+|--------|----|----|
+| Granularity | By category | By specific law |
+| Matching | Single category | Multiple keywords |
+| Precision | Low | Medium |
 
-### 4.4 Problema Identificado
+### 4.4 Identified Problem
 
-**Solo busqueda directa:** Solo buscaba leyes que IMPLEMENTAN la promesa.
+**Direct search only:** Only searched for laws that IMPLEMENT the promise.
 
-**Ejemplo de fallo:**
+**Example of failure:**
 ```
-Promesa: "Eliminar exoneraciones"
+Promise: "Eliminate exemptions"
 
-Busqueda v3 (directa):
+v3 Search (direct):
 - Keywords: "eliminar exoneracion"
-- Leyes encontradas: 0
-- Resultado: DATOS INSUFICIENTES
+- Laws found: 0
+- Result: INSUFFICIENT DATA
 
-Realidad:
-- Existen 6 leyes que EXTIENDEN exoneraciones
-- Partido voto SI en todas
-- Deberia ser AMPAY (por contradiccion inversa)
+Reality:
+- 6 laws EXTENDING exemptions exist
+- Party voted YES on all of them
+- Should be AMPAY (inverse contradiction)
 ```
 
 ### 4.5 Decision
 
-**SUPERADA** - Funcional pero incompleta. Necesita busqueda inversa.
+**SUPERSEDED** -- Functional but incomplete. Needs inverse search.
 
 ---
 
-## 5. Version 4 (Superada)
+## 5. Version 4 (Superseded)
 
-### 5.1 Descripcion
+### 5.1 Description
 
-Agregar busqueda INVERSA: no solo buscar leyes de apoyo, tambien leyes de contradiccion.
+Add INVERSE search: not only search for supporting laws, but also contradictory laws.
 
-### 5.2 Metodologia
+### 5.2 Methodology
 
 ```
-Para cada promesa:
-  # Busqueda A: Directa
-  keywords_apoyo = keywords que IMPLEMENTAN promesa
-  leyes_apoyo = buscar(votos, keywords_apoyo)
-  ratio_no_apoyo = contar_NO(leyes_apoyo) / total(leyes_apoyo)
+For each promise:
+  # Search A: Direct
+  support_keywords = keywords that IMPLEMENT the promise
+  support_laws = search(votes, support_keywords)
+  no_support_ratio = count_NO(support_laws) / total(support_laws)
 
-  # Busqueda B: Inversa
-  keywords_contradiccion = keywords que CONTRADICEN promesa
-  leyes_contradiccion = buscar(votos, keywords_contradiccion)
-  ratio_si_contradiccion = contar_SI(leyes_contradiccion) / total(leyes_contradiccion)
+  # Search B: Inverse
+  contradiction_keywords = keywords that CONTRADICT the promise
+  contradiction_laws = search(votes, contradiction_keywords)
+  yes_contradiction_ratio = count_YES(contradiction_laws) / total(contradiction_laws)
 
-  # Matriz de decision
-  Si ratio_no_apoyo >= 60% OR ratio_si_contradiccion >= 60%:
+  # Decision matrix
+  If no_support_ratio >= 60% OR yes_contradiction_ratio >= 60%:
     AMPAY
 ```
 
-### 5.3 Mejoras sobre v3
+### 5.3 Improvements over v3
 
-| Aspecto | v3 | v4 |
-|---------|----|----|
-| Direcciones de busqueda | Solo directa | Directa + Inversa |
-| Tipos de AMPAY detectados | Tipo A solamente | Tipo A + Tipo B |
-| Cobertura | Parcial | Completa |
+| Aspect | v3 | v4 |
+|--------|----|----|
+| Search directions | Direct only | Direct + Inverse |
+| AMPAY types detected | Type A only | Type A + Type B |
+| Coverage | Partial | Complete |
 
-### 5.4 Problema Identificado
+### 5.4 Identified Problem
 
-**Sin sistema de confianza:** Todos los AMPAYs tratados igual, sin distinguir fuerza de evidencia.
+**No confidence system:** All AMPAYs treated equally, without distinguishing the strength of evidence.
 
 ### 5.5 Decision
 
-**SUPERADA** - Deteccion completa pero falta calibracion de confianza.
+**SUPERSEDED** -- Complete detection but lacking confidence calibration.
 
 ---
 
-## 6. Version 5 (Actual)
+## 6. Version 5 (Current)
 
-### 6.1 Descripcion
+### 6.1 Description
 
-Agregar sistema de confianza y revision manual obligatoria.
+Add a confidence system and mandatory manual review.
 
-### 6.2 Metodologia
+### 6.2 Methodology
 
 ```
-Para cada promesa:
-  # Deteccion (igual que v4)
-  ejecutar_busqueda_dual()
+For each promise:
+  # Detection (same as v4)
+  execute_dual_search()
 
-  # Calcular confianza
-  confianza = calcular_confianza(
-    num_leyes,
+  # Calculate confidence
+  confidence = calculate_confidence(
+    num_laws,
     ratio,
-    fuerza_conexion_semantica
+    semantic_connection_strength
   )
 
-  # Clasificar
-  Si confianza >= HIGH:
-    AMPAY_candidato (revision automatica)
-  Si confianza == MEDIUM:
-    AMPAY_candidato (revision manual obligatoria)
-  Si confianza == LOW:
-    No publicar
+  # Classify
+  If confidence >= HIGH:
+    AMPAY_candidate (automatic review)
+  If confidence == MEDIUM:
+    AMPAY_candidate (mandatory manual review)
+  If confidence == LOW:
+    Do not publish
 ```
 
-### 6.3 Mejoras sobre v4
+### 6.3 Improvements over v4
 
-| Aspecto | v4 | v5 |
-|---------|----|----|
-| Confianza | Binario (AMPAY/NO) | HIGH/MEDIUM/LOW |
-| Revision | Opcional | Obligatoria para MEDIUM |
-| Transparencia | Basica | Documentacion completa |
+| Aspect | v4 | v5 |
+|--------|----|----|
+| Confidence | Binary (AMPAY/NO) | HIGH/MEDIUM/LOW |
+| Review | Optional | Mandatory for MEDIUM |
+| Transparency | Basic | Complete documentation |
 
-### 6.4 Componentes Nuevos
+### 6.4 New Components
 
-1. **Sistema de confianza:** HIGH, MEDIUM, LOW
-2. **Proceso de revision manual:** Checklist estandarizado
-3. **Documentacion de rechazo:** Log de falsos positivos
-4. **Proceso de apelacion:** Canal para disputar AMPAYs
+1. **Confidence system:** HIGH, MEDIUM, LOW
+2. **Manual review process:** Standardized checklist
+3. **Rejection documentation:** False positive log
+4. **Appeals process:** Channel to dispute AMPAYs
 
-### 6.5 Resultados
+### 6.5 Results
 
 ```
-AMPAYs detectados: 23
-AMPAYs aprobados (HIGH): 4
-AMPAYs aprobados (MEDIUM): 4
-AMPAYs rechazados: 17
+AMPAYs detected: 23
+AMPAYs approved (HIGH): 4
+AMPAYs approved (MEDIUM): 4
+AMPAYs rejected: 17
 AMPAYs final (after audit): 6
-Precision estimada: 90%+
+Estimated precision: 90%+
 ```
 
 ---
 
-## 7. Linea de Tiempo Detallada
+## 7. Detailed Timeline
 
-| Fecha | Version | Evento |
-|-------|---------|--------|
-| 2026-01-18 | v1 | Primera implementacion |
-| 2026-01-18 | v1 | Detectados 200+ AMPAYs (sospechoso) |
-| 2026-01-18 | v1 | Revision manual: >95% falsos positivos |
-| 2026-01-19 | v2 | Pivotar a agregacion por categoria |
-| 2026-01-19 | v2 | 0 AMPAYs detectados (sospechoso) |
-| 2026-01-19 | v2 | Identificado: promesas especificas perdidas |
-| 2026-01-20 | v3 | Pivotar a busqueda por keywords |
-| 2026-01-20 | v3 | AMPAYs detectados pero incompletos |
-| 2026-01-20 | v4 | Agregar busqueda inversa |
-| 2026-01-20 | v4 | Primer AMPAY valido: FP-universalidad |
-| 2026-01-21 | v5 | Agregar sistema de confianza |
-| 2026-01-21 | v5 | 6 AMPAYs validados para publicacion |
-
----
-
-## 8. Lecciones Aprendidas
-
-### 8.1 Errores que no Repetir
-
-| Error | Leccion |
-|-------|---------|
-| Confiar en deteccion automatica sin revision | Siempre validar humano |
-| Agregar sin medir precision | Medir antes de publicar |
-| Asumir que mas detecciones = mejor | Calidad > cantidad |
-| Busqueda unidireccional | Siempre buscar ambas direcciones |
-
-### 8.2 Principios Establecidos
-
-1. **Patron > evento aislado:** Minimo 3 leyes
-2. **Especificidad > categoria:** Buscar leyes exactas
-3. **Bidireccional > unidireccional:** Directa + inversa
-4. **Confianza calibrada:** No todos los AMPAYs son iguales
-5. **Revision obligatoria:** Humano en el loop
+| Date | Version | Event |
+|------|---------|-------|
+| 2026-01-18 | v1 | First implementation |
+| 2026-01-18 | v1 | 200+ AMPAYs detected (suspicious) |
+| 2026-01-18 | v1 | Manual review: >95% false positives |
+| 2026-01-19 | v2 | Pivot to category aggregation |
+| 2026-01-19 | v2 | 0 AMPAYs detected (suspicious) |
+| 2026-01-19 | v2 | Identified: specific promises lost |
+| 2026-01-20 | v3 | Pivot to keyword-based search |
+| 2026-01-20 | v3 | AMPAYs detected but incomplete |
+| 2026-01-20 | v4 | Add inverse search |
+| 2026-01-20 | v4 | First valid AMPAY: FP-universality |
+| 2026-01-21 | v5 | Add confidence system |
+| 2026-01-21 | v5 | 6 AMPAYs validated for publication |
 
 ---
 
-## 9. Proximas Mejoras (Roadmap)
+## 8. Lessons Learned
 
-| Mejora | Prioridad | Estado |
-|--------|-----------|--------|
-| Incorporar datos 2024-2026 | Alta | Pendiente |
-| Mejorar extraccion de keywords con NLP | Media | Investigando |
-| Dashboard de monitoreo de precision | Media | Pendiente |
-| API para periodistas | Baja | Futuro |
+### 8.1 Mistakes Not to Repeat
+
+| Mistake | Lesson |
+|---------|--------|
+| Trusting automated detection without review | Always validate with a human |
+| Aggregating without measuring precision | Measure before publishing |
+| Assuming more detections = better | Quality > quantity |
+| Unidirectional search | Always search in both directions |
+
+### 8.2 Established Principles
+
+1. **Pattern > isolated event:** Minimum 3 laws
+2. **Specificity > category:** Search for exact laws
+3. **Bidirectional > unidirectional:** Direct + inverse
+4. **Calibrated confidence:** Not all AMPAYs are equal
+5. **Mandatory review:** Human in the loop
 
 ---
 
-## 10. Archivos de Cada Version
+## 9. Future Improvements (Roadmap)
 
-| Version | Archivo | Estado |
-|---------|---------|--------|
-| v2 | `docs/methodology/archive/METHODOLOGY_V2_DEPRECATED.md` | Archivado |
-| v3 | `docs/methodology/archive/METHODOLOGY_V3_DEPRECATED.md` | Archivado |
-| v4 | `docs/methodology/METHODOLOGY_V4_DUAL_SEARCH.md` | Superado |
-| v5 | Documentacion distribuida en `/docs/methodology/` | **ACTIVO** |
+| Improvement | Priority | Status |
+|-------------|----------|--------|
+| Incorporate 2024-2026 data | High | Pending |
+| Improve keyword extraction with NLP | Medium | Under research |
+| Precision monitoring dashboard | Medium | Pending |
+| API for journalists | Low | Future |
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+## 10. Files for Each Version
+
+| Version | File | Status |
+|---------|------|--------|
+| v2 | `docs/methodology/archive/METHODOLOGY_V2_DEPRECATED.md` | Archived |
+| v3 | `docs/methodology/archive/METHODOLOGY_V3_DEPRECATED.md` | Archived |
+| v4 | `docs/methodology/METHODOLOGY_V4_DUAL_SEARCH.md` | Superseded |
+| v5 | Documentation distributed across `/docs/methodology/` | **ACTIVE** |
+
+---
+
+*Last updated: 2026-01-21*

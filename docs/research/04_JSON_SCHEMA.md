@@ -191,7 +191,7 @@ W3C standard for fact-checking markup. Used by PolitiFact, Snopes, FactCheck.org
 
 ## 2. Custom Schema: Promise Tracking System
 
-No existing standard covers promise-to-vote linkage. Here's a designed schema:
+No existing standard covers promise-to-vote linkage. Here is a designed schema:
 
 ### 2.1 Promise Entity
 
@@ -638,7 +638,7 @@ Use `_embedded` flag or `_links` (HATEOAS) for API responses.
 
 ---
 
-## 5. Referencias
+## 5. References
 
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)

@@ -1,203 +1,203 @@
-# Preguntas Frecuentes (FAQ)
+# Frequently Asked Questions (FAQ)
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Idioma:** Espanol
+**Date:** 2026-01-21
+**Language:** English
 
 ---
 
-## Sobre AMPAY
+## About AMPAY
 
-### ¿Que es AMPAY?
+### What is AMPAY?
 
-AMPAY es una herramienta de transparencia politica que permite a los ciudadanos:
-1. Descubrir que partidos se alinean con sus posiciones mediante un quiz
-2. Ver contradicciones entre promesas de campana y votos en el Congreso
-3. Explorar patrones de votacion por partido y categoria
+AMPAY is a political transparency tool that enables citizens to:
+1. Discover which parties align with their positions through a quiz
+2. View contradictions between campaign promises and congressional votes
+3. Explore voting patterns by party and category
 
-### ¿Por que se llama "AMPAY"?
+### Why is it called "AMPAY"?
 
-"Ampay" es una expresion coloquial peruana que significa atrapar a alguien in fraganti o descubrir algo oculto. Usamos este termino porque la herramienta "atrapa" a los partidos cuando votan de manera contraria a sus promesas.
+"Ampay" is a Peruvian colloquial expression meaning to catch someone in the act or to uncover something hidden. We use this term because the tool "catches" parties when they vote contrary to their promises.
 
-### ¿Quien creo AMPAY?
+### Who created AMPAY?
 
-AMPAY fue creado por el usuario de GitHub [JDRV-space](https://github.com/JDRV-space), un ciudadano peruano independiente interesado en mejorar la transparencia politica. No tenemos afiliacion con ningun partido politico.
-
----
-
-## Sobre el Quiz
-
-### ¿Como funciona el quiz?
-
-El quiz te hace 8 preguntas sobre temas politicos. Comparamos tus respuestas con las posiciones de 9 partidos usando un algoritmo llamado "distancia Manhattan" (el mismo que usan herramientas similares en Alemania y Suiza). El partido con menor "distancia" es tu mayor coincidencia.
-
-### ¿Las preguntas de calibracion afectan mi resultado?
-
-No directamente. Las preguntas de calibracion (izquierda/derecha, conservador/progresista) solo filtran COMO se presentan los resultados. Tu match matematico siempre se calcula igual, pero te mostramos primero los partidos dentro de tu auto-identificacion ideologica.
-
-### ¿Por que solo 8 preguntas?
-
-Queremos que el quiz sea rapido y accesible. Mas preguntas aumentarian la precision pero reducirian la tasa de completion. Las 8 preguntas fueron seleccionadas para cubrir los temas mas diferenciadores entre partidos.
-
-### ¿El quiz me dice por quien votar?
-
-**NO.** AMPAY es informativo, no una recomendacion de voto. El quiz te muestra coincidencias basadas en posiciones declaradas en planes de gobierno. Siempre debes investigar mas antes de decidir tu voto.
-
-### ¿Que significa el porcentaje de match?
-
-El porcentaje indica que tan similar es tu posicion a la del partido. 100% seria coincidencia perfecta, 0% seria total oposicion. La mayoria de usuarios obtienen entre 50-80% con varios partidos.
+AMPAY was created by GitHub user [JDRV-space](https://github.com/JDRV-space), an independent Peruvian citizen committed to improving political transparency. We have no affiliation with any political party.
 
 ---
 
-## Sobre los AMPAYs
+## About the Quiz
 
-### ¿Que es exactamente un AMPAY?
+### How does the quiz work?
 
-Un AMPAY es cuando encontramos que un partido:
-- Hizo una promesa especifica en su plan de gobierno
-- Voto de manera contraria a esa promesa en el Congreso
+The quiz asks you 8 questions about political topics. We compare your answers with the positions of 9 parties using an algorithm called "Manhattan distance" (the same algorithm used by similar tools in Germany and Switzerland). The party with the smallest "distance" is your closest match.
 
-Por ejemplo: prometer "eliminar exoneraciones tributarias" pero votar SI en leyes que las extienden.
+### Do the calibration questions affect my result?
 
-### ¿Como verifican los AMPAYs?
+Not directly. The calibration questions (left/right, conservative/progressive) only filter HOW results are presented. Your mathematical match is always calculated the same way, but we display first the parties within your self-identified ideological alignment.
 
-Cada AMPAY pasa por:
-1. Deteccion automatica (busqueda de patrones)
-2. Verificacion de fuentes (promesa real, voto real)
-3. Analisis de conexion logica (¿la ley se relaciona con la promesa?)
-4. Revision manual antes de publicar
+### Why only 8 questions?
 
-### ¿Por que hay pocos AMPAYs?
+We want the quiz to be fast and accessible. More questions would increase accuracy but reduce the completion rate. The 8 questions were selected to cover the most differentiating topics across parties.
 
-Solo publicamos AMPAYs con alta confianza. Muchos "candidatos a AMPAY" son descartados porque:
-- La conexion entre promesa y ley era debil
-- Solo habia 1-2 votos (no era patron)
-- Existia contexto que explicaba el voto
+### Does the quiz tell me who to vote for?
 
-### ¿Pueden los partidos disputar un AMPAY?
+**NO.** AMPAY is informational, not a voting recommendation. The quiz shows you matches based on positions declared in government plans. You should always conduct further research before deciding your vote.
 
-Si. Cualquier partido o ciudadano puede abrir un issue en nuestro repositorio de GitHub con evidencia que contradiga nuestro analisis. Revisaremos y corregiremos si corresponde.
+### What does the match percentage mean?
 
-### ¿Por que algunos partidos tienen mas AMPAYs que otros?
-
-Las razones pueden ser varias:
-- Hicieron promesas mas especificas (mas verificables)
-- Tuvieron mas oportunidades de votar sobre sus promesas
-- Realmente votaron de manera contraria con mas frecuencia
-
-No significa necesariamente que un partido sea "peor" que otro.
+The percentage indicates how similar your position is to that of the party. 100% would represent a perfect match; 0% would represent total opposition. Most users score between 50-80% with several parties.
 
 ---
 
-## Sobre los Datos
+## About AMPAYs
 
-### ¿De donde vienen los datos de votacion?
+### What exactly is an AMPAY?
 
-Usamos datos de Open Politica, una organizacion de la sociedad civil que recopila y publica votaciones del Congreso. Puedes verificar los datos originales en su repositorio de GitHub.
+An AMPAY occurs when we find that a party:
+- Made a specific promise in its government plan
+- Voted contrary to that promise in Congress
 
-### ¿De donde vienen las promesas?
+For example: promising to "eliminate tax exemptions" but voting YES on laws that extend them.
 
-Las promesas se extraen de los Planes de Gobierno oficiales registrados ante el Jurado Nacional de Elecciones (JNE). Estos son documentos publicos disponibles en la plataforma electoral del JNE.
+### How are AMPAYs verified?
 
-### ¿Por que los datos solo llegan hasta julio 2024?
+Each AMPAY undergoes:
+1. Automated detection (pattern matching)
+2. Source verification (actual promise, actual vote)
+3. Logical connection analysis (does the law relate to the promise?)
+4. Manual review before publication
 
-El dataset de votaciones que usamos se actualizo por ultima vez en julio 2024. Votaciones mas recientes no estan incluidas. Planeamos actualizar cuando haya datos nuevos disponibles.
+### Why are there so few AMPAYs?
 
-### ¿Puedo descargar los datos?
+We only publish AMPAYs with high confidence. Many "AMPAY candidates" are discarded because:
+- The connection between the promise and the law was weak
+- There were only 1-2 votes (insufficient pattern)
+- Context existed that explained the vote
 
-Si. Todos nuestros datos son abiertos y estan disponibles en GitHub. Queremos que periodistas, investigadores y ciudadanos puedan verificar y usar nuestros datos.
+### Can parties dispute an AMPAY?
 
----
+Yes. Any party or citizen may open an issue on our GitHub repository with evidence contradicting our analysis. We will review and correct as appropriate.
 
-## Sobre la Metodologia
+### Why do some parties have more AMPAYs than others?
 
-### ¿Que algoritmo usan para el quiz?
+The reasons may vary:
+- They made more specific promises (more verifiable)
+- They had more opportunities to vote on matters related to their promises
+- They actually voted contrary to their promises more frequently
 
-Usamos distancia Manhattan, el mismo algoritmo que usa Wahl-O-Mat en Alemania y Smartvote en Suiza. Es un estandar en Voting Advice Applications (VAAs) por su simplicidad e interpretabilidad.
-
-### ¿Como asignan posiciones a los partidos?
-
-Leemos los planes de gobierno y asignamos:
-- +1 si hay promesa explicita a favor
-- -1 si hay promesa explicita en contra
-- 0 si no hay posicion clara o el partido guardo silencio
-
-### ¿Por que usan solo promesas y no votos para el quiz?
-
-El quiz es para las elecciones 2026, asi que usamos las propuestas 2026 de los partidos. Los votos son del periodo 2021-2024 y reflejan comportamiento historico, no propuestas actuales. Los votos se usan para la seccion de AMPAYs.
-
-### ¿Han validado la metodologia academicamente?
-
-Nuestra metodologia se basa en literatura academica sobre VAAs y cumplimiento de promesas electorales. Citamos todas nuestras fuentes en la documentacion. No hemos realizado validacion externa formal, pero nuestro codigo y datos son abiertos para escrutinio.
+This does not necessarily mean that one party is "worse" than another.
 
 ---
 
-## Sobre Privacidad
+## About the Data
 
-### ¿Guardan mis respuestas del quiz?
+### Where do the voting data come from?
 
-No guardamos respuestas individuales ni datos personales. El calculo se hace en tu navegador y no se envia a ningun servidor.
+We use data from Open Politica, a civil society organization that collects and publishes votes from the Peruvian Congress. You can verify the original data in their GitHub repository.
 
-### ¿Usan cookies?
+### Where do the promises come from?
 
-Solo cookies tecnicas necesarias para el funcionamiento del sitio. No usamos cookies de tracking ni publicidad.
+Promises are extracted from the official Government Plans (Planes de Gobierno) registered with the Jurado Nacional de Elecciones (JNE). These are public documents available on the JNE's electoral platform.
 
----
+### Why do the data only go up to July 2024?
 
-## Problemas y Errores
+The voting dataset we use was last updated in July 2024. More recent votes are not included. We plan to update the data when new records become available.
 
-### Encontre un error en un AMPAY, ¿como lo reporto?
+### Can I download the data?
 
-Abre un issue en nuestro repositorio de GitHub con:
-- El ID del AMPAY
-- Que crees que esta mal
-- Evidencia que respalde tu reclamo
-
-### El quiz no funciona en mi navegador
-
-AMPAY funciona mejor en navegadores modernos (Chrome, Firefox, Safari, Edge actualizados). Si tienes problemas, intenta:
-1. Actualizar tu navegador
-2. Desactivar extensiones que bloqueen JavaScript
-3. Limpiar cache del navegador
-
-### ¿Por que mi partido favorito no aparece?
-
-Solo incluimos partidos con representacion parlamentaria significativa en el periodo 2021-2026. Partidos nuevos o muy pequenos pueden no estar incluidos.
+Yes. All our data are open and available on GitHub. We want journalists, researchers, and citizens to be able to verify and use our data.
 
 ---
 
-## Contacto
+## About the Methodology
 
-### ¿Como puedo contactar al creador?
+### What algorithm does the quiz use?
 
-- GitHub: https://github.com/JDRV-space (reportar errores, sugerencias, contribuciones)
+We use Manhattan distance, the same algorithm used by Wahl-O-Mat in Germany and Smartvote in Switzerland. It is a standard in Voting Advice Applications (VAAs) due to its simplicity and interpretability.
+
+### How are party positions assigned?
+
+We read the government plans and assign:
+- +1 if there is an explicit promise in favor
+- -1 if there is an explicit promise against
+- 0 if there is no clear position or the party was silent
+
+### Why do you use only promises and not votes for the quiz?
+
+The quiz is designed for the 2026 elections, so we use the parties' 2026 proposals. The votes are from the 2021-2024 period and reflect historical behavior, not current proposals. Votes are used in the AMPAY section.
+
+### Has the methodology been validated academically?
+
+Our methodology is based on academic literature on VAAs and electoral promise fulfillment. We cite all our sources in the documentation. We have not conducted a formal external validation, but our code and data are open for scrutiny.
+
+---
+
+## About Privacy
+
+### Do you store my quiz answers?
+
+We do not store individual responses or personal data. The calculation is performed in your browser and is not sent to any server.
+
+### Do you use cookies?
+
+Only technical cookies necessary for the site to function. We do not use tracking or advertising cookies.
+
+---
+
+## Issues and Errors
+
+### I found an error in an AMPAY. How do I report it?
+
+Open an issue on our GitHub repository with:
+- The AMPAY ID
+- What you believe is incorrect
+- Evidence supporting your claim
+
+### The quiz does not work in my browser
+
+AMPAY works best in modern browsers (Chrome, Firefox, Safari, and Edge, up to date). If you experience issues, try:
+1. Updating your browser
+2. Disabling extensions that block JavaScript
+3. Clearing your browser cache
+
+### Why does my favorite party not appear?
+
+We only include parties with significant parliamentary representation during the 2021-2026 period. New or very small parties may not be included.
+
+---
+
+## Contact
+
+### How can I contact the creator?
+
+- GitHub: https://github.com/JDRV-space (bug reports, suggestions, contributions)
 - X (Twitter): https://x.com/JDRV_space
 
-### ¿Puedo contribuir al proyecto?
+### Can I contribute to the project?
 
-Si. AMPAY es codigo abierto. Puedes:
-- Reportar errores
-- Sugerir mejoras
-- Contribuir codigo
-- Ayudar con verificacion de datos
+Yes. AMPAY is open source. You can:
+- Report errors
+- Suggest improvements
+- Contribute code
+- Assist with data verification
 
 ---
 
 ## Disclaimers
 
-### ¿AMPAY es neutral politicamente?
+### Is AMPAY politically neutral?
 
-AMPAY es una herramienta informativa basada en datos publicos. No hacemos recomendaciones de voto ni apoyamos a ningun partido. Nuestro objetivo es transparencia, no promocion politica.
+AMPAY is an informational tool based on public data. We do not make voting recommendations nor endorse any political party. Our objective is transparency, not political promotion.
 
-### ¿La informacion es 100% precisa?
+### Is the information 100% accurate?
 
-Hacemos nuestro mejor esfuerzo para ser precisos, pero:
-- Los datos pueden tener errores menores
-- La interpretacion de promesas tiene componente subjetivo
-- El contexto politico puede ser mas complejo de lo que mostramos
+We make our best effort to be accurate, but:
+- The data may contain minor errors
+- The interpretation of promises has a subjective component
+- The political context may be more complex than what we present
 
-Siempre recomendamos verificar fuentes originales para decisiones importantes.
+We always recommend verifying original sources for important decisions.
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+*Last updated: 2026-01-21*

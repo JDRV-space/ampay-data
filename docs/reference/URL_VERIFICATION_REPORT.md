@@ -1,36 +1,36 @@
 # URL Verification Report - AMPAY Documentation
 
-**Fecha de verificacion:** 2026-01-22
-**Archivo verificado:** SOURCES_BIBLIOGRAPHY.md
-**Total URLs verificadas:** 41
+**Verification date:** 2026-01-22
+**File verified:** SOURCES_BIBLIOGRAPHY.md
+**Total URLs verified:** 41
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-| Estado | Cantidad |
-|--------|----------|
+| Status | Count |
+|--------|-------|
 | OK | 30 |
-| CORREGIDO | 3 |
-| VERIFICAR | 6 |
-| ROTO | 2 |
+| CORRECTED | 3 |
+| VERIFY | 6 |
+| BROKEN | 2 |
 
 ---
 
-## 1. URLs Verificadas OK
+## 1. Verified URLs (OK)
 
-### 1.1 Fuentes de Datos Primarias
+### 1.1 Primary Data Sources
 
-| URL | Estado |
+| URL | Status |
 |-----|--------|
 | https://github.com/openpolitica/congreso-pleno-asistencia-votacion | OK |
 | https://www.congreso.gob.pe/AsistenciasVotacionesPleno/ | OK |
 | https://plataformahistorico.jne.gob.pe/OrganizacionesPoliticas/PlanesGobiernoTrabajo | OK |
 | https://github.com/hiperderecho/proyectos_de_ley | OK |
 
-### 1.2 Portales Gubernamentales
+### 1.2 Government Portals
 
-| URL | Estado |
+| URL | Status |
 |-----|--------|
 | https://www.congreso.gob.pe/ | OK |
 | https://www.congreso.gob.pe/proyectosdeley/ | OK |
@@ -39,17 +39,17 @@
 | https://portal.jne.gob.pe/portal/Pagina/Ver/979/page/Elecciones-Generales-2026 | OK |
 | https://diariooficial.elperuano.pe/Normas | OK |
 
-### 1.3 Organizaciones de Transparencia
+### 1.3 Transparency Organizations
 
-| URL | Estado |
+| URL | Status |
 |-----|--------|
 | https://openpolitica.com/ | OK |
 | https://hiperderecho.org/ | OK |
 | https://directoriolegislativo.org/en/categoria/ingles/peru-en/ | OK |
 
-### 1.4 Plataformas VAA Internacionales
+### 1.4 International VAA Platforms
 
-| URL | Estado |
+| URL | Status |
 |-----|--------|
 | https://www.bpb.de/themen/wahl-o-mat/ | OK |
 | https://votecompass.com/ | OK |
@@ -58,24 +58,24 @@
 | https://www.votematch.eu/ | OK |
 | https://euandi.eu/ | OK |
 
-### 1.5 Metodologia Fact-Checking
+### 1.5 Fact-Checking Methodology
 
-| URL | Estado |
+| URL | Status |
 |-----|--------|
 | https://www.politifact.com/article/2018/feb/12/principles-truth-o-meter-politifacts-methodology-i/ | OK |
 
-### 1.6 Articulos de Noticias
+### 1.6 News Articles
 
-| URL | Estado |
+| URL | Status |
 |-----|--------|
 | https://gestion.pe/economia/mas-de-7500-proyectos-de-ley-en-el-congreso-de-peru-los-que-mas-preocupan-videnza-populismo-noticia/ | OK |
 | https://ojo-publico.com/politica/congreso-publico-mas-100-leyes-por-insistencia-pesar-alertas | OK |
 | https://ojo-publico.com/4925/congresistas-impulsaron-497-proyectos-ley-declarativos-el-2023 | OK |
 | https://andina.pe/agencia/noticia-congreso-90-leyes-fueron-promulgadas-durante-primera-legislatura-20242025-1012947.aspx | OK |
 
-### 1.7 Estandares y Herramientas Tecnicas
+### 1.7 Technical Standards and Tools
 
-| URL | Estado |
+| URL | Status |
 |-----|--------|
 | https://www.popoloproject.com/specs/ | OK |
 | https://open-civic-data.readthedocs.io/ | OK |
@@ -87,147 +87,147 @@
 
 ---
 
-## 2. URLs Corregidas
+## 2. Corrected URLs
 
-### 2.1 Wahl-O-Mat (Alemania)
+### 2.1 Wahl-O-Mat (Germany)
 
-| URL Original | URL Corregida | Estado |
+| Original URL | Corrected URL | Status |
 |--------------|---------------|--------|
-| https://www.wahl-o-mat.de/ | https://www.bpb.de/themen/wahl-o-mat/ | CORREGIDO |
+| https://www.wahl-o-mat.de/ | https://www.bpb.de/themen/wahl-o-mat/ | CORRECTED |
 
-**Nota:** wahl-o-mat.de redirige automaticamente a bpb.de/themen/wahl-o-mat/
+**Note:** wahl-o-mat.de automatically redirects to bpb.de/themen/wahl-o-mat/
 
-### 2.2 MEF Transparencia
+### 2.2 MEF Transparency
 
-| URL Original | URL Corregida | Estado |
+| Original URL | Corrected URL | Status |
 |--------------|---------------|--------|
-| https://www.mef.gob.pe/es/por-instrumento/decreto-de-urgencia | https://www.mef.gob.pe/es/normatividad-sp-9867/por-instrumento/decretos-de-urgencia | CORREGIDO |
+| https://www.mef.gob.pe/es/por-instrumento/decreto-de-urgencia | https://www.mef.gob.pe/es/normatividad-sp-9867/por-instrumento/decretos-de-urgencia | CORRECTED |
 
-**Nota:** La URL original tiene problemas de carga. La URL corregida es la oficial del MEF.
+**Note:** The original URL had loading issues. The corrected URL is the official MEF link.
 
-### 2.3 ONPE Datos Abiertos
+### 2.3 ONPE Open Data
 
-| URL Original | URL Corregida | Estado |
+| Original URL | Corrected URL | Status |
 |--------------|---------------|--------|
-| https://datosabiertos.gob.pe/users/onpedatos | https://www.gob.pe/institucion/onpe/tema/datos-abiertos | CORREGIDO |
+| https://datosabiertos.gob.pe/users/onpedatos | https://www.gob.pe/institucion/onpe/tema/datos-abiertos | CORRECTED |
 
-**Nota:** La plataforma de datos abiertos tiene una nueva estructura. URL alternativa: https://datosabiertos.gob.pe/SEARCH/field_tags/onpe-1039
+**Note:** The open data platform has a new structure. Alternative URL: https://datosabiertos.gob.pe/SEARCH/field_tags/onpe-1039
 
 ---
 
-## 3. URLs que Requieren Verificacion Manual
+## 3. URLs Requiring Manual Verification
 
-### 3.1 JNE Plataforma Electoral 2026
+### 3.1 JNE Electoral Platform 2026
 
-| URL | Estado | Nota |
+| URL | Status | Note |
 |-----|--------|------|
-| https://plataformaelectoral.jne.gob.pe/candidatos/plan-gobierno-trabajo/buscar | VERIFICAR | La pagina existe pero el contenido carga dinamicamente. Requiere verificacion manual en navegador. |
+| https://plataformaelectoral.jne.gob.pe/candidatos/plan-gobierno-trabajo/buscar | VERIFY | The page exists but content loads dynamically. Requires manual browser verification. |
 
-### 3.2 JNE Portal Principal
+### 3.2 JNE Main Portal
 
-| URL | Estado | Nota |
+| URL | Status | Note |
 |-----|--------|------|
-| https://www.jne.gob.pe/ | VERIFICAR | Error de tamano en fetch automatico. La URL es correcta segun busqueda web. Verificar manualmente. |
+| https://www.jne.gob.pe/ | VERIFY | Size error during automated fetch. The URL is correct according to web search. Verify manually. |
 
-### 3.3 DOIs Academicos
+### 3.3 Academic DOIs
 
-| DOI | Estado | Nota |
+| DOI | Status | Note |
 |-----|--------|------|
-| https://doi.org/10.1080/00344890903510006 | VERIFICAR | DOI correcto (Garzia 2010). Taylor & Francis puede requerir acceso institucional. |
-| https://doi.org/10.1080/19331680903048992 | VERIFICAR | DOI correcto (Walgrave et al. 2009). Taylor & Francis puede requerir acceso institucional. |
-| https://doi.org/10.1017/s0003055421000754 | VERIFICAR | DOI correcto (Jolly et al. 2022). Cambridge puede requerir acceso. |
-| https://doi.org/10.25522/manifesto.v6 | VERIFICAR | DOI de dataset Manifesto Project. Verificar acceso. |
+| https://doi.org/10.1080/00344890903510006 | VERIFY | Correct DOI (Garzia 2010). Taylor & Francis may require institutional access. |
+| https://doi.org/10.1080/19331680903048992 | VERIFY | Correct DOI (Walgrave et al. 2009). Taylor & Francis may require institutional access. |
+| https://doi.org/10.1017/s0003055421000754 | VERIFY | Correct DOI (Jolly et al. 2022). Cambridge may require access. |
+| https://doi.org/10.25522/manifesto.v6 | VERIFY | Manifesto Project dataset DOI. Verify access. |
 
-**Nota sobre DOIs:** Los DOIs son identificadores permanentes. Si no resuelven directamente, pueden requerir acceso institucional o tener problemas temporales de resolucion. Los DOIs listados corresponden a las publicaciones correctas segun verificacion cruzada.
+**Note on DOIs:** DOIs are permanent identifiers. If they do not resolve directly, they may require institutional access or be experiencing temporary resolution issues. The DOIs listed correspond to the correct publications as verified through cross-referencing.
 
-### 3.4 Vote Compass Metodologia
+### 3.4 Vote Compass Methodology
 
-| URL | Estado | Nota |
+| URL | Status | Note |
 |-----|--------|------|
-| https://votecompass.com/methodology | VERIFICAR | La pagina principal funciona. La seccion de metodologia puede estar integrada en la pagina principal. |
+| https://votecompass.com/methodology | VERIFY | The main page works. The methodology section may be integrated into the main page. |
 
 ---
 
-## 4. URLs Rotas Sin Reemplazo
+## 4. Broken URLs Without Replacement
 
 ### 4.1 Proyectos de Ley PE
 
-| URL | Estado | Nota |
+| URL | Status | Note |
 |-----|--------|------|
-| http://proyectosdeley.pe/ | ROTO | Servidor no responde (ECONNREFUSED). El proyecto de Hiperderecho puede estar inactivo. |
+| http://proyectosdeley.pe/ | BROKEN | Server not responding (ECONNREFUSED). The Hiperderecho project may be inactive. |
 
-**Alternativas sugeridas:**
-- https://www.congreso.gob.pe/proyectosdeley/ (Portal oficial del Congreso)
-- https://wb2server.congreso.gob.pe/spley-portal/ (Portal alternativo del Congreso)
-- https://github.com/hiperderecho/proyectos_de_ley (Repositorio GitHub - funciona)
+**Suggested alternatives:**
+- https://www.congreso.gob.pe/proyectosdeley/ (Official Congress portal)
+- https://wb2server.congreso.gob.pe/spley-portal/ (Alternative Congress portal)
+- https://github.com/hiperderecho/proyectos_de_ley (GitHub repository - functional)
 
-### 4.2 Red Transparencia Legislativa
+### 4.2 Red Transparencia Legislativa (Legislative Transparency Network)
 
-| URL | Estado | Nota |
+| URL | Status | Note |
 |-----|--------|------|
-| https://transparencialegislativa.org/ | ROTO | Servidor no responde (ECONNREFUSED). |
+| https://transparencialegislativa.org/ | BROKEN | Server not responding (ECONNREFUSED). |
 
-**Alternativa confirmada:**
-- La organizacion existe y opera. Directorio Legislativo coordina la red 2023-2025.
-- URL de contacto: https://directoriolegislativo.org/en/
+**Confirmed alternative:**
+- The organization exists and operates. Directorio Legislativo coordinates the network 2023-2025.
+- Contact URL: https://directoriolegislativo.org/en/
 - Twitter: @redltl
 
-### 4.3 Poltext Polimeter Metodologia
+### 4.3 Poltext Polimeter Methodology
 
-| URL | Estado | Nota |
+| URL | Status | Note |
 |-----|--------|------|
-| https://www.poltext.org/en/donnees-et-analyses/les-polimetres/methodology-polimeters | VERIFICAR | Certificado SSL con problemas. La URL es correcta. |
+| https://www.poltext.org/en/donnees-et-analyses/les-polimetres/methodology-polimeters | VERIFY | SSL certificate issues. The URL is correct. |
 
-**Alternativa funcional:**
-- https://www.polimeter.org/en/trudeau (Polimeter activo)
+**Functional alternative:**
+- https://www.polimeter.org/en/trudeau (Active Polimeter)
 
 ### 4.4 VoteMatch UK
 
-| URL | Estado | Nota |
+| URL | Status | Note |
 |-----|--------|------|
-| https://votematch.org.uk/ | ROTO | Error 526 (SSL handshake failed). El proyecto puede estar inactivo. |
+| https://votematch.org.uk/ | BROKEN | Error 526 (SSL handshake failed). The project may be inactive. |
 
-**Alternativas:**
-- https://uk.isidewith.com/political-quiz (Alternativa activa para UK)
-- https://source.votematch.eu/ (Codigo fuente de VoteMatch)
+**Alternatives:**
+- https://uk.isidewith.com/political-quiz (Active alternative for UK)
+- https://source.votematch.eu/ (VoteMatch source code)
 
 ### 4.5 ResearchGate Smartvote
 
-| URL | Estado | Nota |
+| URL | Status | Note |
 |-----|--------|------|
-| https://www.researchgate.net/publication/226593563 | VERIFICAR | Error 403 (acceso denegado automatico). ResearchGate bloquea algunos crawlers. |
+| https://www.researchgate.net/publication/226593563 | VERIFY | Error 403 (access denied automatically). ResearchGate blocks some crawlers. |
 
-**Alternativa verificada:**
-- https://www.researchgate.net/publication/261495925_Voting_Advice_Applications_and_Party_Choice_Evidence_From_Smartvote_Users_in_Switzerland (Publicacion relacionada de Ladner y Fivaz)
-
----
-
-## 5. Acciones Recomendadas
-
-### Inmediatas (Corregir ahora)
-1. Actualizar URL de MEF Transparencia
-2. Actualizar URL de ONPE Datos Abiertos
-3. Agregar nota sobre redireccion de Wahl-O-Mat
-
-### A corto plazo (Verificar manualmente)
-1. Verificar JNE Plataforma Electoral en navegador
-2. Verificar DOIs desde red institucional
-3. Verificar Poltext con navegador (ignorar error SSL)
-
-### A mediano plazo (Buscar reemplazos)
-1. Encontrar alternativa para proyectosdeley.pe (usar Congreso oficial)
-2. Contactar Red Transparencia Legislativa via Directorio Legislativo
-3. Actualizar referencia de VoteMatch UK
+**Verified alternative:**
+- https://www.researchgate.net/publication/261495925_Voting_Advice_Applications_and_Party_Choice_Evidence_From_Smartvote_Users_in_Switzerland (Related publication by Ladner and Fivaz)
 
 ---
 
-## 6. Historial de Verificaciones
+## 5. Recommended Actions
 
-| Fecha | Verificador | Resultado |
-|-------|-------------|-----------|
-| 2026-01-21 | Manual | Inicial - Todos OK |
-| 2026-01-22 | Automatico (Claude) | 30 OK, 3 Corregidos, 6 Verificar, 2 Rotos |
+### Immediate (Correct now)
+1. Update MEF Transparency URL
+2. Update ONPE Open Data URL
+3. Add note about Wahl-O-Mat redirect
+
+### Short term (Verify manually)
+1. Verify JNE Electoral Platform in a browser
+2. Verify DOIs from an institutional network
+3. Verify Poltext with a browser (ignore SSL error)
+
+### Medium term (Find replacements)
+1. Find alternative for proyectosdeley.pe (use official Congress portal)
+2. Contact Red Transparencia Legislativa via Directorio Legislativo
+3. Update VoteMatch UK reference
 
 ---
 
-*Generado automaticamente el 2026-01-22*
+## 6. Verification History
+
+| Date | Verifier | Result |
+|------|----------|--------|
+| 2026-01-21 | Manual | Initial - All OK |
+| 2026-01-22 | Automated (Claude) | 30 OK, 3 Corrected, 6 Verify, 2 Broken |
+
+---
+
+*Automatically generated on 2026-01-22*

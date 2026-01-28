@@ -1,51 +1,51 @@
-# Esquema de Datos JSON
+# JSON Data Schema
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
+**Date:** 2026-01-21
+**Status:** ACTIVE
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-Este documento define la estructura de los archivos JSON utilizados en AMPAY, siguiendo estandares de datos abiertos donde es posible.
+This document defines the structure of the JSON files used in AMPAY, following open data standards where applicable.
 
 ---
 
-## 1. Estandares Adoptados
+## 1. Adopted Standards
 
-### 1.1 Referencias
+### 1.1 References
 
-| Estandar | Uso | URL |
-|----------|-----|-----|
-| Popolo | Estructura de partidos/organizaciones | https://www.popoloproject.com/specs/ |
-| Open Civic Data | IDs y relaciones | https://open-civic-data.readthedocs.io/ |
+| Standard | Usage | URL |
+|----------|-------|-----|
+| Popolo | Party/organization structure | https://www.popoloproject.com/specs/ |
+| Open Civic Data | IDs and relationships | https://open-civic-data.readthedocs.io/ |
 | Schema.org ClaimReview | AMPAYs | https://schema.org/ClaimReview |
 
-### 1.2 Convenciones
+### 1.2 Conventions
 
-| Convencion | Ejemplo |
+| Convention | Example |
 |------------|---------|
-| snake_case para campos | `party_slug`, `vote_date` |
-| ISO 8601 para fechas | `2026-01-21` |
-| Slugs para IDs | `fuerza_popular`, `peru_libre` |
-| Porcentajes como float | `93.1` (no "93.1%") |
+| snake_case for fields | `party_slug`, `vote_date` |
+| ISO 8601 for dates | `2026-01-21` |
+| Slugs for IDs | `fuerza_popular`, `peru_libre` |
+| Percentages as float | `93.1` (not "93.1%") |
 
 ---
 
 ## 2. quiz_statements.json
 
-### 2.1 Proposito
+### 2.1 Purpose
 
-Contiene las preguntas del quiz, posiciones de partidos, y configuracion de calibracion.
+Contains quiz questions, party positions, and calibration configuration.
 
-### 2.2 Ubicacion
+### 2.2 Location
 
 ```
 data/02_output/quiz_statements.json
 ```
 
-### 2.3 Esquema
+### 2.3 Schema
 
 ```json
 {
@@ -91,7 +91,7 @@ data/02_output/quiz_statements.json
       "positions": {
         "[party_slug]": -1|0|1
       },
-      "note": "string (opcional)"
+      "note": "string (optional)"
     }
   ],
 
@@ -117,7 +117,7 @@ data/02_output/quiz_statements.json
 }
 ```
 
-### 2.4 Ejemplo
+### 2.4 Example
 
 ```json
 {
@@ -144,17 +144,17 @@ data/02_output/quiz_statements.json
 
 ## 3. ampays.json
 
-### 3.1 Proposito
+### 3.1 Purpose
 
-Contiene los AMPAYs confirmados con evidencia detallada.
+Contains confirmed AMPAYs with detailed evidence.
 
-### 3.2 Ubicacion
+### 3.2 Location
 
 ```
 data/02_output/ampays.json
 ```
 
-### 3.3 Esquema
+### 3.3 Schema
 
 ```json
 {
@@ -191,7 +191,7 @@ data/02_output/ampays.json
 }
 ```
 
-### 3.4 Ejemplo
+### 3.4 Example
 
 ```json
 {
@@ -221,17 +221,17 @@ data/02_output/ampays.json
 
 ## 4. votes_categorized.json
 
-### 4.1 Proposito
+### 4.1 Purpose
 
-Contiene todos los votos sustantivos con categoria asignada.
+Contains all substantive votes with assigned categories.
 
-### 4.2 Ubicacion
+### 4.2 Location
 
 ```
 data/02_output/votes_categorized.json
 ```
 
-### 4.3 Esquema
+### 4.3 Schema
 
 ```json
 {
@@ -277,17 +277,17 @@ data/02_output/votes_categorized.json
 
 ## 5. votes_by_party.json
 
-### 5.1 Proposito
+### 5.1 Purpose
 
-Acceso rapido a posiciones de partidos indexado por vote_id.
+Provides quick access to party positions indexed by vote_id.
 
-### 5.2 Ubicacion
+### 5.2 Location
 
 ```
 data/02_output/votes_by_party.json
 ```
 
-### 5.3 Esquema
+### 5.3 Schema
 
 ```json
 {
@@ -303,7 +303,7 @@ data/02_output/votes_by_party.json
 }
 ```
 
-### 5.4 Ejemplo
+### 5.4 Example
 
 ```json
 {
@@ -330,17 +330,17 @@ data/02_output/votes_by_party.json
 
 ## 6. party_patterns.json
 
-### 6.1 Proposito
+### 6.1 Purpose
 
-Patrones de votacion para sparklines y visualizaciones.
+Voting patterns for sparklines and visualizations.
 
-### 6.2 Ubicacion
+### 6.2 Location
 
 ```
 data/02_output/party_patterns.json
 ```
 
-### 6.3 Esquema
+### 6.3 Schema
 
 ```json
 {
@@ -370,9 +370,9 @@ data/02_output/party_patterns.json
 
 ---
 
-## 7. Validacion de Esquemas
+## 7. Schema Validation
 
-### 7.1 JSON Schema (Ejemplo para ampays)
+### 7.1 JSON Schema (Example for ampays)
 
 ```json
 {
@@ -397,7 +397,7 @@ data/02_output/party_patterns.json
 }
 ```
 
-### 7.2 Script de Validacion
+### 7.2 Validation Script
 
 ```python
 # scripts/validate_schema.py
@@ -412,7 +412,7 @@ def validate_ampays(data, schema):
 
 ---
 
-## 8. Relaciones Entre Archivos
+## 8. Relationships Between Files
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -440,15 +440,15 @@ def validate_ampays(data, schema):
 │    ├── votes[].party_positions → party_slug            │
 │    └── votes[].category → party_patterns.categories    │
 │                                                         │
-│  votes_by_party.json (index optimizado)                 │
+│  votes_by_party.json (optimized index)                  │
 │                                                         │
-│  party_patterns.json (agregaciones)                     │
+│  party_patterns.json (aggregations)                     │
 └─────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 9. Tipos TypeScript
+## 9. TypeScript Types
 
 ```typescript
 // types/index.ts
@@ -499,23 +499,23 @@ export interface Ampay {
 
 ---
 
-## 10. Archivos Generados
+## 10. Generated Files
 
-| Archivo | Generado Por | Frecuencia |
-|---------|--------------|------------|
-| `quiz_statements.json` | Manual | Una vez |
-| `ampays.json` | Manual + Script | Una vez |
-| `votes_categorized.json` | Script | Una vez |
-| `votes_by_party.json` | Script | Una vez |
-| `party_patterns.json` | Script | Una vez |
-
----
-
-## Referencias
-
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+| File | Generated By | Frequency |
+|------|-------------|-----------|
+| `quiz_statements.json` | Manual | Once |
+| `ampays.json` | Manual + Script | Once |
+| `votes_categorized.json` | Script | Once |
+| `votes_by_party.json` | Script | Once |
+| `party_patterns.json` | Script | Once |
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+## References
+
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)
+
+---
+
+*Last updated: 2026-01-21*

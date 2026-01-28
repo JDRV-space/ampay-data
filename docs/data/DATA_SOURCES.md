@@ -1,234 +1,234 @@
-# Fuentes de Datos
+# Data Sources
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
+**Date:** 2026-01-21
+**Status:** ACTIVE
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-Este documento cataloga todas las fuentes de datos utilizadas en AMPAY, incluyendo URLs, fechas de acceso, y formato de los datos.
+This document catalogs all data sources used in AMPAY, including URLs, access dates, and data formats.
 
 ---
 
-## 1. Datos de Votacion Parlamentaria
+## 1. Parliamentary Voting Data
 
-### 1.1 Fuente Principal
+### 1.1 Primary Source
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
-| **Nombre** | openpolitica/congreso-pleno-asistencia-votacion |
+| **Name** | openpolitica/congreso-pleno-asistencia-votacion |
 | **URL** | https://github.com/openpolitica/congreso-pleno-asistencia-votacion |
-| **Formato** | CSV |
-| **Periodo** | 2021-07-26 a 2024-07-26 |
-| **Registros** | ~289,000 votos individuales |
-| **Votaciones** | 2,226 sesiones (post-filtrado) |
-| **Ultima actualizacion** | Julio 2024 |
-| **Fecha de descarga** | 2026-01-15 |
-| **Licencia** | Open Data |
+| **Format** | CSV |
+| **Period** | 2021-07-26 to 2024-07-26 |
+| **Records** | ~289,000 individual votes |
+| **Sessions** | 2,226 sessions (post-filtering) |
+| **Last updated** | July 2024 |
+| **Download date** | 2026-01-15 |
+| **License** | Open Data |
 
-### 1.2 Campos Disponibles
+### 1.2 Available Fields
 
-| Campo | Tipo | Descripcion |
+| Field | Type | Description |
 |-------|------|-------------|
-| `fecha` | date | Fecha de la votacion |
-| `asunto` | string | Descripcion del tema votado |
-| `congresista` | string | Nombre del congresista |
-| `grupo_parlamentario` | string | Partido al momento del voto |
+| `fecha` | date | Date of the vote |
+| `asunto` | string | Description of the subject voted on |
+| `congresista` | string | Name of the legislator |
+| `grupo_parlamentario` | string | Party at the time of the vote |
 | `votacion` | enum | SI / NO / ABSTENCION / AUSENTE |
 
-### 1.3 Fuente Oficial Complementaria
+### 1.3 Complementary Official Source
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
-| **Nombre** | Congreso - Asistencias y Votaciones Pleno |
+| **Name** | Congress - Plenary Attendance and Votes |
 | **URL** | https://www.congreso.gob.pe/AsistenciasVotacionesPleno/ |
-| **Formato** | PDF (no estructurado) |
-| **Uso** | Verificacion manual |
+| **Format** | PDF (unstructured) |
+| **Usage** | Manual verification |
 
 ---
 
-## 2. Proyectos de Ley (Metadata)
+## 2. Bills (Metadata)
 
-### 2.1 Fuente Principal
+### 2.1 Primary Source
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
-| **Nombre** | hiperderecho/proyectos_de_ley |
+| **Name** | hiperderecho/proyectos_de_ley |
 | **URL** | https://github.com/hiperderecho/proyectos_de_ley |
-| **Formato** | SQLite (leyes.db) |
+| **Format** | SQLite (leyes.db) |
 | **Website** | https://github.com/hiperderecho/proyectos_de_ley |
-| **Contenido** | Metadata de proyectos de ley |
-| **Fecha de descarga** | 2026-01-15 |
+| **Content** | Bill metadata |
+| **Download date** | 2026-01-15 |
 
-### 2.2 Campos Relevantes
+### 2.2 Relevant Fields
 
-| Campo | Tipo | Descripcion |
+| Field | Type | Description |
 |-------|------|-------------|
-| `codigo` | string | Numero de proyecto de ley |
-| `titulo` | string | Titulo oficial |
-| `fecha_presentacion` | date | Fecha de ingreso |
-| `autor` | string | Congresista/s autores |
-| `estado` | enum | En comision / Aprobado / Archivado |
-| `comision` | string | Comision asignada |
+| `codigo` | string | Bill number |
+| `titulo` | string | Official title |
+| `fecha_presentacion` | date | Submission date |
+| `autor` | string | Authoring legislator(s) |
+| `estado` | enum | In committee / Approved / Archived |
+| `comision` | string | Assigned committee |
 
 ---
 
-## 3. Planes de Gobierno
+## 3. Governance Plans
 
-### 3.1 Elecciones 2021
+### 3.1 2021 Elections
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
-| **Nombre** | JNE Plataforma Historica |
+| **Name** | JNE Historical Platform |
 | **URL** | https://plataformahistorico.jne.gob.pe/OrganizacionesPoliticas/PlanesGobiernoTrabajo |
-| **Formato** | PDF |
-| **Partidos** | 9 partidos principales |
-| **Fecha de descarga** | 2026-01-15 |
+| **Format** | PDF |
+| **Parties** | 9 major parties |
+| **Download date** | 2026-01-15 |
 
-**Links directos verificados:**
+**Verified direct links:**
 
-| Partido | URL Plan 2021 |
-|---------|---------------|
+| Party | 2021 Plan URL |
+|-------|---------------|
 | Juntos por el Peru | https://apisije-e.jne.gob.pe/TRAMITE/ESCRITO/1587/ARCHIVO/FIRMADO/5262.PDF |
 | Accion Popular | https://declara.jne.gob.pe/ASSETS/PLANGOBIERNO/FILEPLANGOBIERNO/16511.pdf |
 
-### 3.2 Elecciones 2026
+### 3.2 2026 Elections
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
-| **Nombre** | JNE Plataforma Electoral |
+| **Name** | JNE Electoral Platform |
 | **URL** | https://plataformaelectoral.jne.gob.pe/candidatos/plan-gobierno-trabajo/buscar |
-| **Formato** | PDF |
-| **Candidatos** | 36 candidatos presidenciales |
-| **Fecha de descarga** | 2026-01-18 |
+| **Format** | PDF |
+| **Candidates** | 36 presidential candidates |
+| **Download date** | 2026-01-18 |
 
-### 3.3 Reporte Comparativo JNE
+### 3.3 JNE Comparative Report
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
 | **URL** | https://saednef.jne.gob.pe/Content/PlanesGobierno/documentos/REPORTE%20F%20DE%20PLANES%20DE%20GOBIERNO.pdf |
-| **Contenido** | Comparacion oficial de propuestas |
+| **Content** | Official comparison of proposals |
 
 ---
 
-## 4. Portales Gubernamentales Oficiales
+## 4. Official Government Portals
 
-### 4.1 Congreso de la Republica
+### 4.1 Congress of the Republic
 
-| Recurso | URL |
-|---------|-----|
-| Portal Principal | https://www.congreso.gob.pe/ |
-| Votaciones Pleno | https://www.congreso.gob.pe/AsistenciasVotacionesPleno/ |
-| Proyectos de Ley | https://www.congreso.gob.pe/proyectosdeley/ |
-| Congreso en Cifras | https://www.congreso.gob.pe/GestionInformacionEstadistica/congreso-cifras/ |
-| Reglamento | https://www.congreso.gob.pe/reglamento/ |
+| Resource | URL |
+|----------|-----|
+| Main Portal | https://www.congreso.gob.pe/ |
+| Plenary Votes | https://www.congreso.gob.pe/AsistenciasVotacionesPleno/ |
+| Bills | https://www.congreso.gob.pe/proyectosdeley/ |
+| Congress in Numbers | https://www.congreso.gob.pe/GestionInformacionEstadistica/congreso-cifras/ |
+| Rules of Procedure | https://www.congreso.gob.pe/reglamento/ |
 
-### 4.2 Jurado Nacional de Elecciones (JNE)
+### 4.2 National Elections Jury (JNE)
 
-| Recurso | URL |
-|---------|-----|
-| Portal Principal | https://www.jne.gob.pe/ |
-| Plataforma Electoral 2026 | https://plataformaelectoral.jne.gob.pe/ |
-| Plataforma Historica | https://plataformahistorico.jne.gob.pe/ |
-| Elecciones 2026 Info | https://portal.jne.gob.pe/portal/Pagina/Ver/979/page/Elecciones-Generales-2026 |
+| Resource | URL |
+|----------|-----|
+| Main Portal | https://www.jne.gob.pe/ |
+| Electoral Platform 2026 | https://plataformaelectoral.jne.gob.pe/ |
+| Historical Platform | https://plataformahistorico.jne.gob.pe/ |
+| 2026 Elections Info | https://portal.jne.gob.pe/portal/Pagina/Ver/979/page/Elecciones-Generales-2026 |
 
 ### 4.3 ONPE
 
-| Recurso | URL |
-|---------|-----|
-| Datos Abiertos | https://datosabiertos.gob.pe/users/onpedatos |
+| Resource | URL |
+|----------|-----|
+| Open Data | https://datosabiertos.gob.pe/users/onpedatos |
 
-### 4.4 Otras Entidades
+### 4.4 Other Entities
 
-| Entidad | URL | Contenido |
-|---------|-----|-----------|
-| El Peruano | https://diariooficial.elperuano.pe/Normas | Normas legales oficiales |
-| MEF Transparencia | https://www.mef.gob.pe/es/por-instrumento/decreto-de-urgencia | Decretos de urgencia |
+| Entity | URL | Content |
+|--------|-----|---------|
+| El Peruano | https://diariooficial.elperuano.pe/Normas | Official legal norms |
+| MEF Transparency | https://www.mef.gob.pe/es/por-instrumento/decreto-de-urgencia | Emergency decrees |
 
 ---
 
-## 5. Organizaciones de Transparencia
+## 5. Transparency Organizations
 
 ### 5.1 Open Politica
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
 | **URL** | https://openpolitica.com/ |
-| **Rol** | Proveedor principal de datos de votacion |
-| **Metodologia** | Recopilacion sistematica de actas |
+| **Role** | Primary voting data provider |
+| **Methodology** | Systematic compilation from official minutes |
 
 ### 5.2 Hiperderecho
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
 | **URL** | https://hiperderecho.org/ |
-| **Rol** | Metadata de proyectos de ley |
-| **Enfoque** | Derechos digitales y transparencia |
+| **Role** | Bill metadata |
+| **Focus** | Digital rights and transparency |
 
-### 5.3 Otras Organizaciones
+### 5.3 Other Organizations
 
-| Organizacion | URL | Enfoque |
-|--------------|-----|---------|
-| Directorio Legislativo | https://directoriolegislativo.org/en/categoria/ingles/peru-en/ | Analisis legislativo regional |
-
----
-
-## 6. Fuentes de Analisis/Noticias
-
-### 6.1 Articulos Citados
-
-| Fuente | URL | Contenido |
-|--------|-----|-----------|
-| Gestion | https://gestion.pe/economia/mas-de-7500-proyectos-de-ley-en-el-congreso-de-peru-los-que-mas-preocupan-videnza-populismo-noticia/ | 7,500+ proyectos de ley |
-| Ojo Publico | https://ojo-publico.com/politica/congreso-publico-mas-100-leyes-por-insistencia-pesar-alertas | 107+ leyes por insistencia |
-| Ojo Publico | https://ojo-publico.com/4925/congresistas-impulsaron-497-proyectos-ley-declarativos-el-2023 | 497 proyectos declarativos 2023 |
-| Agencia Andina | https://andina.pe/agencia/noticia-congreso-90-leyes-fueron-promulgadas-durante-primera-legislatura-20242025-1012947.aspx | 90 leyes promulgadas 2024 |
-
-### 6.2 Estudios Academicos
-
-| Institucion | URL | Contenido |
-|-------------|-----|-----------|
-| PUCP | https://gobierno.pucp.edu.pe/wp-content/uploads/2024/08/poder-congresal.pdf | Estudio del poder congresal |
+| Organization | URL | Focus |
+|--------------|-----|-------|
+| Directorio Legislativo | https://directoriolegislativo.org/en/categoria/ingles/peru-en/ | Regional legislative analysis |
 
 ---
 
-## 7. Calendario de Actualizacion
+## 6. Analysis and News Sources
 
-| Dataset | Frecuencia | Proxima Actualizacion |
-|---------|------------|----------------------|
-| Votaciones openpolitica | Trimestral | Q2 2026 (si disponible) |
-| Planes de gobierno 2026 | Una vez | Completado |
-| Proyectos de ley | Mensual | No planeado |
+### 6.1 Cited Articles
 
----
+| Source | URL | Content |
+|--------|-----|---------|
+| Gestion | https://gestion.pe/economia/mas-de-7500-proyectos-de-ley-en-el-congreso-de-peru-los-que-mas-preocupan-videnza-populismo-noticia/ | 7,500+ bills |
+| Ojo Publico | https://ojo-publico.com/politica/congreso-publico-mas-100-leyes-por-insistencia-pesar-alertas | 107+ laws passed by override |
+| Ojo Publico | https://ojo-publico.com/4925/congresistas-impulsaron-497-proyectos-ley-declarativos-el-2023 | 497 declaratory bills in 2023 |
+| Agencia Andina | https://andina.pe/agencia/noticia-congreso-90-leyes-fueron-promulgadas-durante-primera-legislatura-20242025-1012947.aspx | 90 laws enacted in 2024 |
 
-## 8. Limitaciones de Datos
+### 6.2 Academic Studies
 
-### 8.1 Gaps Conocidos
-
-| Gap | Descripcion | Impacto |
-|-----|-------------|---------|
-| Periodo 2024-07 a 2026-01 | Votaciones no incluidas en dataset | AMPAYs recientes no detectados |
-| Partidos nuevos 2026 | Sin historial de votacion | Solo analisis de promesas |
-| Votos secretos | No registrados | Subestimacion de participacion |
-
-### 8.2 Calidad de Datos
-
-| Fuente | Completitud | Precision | Notas |
-|--------|-------------|-----------|-------|
-| openpolitica | 99%+ | 99.7% | Verificado contra Congreso |
-| JNE PDFs | 100% | Variable | OCR puede fallar |
-| hiperderecho | 95% | 98% | Algunos proyectos faltantes |
+| Institution | URL | Content |
+|-------------|-----|---------|
+| PUCP | https://gobierno.pucp.edu.pe/wp-content/uploads/2024/08/poder-congresal.pdf | Study on congressional power |
 
 ---
 
-## 9. Verificacion de URLs
+## 7. Update Schedule
 
-**Ultima verificacion:** 2026-01-21
+| Dataset | Frequency | Next Update |
+|---------|-----------|-------------|
+| openpolitica voting data | Quarterly | Q2 2026 (if available) |
+| 2026 governance plans | Once | Completed |
+| Bills | Monthly | Not planned |
 
-| URL | Estado | Notas |
+---
+
+## 8. Data Limitations
+
+### 8.1 Known Gaps
+
+| Gap | Description | Impact |
+|-----|-------------|--------|
+| Period 2024-07 to 2026-01 | Votes not included in dataset | Recent AMPAYs not detected |
+| New 2026 parties | No voting history | Promise analysis only |
+| Secret votes | Not recorded | Underestimation of participation |
+
+### 8.2 Data Quality
+
+| Source | Completeness | Accuracy | Notes |
+|--------|-------------|----------|-------|
+| openpolitica | 99%+ | 99.7% | Verified against Congress |
+| JNE PDFs | 100% | Variable | OCR may fail |
+| hiperderecho | 95% | 98% | Some bills missing |
+
+---
+
+## 9. URL Verification
+
+**Last verified:** 2026-01-21
+
+| URL | Status | Notes |
 |-----|--------|-------|
 | github.com/openpolitica | OK | |
 | github.com/hiperderecho | OK | |
@@ -238,11 +238,11 @@ Este documento cataloga todas las fuentes de datos utilizadas en AMPAY, incluyen
 
 ---
 
-## Referencias
+## References
 
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+*Last updated: 2026-01-21*

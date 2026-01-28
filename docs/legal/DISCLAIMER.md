@@ -1,299 +1,299 @@
-# AVISO LEGAL (DISCLAIMER)
+# LEGAL DISCLAIMER
 
-**AMPAY - Plataforma de Transparencia Electoral**
+**AMPAY - Electoral Transparency Platform**
 
 **Version:** 1.0
-**Fecha de entrada en vigencia:** 21 de enero de 2026
-**Ultima actualizacion:** 21 de enero de 2026
+**Effective Date:** January 21, 2026
+**Last Updated:** January 21, 2026
 
 ---
 
-## AVISO LEGAL PRINCIPAL
+## PRINCIPAL LEGAL NOTICE
 
-### ESTE SITIO WEB ES EXCLUSIVAMENTE INFORMATIVO
+### THIS WEBSITE IS EXCLUSIVELY INFORMATIONAL
 
-**AMPAY presenta informacion de fuentes publicas gubernamentales con fines educativos y de transparencia ciudadana. La informacion aqui contenida NO constituye una recomendacion de voto, asesoria politica ni orientacion electoral de ningun tipo.**
-
----
-
-## SECCION 1. NATURALEZA DE LA INFORMACION
-
-### 1.1. Proposito Informativo
-
-1.1.1. AMPAY es un proyecto ciudadano independiente que tiene como unico proposito facilitar el acceso a informacion publica sobre:
-- (a) El desempeno legislativo de los congresistas peruanos;
-- (b) Las posiciones y propuestas de los partidos politicos;
-- (c) El historial de votaciones en el Congreso de la Republica.
-
-1.1.2. **AMPAY NO HACE NINGUNA RECOMENDACION** sobre por quien votar, que partido apoyar ni que posicion politica adoptar.
-
-### 1.2. Lo Que AMPAY NO Es
-
-1.2.1. **AMPAY NO ES:**
-
-| AMPAY NO ES | Descripcion |
-|-------------|-------------|
-| Una entidad gubernamental | No estamos afiliados al Estado peruano |
-| Un partido politico | No tenemos agenda politica ni electoral |
-| Una organizacion electoral | No participamos en procesos electorales |
-| Un servicio de asesoria | No brindamos consejos politicos o legales |
-| Una fuente primaria | Compilamos datos de fuentes oficiales |
-| Una autoridad en la materia | Somos un proyecto ciudadano independiente |
+**AMPAY presents information from public government sources for educational and civic transparency purposes. The information contained herein does NOT constitute a voting recommendation, political advice, or electoral guidance of any kind.**
 
 ---
 
-## SECCION 2. FUENTES DE INFORMACION
+## SECTION 1. NATURE OF THE INFORMATION
 
-### 2.1. Origen de los Datos
+### 1.1. Informational Purpose
 
-2.1.1. Toda la informacion presentada en AMPAY proviene de **fuentes publicas gubernamentales**, incluyendo:
+1.1.1. AMPAY is an independent civic project whose sole purpose is to facilitate access to public information regarding:
+- (a) The legislative performance of Peruvian members of Congress;
+- (b) The positions and proposals of political parties;
+- (c) The voting history in the Congreso de la Republica.
 
-**FUENTES PRIMARIAS:**
+1.1.2. **AMPAY DOES NOT MAKE ANY RECOMMENDATION** regarding whom to vote for, which party to support, or which political position to adopt.
 
-| Fuente | Tipo de Informacion | URL Oficial |
-|--------|---------------------|-------------|
-| Congreso de la Republica del Peru | Votaciones, asistencia, proyectos de ley | https://www.congreso.gob.pe |
-| Jurado Nacional de Elecciones (JNE) | Organizaciones politicas, resultados electorales | https://portal.jne.gob.pe |
-| Infogob (JNE) | Datos electorales historicos | https://infogob.jne.gob.pe |
-| ONPE | Procesos electorales, datos abiertos | https://www.onpe.gob.pe |
-| Plataforma Nacional de Datos Abiertos | Datasets gubernamentales | https://www.datosabiertos.gob.pe |
+### 1.2. What AMPAY Is NOT
 
-### 2.2. Derecho de Acceso
+1.2.1. **AMPAY IS NOT:**
 
-2.2.1. El uso de estas fuentes se realiza al amparo del derecho constitucional de acceso a la informacion publica:
+| AMPAY IS NOT | Description |
+|--------------|-------------|
+| A government entity | We are not affiliated with the Peruvian State |
+| A political party | We have no political or electoral agenda |
+| An electoral organization | We do not participate in electoral processes |
+| An advisory service | We do not provide political or legal advice |
+| A primary source | We compile data from official sources |
+| An authority on the matter | We are an independent civic project |
+
+---
+
+## SECTION 2. SOURCES OF INFORMATION
+
+### 2.1. Origin of Data
+
+2.1.1. All information presented on AMPAY originates from **public government sources**, including:
+
+**PRIMARY SOURCES:**
+
+| Source | Type of Information | Official URL |
+|--------|---------------------|--------------|
+| Congreso de la Republica del Peru | Voting records, attendance, legislative bills | https://www.congreso.gob.pe |
+| Jurado Nacional de Elecciones (JNE) | Political organizations, election results | https://portal.jne.gob.pe |
+| Infogob (JNE) | Historical electoral data | https://infogob.jne.gob.pe |
+| ONPE | Electoral processes, open data | https://www.onpe.gob.pe |
+| Plataforma Nacional de Datos Abiertos | Government datasets | https://www.datosabiertos.gob.pe |
+
+### 2.2. Right of Access
+
+2.2.1. The use of these sources is carried out pursuant to the constitutional right of access to public information:
 
 > **Constitucion Politica del Peru, Articulo 2, inciso 5:**
-> "Toda persona tiene derecho a solicitar sin expresion de causa la informacion que requiera y a recibirla de cualquier entidad publica, en el plazo legal, con el costo que suponga el pedido."
+> "Every person has the right to request, without stating a reason, any information they require and to receive it from any public entity, within the legally established timeframe, at the cost entailed by the request."
 
-2.2.2. Adicionalmente, nos amparamos en la **Ley N° 27806, Ley de Transparencia y Acceso a la Informacion Publica**, que establece la presuncion de publicidad de toda informacion en posesion del Estado.
-
----
-
-## SECCION 3. ADVERTENCIAS IMPORTANTES
-
-### 3.1. Sobre la Precision de los Datos
-
-**ADVERTENCIA:** La informacion presentada en AMPAY puede contener errores.
-
-3.1.1. **Posibles fuentes de inexactitud:**
-- (a) **Errores de transcripcion** durante el procesamiento de datos;
-- (b) **Informacion desactualizada** si las fuentes originales se actualizan despues de nuestra ultima sincronizacion;
-- (c) **Omisiones involuntarias** de datos o registros;
-- (d) **Errores de interpretacion** al categorizar o clasificar informacion;
-- (e) **Limitaciones tecnicas** en el procesamiento automatizado;
-- (f) **Inconsistencias en las fuentes originales** que se reflejan en nuestros datos.
-
-3.1.2. **RECOMENDACION IMPORTANTE:** Antes de tomar cualquier decision basada en la informacion de AMPAY, **VERIFIQUE los datos directamente en las fuentes oficiales** citadas.
-
-### 3.2. Sobre las Posiciones de los Partidos
-
-**ADVERTENCIA:** Las posiciones politicas pueden cambiar.
-
-3.2.1. La informacion sobre posiciones de partidos politicos se basa en:
-- (a) Planes de gobierno presentados ante el JNE;
-- (b) Declaraciones publicas documentadas;
-- (c) Historial de votaciones en el Congreso;
-- (d) Documentos oficiales de los partidos.
-
-3.2.2. **LIMITACIONES:**
-- (a) Los partidos pueden cambiar sus posiciones despues de la publicacion de documentos;
-- (b) Puede haber diferencias entre posiciones oficiales y practicas reales;
-- (c) Las posiciones pueden ser interpretadas de diferentes maneras;
-- (d) Candidatos individuales pueden diferir de la posicion oficial del partido.
-
-### 3.3. Sobre la Herramienta de Afinidad
-
-**ADVERTENCIA:** Los resultados del cuestionario son ilustrativos, no prescriptivos.
-
-3.3.1. La Herramienta de Afinidad:
-- (a) **NO predice** como gobernara un partido o candidato;
-- (b) **NO garantiza** que el partido sugerido represente sus intereses;
-- (c) **NO considera** todos los factores relevantes para una decision electoral;
-- (d) **NO sustituye** su propio analisis e investigacion.
-
-3.3.2. Los resultados deben tomarse como un **punto de partida** para su investigacion personal, nunca como una recomendacion definitiva.
+2.2.2. Additionally, we are protected by **Ley N° 27806, Ley de Transparencia y Acceso a la Informacion Publica**, which establishes the presumption of publicity of all information held by the State.
 
 ---
 
-## SECCION 4. DECLARACION DE NO RECOMENDACION
+## SECTION 3. IMPORTANT WARNINGS
 
-### 4.1. Neutralidad Absoluta
+### 3.1. Regarding Data Accuracy
 
-4.1.1. **AMPAY DECLARA EXPRESAMENTE** que:
+**WARNING:** The information presented on AMPAY may contain errors.
 
-> **No recomendamos, sugerimos, favorecemos ni promovemos el voto por ningun candidato, partido politico, alianza electoral o movimiento politico.**
+3.1.1. **Possible sources of inaccuracy:**
+- (a) **Transcription errors** during data processing;
+- (b) **Outdated information** if original sources are updated after our last synchronization;
+- (c) **Unintentional omissions** of data or records;
+- (d) **Interpretation errors** when categorizing or classifying information;
+- (e) **Technical limitations** in automated data processing;
+- (f) **Inconsistencies in the original sources** that are reflected in our data.
 
-4.1.2. La presentacion de informacion sobre cualquier actor politico no implica:
-- (a) Aprobacion o desaprobacion de sus posiciones;
-- (b) Recomendacion o advertencia sobre votarlos;
-- (c) Juicio de valor sobre su desempeno;
-- (d) Preferencia o rechazo por parte de AMPAY.
+3.1.2. **IMPORTANT RECOMMENDATION:** Before making any decision based on information from AMPAY, **VERIFY the data directly with the official sources** cited herein.
 
-### 4.2. Responsabilidad del Usuario
+### 3.2. Regarding Party Positions
 
-4.2.1. **EL USUARIO ES EL UNICO RESPONSABLE** de:
-- (a) Investigar a los candidatos y partidos;
-- (b) Evaluar criticamente toda la informacion disponible;
-- (c) Formar su propia opinion politica;
-- (d) Tomar su decision de voto de manera independiente;
-- (e) Asumir las consecuencias de su decision electoral.
+**WARNING:** Political positions are subject to change.
 
-4.2.2. **AMPAY NO ASUME RESPONSABILIDAD** por las decisiones electorales que el Usuario tome basandose en la informacion del sitio web.
+3.2.1. Information regarding political party positions is based on:
+- (a) Government plans submitted to the JNE;
+- (b) Documented public statements;
+- (c) Voting history in Congress;
+- (d) Official party documents.
 
----
+3.2.2. **LIMITATIONS:**
+- (a) Parties may change their positions after the publication of their documents;
+- (b) There may be discrepancies between official positions and actual practices;
+- (c) Positions may be interpreted in different ways;
+- (d) Individual candidates may diverge from the official party position.
 
-## SECCION 5. ADVERTENCIAS LEGALES ESPECIFICAS
+### 3.3. Regarding the Affinity Tool
 
-### 5.1. Sobre Defamacion
+**WARNING:** The questionnaire results are illustrative, not prescriptive.
 
-5.1.1. AMPAY presenta **informacion factica** obtenida de fuentes publicas gubernamentales. No emitimos opiniones, juicios de valor ni declaraciones difamatorias sobre ninguna persona.
+3.3.1. The Affinity Tool:
+- (a) **DOES NOT predict** how a party or candidate will govern;
+- (b) **DOES NOT guarantee** that the suggested party will represent your interests;
+- (c) **DOES NOT consider** all factors relevant to an electoral decision;
+- (d) **DOES NOT replace** your own analysis and research.
 
-5.1.2. Si cualquier informacion publicada resulta ser inexacta, el error no es intencional y procede de las fuentes citadas o de limitaciones en el procesamiento de datos.
-
-5.1.3. Cualquier persona que considere que la informacion publicada es incorrecta puede contactarnos para solicitar una revision.
-
-### 5.2. Sobre Responsabilidad Civil
-
-5.2.1. En la maxima medida permitida por la ley peruana, **AMPAY, sus operadores y colaboradores NO SERAN RESPONSABLES** por:
-- (a) Danos directos o indirectos derivados del uso de la informacion;
-- (b) Decisiones tomadas basandose en los datos presentados;
-- (c) Perdidas de cualquier tipo relacionadas con el sitio web;
-- (d) Inexactitudes en la informacion presentada.
-
-### 5.3. Sobre Uso Electoral
-
-5.3.1. AMPAY es una herramienta de **transparencia ciudadana**. Su uso durante periodos electorales esta sujeto a las regulaciones del JNE y ONPE sobre propaganda electoral.
-
-5.3.2. AMPAY **no es propaganda electoral** - no promueve ni ataca a ningun candidato o partido.
+3.3.2. The results should be taken as a **starting point** for your personal research and never as a definitive recommendation.
 
 ---
 
-## SECCION 6. EXENCION DE RESPONSABILIDAD COMPLETA
+## SECTION 4. DECLARATION OF NON-RECOMMENDATION
 
-### 6.1. Declaracion General
+### 4.1. Absolute Neutrality
 
-6.1.1. **AL UTILIZAR AMPAY, EL USUARIO RECONOCE Y ACEPTA QUE:**
+4.1.1. **AMPAY EXPRESSLY DECLARES** that:
 
-1. La informacion se proporciona "TAL CUAL" sin garantias de ningun tipo;
-2. Los datos pueden contener errores, omisiones o estar desactualizados;
-3. AMPAY no garantiza la exactitud, integridad o actualidad de la informacion;
-4. El Usuario debe verificar la informacion en fuentes oficiales;
-5. Las decisiones tomadas son responsabilidad exclusiva del Usuario;
-6. AMPAY no es responsable por danos derivados del uso del sitio;
-7. Los resultados de la Herramienta de Afinidad son meramente ilustrativos;
-8. AMPAY no hace recomendaciones de voto de ninguna naturaleza.
+> **We do not recommend, suggest, favor, or promote voting for any candidate, political party, electoral alliance, or political movement.**
 
-### 6.2. Renuncia a Reclamos
+4.1.2. The presentation of information about any political actor does not imply:
+- (a) Approval or disapproval of their positions;
+- (b) A recommendation or warning regarding voting for them;
+- (c) A value judgment regarding their performance;
+- (d) A preference or rejection by AMPAY.
 
-6.2.1. Al utilizar AMPAY, el Usuario **renuncia expresamente** a cualquier reclamo contra AMPAY, sus operadores o colaboradores por:
-- (a) Errores en la informacion presentada;
-- (b) Consecuencias de decisiones basadas en dicha informacion;
-- (c) Resultados de la Herramienta de Afinidad;
-- (d) Cualquier interpretacion de los datos presentados.
+### 4.2. User Responsibility
 
----
+4.2.1. **THE USER IS SOLELY RESPONSIBLE** for:
+- (a) Researching candidates and parties;
+- (b) Critically evaluating all available information;
+- (c) Forming their own political opinion;
+- (d) Making their voting decision independently;
+- (e) Assuming the consequences of their electoral decision.
 
-## SECCION 7. TEXTO PARA PAGINA DE ENTRADA (GATE)
-
-### 7.1. Texto Recomendado para el Gate
-
-El siguiente texto esta disenado para ser mostrado en la pagina de entrada del sitio web, requiriendo aceptacion del usuario antes de continuar:
+4.2.2. **AMPAY ASSUMES NO RESPONSIBILITY** for the electoral decisions that the User makes based on information from the website.
 
 ---
 
-**[INICIO DEL TEXTO DEL GATE]**
+## SECTION 5. SPECIFIC LEGAL WARNINGS
 
-## AVISO IMPORTANTE - LEA ANTES DE CONTINUAR
+### 5.1. Regarding Defamation
 
-**Bienvenido a AMPAY**
+5.1.1. AMPAY presents **factual information** obtained from public government sources. We do not express opinions, value judgments, or defamatory statements about any person.
 
-Antes de acceder, por favor lea y acepte lo siguiente:
+5.1.2. If any published information proves to be inaccurate, the error is unintentional and originates from the cited sources or from limitations in data processing.
 
-### Que es AMPAY
+5.1.3. Any person who believes that published information is incorrect may contact us to request a review.
 
-AMPAY es un proyecto ciudadano independiente que presenta informacion de fuentes publicas gubernamentales (Congreso, JNE, ONPE) sobre el desempeno de congresistas y las posiciones de partidos politicos.
+### 5.2. Regarding Civil Liability
 
-### Lo que AMPAY NO es
+5.2.1. To the fullest extent permitted by Peruvian law, **AMPAY, its operators, and collaborators SHALL NOT BE LIABLE** for:
+- (a) Direct or indirect damages arising from the use of the information;
+- (b) Decisions made based on the data presented;
+- (c) Losses of any kind related to the website;
+- (d) Inaccuracies in the information presented.
 
-- **NO somos** una entidad gubernamental
-- **NO somos** un partido politico ni tenemos agenda electoral
-- **NO hacemos** recomendaciones de voto
-- **NO brindamos** asesoria politica ni legal
+### 5.3. Regarding Electoral Use
 
-### Advertencias importantes
+5.3.1. AMPAY is a tool for **civic transparency**. Its use during electoral periods is subject to the regulations of the JNE and ONPE concerning electoral propaganda.
 
-1. **La informacion puede contener errores.** Siempre verifique los datos en las fuentes oficiales.
+5.3.2. AMPAY **is not electoral propaganda** -- it does not promote or attack any candidate or party.
 
-2. **Los resultados del cuestionario de afinidad son ilustrativos,** no son recomendaciones de voto.
+---
 
-3. **Usted es responsable de sus decisiones electorales.** AMPAY no asume responsabilidad por las consecuencias de su voto.
+## SECTION 6. COMPLETE DISCLAIMER OF LIABILITY
 
-### Fuentes de informacion
+### 6.1. General Declaration
+
+6.1.1. **BY USING AMPAY, THE USER ACKNOWLEDGES AND AGREES THAT:**
+
+1. The information is provided "AS IS" without warranties of any kind;
+2. The data may contain errors, omissions, or may be outdated;
+3. AMPAY does not guarantee the accuracy, completeness, or timeliness of the information;
+4. The User must verify information with official sources;
+5. Decisions made are the sole responsibility of the User;
+6. AMPAY is not liable for damages arising from the use of the site;
+7. The results of the Affinity Tool are merely illustrative;
+8. AMPAY does not make voting recommendations of any nature.
+
+### 6.2. Waiver of Claims
+
+6.2.1. By using AMPAY, the User **expressly waives** any claim against AMPAY, its operators, or collaborators for:
+- (a) Errors in the information presented;
+- (b) Consequences of decisions based on such information;
+- (c) Results of the Affinity Tool;
+- (d) Any interpretation of the data presented.
+
+---
+
+## SECTION 7. ENTRY PAGE (GATE) TEXT
+
+### 7.1. Recommended Text for the Gate
+
+The following text is designed to be displayed on the entry page of the website, requiring user acceptance before proceeding:
+
+---
+
+**[START OF GATE TEXT]**
+
+## IMPORTANT NOTICE - PLEASE READ BEFORE CONTINUING
+
+**Welcome to AMPAY**
+
+Before accessing, please read and accept the following:
+
+### What AMPAY Is
+
+AMPAY is an independent civic project that presents information from public government sources (Congress, JNE, ONPE) regarding the performance of members of Congress and the positions of political parties.
+
+### What AMPAY Is NOT
+
+- **We are NOT** a government entity
+- **We are NOT** a political party and we have no electoral agenda
+- **We do NOT** make voting recommendations
+- **We do NOT** provide political or legal advice
+
+### Important Warnings
+
+1. **The information may contain errors.** Always verify data with official sources.
+
+2. **The affinity questionnaire results are illustrative,** not voting recommendations.
+
+3. **You are responsible for your electoral decisions.** AMPAY assumes no responsibility for the consequences of your vote.
+
+### Sources of Information
 
 - Congreso de la Republica: https://www.congreso.gob.pe
 - JNE: https://portal.jne.gob.pe
 - ONPE: https://www.onpe.gob.pe
 
-### Aceptacion
+### Acceptance
 
-Al hacer clic en "ACEPTO Y CONTINUAR", usted declara:
+By clicking "I ACCEPT AND CONTINUE," you declare:
 
-- Haber leido y comprendido este aviso
-- Aceptar los Terminos y Condiciones completos
-- Entender que AMPAY es solo informativo
-- Asumir responsabilidad por sus decisiones
+- Having read and understood this notice
+- Accepting the full Terms and Conditions
+- Understanding that AMPAY is informational only
+- Assuming responsibility for your decisions
 
-[BOTON: ACEPTO Y CONTINUAR]
+[BUTTON: I ACCEPT AND CONTINUE]
 
-[ENLACE: Leer Terminos y Condiciones completos]
+[LINK: Read full Terms and Conditions]
 
-**[FIN DEL TEXTO DEL GATE]**
-
----
-
-## SECCION 8. CONTACTO Y CORRECCIONES
-
-### 8.1. Reporte de Errores
-
-8.1.1. Si encuentra informacion que considera incorrecta, puede reportarla a traves del repositorio de GitHub del proyecto.
-
-8.1.2. Haremos nuestro mejor esfuerzo para verificar y corregir errores reportados en un plazo razonable.
-
-### 8.2. Informacion de Contacto
-
-**AMPAY - Plataforma de Transparencia Electoral**
-Operador: JDRV-space
-Repositorio: https://github.com/JDRV-space
+**[END OF GATE TEXT]**
 
 ---
 
-## SECCION 9. FECHA Y VIGENCIA
+## SECTION 8. CONTACT AND CORRECTIONS
 
-9.1. Este Aviso Legal entra en vigencia el 21 de enero de 2026.
+### 8.1. Error Reporting
 
-9.2. AMPAY se reserva el derecho de modificar este Aviso Legal en cualquier momento.
+8.1.1. If you find information that you believe is incorrect, you may report it through the project's GitHub repository.
 
-9.3. Las modificaciones entraran en vigencia inmediatamente despues de su publicacion.
+8.1.2. We will make our best effort to verify and correct reported errors within a reasonable timeframe.
 
----
+### 8.2. Contact Information
 
-## DECLARACION FINAL
-
-**AMPAY es una herramienta de transparencia ciudadana.** Creemos que el acceso a la informacion publica fortalece la democracia. Sin embargo, la responsabilidad de informarse adecuadamente y tomar decisiones electorales fundamentadas recae exclusivamente en cada ciudadano.
-
-**Investigue. Compare. Decida por usted mismo.**
+**AMPAY - Electoral Transparency Platform**
+Operator: JDRV-space
+Repository: https://github.com/JDRV-space
 
 ---
 
-**Documento elaborado el 21 de enero de 2026**
+## SECTION 9. DATE AND VALIDITY
 
-**AMPAY - Transparencia Electoral para el Peru**
+9.1. This Legal Disclaimer becomes effective on January 21, 2026.
 
-*Este documento forma parte del marco legal de AMPAY junto con los Terminos y Condiciones, la Politica de Privacidad y el documento de Copyright.*
+9.2. AMPAY reserves the right to modify this Legal Disclaimer at any time.
+
+9.3. Modifications shall become effective immediately upon publication.
 
 ---
 
-## Referencias
+## FINAL DECLARATION
 
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+**AMPAY is a civic transparency tool.** We believe that access to public information strengthens democracy. However, the responsibility to become adequately informed and to make well-founded electoral decisions rests solely with each citizen.
+
+**Research. Compare. Decide for yourself.**
+
+---
+
+**Document prepared on January 21, 2026**
+
+**AMPAY - Electoral Transparency for Peru**
+
+*This document forms part of the AMPAY legal framework together with the Terms and Conditions, the Privacy Policy, and the Copyright document.*
+
+---
+
+## References
+
+For all academic references and sources used in AMPAY, please consult the centralized document:
+[Bibliography and Sources](/referencia/fuentes)

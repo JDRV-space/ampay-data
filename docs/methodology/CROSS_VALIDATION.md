@@ -1,235 +1,235 @@
-# Validacion Cruzada de AMPAYs
+# Cross-Validation of AMPAYs
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
+**Date:** 2026-01-21
+**Status:** ACTIVE
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-Cada AMPAY detectado automaticamente pasa por un proceso de validacion cruzada antes de publicarse. Este documento describe el proceso de verificacion, criterios de aceptacion, y ejemplos de falsos positivos rechazados.
+Every AMPAY detected automatically undergoes a cross-validation process before publication. This document describes the verification process, acceptance criteria, and examples of rejected false positives.
 
 ---
 
-## 1. Proceso de Validacion
+## 1. Validation Process
 
-### 1.1 Pipeline de Validacion
+### 1.1 Validation Pipeline
 
 ```
 ┌─────────────────────────────────────────┐
-│      AMPAY DETECTADO AUTOMATICAMENTE    │
+│      AUTOMATICALLY DETECTED AMPAY       │
 └────────────────────┬────────────────────┘
                      │
                      ▼
          ┌───────────────────────┐
-         │  VERIFICACION FUENTES │
-         │  (promesa + votos)    │
+         │  SOURCE VERIFICATION  │
+         │  (promise + votes)    │
          └───────────┬───────────┘
                      │
                      ▼
          ┌───────────────────────┐
-         │  ANALISIS SEMANTICO   │
-         │  (conexion logica)    │
+         │  SEMANTIC ANALYSIS    │
+         │  (logical connection) │
          └───────────┬───────────┘
                      │
                      ▼
          ┌───────────────────────┐
-         │  BUSQUEDA DE CONTEXTO │
-         │  (explicaciones)      │
+         │  CONTEXT SEARCH       │
+         │  (explanations)       │
          └───────────┬───────────┘
                      │
                      ▼
          ┌───────────────────────┐
-         │  DECISION FINAL       │
-         │  (aprobar/rechazar)   │
+         │  FINAL DECISION       │
+         │  (approve/reject)     │
          └───────────────────────┘
 ```
 
-### 1.2 Criterios de Validacion
+### 1.2 Validation Criteria
 
-| Criterio | Pregunta | Peso |
-|----------|----------|------|
-| **Fuente verificable** | ¿Existe la promesa en el PDF de JNE? | Obligatorio |
-| **Voto verificable** | ¿El dato de votacion es correcto? | Obligatorio |
-| **Conexion semantica** | ¿La ley se relaciona con la promesa? | Alto |
-| **Patron consistente** | ¿Hay multiples votos, no solo uno? | Medio |
-| **Sin contexto exculpatorio** | ¿No hay explicacion razonable? | Medio |
-
----
-
-## 2. Verificacion de Fuentes
-
-### 2.1 Verificar Promesa
-
-**Pasos:**
-1. Obtener PDF original del JNE
-2. Localizar pagina citada
-3. Confirmar texto exacto
-4. Verificar que es promesa (no contexto)
-
-**Checklist:**
-- [ ] PDF accesible en URL citada
-- [ ] Pagina correcta
-- [ ] Texto coincide
-- [ ] Es compromiso, no descripcion
-
-### 2.2 Verificar Votos
-
-**Pasos:**
-1. Consultar dataset openpolitica
-2. Buscar por fecha + asunto
-3. Confirmar posicion del partido
-4. Verificar que es voto sustantivo
-
-**Checklist:**
-- [ ] Votacion existe en dataset
-- [ ] Fecha correcta
-- [ ] Asunto coincide
-- [ ] Posicion del partido correcta
-- [ ] No es voto procedural
+| Criterion | Question | Weight |
+|-----------|----------|--------|
+| **Verifiable source** | Does the promise exist in the JNE PDF? | Mandatory |
+| **Verifiable vote** | Is the voting data correct? | Mandatory |
+| **Semantic connection** | Is the law related to the promise? | High |
+| **Consistent pattern** | Are there multiple votes, not just one? | Medium |
+| **No exculpatory context** | Is there no reasonable explanation? | Medium |
 
 ---
 
-## 3. Analisis Semantico
+## 2. Source Verification
 
-### 3.1 Conexion Promesa-Ley
+### 2.1 Verify Promise
 
-**Pregunta clave:** ¿Votar SI/NO en esta ley afecta directamente el cumplimiento de la promesa?
+**Steps:**
+1. Obtain the original PDF from JNE
+2. Locate the cited page
+3. Confirm exact text
+4. Verify it is a promise (not context)
 
-**Matriz de Conexion:**
+**Checklist:**
+- [ ] PDF accessible at cited URL
+- [ ] Correct page
+- [ ] Text matches
+- [ ] It is a commitment, not a description
 
-| Promesa | Ley | Voto | Conexion | Veredicto |
+### 2.2 Verify Votes
+
+**Steps:**
+1. Query the OpenPolitica dataset
+2. Search by date + subject
+3. Confirm party position
+4. Verify it is a substantive vote
+
+**Checklist:**
+- [ ] Vote exists in dataset
+- [ ] Correct date
+- [ ] Subject matches
+- [ ] Party position is correct
+- [ ] It is not a procedural vote
+
+---
+
+## 3. Semantic Analysis
+
+### 3.1 Promise-Law Connection
+
+**Key question:** Does voting YES/NO on this law directly affect fulfillment of the promise?
+
+**Connection Matrix:**
+
+| Promise | Law | Vote | Connection | Verdict |
 |---------|-----|------|----------|-----------|
-| "Eliminar exoneraciones" | Ley que elimina exoneracion X | NO | DIRECTA | AMPAY |
-| "Eliminar exoneraciones" | Ley que prorroga exoneracion X | SI | DIRECTA (inversa) | AMPAY |
-| "Eliminar exoneraciones" | Ley de presupuesto general | NO | INDIRECTA | No AMPAY |
+| "Eliminate exemptions" | Law eliminating exemption X | NO | DIRECT | AMPAY |
+| "Eliminate exemptions" | Law extending exemption X | YES | DIRECT (inverse) | AMPAY |
+| "Eliminate exemptions" | General budget law | NO | INDIRECT | Not AMPAY |
 
-### 3.2 Errores Semanticos Comunes
+### 3.2 Common Semantic Errors
 
-| Error | Ejemplo | Por que es Error |
-|-------|---------|------------------|
-| **Falso homonimo** | Promesa "seguridad ciudadana" vs Ley "seguridad alimentaria" | Diferentes conceptos |
-| **Categoria sin especificidad** | Promesa "mejorar salud" vs Cualquier ley de salud | Promesa muy vaga |
-| **Oposicion tactica** | Votar NO por enmienda especifica, no por concepto | Contexto perdido |
-
----
-
-## 4. Busqueda de Contexto
-
-### 4.1 Fuentes de Contexto
-
-| Fuente | Que Buscar | Donde |
-|--------|------------|-------|
-| Prensa | Declaraciones del partido sobre el voto | Google News |
-| Actas | Fundamentacion de voto en sesion | Congreso.gob.pe |
-| Comunicados | Posicion oficial del partido | Redes sociales |
-
-### 4.2 Contexto Exculpatorio Valido
-
-| Contexto | Ejemplo | Resultado |
-|----------|---------|-----------|
-| **Oposicion por forma, no fondo** | "Votamos NO porque la ley tenia errores tecnicos" | Evaluar caso |
-| **Cambio de circunstancias** | Promesa 2021, realidad 2023 muy diferente | Evaluar caso |
-| **Ley mixta** | Ley tiene partes alineadas y partes contradictorias | No AMPAY automatico |
-
-### 4.3 Contexto NO Exculpatorio
-
-| Excusa Invalida | Por que es Invalida |
-|-----------------|---------------------|
-| "Coherencia ideologica" | Si contradice ideologia, no debio prometerse |
-| "Conveniencia politica" | Es precisamente lo que AMPAY detecta |
-| "No habia recursos" | Promesas deben ser realistas |
-| "La oposicion lo propuso" | El origen no invalida el contenido |
+| Error | Example | Why It Is an Error |
+|-------|---------|-------------------|
+| **False homonym** | Promise "citizen security" vs. Law "food security" | Different concepts |
+| **Category without specificity** | Promise "improve healthcare" vs. Any health law | Promise too vague |
+| **Tactical opposition** | Voting NO due to a specific amendment, not the concept | Context lost |
 
 ---
 
-## 5. Ejemplos de Falsos Positivos Rechazados
+## 4. Context Search
 
-### 5.1 Caso: FP-MYPE-NO
+### 4.1 Context Sources
 
-```
-AMPAY DETECTADO:
-- Promesa: "Formalizar un millon de MYPES"
-- Ley: "Ley de pago de facturas MYPE"
-- Voto FP: NO
+| Source | What to Look For | Where |
+|--------|-----------------|-------|
+| Press | Party statements about the vote | Google News |
+| Minutes | Vote justification in session | Congreso.gob.pe |
+| Communiques | Official party position | Social media |
 
-INVESTIGACION:
-- FP voto NO en esta ley especifica
-- PERO voto SI en otras 25 leyes MYPE
-- Este NO fue por oposicion a clausula de penalidades
+### 4.2 Valid Exculpatory Context
 
-DECISION: RECHAZADO
-RAZON: Patron general es de apoyo (25 SI vs 1 NO)
-```
+| Context | Example | Result |
+|---------|---------|--------|
+| **Opposition on form, not substance** | "We voted NO because the law had technical errors" | Evaluate case |
+| **Changed circumstances** | Promise made in 2021, very different reality in 2023 | Evaluate case |
+| **Mixed legislation** | Law has both aligned and contradictory provisions | Not an automatic AMPAY |
 
-### 5.2 Caso: PL-EXONERACION-SI
+### 4.3 Non-Exculpatory Context
 
-```
-AMPAY DETECTADO:
-- Promesa: "Eliminar exoneraciones tributarias"
-- Ley: "Prorrogar exoneracion Amazonia"
-- Voto PL: SI
-
-INVESTIGACION:
-- PL tiene base electoral en Amazonia
-- La exoneracion beneficia a pequenos productores
-- PL distingue entre exoneraciones "corporativas" y "populares"
-
-DECISION: ACEPTADO con nota
-RAZON: Contradiccion real pero con matiz (HIGH → MEDIUM confidence)
-```
-
-### 5.3 Caso: RP-EXPORTACION-NO
-
-```
-AMPAY DETECTADO:
-- Promesa: "Fomentar exportaciones"
-- Ley: "Comision investigadora Puerto Chancay"
-- Voto RP: NO
-
-INVESTIGACION:
-- Conexion semantica: Puerto = exportaciones
-- Pero: Comision investigadora ≠ promover exportaciones
-- Votar NO en investigar no es votar NO en exportar
-
-DECISION: RECHAZADO
-RAZON: Conexion semantica debil. Investigar infraestructura no es lo mismo que oponerse a ella.
-```
-
-**Nota:** Este caso fue posteriormente reclasificado como AMPAY valido despues de revision adicional.
+| Invalid Excuse | Why It Is Invalid |
+|----------------|-------------------|
+| "Ideological coherence" | If it contradicts the ideology, it should not have been promised |
+| "Political convenience" | This is precisely what AMPAY detects |
+| "Resources were unavailable" | Promises should be realistic |
+| "The opposition proposed it" | The origin does not invalidate the content |
 
 ---
 
-## 6. Metricas de Validacion
+## 5. Examples of Rejected False Positives
 
-### 6.1 Resultados del Proceso
+### 5.1 Case: FP-MYPE-NO
 
-| Metrica | Valor |
-|---------|-------|
-| AMPAYs detectados automaticamente | 23 |
-| AMPAYs aprobados tras validacion cruzada | 8 |
-| AMPAYs rechazados en validacion cruzada | 15 |
-| AMPAYs eliminados en auditoria manual | 2 |
-| **AMPAYs finales confirmados** | **6** |
-| Tasa de falsos positivos (validacion) | 65.2% |
+```
+DETECTED AMPAY:
+- Promise: "Formalize one million MSMEs"
+- Law: "MSME invoice payment law"
+- FP vote: NO
 
-> **Nota de auditoria:** De los 8 AMPAYs aprobados en validacion cruzada, 2 fueron posteriormente eliminados durante la auditoria manual final (AMPAY-006 y AMPAY-007 de Alianza para el Progreso, numeracion original pre-auditoria) por interpretacion incorrecta de votos. El total final confirmado es 6 AMPAYs.
+INVESTIGATION:
+- FP voted NO on this specific law
+- BUT voted YES on 25 other MSME laws
+- This NO was due to opposition to a penalty clause
 
-### 6.2 Razones de Rechazo
+DECISION: REJECTED
+REASON: Overall pattern is supportive (25 YES vs 1 NO)
+```
 
-| Razon | Cantidad | % |
-|-------|----------|---|
-| Conexion semantica debil | 7 | 46.7% |
-| Patron no consistente (1 solo voto) | 4 | 26.7% |
-| Contexto exculpatorio valido | 2 | 13.3% |
-| Error en datos fuente | 2 | 13.3% |
+### 5.2 Case: PL-EXONERACION-SI
+
+```
+DETECTED AMPAY:
+- Promise: "Eliminate tax exemptions"
+- Law: "Extend Amazonia exemption"
+- PL vote: YES
+
+INVESTIGATION:
+- PL has an electoral base in the Amazon region
+- The exemption benefits small producers
+- PL distinguishes between "corporate" and "popular" exemptions
+
+DECISION: ACCEPTED with note
+REASON: Real contradiction but with nuance (HIGH -> MEDIUM confidence)
+```
+
+### 5.3 Case: RP-EXPORTACION-NO
+
+```
+DETECTED AMPAY:
+- Promise: "Promote exports"
+- Law: "Investigative commission on Puerto Chancay"
+- RP vote: NO
+
+INVESTIGATION:
+- Semantic connection: Port = exports
+- However: Investigative commission != promoting exports
+- Voting NO on investigating is not voting NO on exporting
+
+DECISION: REJECTED
+REASON: Weak semantic connection. Investigating infrastructure is not the same as opposing it.
+```
+
+**Note:** This case was subsequently reclassified as a valid AMPAY after additional review.
 
 ---
 
-## 7. Documentacion de Revision
+## 6. Validation Metrics
 
-### 7.1 Formato de Registro
+### 6.1 Process Results
+
+| Metric | Value |
+|--------|-------|
+| Automatically detected AMPAYs | 23 |
+| AMPAYs approved after cross-validation | 8 |
+| AMPAYs rejected in cross-validation | 15 |
+| AMPAYs eliminated in manual audit | 2 |
+| **Final confirmed AMPAYs** | **6** |
+| False positive rate (validation) | 65.2% |
+
+> **Audit note:** Of the 8 AMPAYs approved in cross-validation, 2 were subsequently eliminated during the final manual audit (AMPAY-006 and AMPAY-007 from Alianza para el Progreso, original pre-audit numbering) due to incorrect vote interpretation. The final confirmed total is 6 AMPAYs.
+
+### 6.2 Rejection Reasons
+
+| Reason | Count | % |
+|--------|-------|---|
+| Weak semantic connection | 7 | 46.7% |
+| Inconsistent pattern (single vote only) | 4 | 26.7% |
+| Valid exculpatory context | 2 | 13.3% |
+| Error in source data | 2 | 13.3% |
+
+---
+
+## 7. Review Documentation
+
+### 7.1 Record Format
 
 ```json
 {
@@ -247,7 +247,7 @@ RAZON: Conexion semantica debil. Investigar infraestructura no es lo mismo que o
 }
 ```
 
-### 7.2 Archivo de Auditoria
+### 7.2 Audit File
 
 ```
 data/02_output/ampays.json
@@ -255,51 +255,51 @@ data/02_output/ampays.json
 
 ---
 
-## 8. Proceso de Apelacion
+## 8. Appeals Process
 
-### 8.1 Como Apelar un AMPAY
+### 8.1 How to Appeal an AMPAY
 
-Si un partido o ciudadano cree que un AMPAY publicado es incorrecto:
+If a party or citizen believes a published AMPAY is incorrect:
 
-1. Abrir issue en GitHub: `github.com/ampay/issues`
-2. Proveer evidencia de contexto exculpatorio
-3. Equipo AMPAY revisa en 7 dias
-4. Decision documentada publicamente
+1. Open an issue on GitHub: `github.com/ampay/issues`
+2. Provide evidence of exculpatory context
+3. AMPAY team reviews within 7 days
+4. Decision documented publicly
 
-### 8.2 Criterios de Apelacion Exitosa
+### 8.2 Criteria for a Successful Appeal
 
-| Evidencia | Resultado |
-|-----------|-----------|
-| Error factual demostrado | Correccion inmediata |
-| Contexto exculpatorio nuevo | Re-evaluacion |
-| Interpretacion alternativa razonable | Agregar nota, mantener AMPAY |
-| Opinion sin evidencia | Rechazar apelacion |
-
----
-
-## 9. Limitaciones
-
-1. **Sesgo de revisor:** Validacion manual puede tener sesgos
-2. **Informacion asimetrica:** Partidos tienen mas contexto que revisores
-3. **Tiempo limitado:** No se puede investigar exhaustivamente cada caso
-4. **Fuentes incompletas:** Algunas declaraciones no estan documentadas
+| Evidence | Outcome |
+|----------|---------|
+| Demonstrated factual error | Immediate correction |
+| New exculpatory context | Re-evaluation |
+| Reasonable alternative interpretation | Add note, maintain AMPAY |
+| Opinion without evidence | Reject appeal |
 
 ---
 
-## 10. Archivos Relacionados
+## 9. Limitations
 
-| Archivo | Contenido |
-|---------|-----------|
-| `data/02_output/ampays.json` | AMPAYs aprobados |
-| `data/02_output/ampays.json` | AMPAYs aprobados (includes audit log) |
-
----
-
-## Referencias
-
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+1. **Reviewer bias:** Manual validation may be subject to biases
+2. **Information asymmetry:** Parties possess more context than reviewers
+3. **Limited time:** Exhaustive investigation of every case is not feasible
+4. **Incomplete sources:** Some statements are not documented
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+## 10. Related Files
+
+| File | Content |
+|------|---------|
+| `data/02_output/ampays.json` | Approved AMPAYs |
+| `data/02_output/ampays.json` | Approved AMPAYs (includes audit log) |
+
+---
+
+## References
+
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)
+
+---
+
+*Last updated: 2026-01-21*

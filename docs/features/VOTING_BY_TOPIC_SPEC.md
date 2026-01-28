@@ -1,4 +1,4 @@
-# Feature Spec: Por Tema
+# Feature Spec: By Topic
 
 *Created: 2026-01-21*
 
@@ -8,7 +8,7 @@ Browse congressional votes (2021-2024) filtered by topic. User selects a categor
 
 ## User Value
 
-**Question answered:** "¿Cómo votaron los partidos en temas de [salud/economía/seguridad]?"
+**Question answered:** "How did parties vote on [health/economy/security] issues?"
 
 **Use case:** User wants to see actual voting behavior, not just promises. Complements the quiz (promises) with real data (votes).
 
@@ -31,26 +31,26 @@ Browse congressional votes (2021-2024) filtered by topic. User selects a categor
 
 ```
 ┌─────────────────────────────────────┐
-│  VOTACIONES POR TEMA                │
+│  VOTES BY TOPIC                     │
 │                                     │
-│  Selecciona un tema:                │
+│  Select a topic:                    │
 │                                     │
-│  [Salud]        164 votaciones      │
-│  [Economía]     226 votaciones      │
-│  [Seguridad]    161 votaciones      │
-│  [Educación]    180 votaciones      │
-│  [Empleo]       116 votaciones      │
-│  [Agricultura]  106 votaciones      │
-│  [Transporte]    97 votaciones      │
-│  [Ambiente]      77 votaciones      │
-│  [Fiscal]        78 votaciones      │
-│  [Agua]          57 votaciones      │
-│  [Energía]       48 votaciones      │
-│  [Vivienda]      42 votaciones      │
-│  [Minería]       19 votaciones      │
+│  [Salud (Health)]       164 votes   │
+│  [Economia (Economy)]   226 votes   │
+│  [Seguridad (Security)] 161 votes   │
+│  [Educacion (Education)]180 votes   │
+│  [Empleo (Employment)]  116 votes   │
+│  [Agricultura (Agriculture)] 106    │
+│  [Transporte (Transport)]    97     │
+│  [Ambiente (Environment)]    77     │
+│  [Fiscal (Fiscal Policy)]    78     │
+│  [Agua (Water)]              57     │
+│  [Energia (Energy)]          48     │
+│  [Vivienda (Housing)]        42     │
+│  [Mineria (Mining)]          19     │
 │                                     │
-│  [Justicia - 776 votaciones]        │
-│  ⚠️ Incluye procedimientos internos │
+│  [Justicia (Justice) - 776 votes]   │
+│  ⚠️ Includes internal procedures    │
 └─────────────────────────────────────┘
 ```
 
@@ -58,25 +58,25 @@ Browse congressional votes (2021-2024) filtered by topic. User selects a categor
 
 ```
 ┌─────────────────────────────────────┐
-│  ← SALUD (164 votaciones)           │
+│  ← SALUD (HEALTH) (164 votes)      │
 │                                     │
-│  Filtrar: [Sustantivo ▼] [2023 ▼]   │
+│  Filter: [Substantive ▼] [2023 ▼]  │
 │                                     │
 │  ┌─────────────────────────────────┐│
-│  │ Ley de Fortalecimiento del SIS ││
-│  │ 15 Mar 2023 · Aprobado          ││
-│  │ Votación sustantiva             ││
-│  │                        [Ver →]  ││
+│  │ SIS Strengthening Act          ││
+│  │ 15 Mar 2023 · Approved          ││
+│  │ Substantive vote                ││
+│  │                        [View →] ││
 │  └─────────────────────────────────┘│
 │                                     │
 │  ┌─────────────────────────────────┐│
-│  │ Reforma del Sistema de Salud   ││
-│  │ 08 Nov 2022 · Rechazado         ││
-│  │ Votación sustantiva             ││
-│  │                        [Ver →]  ││
+│  │ Healthcare System Reform       ││
+│  │ 08 Nov 2022 · Rejected          ││
+│  │ Substantive vote                ││
+│  │                        [View →] ││
 │  └─────────────────────────────────┘│
 │                                     │
-│  [Cargar más...]                    │
+│  [Load more...]                     │
 └─────────────────────────────────────┘
 ```
 
@@ -84,31 +84,31 @@ Browse congressional votes (2021-2024) filtered by topic. User selects a categor
 
 ```
 ┌─────────────────────────────────────┐
-│  ← SALUD                            │
+│  ← SALUD (HEALTH)                   │
 │                                     │
-│  LEY DE FORTALECIMIENTO DEL SIS    │
-│  15 de marzo de 2023                │
-│  Resultado: APROBADO (78-42-10)     │
+│  SIS STRENGTHENING ACT             │
+│  March 15, 2023                     │
+│  Result: APPROVED (78-42-10)        │
 │                                     │
 │  ┌─────────────────────────────────┐│
-│  │ PARTIDO          │ VOTO         ││
-│  │──────────────────│──────────────││
-│  │ Fuerza Popular   │ ✗ En contra  ││
-│  │ Perú Libre       │ ✓ A favor    ││
-│  │ Renovación Pop.  │ ✓ A favor    ││
-│  │ Avanza País      │ ✗ En contra  ││
-│  │ Alianza Progreso │ ✓ A favor    ││
-│  │ Somos Perú       │ ○ Abstención ││
-│  │ Podemos Perú     │ — Ausente    ││
-│  │ Juntos por Perú  │ ✓ A favor    ││
-│  │ Partido Morado   │ ✓ A favor    ││
+│  │ PARTY              │ VOTE       ││
+│  │────────────────────│────────────││
+│  │ Fuerza Popular     │ ✗ Against  ││
+│  │ Peru Libre         │ ✓ In favor ││
+│  │ Renovacion Popular │ ✓ In favor ││
+│  │ Avanza Pais        │ ✗ Against  ││
+│  │ Alianza Progreso   │ ✓ In favor ││
+│  │ Somos Peru         │ ○ Abstain  ││
+│  │ Podemos Peru       │ — Absent   ││
+│  │ Juntos por el Peru │ ✓ In favor ││
+│  │ Partido Morado     │ ✓ In favor ││
 │  └─────────────────────────────────┘│
 │                                     │
-│  [Ver detalle completo en Congreso] │
+│  [View full detail on Congress.gob] │
 │                                     │
 │  ───────────────────────────────────│
-│  Esto es información pública del    │
-│  Congreso de la República.          │
+│  This is public information from    │
+│  the Congress of the Republic.      │
 └─────────────────────────────────────┘
 ```
 
@@ -118,11 +118,11 @@ Browse congressional votes (2021-2024) filtered by topic. User selects a categor
 
 | Filter | Options |
 |--------|---------|
-| **vote_type** | Sustantivo (leyes reales), Declarativo, Procedural, Todos |
-| **year** | 2021, 2022, 2023, 2024, Todos |
-| **result** | Aprobado, Rechazado, Todos |
+| **vote_type** | Sustantivo (Substantive - real laws), Declarativo (Declaratory), Procedural, All |
+| **year** | 2021, 2022, 2023, 2024, All |
+| **result** | Aprobado (Approved), Rechazado (Rejected), All |
 
-**Default:** Sustantivo only (hide procedural noise)
+**Default:** Substantive only (hide procedural noise)
 
 ---
 
@@ -156,25 +156,25 @@ Congressional groups → Our party slugs:
 | Grupo Parlamentario | party_slug |
 |---------------------|------------|
 | FUERZA POPULAR | fuerza_popular |
-| PERÚ LIBRE | peru_libre |
-| RENOVACIÓN POPULAR | renovacion_popular |
-| AVANZA PAÍS | avanza_pais |
+| PERU LIBRE | peru_libre |
+| RENOVACION POPULAR | renovacion_popular |
+| AVANZA PAIS | avanza_pais |
 | ALIANZA PARA EL PROGRESO | alianza_progreso |
-| SOMOS PERÚ | somos_peru |
-| PODEMOS PERÚ | podemos_peru |
-| JUNTOS POR EL PERÚ | juntos_peru |
+| SOMOS PERU | somos_peru |
+| PODEMOS PERU | podemos_peru |
+| JUNTOS POR EL PERU | juntos_peru |
 | PARTIDO MORADO | partido_morado |
 
-**Note:** Some congresspeople changed parties mid-term. Use grupo_parlamentario at time of vote.
+**Note:** Some members of Congress changed parties mid-term. Use grupo_parlamentario at time of vote.
 
 ---
 
 ## Edge Cases
 
-1. **Party didn't exist yet** - Show "N/A" or hide row
-2. **Party had no members present** - Show "— Ausentes"
-3. **Mixed votes within party** - Show majority + "(dividido)"
-4. **Low confidence categorization** - Flag with "⚠️ Categorización aproximada"
+1. **Party did not exist yet** - Show "N/A" or hide row
+2. **Party had no members present** - Show "— Absent"
+3. **Mixed votes within party** - Show majority + "(divided)"
+4. **Low confidence categorization** - Flag with "⚠️ Approximate categorization"
 
 ---
 
@@ -184,20 +184,20 @@ After quiz results, show:
 
 ```
 ┌─────────────────────────────────────┐
-│  Tus respuestas se alinean con:     │
-│  JUNTOS POR EL PERÚ (82%)           │
+│  Your answers align with:           │
+│  JUNTOS POR EL PERU (82%)          │
 │                                     │
-│  [Ver cómo votaron en el Congreso →]│
+│  [See how they voted in Congress →] │
 └─────────────────────────────────────┘
 ```
 
-Links to "Por Tema" filtered by quiz topics (salud, economía, etc.)
+Links to "By Topic" filtered by quiz topics (health, economy, etc.)
 
 ---
 
 ## Technical Notes
 
-- **Data size:** 2226 votes × ~130 congresspeople = ~290K vote records
+- **Data size:** 2226 votes x ~130 members of Congress = ~290K vote records
 - **Caching:** Pre-aggregate party votes per vote_id, store in JSON
 - **Performance:** Lazy load vote details on click
 
@@ -211,7 +211,7 @@ Links to "Por Tema" filtered by quiz topics (salud, economía, etc.)
 - Party vote breakdown per vote
 
 **Exclude (v2):**
-- Individual congressperson lookup
+- Individual member of Congress lookup
 - Vote comparison across time
 - Export functionality
 
@@ -220,7 +220,7 @@ Links to "Por Tema" filtered by quiz topics (salud, economía, etc.)
 ## Disclaimer (required)
 
 ```
-Los datos provienen del portal del Congreso de la República.
-AMPAY presenta esta información sin modificaciones.
-Esto no es una recomendación de voto.
+Data sourced from the portal of the Congress of the Republic.
+AMPAY presents this information without modification.
+This is not a voting recommendation.
 ```

@@ -1,65 +1,65 @@
-# Filtrado de Votos Parlamentarios
+# Filtering of Parliamentary Votes
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
+**Date:** 2026-01-21
+**Status:** ACTIVE
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-No todos los votos del Congreso tienen igual relevancia para analisis politico. Este documento describe los criterios para filtrar votos sustantivos de procedimentales y declarativos.
-
----
-
-## 1. Tipos de Votos
-
-### 1.1 Clasificacion Tripartita
-
-| Tipo | Definicion | Incluido en Analisis |
-|------|------------|---------------------|
-| **Sustantivo** | Votos sobre legislacion con impacto politico real | **SI** |
-| **Procedural** | Votos sobre mecanica legislativa | NO |
-| **Declarativo** | Votos simbolicos sin efecto legal | NO |
-
-### 1.2 Ejemplos por Tipo
-
-**SUSTANTIVO (incluir):**
-```
-- "Ley que modifica el Codigo Penal"
-- "Presupuesto del Sector Publico 2024"
-- "Ley de reforma del sistema de pensiones"
-- "Credito suplementario para el sector salud"
-```
-
-**PROCEDURAL (excluir):**
-```
-- "Mocion de orden del dia"
-- "Aprobacion del acta de sesion anterior"
-- "Cuestion previa"
-- "Cuestion de orden"
-- "Dispensa de segunda votacion"
-- "Ampliacion de agenda"
-```
-
-**DECLARATIVO (excluir):**
-```
-- "Declarar de interes nacional el Festival de X"
-- "Declarar heroe de la patria a Y"
-- "Saludo por el dia de Z"
-- "Reconocimiento a la labor de..."
-```
+Not all congressional votes carry equal relevance for political analysis. This document describes the criteria for filtering substantive votes from procedural and declarative ones.
 
 ---
 
-## 2. Criterios de Filtrado
+## 1. Vote Types
 
-### 2.1 Reglas de Exclusion Automatica
+### 1.1 Tripartite Classification
 
-**Por palabras clave en asunto:**
+| Type | Definition | Included in Analysis |
+|------|-----------|---------------------|
+| **Substantive** | Votes on legislation with real political impact | **YES** |
+| **Procedural** | Votes on legislative mechanics | NO |
+| **Declarative** | Symbolic votes with no legal effect | NO |
+
+### 1.2 Examples by Type
+
+**SUBSTANTIVE (include):**
+```
+- "Law amending the Penal Code"
+- "Public Sector Budget 2024"
+- "Pension system reform law"
+- "Supplementary credit for the health sector"
+```
+
+**PROCEDURAL (exclude):**
+```
+- "Order of the day motion"
+- "Approval of previous session minutes"
+- "Preliminary question"
+- "Point of order"
+- "Waiver of second vote"
+- "Agenda expansion"
+```
+
+**DECLARATIVE (exclude):**
+```
+- "Declare the Festival of X to be of national interest"
+- "Declare Y a national hero"
+- "Greeting on the day of Z"
+- "Recognition of the work of..."
+```
+
+---
+
+## 2. Filtering Criteria
+
+### 2.1 Automatic Exclusion Rules
+
+**By keywords in subject:**
 
 ```python
-EXCLUIR_SI_CONTIENE = [
+EXCLUDE_IF_CONTAINS = [
     # Procedural
     "orden del dia",
     "acta de sesion",
@@ -70,7 +70,7 @@ EXCLUIR_SI_CONTIENE = [
     "reconsideracion",
     "votacion en bloque",
 
-    # Declarativo
+    # Declarative
     "declarar de interes nacional",
     "declarar heroe",
     "declarar patrimonio",
@@ -84,12 +84,12 @@ EXCLUIR_SI_CONTIENE = [
 ]
 ```
 
-### 2.2 Reglas de Inclusion Forzada
+### 2.2 Forced Inclusion Rules
 
-Aunque contenga palabras de exclusion, INCLUIR si:
+Even if exclusion keywords are present, INCLUDE if:
 
 ```python
-INCLUIR_SI_CONTIENE = [
+INCLUDE_IF_CONTAINS = [
     "ley",
     "proyecto de ley",
     "presupuesto",
@@ -101,218 +101,218 @@ INCLUIR_SI_CONTIENE = [
 ]
 ```
 
-### 2.3 Matriz de Decision
+### 2.3 Decision Matrix
 
-| Contiene Exclusion | Contiene Inclusion | Resultado |
-|--------------------|-------------------|-----------|
-| NO | SI | **INCLUIR** |
-| NO | NO | **INCLUIR** (default) |
-| SI | NO | **EXCLUIR** |
-| SI | SI | **REVISION MANUAL** |
+| Contains Exclusion | Contains Inclusion | Result |
+|--------------------|--------------------|--------|
+| NO | YES | **INCLUDE** |
+| NO | NO | **INCLUDE** (default) |
+| YES | NO | **EXCLUDE** |
+| YES | YES | **MANUAL REVIEW** |
 
 ---
 
-## 3. Proceso de Clasificacion
+## 3. Classification Process
 
-### 3.1 Pipeline Automatico
+### 3.1 Automated Pipeline
 
 ```
 ┌─────────────────────────────────────────┐
-│         ASUNTO DEL VOTO                 │
+│         VOTE SUBJECT                    │
 └────────────────────┬────────────────────┘
                      │
                      ▼
          ┌───────────────────────┐
-         │  REGLAS DE EXCLUSION  │
-         │  (palabras clave)     │
+         │  EXCLUSION RULES      │
+         │  (keywords)           │
          └───────────┬───────────┘
                      │
         ┌────────────┼────────────┐
         │            │            │
-   No match     Match excl   Match ambos
+   No match     Excl match   Both match
         │            │            │
         ▼            │            ▼
    ┌─────────┐       │      ┌───────────┐
-   │ INCLUIR │       │      │ REVISION  │
-   │ como    │       │      │ MANUAL    │
-   │sustantivo│      │      └───────────┘
+   │ INCLUDE │       │      │ MANUAL    │
+   │ as      │       │      │ REVIEW    │
+   │substantive│     │      └───────────┘
    └─────────┘       │
                      ▼
          ┌───────────────────────┐
-         │  REGLAS DE INCLUSION  │
-         │  (palabras clave)     │
+         │  INCLUSION RULES      │
+         │  (keywords)           │
          └───────────┬───────────┘
                      │
         ┌────────────┴────────────┐
         │                         │
-   Match incl               No match
+   Incl match               No match
         │                         │
         ▼                         ▼
    ┌─────────┐              ┌─────────┐
-   │ INCLUIR │              │ EXCLUIR │
-   │ como    │              │ como    │
-   │sustantivo│             │ declarativo/
+   │ INCLUDE │              │ EXCLUDE │
+   │ as      │              │ as      │
+   │substantive│            │ declarative/
    └─────────┘              │ procedural │
                             └─────────┘
 ```
 
-### 3.2 Clasificacion por IA
+### 3.2 AI Classification
 
-Para casos ambiguos, usar Claude:
+For ambiguous cases, use Claude:
 
 ```
 Prompt:
-"Clasifica este asunto de votacion del Congreso peruano:
+"Classify this Peruvian Congress vote subject:
 
-ASUNTO: [texto]
+SUBJECT: [text]
 
-Clasificacion (elegir UNA):
-1. SUSTANTIVO - Ley o decision con impacto politico real
-2. PROCEDURAL - Mecanica legislativa sin contenido politico
-3. DECLARATIVO - Reconocimiento simbolico sin efecto legal
+Classification (choose ONE):
+1. SUBSTANTIVE - Law or decision with real political impact
+2. PROCEDURAL - Legislative mechanics with no political content
+3. DECLARATIVE - Symbolic recognition with no legal effect
 
-Responde SOLO con: SUSTANTIVO, PROCEDURAL, o DECLARATIVO"
+Respond ONLY with: SUBSTANTIVE, PROCEDURAL, or DECLARATIVE"
 ```
 
 ---
 
-## 4. Estadisticas de Filtrado
+## 4. Filtering Statistics
 
-### 4.1 Resultados del Filtrado (2021-2024)
+### 4.1 Filtering Results (2021-2024)
 
-| Tipo | Cantidad | % del Total |
-|------|----------|-------------|
-| **Sustantivo** | 2,226 | 62.4% |
+| Type | Count | % of Total |
+|------|-------|------------|
+| **Substantive** | 2,226 | 62.4% |
 | Procedural | 847 | 23.8% |
-| Declarativo | 497 | 13.9% |
+| Declarative | 497 | 13.9% |
 | **TOTAL** | 3,570 | 100% |
 
-### 4.2 Votos Declarativos por Año
+### 4.2 Declarative Votes by Year
 
-| Año | Declarativos | % del Año | Notas |
-|-----|--------------|-----------|-------|
-| 2021 | 89 | 11.2% | Inicio legislatura |
+| Year | Declarative | % of Year | Notes |
+|------|-------------|-----------|-------|
+| 2021 | 89 | 11.2% | Start of legislature |
 | 2022 | 142 | 14.8% | Normal |
-| 2023 | 178 | 15.6% | Aumento pre-electoral |
-| 2024 | 88 | 12.1% | Parcial (hasta julio) |
+| 2023 | 178 | 15.6% | Pre-electoral increase |
+| 2024 | 88 | 12.1% | Partial (through July) |
 
-**Fuente:** Analisis Ojo Publico sobre proyectos declarativos: [URL](https://ojo-publico.com/4925/congresistas-impulsaron-497-proyectos-ley-declarativos-el-2023)
-
----
-
-## 5. Justificacion de Exclusiones
-
-### 5.1 Por que Excluir Declarativos
-
-1. **Sin fuerza legal:** No crean obligaciones ni derechos
-2. **Sin impacto presupuestal:** No asignan recursos
-3. **Distorsion de patrones:** Inflan artificialmente % de "SI"
-4. **Universalmente aprobados:** Casi siempre pasan por unanimidad
-
-**Ejemplo de distorsion:**
-```
-Sin filtrar: FP 96% SI (incluye 200 declarativos)
-Filtrado:    FP 89% SI (solo sustantivos)
-```
-
-### 5.2 Por que Excluir Procedurales
-
-1. **No reflejan posicion politica:** Son mecanica de sesion
-2. **Contexto perdido:** "Cuestion previa" puede ser tactica
-3. **Alta frecuencia:** Inflan numero de votos artificialmente
-4. **Irrelevantes para promesas:** No se puede vincular a compromisos
+**Source:** Ojo Publico analysis on declarative bills: [URL](https://ojo-publico.com/4925/congresistas-impulsaron-497-proyectos-ley-declarativos-el-2023)
 
 ---
 
-## 6. Casos Especiales
+## 5. Justification for Exclusions
 
-### 6.1 Mociones de Censura/Vacancia
+### 5.1 Why Exclude Declarative Votes
 
-**Clasificacion:** SUSTANTIVO
+1. **No legal force:** They do not create obligations or rights
+2. **No budget impact:** They do not allocate resources
+3. **Pattern distortion:** They artificially inflate the "YES" percentage
+4. **Universally approved:** Almost always pass by unanimity
 
-**Razon:** Alto impacto politico, aunque tecnicamente son "mociones".
-
+**Example of distortion:**
 ```
-INCLUIR:
-- "Mocion de censura al ministro X"
-- "Mocion de vacancia presidencial"
-- "Mocion de interpelacion"
-```
-
-### 6.2 Comisiones Investigadoras
-
-**Clasificacion:** SUSTANTIVO
-
-**Razon:** Reflejan posicion sobre fiscalizacion.
-
-```
-INCLUIR:
-- "Creacion de comision investigadora sobre X"
-- "Informe final de comision investigadora"
+Unfiltered: FP 96% YES (includes 200 declarative votes)
+Filtered:   FP 89% YES (substantive only)
 ```
 
-### 6.3 Designaciones
+### 5.2 Why Exclude Procedural Votes
 
-**Clasificacion:** SUSTANTIVO (si es cargo de poder)
+1. **Do not reflect political position:** They are session mechanics
+2. **Lost context:** A "preliminary question" can be a tactic
+3. **High frequency:** They artificially inflate the vote count
+4. **Irrelevant to promises:** Cannot be linked to campaign commitments
+
+---
+
+## 6. Special Cases
+
+### 6.1 Censure/Vacancy Motions
+
+**Classification:** SUBSTANTIVE
+
+**Reason:** High political impact, even though they are technically "motions."
 
 ```
-INCLUIR:
-- "Designacion de miembros del TC"
-- "Designacion de Defensor del Pueblo"
-- "Designacion de Contralor"
+INCLUDE:
+- "Censure motion against Minister X"
+- "Presidential vacancy motion"
+- "Interpellation motion"
+```
 
-EXCLUIR:
-- "Designacion de representante ceremonial"
+### 6.2 Investigative Commissions
+
+**Classification:** SUBSTANTIVE
+
+**Reason:** They reflect a position on oversight.
+
+```
+INCLUDE:
+- "Creation of investigative commission on X"
+- "Final report of investigative commission"
+```
+
+### 6.3 Appointments
+
+**Classification:** SUBSTANTIVE (if a position of power)
+
+```
+INCLUDE:
+- "Appointment of Constitutional Tribunal members"
+- "Appointment of Ombudsman"
+- "Appointment of Comptroller General"
+
+EXCLUDE:
+- "Appointment of ceremonial representative"
 ```
 
 ---
 
-## 7. Validacion del Filtrado
+## 7. Filtering Validation
 
-### 7.1 Muestra de Verificacion
+### 7.1 Verification Sample
 
-Revisar manualmente 5% de votos filtrados:
+Manually review 5% of filtered votes:
 
-| Categoria | Muestra | Correctos | Precision |
-|-----------|---------|-----------|-----------|
-| Sustantivo | 111 | 108 | 97.3% |
+| Category | Sample | Correct | Accuracy |
+|----------|--------|---------|----------|
+| Substantive | 111 | 108 | 97.3% |
 | Procedural | 42 | 40 | 95.2% |
-| Declarativo | 25 | 24 | 96.0% |
+| Declarative | 25 | 24 | 96.0% |
 
-### 7.2 Errores Comunes
+### 7.2 Common Errors
 
-| Error | Frecuencia | Solucion |
-|-------|------------|----------|
-| Declarativo clasificado como sustantivo | 2.1% | Agregar keywords |
-| Sustantivo excluido por keyword falso positivo | 0.8% | Reglas de inclusion |
-| Procedural ambiguo | 3.2% | IA para desambiguar |
-
----
-
-## 8. Limitaciones
-
-1. **Sesgo de disponibilidad:** Solo analiza lo que llega a votacion
-2. **Contexto perdido:** No sabemos si exclusion fue estrategica
-3. **Granularidad:** Algunos sustantivos tienen partes declarativas
-4. **Evolucion:** Nuevos tipos de votos pueden no estar cubiertos
+| Error | Frequency | Solution |
+|-------|-----------|----------|
+| Declarative classified as substantive | 2.1% | Add keywords |
+| Substantive excluded by false positive keyword | 0.8% | Inclusion rules |
+| Ambiguous procedural | 3.2% | AI for disambiguation |
 
 ---
 
-## 9. Archivos Relacionados
+## 8. Limitations
 
-| Archivo | Contenido |
-|---------|-----------|
-| `data/02_output/votes_categorized.json` | Votos filtrados con categoria |
-| `scripts/filter_votes.py` | Script de filtrado |
-| `data/02_output/votes_categorized.json` | Votos categorizados (auditoria) |
-
----
-
-## Referencias
-
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+1. **Availability bias:** Only analyzes what reaches a vote
+2. **Lost context:** We do not know if an exclusion was strategic
+3. **Granularity:** Some substantive votes contain declarative sections
+4. **Evolution:** New vote types may not be covered
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+## 9. Related Files
+
+| File | Content |
+|------|---------|
+| `data/02_output/votes_categorized.json` | Filtered votes with category |
+| `scripts/filter_votes.py` | Filtering script |
+| `data/02_output/votes_categorized.json` | Categorized votes (audit) |
+
+---
+
+## References
+
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)
+
+---
+
+*Last updated: 2026-01-21*

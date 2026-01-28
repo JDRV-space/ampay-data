@@ -4,29 +4,29 @@
 
 | # | Category | Spanish | Covers |
 |---|----------|---------|--------|
-| 1 | seguridad | Seguridad | Crimen, policía, cárceles, narcotráfico |
-| 2 | economia | Economía | Impuestos, comercio, inversión, MYPE |
-| 3 | fiscal | Fiscal | Déficit, presupuesto, deuda pública |
-| 4 | social | Social | Pobreza, bonos, programas sociales, pensiones |
-| 5 | empleo | Empleo | Trabajo, laboral, informalidad |
-| 6 | educacion | Educación | Escuelas, universidades, becas |
-| 7 | salud | Salud | Hospitales, medicamentos, anemia, SIS |
-| 8 | agua | Agua/Saneamiento | Agua potable, desagüe, alcantarillado |
-| 9 | vivienda | Vivienda | Déficit habitacional, urbanismo |
-| 10 | transporte | Transporte | Puertos, aeropuertos, carreteras |
-| 11 | energia | Energía | Electricidad, gas, petróleo |
-| 12 | mineria | Minería | Minería formal/informal, canon |
-| 13 | ambiente | Ambiente | Deforestación, residuos, contaminación |
-| 14 | agricultura | Agricultura | Campo, riego, productores |
-| 15 | justicia | Justicia/Anticorrupción | Tribunales, transparencia, corrupción |
+| 1 | seguridad | Seguridad (Security) | Crime, police, prisons, drug trafficking |
+| 2 | economia | Economia (Economy) | Taxes, trade, investment, MSMEs |
+| 3 | fiscal | Fiscal (Fiscal Policy) | Deficit, budget, public debt |
+| 4 | social | Social (Social Welfare) | Poverty, cash transfers, social programs, pensions |
+| 5 | empleo | Empleo (Employment) | Labor, workforce, informality |
+| 6 | educacion | Educacion (Education) | Schools, universities, scholarships |
+| 7 | salud | Salud (Health) | Hospitals, medicines, anemia, SIS |
+| 8 | agua | Agua/Saneamiento (Water/Sanitation) | Drinking water, sewerage, drainage |
+| 9 | vivienda | Vivienda (Housing) | Housing deficit, urban planning |
+| 10 | transporte | Transporte (Transportation) | Ports, airports, highways |
+| 11 | energia | Energia (Energy) | Electricity, gas, petroleum |
+| 12 | mineria | Mineria (Mining) | Formal/informal mining, canon |
+| 13 | ambiente | Ambiente (Environment) | Deforestation, waste, pollution |
+| 14 | agricultura | Agricultura (Agriculture) | Rural sector, irrigation, producers |
+| 15 | justicia | Justicia/Anticorrupcion (Justice/Anti-corruption) | Courts, transparency, corruption |
 
 ## Notes
 
-- **Digitalización** removed - it's a HOW, not a WHAT (cross-cutting)
+- **Digitalizacion** removed - it is a HOW, not a WHAT (cross-cutting)
 - Categories derived from sampling Fuerza Popular plan de gobierno
 - Same categories used for both:
-  - Planes de gobierno (promises)
-  - Asuntos de votación (congress votes)
+  - Planes de gobierno (governance plans / promises)
+  - Asuntos de votacion (congressional votes)
 
 ## Usage
 

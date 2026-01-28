@@ -1,314 +1,314 @@
-# Categorizacion de Votos Parlamentarios
+# Categorization of Parliamentary Votes
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
+**Date:** 2026-01-21
+**Status:** ACTIVE
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-Cada voto del Congreso se clasifica en una de 15 categorias tematicas (14 categorias generales + justicia). La clasificacion combina analisis de keywords con verificacion por IA (Gemini/Claude).
-
----
-
-## 1. Sistema de 15 Categorias
-
-### 1.1 Lista de Categorias
-
-| # | Categoria | Nombre Display | Alcance |
-|---|-----------|----------------|---------|
-| 1 | `seguridad` | Seguridad | Crimen, policia, carceles, narcotrafico, terrorismo |
-| 2 | `economia` | Economia | Impuestos, comercio, inversion, MYPE, TLC |
-| 3 | `fiscal` | Fiscal | Deficit, presupuesto, deuda publica, gasto corriente |
-| 4 | `social` | Social | Pobreza, bonos, programas sociales, pensiones |
-| 5 | `empleo` | Empleo | Trabajo, laboral, informalidad, salario minimo |
-| 6 | `educacion` | Educacion | Escuelas, universidades, becas, docentes |
-| 7 | `salud` | Salud | Hospitales, medicamentos, anemia, SIS, ESSALUD |
-| 8 | `agricultura` | Agricultura | Agroindustria, riego, campesinos, precios agricolas |
-| 9 | `agua` | Agua/Saneamiento | Agua potable, desague, alcantarillado |
-| 10 | `vivienda` | Vivienda | Deficit habitacional, urbanismo, construccion |
-| 11 | `transporte` | Transporte | Puertos, aeropuertos, carreteras, ferrocarriles |
-| 12 | `energia` | Energia | Electricidad, gas, petroleo, renovables |
-| 13 | `mineria` | Mineria | Mineria formal/informal, canon, regalias |
-| 14 | `ambiente` | Ambiente | Deforestacion, residuos, contaminacion, areas protegidas |
-
-**Nota:** La categoria 15 es "justicia/anticorrupcion", usada para AMPAYs y clasificacion de votos relacionados con el sistema judicial y anticorrupcion. No se incluye en analisis de patrones de votacion (sparklines).
-
-### 1.2 Categoria Excluida
-
-| Categoria | Razon de Exclusion |
-|-----------|-------------------|
-| `digitalizacion` | Es un COMO, no un QUE. Cruza todas las categorias |
-| `otros` | No se permite. Forzar clasificacion en categoria existente |
+Each congressional vote is classified into one of 15 thematic categories (14 general categories + justice). The classification combines keyword analysis with AI verification (Gemini/Claude).
 
 ---
 
-## 2. Proceso de Categorizacion
+## 1. 15-Category System
 
-### 2.1 Diagrama de Flujo
+### 1.1 Category List
+
+| # | Category | Display Name | Scope |
+|---|----------|-------------|-------|
+| 1 | `seguridad` (security) | Security | Crime, police, prisons, drug trafficking, terrorism |
+| 2 | `economia` (economy) | Economy | Taxes, trade, investment, MSMEs, FTAs |
+| 3 | `fiscal` | Fiscal | Deficit, budget, public debt, current spending |
+| 4 | `social` | Social | Poverty, vouchers, social programs, pensions |
+| 5 | `empleo` (employment) | Employment | Labor, informality, minimum wage |
+| 6 | `educacion` (education) | Education | Schools, universities, scholarships, teachers |
+| 7 | `salud` (health) | Health | Hospitals, medicines, anemia, SIS, ESSALUD |
+| 8 | `agricultura` (agriculture) | Agriculture | Agribusiness, irrigation, farmers, agricultural prices |
+| 9 | `agua` (water/sanitation) | Water/Sanitation | Drinking water, sewage, sewerage |
+| 10 | `vivienda` (housing) | Housing | Housing deficit, urban planning, construction |
+| 11 | `transporte` (transport) | Transport | Ports, airports, highways, railways |
+| 12 | `energia` (energy) | Energy | Electricity, gas, petroleum, renewables |
+| 13 | `mineria` (mining) | Mining | Formal/informal mining, canon, royalties |
+| 14 | `ambiente` (environment) | Environment | Deforestation, waste, pollution, protected areas |
+
+**Note:** Category 15 is "justicia/anticorrupcion" (justice/anti-corruption), used for AMPAYs and classification of votes related to the judicial system and anti-corruption. It is not included in voting pattern analysis (sparklines).
+
+### 1.2 Excluded Categories
+
+| Category | Reason for Exclusion |
+|----------|---------------------|
+| `digitalizacion` (digitalization) | It is a HOW, not a WHAT. Crosses all categories |
+| `otros` (other) | Not permitted. Force classification into an existing category |
+
+---
+
+## 2. Categorization Process
+
+### 2.1 Flow Diagram
 
 ```
 ┌─────────────────────────────────────────┐
-│         ASUNTO DEL VOTO                 │
-│  "PL 3456 que modifica Ley del SIS"     │
+│         VOTE SUBJECT                    │
+│  "PL 3456 que modifica Ley del SIS"    │
 └────────────────────┬────────────────────┘
                      │
                      ▼
          ┌───────────────────────┐
-         │  MATCHING DE KEYWORDS │
-         │  (Primera pasada)     │
+         │  KEYWORD MATCHING     │
+         │  (First pass)         │
          └───────────┬───────────┘
                      │
         ┌────────────┼────────────┐
         │            │            │
-   Match unico   Match multiple  Sin match
+   Single match  Multiple match  No match
         │            │            │
         ▼            ▼            ▼
    ┌─────────┐  ┌─────────┐  ┌─────────┐
-   │ ASIGNAR │  │ IA para │  │ IA para │
-   │ directo │  │ decidir │  │ clasificar │
+   │ ASSIGN  │  │ AI to   │  │ AI to   │
+   │ directly│  │ decide  │  │ classify│
    └─────────┘  └─────────┘  └─────────┘
                      │            │
                      └────┬───────┘
                           │
                           ▼
               ┌───────────────────────┐
-              │  VERIFICACION HUMANA  │
-              │  (muestra aleatoria)  │
+              │  HUMAN VERIFICATION   │
+              │  (random sample)      │
               └───────────────────────┘
 ```
 
-### 2.2 Reglas de Keywords
+### 2.2 Keyword Rules
 
-**Prioridad de matching:**
+**Matching priority:**
 
-1. **Terminos tecnicos especificos** (alta precision)
-2. **Nombres de instituciones** (media precision)
-3. **Terminos generales** (baja precision, requiere contexto)
+1. **Specific technical terms** (high precision)
+2. **Institution names** (medium precision)
+3. **General terms** (low precision, requires context)
 
-### 2.3 Diccionario de Keywords por Categoria
+### 2.3 Keyword Dictionary by Category
 
 ```
-SEGURIDAD:
-├── Alta confianza: PNP, policia, narcotrafico, terrorismo, penal, crimen
-├── Media confianza: detencion, seguridad ciudadana, requisitoria
-└── Requiere contexto: ley, delito, sancion
+SEGURIDAD (security):
+├── High confidence: PNP, policia, narcotrafico, terrorismo, penal, crimen
+├── Medium confidence: detencion, seguridad ciudadana, requisitoria
+└── Requires context: ley, delito, sancion
 
-ECONOMIA:
-├── Alta confianza: MYPE, SUNAT, TLC, exportacion, importacion, aranceles
-├── Media confianza: competitividad, inversion, mercado
-└── Requiere contexto: empresa, comercio, fiscal
+ECONOMIA (economy):
+├── High confidence: MYPE, SUNAT, TLC, exportacion, importacion, aranceles
+├── Medium confidence: competitividad, inversion, mercado
+└── Requires context: empresa, comercio, fiscal
 
 FISCAL:
-├── Alta confianza: presupuesto, MEF, deficit, credito suplementario
-├── Media confianza: endeudamiento, gasto publico, tesoro
-└── Requiere contexto: recursos, financiamiento
+├── High confidence: presupuesto, MEF, deficit, credito suplementario
+├── Medium confidence: endeudamiento, gasto publico, tesoro
+└── Requires context: recursos, financiamiento
 
 SOCIAL:
-├── Alta confianza: pension, ONP, AFP, bono, Qali Warma, Cuna Mas
-├── Media confianza: programa social, subsidio, pobreza
-└── Requiere contexto: beneficio, apoyo
+├── High confidence: pension, ONP, AFP, bono, Qali Warma, Cuna Mas
+├── Medium confidence: programa social, subsidio, pobreza
+└── Requires context: beneficio, apoyo
 
-EMPLEO:
-├── Alta confianza: laboral, SUNAFIL, salario minimo, CTS, gratificacion
-├── Media confianza: trabajador, contrato, despido, sindicato
-└── Requiere contexto: empleo, trabajo
+EMPLEO (employment):
+├── High confidence: laboral, SUNAFIL, salario minimo, CTS, gratificacion
+├── Medium confidence: trabajador, contrato, despido, sindicato
+└── Requires context: empleo, trabajo
 
-EDUCACION:
-├── Alta confianza: MINEDU, universidad, docente, beca, SUNEDU
-├── Media confianza: educacion, escuela, colegio, estudiante
-└── Requiere contexto: formacion, capacitacion
+EDUCACION (education):
+├── High confidence: MINEDU, universidad, docente, beca, SUNEDU
+├── Medium confidence: educacion, escuela, colegio, estudiante
+└── Requires context: formacion, capacitacion
 
-SALUD:
-├── Alta confianza: MINSA, ESSALUD, SIS, hospital, farmacia, vacuna
-├── Media confianza: salud, medico, enfermedad, tratamiento
-└── Requiere contexto: atencion, servicio
+SALUD (health):
+├── High confidence: MINSA, ESSALUD, SIS, hospital, farmacia, vacuna
+├── Medium confidence: salud, medico, enfermedad, tratamiento
+└── Requires context: atencion, servicio
 
-AGUA:
-├── Alta confianza: SEDAPAL, saneamiento, alcantarillado, desague
-├── Media confianza: agua potable, acueducto, tratamiento aguas
-└── Requiere contexto: agua, hidrico
+AGUA (water/sanitation):
+├── High confidence: SEDAPAL, saneamiento, alcantarillado, desague
+├── Medium confidence: agua potable, acueducto, tratamiento aguas
+└── Requires context: agua, hidrico
 
-VIVIENDA:
-├── Alta confianza: vivienda, urbanismo, COFOPRI, Techo Propio
-├── Media confianza: construccion, habilitacion urbana
-└── Requiere contexto: inmobiliario
+VIVIENDA (housing):
+├── High confidence: vivienda, urbanismo, COFOPRI, Techo Propio
+├── Medium confidence: construccion, habilitacion urbana
+└── Requires context: inmobiliario
 
-TRANSPORTE:
-├── Alta confianza: MTC, carretera, aeropuerto, puerto, ferrocarril
-├── Media confianza: transporte, infraestructura vial, peaje
-└── Requiere contexto: movilidad
+TRANSPORTE (transport):
+├── High confidence: MTC, carretera, aeropuerto, puerto, ferrocarril
+├── Medium confidence: transporte, infraestructura vial, peaje
+└── Requires context: movilidad
 
-ENERGIA:
-├── Alta confianza: OSINERGMIN, electricidad, gas, petroleo, hidrocarburo
-├── Media confianza: energia renovable, solar, eolica
-└── Requiere contexto: energia
+ENERGIA (energy):
+├── High confidence: OSINERGMIN, electricidad, gas, petroleo, hidrocarburo
+├── Medium confidence: energia renovable, solar, eolica
+└── Requires context: energia
 
-MINERIA:
-├── Alta confianza: MINEM, mineria, canon minero, regalias mineras
-├── Media confianza: concesion minera, exploracion, explotacion
-└── Requiere contexto: extraccion, recursos
+MINERIA (mining):
+├── High confidence: MINEM, mineria, canon minero, regalias mineras
+├── Medium confidence: concesion minera, exploracion, explotacion
+└── Requires context: extraccion, recursos
 
-AMBIENTE:
-├── Alta confianza: MINAM, SERNANP, area protegida, deforestacion
-├── Media confianza: ambiental, contaminacion, residuos, reciclaje
-└── Requiere contexto: conservacion, ecosistema
+AMBIENTE (environment):
+├── High confidence: MINAM, SERNANP, area protegida, deforestacion
+├── Medium confidence: ambiental, contaminacion, residuos, reciclaje
+└── Requires context: conservacion, ecosistema
 ```
 
 ---
 
-## 3. Clasificacion por IA
+## 3. AI Classification
 
-### 3.1 Prompt de Clasificacion
+### 3.1 Classification Prompt
 
 ```
-Clasifica el siguiente asunto de votacion del Congreso peruano en UNA de estas categorias:
+Classify the following Peruvian Congress vote subject into ONE of these categories:
 seguridad, economia, fiscal, social, empleo, educacion, salud, agua, vivienda, transporte, energia, mineria, ambiente
 
-ASUNTO: "[texto del asunto]"
+SUBJECT: "[vote subject text]"
 
-Reglas:
-1. Elegir la categoria PRINCIPAL, no secundaria
-2. Si hay duda, elegir la categoria mas especifica
-3. NUNCA usar "otros" o inventar categorias
-4. Responder SOLO con el nombre de la categoria en minusculas
+Rules:
+1. Choose the PRIMARY category, not a secondary one
+2. When in doubt, choose the most specific category
+3. NEVER use "other" or invent categories
+4. Respond ONLY with the lowercase category name
 
-Categoria:
+Category:
 ```
 
-### 3.2 Modelo Utilizado
+### 3.2 Model Used
 
-| Modelo | Uso | Costo |
-|--------|-----|-------|
-| Claude Opus | Clasificacion final, AMPAYs | Alto |
-| Gemini Flash | Pre-clasificacion masiva | Bajo |
+| Model | Use | Cost |
+|-------|-----|------|
+| Claude Opus | Final classification, AMPAYs | High |
+| Gemini Flash | Bulk pre-classification | Low |
 
-### 3.3 Umbrales de Confianza
+### 3.3 Confidence Thresholds
 
 ```
-Confianza >= 0.95  → Aceptar directamente
-Confianza 0.80-0.94 → Revisar si hay keyword conflictivo
-Confianza < 0.80   → Revision humana obligatoria
-```
-
----
-
-## 4. Casos Especiales
-
-### 4.1 Votos Multi-Categoria
-
-Algunos votos tocan multiples temas. Regla: **elegir categoria principal**.
-
-**Ejemplo:**
-```
-Asunto: "Ley que promueve la mineria formal para reducir la pobreza"
-Categorias posibles: mineria, social
-Clasificacion: mineria (es el objeto de la ley, pobreza es el objetivo)
-```
-
-### 4.2 Presupuestos Sectoriales
-
-Leyes de presupuesto se clasifican por SECTOR, no como "fiscal".
-
-**Ejemplo:**
-```
-Asunto: "Presupuesto del sector salud 2024"
-Clasificacion: salud (no fiscal)
-
-Asunto: "Ley de equilibrio financiero del sector publico"
-Clasificacion: fiscal (es transversal)
-```
-
-### 4.3 Reformas Institucionales
-
-Reformas de entidades se clasifican por FUNCION de la entidad.
-
-**Ejemplo:**
-```
-Asunto: "Ley que reestructura SEDAPAL"
-Clasificacion: agua
-
-Asunto: "Ley que reorganiza la PNP"
-Clasificacion: seguridad
+Confidence >= 0.95  -> Accept directly
+Confidence 0.80-0.94 -> Review if conflicting keyword exists
+Confidence < 0.80   -> Mandatory human review
 ```
 
 ---
 
-## 5. Estadisticas de Categorizacion
+## 4. Special Cases
 
-### 5.1 Distribucion por Categoria (2,226 votos)
+### 4.1 Multi-Category Votes
 
-| Categoria | Votos | % del Total |
-|-----------|-------|-------------|
-| economia | 412 | 18.5% |
-| seguridad | 298 | 13.4% |
-| salud | 258 | 11.6% |
-| educacion | 245 | 11.0% |
+Some votes touch multiple topics. Rule: **choose the primary category**.
+
+**Example:**
+```
+Subject: "Law promoting formal mining to reduce poverty"
+Possible categories: mineria (mining), social
+Classification: mineria (the object of the law; poverty is the objective)
+```
+
+### 4.2 Sectoral Budgets
+
+Budget laws are classified by SECTOR, not as "fiscal."
+
+**Example:**
+```
+Subject: "Health sector budget 2024"
+Classification: salud (health) (not fiscal)
+
+Subject: "Public sector financial balance act"
+Classification: fiscal (cross-cutting)
+```
+
+### 4.3 Institutional Reforms
+
+Reforms of public entities are classified by the entity's FUNCTION.
+
+**Example:**
+```
+Subject: "Law restructuring SEDAPAL"
+Classification: agua (water)
+
+Subject: "Law reorganizing the PNP"
+Classification: seguridad (security)
+```
+
+---
+
+## 5. Categorization Statistics
+
+### 5.1 Distribution by Category (2,226 votes)
+
+| Category | Votes | % of Total |
+|----------|-------|------------|
+| economia (economy) | 412 | 18.5% |
+| seguridad (security) | 298 | 13.4% |
+| salud (health) | 258 | 11.6% |
+| educacion (education) | 245 | 11.0% |
 | social | 198 | 8.9% |
-| empleo | 187 | 8.4% |
-| agricultura | 156 | 7.0% |
+| empleo (employment) | 187 | 8.4% |
+| agricultura (agriculture) | 156 | 7.0% |
 | fiscal | 143 | 6.4% |
-| transporte | 121 | 5.4% |
-| ambiente | 89 | 4.0% |
-| agua | 67 | 3.0% |
-| vivienda | 31 | 1.4% |
-| mineria | 21 | 0.9% |
+| transporte (transport) | 121 | 5.4% |
+| ambiente (environment) | 89 | 4.0% |
+| agua (water/sanitation) | 67 | 3.0% |
+| vivienda (housing) | 31 | 1.4% |
+| mineria (mining) | 21 | 0.9% |
 
-### 5.2 Precision de Clasificacion
+### 5.2 Classification Accuracy
 
-Basado en revision manual de muestra (n=200):
+Based on manual review of a sample (n=200):
 
-| Metodo | Precision |
-|--------|-----------|
-| Keywords unicos | 98.2% |
-| Keywords + IA | 95.7% |
-| Solo IA | 91.3% |
-| Promedio ponderado | **94.8%** |
-
----
-
-## 6. Validacion
-
-### 6.1 Proceso de QA
-
-1. **Muestra aleatoria:** 5% de votos revisados manualmente
-2. **Casos frontera:** Todos los casos con confianza < 0.85 revisados
-3. **Consistencia:** Votos similares deben tener misma categoria
-
-### 6.2 Metricas de Calidad
-
-| Metrica | Umbral Aceptable | Actual |
-|---------|------------------|--------|
-| Precision | >= 90% | 94.8% |
-| Casos sin clasificar | 0% | 0% |
-| Tiempo promedio/voto | < 2s | 0.8s |
+| Method | Accuracy |
+|--------|----------|
+| Unique keyword matches | 98.2% |
+| Keywords + AI | 95.7% |
+| AI only | 91.3% |
+| Weighted average | **94.8%** |
 
 ---
 
-## 7. Limitaciones
+## 6. Validation
 
-1. **Ambiguedad inherente:** Algunos votos genuinamente cruzan categorias
-2. **Evolucion del lenguaje:** Terminos nuevos pueden no estar en diccionario
-3. **Contexto perdido:** Solo se analiza el "asunto", no el texto completo de la ley
-4. **Sesgos del modelo:** IA puede tener sesgos en clasificacion
+### 6.1 QA Process
 
----
+1. **Random sample:** 5% of votes manually reviewed
+2. **Edge cases:** All cases with confidence < 0.85 reviewed
+3. **Consistency:** Similar votes must share the same category
 
-## 8. Archivos Relacionados
+### 6.2 Quality Metrics
 
-| Archivo | Contenido |
-|---------|-----------|
-| `data/02_output/votes_categorized.json` | Votos con categoria asignada |
-| `docs/CATEGORIES.md` | Definiciones de categorias |
-
----
-
-## Referencias
-
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+| Metric | Acceptable Threshold | Actual |
+|--------|---------------------|--------|
+| Accuracy | >= 90% | 94.8% |
+| Unclassified cases | 0% | 0% |
+| Average time per vote | < 2s | 0.8s |
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+## 7. Limitations
+
+1. **Inherent ambiguity:** Some votes genuinely cross categories
+2. **Language evolution:** New terms may not be in the dictionary
+3. **Lost context:** Only the "subject" is analyzed, not the full text of the law
+4. **Model biases:** AI may have classification biases
+
+---
+
+## 8. Related Files
+
+| File | Content |
+|------|---------|
+| `data/02_output/votes_categorized.json` | Votes with assigned category |
+| `docs/CATEGORIES.md` | Category definitions |
+
+---
+
+## References
+
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)
+
+---
+
+*Last updated: 2026-01-21*

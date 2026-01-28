@@ -1,134 +1,134 @@
-# Codificacion de Posiciones de Partidos
+# Coding of Party Positions
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
+**Date:** 2026-01-21
+**Status:** ACTIVE
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-Las posiciones de los partidos politicos se codifican en una escala de +1/0/-1 basandose en sus promesas de campana documentadas. El silencio se interpreta como posicion neutral (0).
+Political party positions are coded on a +1/0/-1 scale based on their documented campaign promises. Silence is interpreted as a neutral position (0).
 
 ---
 
-## 1. Sistema de Codificacion
+## 1. Coding System
 
-### 1.1 Escala de Posiciones
+### 1.1 Position Scale
 
-| Valor | Significado | Criterio |
-|-------|-------------|----------|
-| **+1** | APOYA | Promesa explicita a favor del tema |
-| **0** | NEUTRAL | Sin promesa clara o silencio sobre el tema |
-| **-1** | SE OPONE | Promesa explicita en contra del tema |
+| Value | Meaning | Criterion |
+|-------|---------|----------|
+| **+1** | SUPPORTS | Explicit promise in favor of the issue |
+| **0** | NEUTRAL | No clear promise or silence on the issue |
+| **-1** | OPPOSES | Explicit promise against the issue |
 
-### 1.2 Fuente de Posiciones
+### 1.2 Source of Positions
 
-**Fuente unica:** Planes de gobierno 2026 registrados en JNE
+**Sole source:** 2026 government plans registered with JNE
 
 ```
 URL: https://plataformaelectoral.jne.gob.pe/candidatos/plan-gobierno-trabajo/buscar
-Formato: PDF
-Acceso: Enero 2026
+Format: PDF
+Accessed: January 2026
 ```
 
-**Por que solo 2026 (no voting records):**
-1. El quiz es para elecciones 2026 → usar propuestas 2026
-2. Registros de votacion son 2021-2024 (datos historicos)
-3. La feature AMPAY ya cubre discrepancias promesa-voto
-4. Simplifica el desarrollo
+**Why only 2026 plans (not voting records):**
+1. The quiz is for the 2026 elections, so 2026 proposals are used
+2. Voting records cover 2021-2024 (historical data)
+3. The AMPAY feature already covers promise-vote discrepancies
+4. Simplifies development
 
 ---
 
-## 2. Reglas de Codificacion
+## 2. Coding Rules
 
-### 2.1 Criterios para +1 (APOYA)
+### 2.1 Criteria for +1 (SUPPORTS)
 
-Una posicion se codifica +1 cuando el plan de gobierno contiene:
+A position is coded +1 when the government plan contains:
 
-1. **Compromiso explicito:** "Implementaremos X", "Crearemos Y"
-2. **Mencion favorable repetida:** El tema aparece 3+ veces positivamente
-3. **Verbo de accion positivo:** aumentar, expandir, crear, fortalecer, garantizar
-4. **Prioridad declarada:** El tema aparece en prioridades o ejes principales
+1. **Explicit commitment:** "We will implement X," "We will create Y"
+2. **Repeated favorable mention:** The issue appears 3+ times positively
+3. **Positive action verb:** increase, expand, create, strengthen, guarantee
+4. **Declared priority:** The issue appears among priorities or main policy pillars
 
-**Ejemplos:**
+**Examples:**
 ```
-"Implementaremos la nacionalizacion del gas de Camisea" → +1 en energia
-"Fortaleceremos los sindicatos" → +1 en empleo/derechos laborales
-"Expandiremos el sistema publico de salud" → +1 en salud publica
-```
-
-### 2.2 Criterios para -1 (SE OPONE)
-
-Una posicion se codifica -1 cuando el plan de gobierno contiene:
-
-1. **Oposicion explicita:** "Eliminaremos X", "Rechazamos Y"
-2. **Mencion negativa:** El tema se presenta como problema a corregir
-3. **Verbo de accion negativo:** reducir, eliminar, recortar, privatizar (en contexto)
-4. **Propuesta contraria:** Alternativa incompatible con la posicion +1
-
-**Ejemplos:**
-```
-"Reduciremos la intervencion estatal en la economia" → -1 en economia estatista
-"Eliminaremos exoneraciones tributarias" → -1 en beneficios fiscales
-"Privatizaremos servicios ineficientes" → -1 en servicios publicos
+"We will implement the nationalization of Camisea gas" -> +1 on energia (energy)
+"We will strengthen labor unions" -> +1 on empleo (employment/labor rights)
+"We will expand the public health system" -> +1 on salud (public health)
 ```
 
-### 2.3 Criterios para 0 (NEUTRAL)
+### 2.2 Criteria for -1 (OPPOSES)
 
-Una posicion se codifica 0 cuando:
+A position is coded -1 when the government plan contains:
 
-1. **Silencio total:** El tema no aparece en el plan de gobierno
-2. **Mencion ambigua:** Lenguaje vago sin compromiso claro
-3. **Posicion contradictoria:** El plan contiene afirmaciones en ambas direcciones
-4. **Condicionamiento excesivo:** "Estudiaremos", "Si es posible", "Evaluaremos"
+1. **Explicit opposition:** "We will eliminate X," "We reject Y"
+2. **Negative mention:** The issue is presented as a problem to correct
+3. **Negative action verb:** reduce, eliminate, cut, privatize (in context)
+4. **Counter-proposal:** An alternative incompatible with the +1 position
 
-**Ejemplos:**
+**Examples:**
 ```
-(Tema no mencionado) → 0
-"Evaluaremos la posibilidad de reformar el sistema tributario" → 0
-"Mejoraremos la economia" (sin especificar como) → 0
+"We will reduce state intervention in the economy" -> -1 on statist economy
+"We will eliminate tax exemptions" -> -1 on fiscal (tax) benefits
+"We will privatize inefficient services" -> -1 on public services
+```
+
+### 2.3 Criteria for 0 (NEUTRAL)
+
+A position is coded 0 when:
+
+1. **Total silence:** The issue does not appear in the government plan
+2. **Ambiguous mention:** Vague language with no clear commitment
+3. **Contradictory position:** The plan contains statements in both directions
+4. **Excessive conditionality:** "We will study," "If possible," "We will evaluate"
+
+**Examples:**
+```
+(Issue not mentioned) -> 0
+"We will evaluate the possibility of reforming the tax system" -> 0
+"We will improve the economy" (without specifying how) -> 0
 ```
 
 ---
 
-## 3. Proceso de Codificacion
+## 3. Coding Process
 
-### 3.1 Flujo de Trabajo
+### 3.1 Workflow
 
 ```
 ┌─────────────────────────────────────────┐
-│      PDF PLAN DE GOBIERNO (JNE)         │
+│      GOVERNMENT PLAN PDF (JNE)          │
 └────────────────────┬────────────────────┘
                      │
                      ▼
          ┌───────────────────────┐
-         │  EXTRACCION DE TEXTO  │
+         │  TEXT EXTRACTION      │
          │  (PyMuPDF/Tesseract)  │
          └───────────┬───────────┘
                      │
                      ▼
          ┌───────────────────────┐
-         │  IDENTIFICAR PROMESAS │
-         │  RELEVANTES AL QUIZ   │
+         │  IDENTIFY PROMISES    │
+         │  RELEVANT TO QUIZ     │
          └───────────┬───────────┘
                      │
                      ▼
          ┌───────────────────────┐
-         │  ASIGNAR POSICION     │
+         │  ASSIGN POSITION      │
          │  (+1 / 0 / -1)        │
          └───────────┬───────────┘
                      │
                      ▼
          ┌───────────────────────┐
-         │  DOCUMENTAR FUENTE    │
-         │  (ID promesa + pagina)│
+         │  DOCUMENT SOURCE      │
+         │  (promise ID + page)  │
          └───────────────────────┘
 ```
 
-### 3.2 Documentacion de Fuentes
+### 3.2 Source Documentation
 
-Cada posicion codificada debe tener:
+Each coded position must have:
 
 ```json
 {
@@ -143,160 +143,160 @@ Cada posicion codificada debe tener:
 
 ---
 
-## 4. Tratamiento del Silencio
+## 4. Treatment of Silence
 
-### 4.1 Logica de Silencio = 0
+### 4.1 Logic of Silence = 0
 
-**Justificacion academica:**
+**Academic justification:**
 
-El Manifesto Project (MARPOR) distingue entre SALIENCIA (cuanto enfatiza un tema) y POSICION (que opina del tema). Cuando un partido no menciona un tema:
+The Manifesto Project (MARPOR) distinguishes between SALIENCE (how much a party emphasizes a topic) and POSITION (what it thinks about the topic). When a party does not mention an issue:
 
-1. No podemos inferir su posicion real
-2. El silencio puede ser estrategico o por omision
-3. Asignar +1 o -1 seria especulacion
+1. We cannot infer its actual position
+2. Silence may be strategic or by omission
+3. Assigning +1 or -1 would be speculation
 
-**Referencia:** Werner, A., et al. (2023). "Manifesto Project Codebook v6". DOI: [10.25522/manifesto.v6](https://doi.org/10.25522/manifesto.v6)
+**Reference:** Werner, A., et al. (2023). "Manifesto Project Codebook v6". DOI: [10.25522/manifesto.v6](https://doi.org/10.25522/manifesto.v6)
 
-### 4.2 Casos Especiales de Silencio
+### 4.2 Special Cases of Silence
 
-| Situacion | Codificacion | Razon |
-|-----------|--------------|-------|
-| Tema no mencionado | 0 | Sin datos |
-| Mencion sin posicion | 0 | Ambiguedad |
-| Promesa + contra-promesa | 0 | Contradiccion interna |
-| "Evaluaremos" / "Estudiaremos" | 0 | No es compromiso |
-
----
-
-## 5. Mapeo Partidos-Ideologia
-
-### 5.1 Eje Economico
-
-| Partido | Posicion Economica | Evidencia |
-|---------|-------------------|-----------|
-| Peru Libre | Izquierda | Nacionalizacion, control estatal |
-| Juntos por el Peru | Izquierda | Impuestos progresivos, gasto social |
-| Partido Morado | Centro | Economia mixta, regulacion |
-| Somos Peru | Centro | Pragmatismo, sin ideologia fija |
-| Alianza para el Progreso | Centro | Empresarial pero social |
-| Fuerza Popular | Derecha | Libre mercado, reduccion estado |
-| Renovacion Popular | Derecha | Conservador fiscal |
-| Avanza Pais | Derecha | Liberal economico |
-| Podemos Peru | Derecha | Pro-empresa |
-
-### 5.2 Eje Social
-
-| Partido | Posicion Social | Evidencia |
-|---------|----------------|-----------|
-| Renovacion Popular | Conservador | Pro-familia tradicional, anti-genero |
-| Peru Libre | Conservador | Tradicionalismo andino |
-| Fuerza Popular | Moderado | Sin posiciones sociales extremas |
-| Podemos Peru | Moderado | Pragmatico |
-| Alianza Progreso | Moderado | Sin agenda social fuerte |
-| Avanza Pais | Moderado | Liberal economico, moderado social |
-| Somos Peru | Moderado | Sin posiciones definidas |
-| Partido Morado | Progresista | Derechos civiles, diversidad |
-| Juntos por el Peru | Progresista | Derechos humanos, genero |
+| Situation | Coding | Reason |
+|-----------|--------|--------|
+| Issue not mentioned | 0 | No data |
+| Mention without position | 0 | Ambiguity |
+| Promise + counter-promise | 0 | Internal contradiction |
+| "We will evaluate" / "We will study" | 0 | Not a commitment |
 
 ---
 
-## 6. Validacion de Posiciones
+## 5. Party-Ideology Mapping
 
-### 6.1 Proceso de Auditoria
+### 5.1 Economic Axis
 
-Para cada pregunta del quiz:
+| Party | Economic Position | Evidence |
+|-------|------------------|----------|
+| Peru Libre | Left | Nationalization, state control |
+| Juntos por el Peru | Left | Progressive taxation, social spending |
+| Partido Morado | Center | Mixed economy, regulation |
+| Somos Peru | Center | Pragmatism, no fixed ideology |
+| Alianza para el Progreso | Center | Business-oriented but socially conscious |
+| Fuerza Popular | Right | Free market, reduced state |
+| Renovacion Popular | Right | Fiscal conservative |
+| Avanza Pais | Right | Economic liberal |
+| Podemos Peru | Right | Pro-business |
 
-1. **Revisar promesa fuente:** Verificar que el texto citado existe en el PDF
-2. **Confirmar interpretacion:** La codificacion refleja el contenido
-3. **Cross-check:** Comparar con otras fuentes (noticias, entrevistas)
-4. **Peer review:** Segunda persona revisa casos dudosos
+### 5.2 Social Axis
 
-### 6.2 Archivo de Auditoria
+| Party | Social Position | Evidence |
+|-------|----------------|----------|
+| Renovacion Popular | Conservative | Pro-traditional family, anti-gender ideology |
+| Peru Libre | Conservative | Andean traditionalism |
+| Fuerza Popular | Moderate | No extreme social positions |
+| Podemos Peru | Moderate | Pragmatic |
+| Alianza para el Progreso | Moderate | No strong social agenda |
+| Avanza Pais | Moderate | Economic liberal, socially moderate |
+| Somos Peru | Moderate | No defined positions |
+| Partido Morado | Progressive | Civil rights, diversity |
+| Juntos por el Peru | Progressive | Human rights, gender equality |
+
+---
+
+## 6. Position Validation
+
+### 6.1 Audit Process
+
+For each quiz question:
+
+1. **Review source promise:** Verify that the cited text exists in the PDF
+2. **Confirm interpretation:** The coding reflects the content
+3. **Cross-check:** Compare with other sources (news, interviews)
+4. **Peer review:** A second person reviews doubtful cases
+
+### 6.2 Audit File
 
 ```
 data/02_output/quiz_position_audit.json
 ```
 
-Contiene:
-- Cada posicion codificada
-- ID de promesa fuente
-- Texto citado
-- Pagina del PDF
-- Fecha de revision
-- Revisor
+Contains:
+- Each coded position
+- Source promise ID
+- Cited text
+- PDF page
+- Review date
+- Reviewer
 
 ---
 
-## 7. Preguntas Removidas
+## 7. Removed Questions
 
-### 7.1 Por Consenso Total
+### 7.1 Due to Total Consensus
 
-Preguntas donde todos los partidos tienen +1:
+Questions where all parties have +1:
 
-| Pregunta Original | Razon de Remocion |
+| Original Question | Reason for Removal |
 |-------------------|-------------------|
-| Intangibilidad Amazonia | 9/9 partidos +1 |
-| Cobertura universal agua | 9/9 partidos +1 |
-| Eliminar burocracia MYPES | 9/9 partidos +1 |
+| Amazon intangibility | 9/9 parties +1 |
+| Universal water coverage | 9/9 parties +1 |
+| Eliminate MSME bureaucracy | 9/9 parties +1 |
 
-**Logica:** Preguntas sin variacion no discriminan entre partidos.
+**Logic:** Questions without variation do not discriminate between parties.
 
-### 7.2 Por Datos Insuficientes
+### 7.2 Due to Insufficient Data
 
-Preguntas donde menos de 5 partidos tienen posicion clara:
+Questions where fewer than 5 parties have a clear position:
 
-| Pregunta Original | Partidos con Datos |
+| Original Question | Parties with Data |
 |-------------------|-------------------|
-| (ninguna en v2.1) | N/A |
+| (none in v2.1) | N/A |
 
 ---
 
-## 8. Comparacion con Otros Enfoques
+## 8. Comparison with Other Approaches
 
 ### 8.1 AMPAY vs Vote Compass
 
-| Aspecto | AMPAY | Vote Compass |
-|---------|-------|--------------|
-| Fuente posiciones | Solo promesas | Promesas + expertos |
-| Escala | 3 puntos (-1/0/+1) | 5 puntos |
-| Validacion | Interna | Partidos revisan |
-| Silencio | = 0 | Puede inferirse |
+| Aspect | AMPAY | Vote Compass |
+|--------|-------|--------------|
+| Position source | Promises only | Promises + experts |
+| Scale | 3 points (-1/0/+1) | 5 points |
+| Validation | Internal | Parties review |
+| Silence | = 0 | May be inferred |
 
 ### 8.2 AMPAY vs Wahl-O-Mat
 
-| Aspecto | AMPAY | Wahl-O-Mat |
-|---------|-------|-----------|
-| Quien codifica | Equipo AMPAY | Partidos directamente |
-| Fuente | PDFs publicos | Cuestionario a partidos |
-| Escala | 3 puntos | 3 puntos |
-| Supervision | Sin expertos externos | Panel de expertos |
+| Aspect | AMPAY | Wahl-O-Mat |
+|--------|-------|-----------|
+| Who codes | AMPAY team | Parties directly |
+| Source | Public PDFs | Questionnaire to parties |
+| Scale | 3 points | 3 points |
+| Oversight | No external experts | Expert panel |
 
 ---
 
-## 9. Limitaciones
+## 9. Limitations
 
-1. **Subjetividad:** Interpretacion de promesas vagas
-2. **Silencio estrategico:** Partidos evitan temas controversiales
-3. **Evolucion de posiciones:** Promesas 2026 pueden cambiar durante campana
-4. **Promesas vs intencion real:** Planes de gobierno pueden ser aspiracionales
-
----
-
-## 10. Archivos Relacionados
-
-| Archivo | Contenido |
-|---------|-----------|
-| `data/02_output/quiz_statements.json` | Posiciones codificadas |
-| `data/02_output/quiz_position_audit.json` | Auditoria de fuentes |
-| `data/01_input/promises/` | PDFs originales |
+1. **Subjectivity:** Interpretation of vague promises
+2. **Strategic silence:** Parties avoid controversial topics
+3. **Evolving positions:** 2026 promises may change during the campaign
+4. **Promises vs. actual intent:** Government plans may be aspirational
 
 ---
 
-## Referencias
+## 10. Related Files
 
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+| File | Content |
+|------|---------|
+| `data/02_output/quiz_statements.json` | Coded positions |
+| `data/02_output/quiz_position_audit.json` | Source audit |
+| `data/01_input/promises/` | Original PDFs |
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+## References
+
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)
+
+---
+
+*Last updated: 2026-01-21*

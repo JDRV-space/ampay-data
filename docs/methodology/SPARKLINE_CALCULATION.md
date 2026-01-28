@@ -1,132 +1,132 @@
-# Calculo de Sparklines: Patrones de Votacion
+# Sparkline Calculation: Voting Patterns
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
+**Date:** 2026-01-21
+**Status:** ACTIVE
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-Los sparklines muestran el porcentaje de votos "SI" de cada partido por categoria y por mes. Se utilizan en los perfiles de partidos para visualizar tendencias de votacion.
+Sparklines display the percentage of "YES" votes for each party by category and by month. They are used in party profiles to visualize voting trends.
 
 ---
 
-## 1. Definicion de Sparkline
+## 1. Sparkline Definition
 
-### 1.1 Que es un Sparkline
+### 1.1 What Is a Sparkline
 
-Un sparkline es una mini-grafica que muestra tendencia en poco espacio. En AMPAY:
+A sparkline is a miniature chart that shows trends in a compact space. In AMPAY:
 
 ```
-Fuerza Popular - Economia: ▁▂▃▅▇▆▅▄▃▂ (94.2%)
+Fuerza Popular - economia (economy): ▁▂▃▅▇▆▅▄▃▂ (94.2%)
 ```
 
-Cada barra representa un periodo (mes o categoria).
+Each bar represents a period (month or category).
 
-### 1.2 Metricas Calculadas
+### 1.2 Calculated Metrics
 
-| Metrica | Formula | Uso |
-|---------|---------|-----|
-| % SI por categoria | SI_votos / (SI_votos + NO_votos) * 100 | Comparar posiciones tematicas |
-| % SI por mes | SI_votos_mes / Total_votos_mes * 100 | Ver evolucion temporal |
+| Metric | Formula | Use |
+|--------|---------|-----|
+| % YES by category | YES_votes / (YES_votes + NO_votes) * 100 | Compare thematic positions |
+| % YES by month | YES_votes_month / Total_votes_month * 100 | Track temporal evolution |
 
 ---
 
-## 2. Calculo por Categoria
+## 2. Calculation by Category
 
 ### 2.1 Formula
 
 ```python
-def calcular_pct_categoria(partido, categoria, votos):
+def calculate_pct_category(party, category, votes):
     """
-    Calcula porcentaje de SI para un partido en una categoria
+    Calculates YES percentage for a party in a category
     """
-    votos_partido_categoria = filter(
-        votos,
-        where partido == partido_input AND categoria == categoria_input
+    party_category_votes = filter(
+        votes,
+        where party == party_input AND category == category_input
     )
 
-    total_si = sum(v.votes_favor for v in votos_partido_categoria)
-    total_no = sum(v.votes_contra for v in votos_partido_categoria)
+    total_yes = sum(v.votes_favor for v in party_category_votes)
+    total_no = sum(v.votes_contra for v in party_category_votes)
 
-    if total_si + total_no == 0:
-        return None  # Sin datos
+    if total_yes + total_no == 0:
+        return None  # No data
 
-    return round(total_si / (total_si + total_no) * 100, 1)
+    return round(total_yes / (total_yes + total_no) * 100, 1)
 ```
 
-### 2.2 Exclusiones
+### 2.2 Exclusions
 
-**Votos excluidos del calculo:**
+**Votes excluded from calculation:**
 
-| Tipo de Voto | Razon de Exclusion |
-|--------------|-------------------|
-| `declarativo` | Sin impacto politico real |
-| `procedural` | Mecanica legislativa, no posicion |
-| `justicia` (categoria) | Altamente contextual, distorsiona |
+| Vote Type | Reason for Exclusion |
+|-----------|---------------------|
+| `declarativo` (declarative) | No real political impact |
+| `procedural` | Legislative mechanics, not a position |
+| `justicia` (justice) category | Highly contextual, causes distortion |
 
-### 2.3 Ejemplo de Calculo
+### 2.3 Calculation Example
 
 ```
-Partido: Fuerza Popular
-Categoria: salud
+Party: Fuerza Popular
+Category: salud (health)
 
-Votos encontrados: 258
-- SI: 1,581 votos individuales
-- NO: 118 votos individuales
+Votes found: 258
+- YES: 1,581 individual votes
+- NO: 118 individual votes
 - Total: 1,699
 
-Calculo:
-% SI = 1,581 / 1,699 * 100 = 93.1%
+Calculation:
+% YES = 1,581 / 1,699 * 100 = 93.1%
 ```
 
 ---
 
-## 3. Calculo por Mes
+## 3. Calculation by Month
 
 ### 3.1 Formula
 
 ```python
-def calcular_pct_mes(partido, mes, votos):
+def calculate_pct_month(party, month, votes):
     """
-    Calcula porcentaje de SI para un partido en un mes especifico
+    Calculates YES percentage for a party in a specific month
     """
-    votos_partido_mes = filter(
-        votos,
-        where partido == partido_input
-        AND extract_month(fecha) == mes_input
+    party_month_votes = filter(
+        votes,
+        where party == party_input
+        AND extract_month(date) == month_input
     )
 
-    total_si = sum(v.votes_favor for v in votos_partido_mes)
-    total_no = sum(v.votes_contra for v in votos_partido_mes)
+    total_yes = sum(v.votes_favor for v in party_month_votes)
+    total_no = sum(v.votes_contra for v in party_month_votes)
 
-    if total_si + total_no == 0:
-        return None  # Sin datos para ese mes
+    if total_yes + total_no == 0:
+        return None  # No data for that month
 
-    return round(total_si / (total_si + total_no) * 100, 1)
+    return round(total_yes / (total_yes + total_no) * 100, 1)
 ```
 
-### 3.2 Normalizacion Temporal
+### 3.2 Temporal Normalization
 
-**Problema:** Algunos meses tienen mas votaciones que otros.
+**Problem:** Some months have more votes than others.
 
-**Solucion:** El porcentaje ya normaliza (ratio, no conteo absoluto).
+**Solution:** The percentage already normalizes (ratio, not absolute count).
 
-**Periodo:** 2021-08 a 2024-07 (36 meses)
+**Period:** 2021-08 to 2024-07 (36 months)
 
-### 3.3 Meses con Pocos Votos
+### 3.3 Months with Few Votes
 
-Si un mes tiene menos de 5 votaciones:
-- Calcular el porcentaje normalmente
-- Mostrar con indicador de "pocos datos"
-- No excluir del sparkline
+If a month has fewer than 5 votes:
+- Calculate the percentage normally
+- Display with a "low data" indicator
+- Do not exclude from the sparkline
 
 ---
 
-## 4. Estructura de Datos
+## 4. Data Structure
 
-### 4.1 Formato JSON
+### 4.1 JSON Format
 
 ```json
 {
@@ -159,7 +159,7 @@ Si un mes tiene menos de 5 votaciones:
 }
 ```
 
-### 4.2 Archivo de Salida
+### 4.2 Output File
 
 ```
 data/02_output/party_patterns.json
@@ -167,34 +167,34 @@ data/02_output/party_patterns.json
 
 ---
 
-## 5. Visualizacion
+## 5. Visualization
 
-### 5.1 Mapeo Porcentaje a Barra
+### 5.1 Percentage-to-Bar Mapping
 
-| % SI | Barra | Significado |
-|------|-------|-------------|
-| 0-12.5% | ▁ | Muy bajo |
-| 12.5-25% | ▂ | Bajo |
-| 25-37.5% | ▃ | Medio-bajo |
-| 37.5-50% | ▄ | Medio |
-| 50-62.5% | ▅ | Medio-alto |
-| 62.5-75% | ▆ | Alto |
-| 75-87.5% | ▇ | Muy alto |
-| 87.5-100% | █ | Maximo |
+| % YES | Bar | Meaning |
+|-------|-----|---------|
+| 0-12.5% | ▁ | Very low |
+| 12.5-25% | ▂ | Low |
+| 25-37.5% | ▃ | Medium-low |
+| 37.5-50% | ▄ | Medium |
+| 50-62.5% | ▅ | Medium-high |
+| 62.5-75% | ▆ | High |
+| 75-87.5% | ▇ | Very high |
+| 87.5-100% | █ | Maximum |
 
-### 5.2 Codigo de Colores
+### 5.2 Color Coding
 
 ```css
-/* CSS Variables para sparklines */
---sparkline-low: #ff6b6b;      /* < 40% - Oposicion */
---sparkline-mid: #ffd93d;      /* 40-60% - Dividido */
---sparkline-high: #6bff6b;     /* > 60% - Apoyo */
+/* CSS Variables for sparklines */
+--sparkline-low: #ff6b6b;      /* < 40% - Opposition */
+--sparkline-mid: #ffd93d;      /* 40-60% - Divided */
+--sparkline-high: #6bff6b;     /* > 60% - Support */
 ```
 
-### 5.3 Ejemplo Visual
+### 5.3 Visual Example
 
 ```
-FUERZA POPULAR - Votacion por Categoria
+FUERZA POPULAR - Voting by Category
 
 salud      ████████▇ 93%
 economia   █████████ 94%
@@ -205,54 +205,54 @@ empleo     ████████▆ 89%
 
 ---
 
-## 6. Interpretacion
+## 6. Interpretation
 
-### 6.1 Patrones Tipicos
+### 6.1 Typical Patterns
 
-| Patron | Significado |
-|--------|-------------|
-| Todos altos (>80%) | Partido oficialista o muy cohesionado |
-| Todos bajos (<40%) | Oposicion sistematica |
-| Variable por categoria | Posiciones diferenciadas por tema |
-| Caida temporal | Cambio de posicion o crisis interna |
+| Pattern | Meaning |
+|---------|---------|
+| All high (>80%) | Ruling party or highly cohesive party |
+| All low (<40%) | Systematic opposition |
+| Variable by category | Differentiated positions by topic |
+| Temporal decline | Position shift or internal crisis |
 
-### 6.2 Alertas
+### 6.2 Alerts
 
-**Alerta de coherencia:** Si un partido tiene >80% SI en una categoria pero promete lo contrario, puede indicar AMPAY potencial.
-
----
-
-## 7. Limitaciones
-
-1. **Sesgo de votaciones:** No todos los temas llegan a votacion
-2. **Agregacion excesiva:** 15 categorias pueden ocultar matices
-3. **Peso igual:** Votos importantes y menores tienen mismo peso
-4. **Sin contexto:** El numero no explica POR QUE votaron asi
-5. **Periodo fijo:** 2021-2024, no incluye legislatura actual
+**Coherence alert:** If a party has >80% YES in a category but promises the opposite, it may indicate a potential AMPAY.
 
 ---
 
-## 8. Validacion
+## 7. Limitations
 
-### 8.1 Verificacion de Totales
+1. **Voting bias:** Not all topics reach a vote
+2. **Excessive aggregation:** 15 categories may obscure nuances
+3. **Equal weighting:** Major and minor votes carry the same weight
+4. **No context:** The number does not explain WHY they voted that way
+5. **Fixed period:** 2021-2024, does not include the current legislative session
+
+---
+
+## 8. Validation
+
+### 8.1 Total Verification
 
 ```python
-# Para cada partido, verificar:
+# For each party, verify:
 total_by_category = sum(cat.total for cat in party.by_category)
 total_by_month = sum(month.total for month in party.by_month)
 
-assert total_by_category == total_by_month, "Inconsistencia en totales"
+assert total_by_category == total_by_month, "Inconsistency in totals"
 ```
 
-### 8.2 Comparacion con Fuentes
+### 8.2 Comparison with Sources
 
-- Contrastar con reportes de transparencia del Congreso
-- Verificar meses con anomalias (0% o 100%)
-- Revisar categorias con pocos datos
+- Cross-reference with Congressional transparency reports
+- Verify months with anomalies (0% or 100%)
+- Review categories with sparse data
 
 ---
 
-## 9. Script de Generacion
+## 9. Generation Script
 
 ```python
 # scripts/compute_patterns.py
@@ -279,7 +279,7 @@ def compute_party_patterns(votes_categorized):
                     patterns[party]['by_category'][category]['si'] += 1
                     patterns[party]['by_month'][month]['si'] += 1
 
-    # Calcular porcentajes
+    # Calculate percentages
     for party in patterns:
         for cat in patterns[party]['by_category']:
             data = patterns[party]['by_category'][cat]
@@ -294,21 +294,21 @@ def compute_party_patterns(votes_categorized):
 
 ---
 
-## 10. Archivos Relacionados
+## 10. Related Files
 
-| Archivo | Contenido |
-|---------|-----------|
-| `data/02_output/party_patterns.json` | Datos de sparklines |
-| `data/02_output/votes_categorized.json` | Votos fuente |
-| `scripts/compute_patterns.py` | Script de generacion |
-
----
-
-## Referencias
-
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+| File | Content |
+|------|---------|
+| `data/02_output/party_patterns.json` | Sparkline data |
+| `data/02_output/votes_categorized.json` | Source votes |
+| `scripts/compute_patterns.py` | Generation script |
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+## References
+
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)
+
+---
+
+*Last updated: 2026-01-21*

@@ -70,7 +70,7 @@ pages/*/*.txt          │                       └─────────�
 |-----------|-------|
 | **Type** | Pure Code (No LLM) |
 | **Input** | `data/pdfs/PDF_URLS.md` (18 verified URLs) |
-| **Output** | raw PDFs, text files, page files |
+| **Output** | Raw PDFs, text files, page files |
 | **Validation** | `data/processing/phase_1_1_validation.json` |
 
 ### Process Flow
@@ -309,18 +309,18 @@ Final: Save data/votes_categorized.json with stats
 **Vote Types:**
 | Type | Description |
 |------|-------------|
-| `sustantivo` | Creates/modifies actual laws with real-world impact |
-| `declarativo` | Symbolic declarations, recognitions, commemorations |
+| `sustantivo` (substantive) | Creates/modifies actual laws with real-world impact |
+| `declarativo` (declarative) | Symbolic declarations, recognitions, commemorations |
 | `procedural` | Internal Congress procedures, committee formation |
 
 **Classification Rules (from script):**
-1. Votes about forming congressional commissions/committees -> `justicia` + `procedural`
-2. Votes about investigating corruption -> `justicia`
-3. Votes about COVID-19 -> `salud`
-4. Votes about elections/electoral fraud -> `justicia`
+1. Votes about forming congressional commissions/committees -> `justicia` (justice) + `procedural`
+2. Votes about investigating corruption -> `justicia` (justice)
+3. Votes about COVID-19 -> `salud` (health)
+4. Votes about elections/electoral fraud -> `justicia` (justice)
 5. Votes about specific ministries -> map to their sector
-6. "Reconsideracion" votes inherit category of original vote
-7. "Admision a debate" votes inherit category of underlying motion
+6. "Reconsideracion" (reconsideration) votes inherit category of original vote
+7. "Admision a debate" (admission to debate) votes inherit category of underlying motion
 
 ### Output Schema
 
@@ -434,7 +434,7 @@ PARTY_CODE_MAP = {
     "SP-PM": "Partido Morado",       # NOT "PM"
     "AP": "Accion Popular",
 
-    # Additional bancadas in data
+    # Additional parliamentary blocs in data
     "BM": "Bloque Magisterial",
     "PB": "Peru Bicentenario",
     "PD": "Peru Democratico",
@@ -516,7 +516,7 @@ PARTY_CODE_MAP = {
 `party_positions.json` provides the voting record for AMPAY detection:
 - `category` - Used to match votes to promises
 - `party_positions[party_name].position` - Used to determine if party voted aligned or against promise
-- `vote_type` - Only `sustantivo` votes are used for AMPAY detection
+- `vote_type` - Only `sustantivo` (substantive) votes are used for AMPAY detection
 
 ### Exit Criteria
 
@@ -535,7 +535,7 @@ PARTY_CODE_MAP = {
 |-----------|-------|
 | **Type** | LLM Processing |
 | **Script** | `scripts/detect_ampays.py` |
-| **Input** | `data/promises.json` (2021 only) + `data/party_positions.json` (sustantivo only) |
+| **Input** | `data/promises.json` (2021 only) + `data/party_positions.json` (substantive only) |
 | **Output** | `data/ampays.json` + `data/evaluations.json` |
 | **Batch Size** | 1 promise at a time (for accuracy) |
 | **Validation** | `data/processing/phase_1_5_validation.json` |

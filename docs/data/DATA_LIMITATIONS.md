@@ -1,251 +1,251 @@
-# Limitaciones de los Datos
+# Data Limitations
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
+**Date:** 2026-01-21
+**Status:** ACTIVE
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-Este documento transparenta las limitaciones conocidas de los datos utilizados en AMPAY, incluyendo gaps temporales, sesgos potenciales, y areas de incertidumbre.
-
----
-
-## 1. Limitaciones Temporales
-
-### 1.1 Periodo de Cobertura
-
-| Dataset | Inicio | Fin | Gap |
-|---------|--------|-----|-----|
-| Votaciones | 2021-07-26 | 2024-07-26 | 2024-07 a 2026-01 no incluido |
-| Promesas 2021 | 2021-04 | 2021-04 | Solo plan registrado |
-| Promesas 2026 | 2026-01 | 2026-01 | Solo plan registrado |
-
-### 1.2 Impacto del Gap 2024-2026
-
-| Implicacion | Detalle |
-|-------------|---------|
-| AMPAYs recientes | Contradicciones de los ultimos 18 meses no detectadas |
-| Cambios de posicion | Partidos pueden haber cambiado comportamiento |
-| Contexto incompleto | Patrones 2021-2024 pueden no reflejar 2024-2026 |
-
-### 1.3 Mitigacion
-
-- Disclaimer explicito en la aplicacion
-- Fecha de corte mostrada claramente
-- Actualizacion planeada si datos disponibles
+This document transparently discloses the known limitations of the data used in AMPAY, including temporal gaps, potential biases, and areas of uncertainty.
 
 ---
 
-## 2. Limitaciones de Votaciones
+## 1. Temporal Limitations
 
-### 2.1 Datos No Capturados
+### 1.1 Coverage Period
 
-| Tipo de Votacion | Incluido | Razon |
-|------------------|----------|-------|
-| Votacion nominal | SI | Registrada en actas |
-| Votacion secreta | NO | No hay registro publico |
-| Comisiones | NO | Solo pleno incluido |
-| Mesa Directiva | PARCIAL | Algunas decisiones sin votacion |
+| Dataset | Start | End | Gap |
+|---------|-------|-----|-----|
+| Votes | 2021-07-26 | 2024-07-26 | 2024-07 to 2026-01 not included |
+| 2021 Promises | 2021-04 | 2021-04 | Registered plan only |
+| 2026 Promises | 2026-01 | 2026-01 | Registered plan only |
 
-### 2.2 Contexto Perdido
+### 1.2 Impact of the 2024-2026 Gap
 
-| Elemento | Disponible | No Disponible |
-|----------|------------|---------------|
-| Resultado del voto | SI | - |
-| Fundamentacion de voto | - | NO |
-| Negociaciones previas | - | NO |
-| Presion politica | - | NO |
-| Votos condicionados | - | NO |
+| Implication | Detail |
+|-------------|--------|
+| Recent AMPAYs | Contradictions from the last 18 months not detected |
+| Position changes | Parties may have changed their behavior |
+| Incomplete context | 2021-2024 patterns may not reflect 2024-2026 |
 
-### 2.3 Calidad de los Datos
+### 1.3 Mitigation
 
-| Metrica | Valor | Fuente |
-|---------|-------|--------|
-| Completitud | 99%+ | openpolitica |
-| Precision | 99.7% | Verificacion muestral |
-| Errores conocidos | < 0.3% | Mayormente typos |
+- Explicit disclaimer in the application
+- Data cutoff date clearly displayed
+- Update planned if data becomes available
 
 ---
 
-## 3. Limitaciones de Promesas
+## 2. Voting Data Limitations
 
-### 3.1 Problemas de Extraccion
+### 2.1 Data Not Captured
 
-| Problema | Frecuencia | Mitigacion |
-|----------|------------|------------|
-| PDFs escaneados baja calidad | 15% | OCR + revision manual |
-| Estructura no estandar | 100% | Adaptacion por documento |
-| Promesas vagas | 30% | Exclusion si no verificable |
-| Lenguaje condicionado | 20% | Codificacion como 0 |
+| Vote Type | Included | Reason |
+|-----------|----------|--------|
+| Roll-call vote | YES | Recorded in official minutes |
+| Secret vote | NO | No public record exists |
+| Committee votes | NO | Only plenary sessions included |
+| Bureau decisions | PARTIAL | Some decisions made without a vote |
 
-### 3.2 Sesgo de Documentacion
+### 2.2 Lost Context
 
-| Partido | Paginas Plan 2021 | Promesas Extraidas | Notas |
-|---------|-------------------|-------------------|-------|
-| Renovacion Popular | 120+ | 84 | Plan muy detallado |
-| Peru Libre | 60 | 21 | Plan mas general |
-| Partido Morado | 25 | 6 | Plan corto |
-
-**Implicacion:** Partidos con planes mas detallados tienen mas promesas analizables.
-
-### 3.3 Promesas No Incluidas
-
-| Tipo | Razon de Exclusion |
-|------|-------------------|
-| Promesas verbales | No documentadas en plan JNE |
-| Entrevistas de campana | Fuera de alcance |
-| Redes sociales | Verificabilidad cuestionable |
-| Promesas post-registro | No en version oficial |
-
----
-
-## 4. Limitaciones de Categorizacion
-
-### 4.1 Precision de Clasificacion
-
-| Metodo | Precision Estimada | Casos Problematicos |
-|--------|-------------------|---------------------|
-| Keywords automaticos | 98% | Homonimos |
-| IA (Claude/Gemini) | 95% | Temas fronterizos |
-| Revision manual | 99%+ | Subjetividad residual |
-
-### 4.2 Categorias Fronterizas
-
-| Ejemplo | Categorias Posibles | Asignacion |
-|---------|---------------------|------------|
-| "Canon minero para educacion" | mineria, educacion, fiscal | fiscal |
-| "Hospitales en zonas mineras" | salud, mineria | salud |
-| "Empleo en agricultura" | empleo, agricultura | agricultura |
-
-### 4.3 Evolucion de Categorias
-
-Las 15 categorias actuales pueden no capturar:
-- Temas emergentes (ej: IA, criptomonedas)
-- Temas transversales (ej: genero, digitalizacion)
-- Matices dentro de categorias (ej: mineria formal vs informal)
-
----
-
-## 5. Limitaciones del Quiz
-
-### 5.1 Simplificacion Inherente
-
-| Aspecto | Realidad | Quiz |
-|---------|----------|------|
-| Espectro politico | Multidimensional | 2 ejes |
-| Posiciones | Matizadas | -1/0/+1 |
-| Temas | Miles | 8 preguntas |
-| Ponderacion | Variable por votante | Igual para todos |
-
-### 5.2 Sesgos Potenciales
-
-| Sesgo | Descripcion | Mitigacion |
-|-------|-------------|------------|
-| Seleccion de preguntas | Temas elegidos por equipo | Diversidad de ejes |
-| Redaccion | Framing afecta respuestas | Lenguaje neutral |
-| Orden | Primeras preguntas anclan | Aleatorizar en futuro |
-
-### 5.3 Validacion Pendiente
-
-| Test | Estado | Prioridad |
-|------|--------|-----------|
-| Test-retest reliability | No realizado | Media |
-| Validez de constructo | No realizado | Alta |
-| Comparacion con encuestas | No realizado | Media |
-
----
-
-## 6. Limitaciones de AMPAYs
-
-### 6.1 Falsos Negativos
-
-Contradicciones que podemos PERDER:
-
-| Tipo | Razon |
-|------|-------|
-| Sin leyes relacionadas | Promesa sin legislacion en periodo |
-| Keywords no detectados | Sinonimos no incluidos |
-| Contradiccion sutil | Conexion semantica debil |
-| Voto por delegacion | Lider vota, bancada ausente |
-
-### 6.2 Incertidumbre Residual
-
-| AMPAY | Confianza | Fuente de Incertidumbre |
-|-------|-----------|------------------------|
-| AMPAY-001 | HIGH | Contexto de negociacion desconocido |
-| AMPAY-005 | MEDIUM | Distincion "corporativo" vs "popular" |
-| AMPAY-006 | MEDIUM | Solo 2 mociones encontradas |
-
-### 6.3 Contexto No Capturado
-
-- Presion de ejecutivo
-- Acuerdos de bancada
-- Votos "estrategicos"
-- Cambios en texto de ley entre versiones
-
----
-
-## 7. Limitaciones de Agregacion
-
-### 7.1 Congresista vs Partido
-
-| Situacion | Tratamiento | Limitacion |
-|-----------|-------------|------------|
-| Voto unanime | Posicion = posicion partido | Ninguna |
-| Voto dividido | Posicion = mayoria | Pierde matiz |
-| Transfuga | Usa partido al momento | Historia perdida |
-| Bancada de 1 | Posicion = individuo | No es "partido" |
-
-### 7.2 Pesos Iguales
-
-Todos los votos tienen igual peso, pero:
-- Algunos votos son mas relevantes (presupuesto)
-- Algunos congresistas tienen mas influencia (lideres)
-- Algunos temas son mas importantes para votantes
-
----
-
-## 8. Recomendaciones de Uso
-
-### 8.1 AMPAY Esta Disenado Para
-
-- Informar votantes sobre patrones generales
-- Identificar contradicciones claras
-- Promover transparencia politica
-- Ser punto de partida para investigacion
-
-### 8.2 AMPAY NO Esta Disenado Para
-
-- Predecir comportamiento futuro con certeza
-- Ser unica fuente de decision de voto
-- Reemplazar analisis periodistico
-- Afirmar intencion o motivacion de politicos
-
----
-
-## 9. Niveles de Confianza por Seccion
-
-| Seccion | Confianza | Justificacion |
+| Element | Available | Not Available |
 |---------|-----------|---------------|
-| Datos de votacion | **ALTA** | Fuente oficial, verificada |
-| Categorizacion de votos | **ALTA** | Proceso multiple, QA |
-| Posiciones de partidos | **MEDIA** | Basado en promesas, no votos |
-| Match del quiz | **MEDIA** | Simplificacion necesaria |
-| AMPAYs | **VARIABLE** | Depende de evidencia especifica |
+| Vote outcome | YES | - |
+| Vote justification | - | NO |
+| Prior negotiations | - | NO |
+| Political pressure | - | NO |
+| Conditional votes | - | NO |
+
+### 2.3 Data Quality
+
+| Metric | Value | Source |
+|--------|-------|--------|
+| Completeness | 99%+ | openpolitica |
+| Accuracy | 99.7% | Sample verification |
+| Known errors | < 0.3% | Mostly typos |
 
 ---
 
-## 10. Actualizaciones Futuras
+## 3. Promise Data Limitations
 
-| Mejora | Impacto en Limitaciones |
-|--------|------------------------|
-| Datos 2024-2026 | Elimina gap temporal |
-| Validacion externa | Aumenta confianza |
-| Mas preguntas quiz | Reduce simplificacion |
-| Categorias granulares | Mejora precision |
+### 3.1 Extraction Issues
+
+| Issue | Frequency | Mitigation |
+|-------|-----------|------------|
+| Low-quality scanned PDFs | 15% | OCR + manual review |
+| Non-standard structure | 100% | Per-document adaptation |
+| Vague promises | 30% | Excluded if not verifiable |
+| Conditional language | 20% | Coded as 0 |
+
+### 3.2 Documentation Bias
+
+| Party | 2021 Plan Pages | Promises Extracted | Notes |
+|-------|-----------------|-------------------|-------|
+| Renovacion Popular | 120+ | 84 | Highly detailed plan |
+| Peru Libre | 60 | 21 | More general plan |
+| Partido Morado | 25 | 6 | Short plan |
+
+**Implication:** Parties with more detailed plans yield a greater number of analyzable promises.
+
+### 3.3 Promises Not Included
+
+| Type | Reason for Exclusion |
+|------|---------------------|
+| Verbal promises | Not documented in JNE plan |
+| Campaign interviews | Outside scope |
+| Social media | Questionable verifiability |
+| Post-registration promises | Not in official version |
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+## 4. Categorization Limitations
+
+### 4.1 Classification Accuracy
+
+| Method | Estimated Accuracy | Problematic Cases |
+|--------|-------------------|-------------------|
+| Automatic keywords | 98% | Homonyms |
+| AI (Claude/Gemini) | 95% | Borderline topics |
+| Manual review | 99%+ | Residual subjectivity |
+
+### 4.2 Borderline Categories
+
+| Example | Possible Categories | Assignment |
+|---------|---------------------|------------|
+| "Mining canon for education" | mineria, educacion, fiscal | fiscal |
+| "Hospitals in mining zones" | salud, mineria | salud |
+| "Employment in agriculture" | empleo, agricultura | agricultura |
+
+### 4.3 Category Evolution
+
+The current 15 categories may not capture:
+- Emerging topics (e.g., AI, cryptocurrencies)
+- Cross-cutting topics (e.g., gender, digitalization)
+- Nuances within categories (e.g., formal vs. informal mining)
+
+---
+
+## 5. Quiz Limitations
+
+### 5.1 Inherent Simplification
+
+| Aspect | Reality | Quiz |
+|--------|---------|------|
+| Political spectrum | Multidimensional | 2 axes |
+| Positions | Nuanced | -1/0/+1 |
+| Topics | Thousands | 8 questions |
+| Weighting | Variable by voter | Equal for all |
+
+### 5.2 Potential Biases
+
+| Bias | Description | Mitigation |
+|------|-------------|------------|
+| Question selection | Topics chosen by the team | Diversity of axes |
+| Wording | Framing affects responses | Neutral language |
+| Order | Early questions anchor | Randomize in future |
+
+### 5.3 Pending Validation
+
+| Test | Status | Priority |
+|------|--------|----------|
+| Test-retest reliability | Not conducted | Medium |
+| Construct validity | Not conducted | High |
+| Comparison with surveys | Not conducted | Medium |
+
+---
+
+## 6. AMPAY Limitations
+
+### 6.1 False Negatives
+
+Contradictions we may MISS:
+
+| Type | Reason |
+|------|--------|
+| No related legislation | Promise without corresponding legislation in the period |
+| Undetected keywords | Synonyms not included |
+| Subtle contradiction | Weak semantic connection |
+| Vote by delegation | Leader votes, caucus absent |
+
+### 6.2 Residual Uncertainty
+
+| AMPAY | Confidence | Source of Uncertainty |
+|-------|-----------|----------------------|
+| AMPAY-001 | HIGH | Negotiation context unknown |
+| AMPAY-005 | MEDIUM | Distinction between "corporate" and "popular" |
+| AMPAY-006 | MEDIUM | Only 2 motions found |
+
+### 6.3 Context Not Captured
+
+- Executive branch pressure
+- Caucus agreements
+- "Strategic" votes
+- Changes in bill text between versions
+
+---
+
+## 7. Aggregation Limitations
+
+### 7.1 Legislator vs. Party
+
+| Situation | Treatment | Limitation |
+|-----------|-----------|------------|
+| Unanimous vote | Position = party position | None |
+| Divided vote | Position = majority | Loses nuance |
+| Party switcher | Uses party at time of vote | History lost |
+| Single-member caucus | Position = individual | Not truly a "party" |
+
+### 7.2 Equal Weights
+
+All votes carry equal weight, yet:
+- Some votes are more consequential (e.g., budget)
+- Some legislators have more influence (e.g., leaders)
+- Some issues matter more to voters
+
+---
+
+## 8. Usage Recommendations
+
+### 8.1 AMPAY Is Designed To
+
+- Inform voters about general patterns
+- Identify clear contradictions
+- Promote political transparency
+- Serve as a starting point for further research
+
+### 8.2 AMPAY Is NOT Designed To
+
+- Predict future behavior with certainty
+- Be the sole source for voting decisions
+- Replace journalistic analysis
+- Assert the intent or motivation of politicians
+
+---
+
+## 9. Confidence Levels by Section
+
+| Section | Confidence | Justification |
+|---------|-----------|---------------|
+| Voting data | **HIGH** | Official source, verified |
+| Vote categorization | **HIGH** | Multi-step process, QA |
+| Party positions | **MEDIUM** | Based on promises, not votes |
+| Quiz match | **MEDIUM** | Necessary simplification |
+| AMPAYs | **VARIABLE** | Depends on specific evidence |
+
+---
+
+## 10. Future Updates
+
+| Improvement | Impact on Limitations |
+|-------------|----------------------|
+| 2024-2026 data | Eliminates temporal gap |
+| External validation | Increases confidence |
+| More quiz questions | Reduces simplification |
+| Granular categories | Improves accuracy |
+
+---
+
+*Last updated: 2026-01-21*

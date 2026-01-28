@@ -1,310 +1,310 @@
-# Algoritmo del Quiz: Compatibilidad Votante-Partido
+# Quiz Algorithm: Voter-Party Compatibility
 
 **Version:** 3.3
-**Fecha:** 2026-01-22
-**Estado:** ACTIVO
+**Date:** 2026-01-22
+**Status:** ACTIVE
 
 ---
 
 ## Disclaimer
 
-> **Este quiz es una herramienta informativa basada en los planes de gobierno publicados. No constituye una recomendacion de voto. Los resultados muestran similitud entre tus respuestas y las posiciones declaradas de los partidos, no una evaluacion de su desempeño o integridad.**
+> **This quiz is an informational tool based on published government plans. It does not constitute a voting recommendation. Results show the similarity between your answers and the declared positions of parties, not an assessment of their performance or integrity.**
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-El quiz de AMPAY utiliza un algoritmo de **puntuacion combinada** basado en distancia Manhattan con ajuste por cobertura. Este enfoque combina la metodologia estandar de VAAs (Voting Advice Applications) con una penalizacion para partidos con pocas posiciones definidas.
+The AMPAY quiz uses a **blended scoring** algorithm based on Manhattan distance with a coverage adjustment. This approach combines the standard VAA (Voting Advice Application) methodology with a penalty for parties with few defined positions.
 
-**Version 3.3:** 15 preguntas con ratio balanceado 5:4 izquierda-derecha en eje economico, preguntas sociales y trans-ideologicas. Orden intercalado para prevenir sesgo de respuesta. Algoritmo validado con 2 millones de simulaciones.
+**Version 3.3:** 15 questions with a balanced 5:4 left-right ratio on the economic axis, plus social and cross-ideological questions. Interleaved ordering to prevent response bias. Algorithm validated with 2 million simulations.
 
-**Validacion:** 1 millon de tests de creyentes (100% precision en identificacion de partidos) + 1 millon de tests aleatorios (ratio de balance 2.72:1).
+**Validation:** 1 million true believer tests (100% accuracy in party identification) + 1 million random tests (balance ratio 2.72:1).
 
 ---
 
-## 1. Fundamento Teorico
+## 1. Theoretical Foundation
 
 ### 1.1 Voting Advice Applications (VAAs)
 
-Las VAAs son herramientas que ayudan a los votantes a identificar que partidos politicos se alinean mejor con sus preferencias. Funcionan mediante:
+VAAs are tools that help voters identify which political parties best align with their preferences. They work by:
 
-1. Recopilar posiciones de partidos sobre temas politicos
-2. Preguntar al usuario su posicion sobre los mismos temas
-3. Calcular la "distancia" entre usuario y partidos
-4. Mostrar los partidos mas cercanos
+1. Collecting party positions on political issues
+2. Asking the user their position on the same issues
+3. Calculating the "distance" between user and parties
+4. Displaying the closest parties
 
-**Referencias academicas:**
+**Academic references:**
 
 - Garzia, D. (2010). "The Methodological Challenges of Voting Advice Applications". *Representation*, 46(1), 89-102. DOI: [10.1080/00344890903510006](https://doi.org/10.1080/00344890903510006)
 - Walgrave, S., Nuytemans, M., & Kriesi, H. (2009). "Who is taught by voters?". *Journal of Information Technology & Politics*, 6(3-4), 194-208. DOI: [10.1080/19331680903048992](https://doi.org/10.1080/19331680903048992)
 
-### 1.2 Distancia Manhattan (City-Block Distance)
+### 1.2 Manhattan Distance (City-Block Distance)
 
-La distancia Manhattan mide la diferencia absoluta entre dos puntos en un espacio multidimensional. Es el metodo preferido por VAAs como Wahl-O-Mat (Alemania) y Smartvote (Suiza).
+Manhattan distance measures the absolute difference between two points in a multidimensional space. It is the preferred method used by VAAs such as Wahl-O-Mat (Germany) and Smartvote (Switzerland).
 
-**Formula matematica:**
+**Mathematical formula:**
 
 ```
-D(usuario, partido) = Σ |posicion_usuario_i - posicion_partido_i|
+D(user, party) = Σ |user_position_i - party_position_i|
 ```
 
-Donde:
-- `D` = distancia total
-- `i` = cada pregunta del quiz
-- `posicion` = valor numerico (-1, 0, o +1)
+Where:
+- `D` = total distance
+- `i` = each quiz question
+- `position` = numerical value (-1, 0, or +1)
 
-**Por que Manhattan y no Euclidiana:**
+**Why Manhattan and not Euclidean:**
 
-| Metrica | Formula | Uso |
-|---------|---------|-----|
-| Manhattan | Σ\|x-y\| | VAAs tradicionales, interpretacion intuitiva |
-| Euclidiana | √Σ(x-y)² | Penaliza mas las diferencias grandes |
+| Metric | Formula | Usage |
+|--------|---------|-------|
+| Manhattan | Σ\|x-y\| | Traditional VAAs, intuitive interpretation |
+| Euclidean | √Σ(x-y)² | Penalizes large differences more heavily |
 
-La distancia Manhattan trata todas las diferencias por igual, lo cual es mas justo para comparaciones politicas donde no hay consenso sobre que diferencia es "peor".
+Manhattan distance treats all differences equally, which is fairer for political comparisons where there is no consensus on which difference is "worse."
 
 ---
 
-## 2. Implementacion en AMPAY
+## 2. Implementation in AMPAY
 
-### 2.1 Escala de Posiciones
+### 2.1 Position Scale
 
-**Entrada del usuario:**
+**User input:**
 ```
-+1 = De acuerdo
- 0 = Neutral / No se
--1 = En desacuerdo
-```
-
-**Posiciones de partidos:**
-```
-+1 = Apoya (promesa explicita a favor)
- 0 = Sin posicion clara (silencio o ambiguedad)
--1 = Se opone (promesa explicita en contra)
++1 = Agree
+ 0 = Neutral / Don't know
+-1 = Disagree
 ```
 
-### 2.2 Calculo de Distancia
+**Party positions:**
+```
++1 = Supports (explicit promise in favor)
+ 0 = No clear position (silence or ambiguity)
+-1 = Opposes (explicit promise against)
+```
 
-**Ejemplo con 15 preguntas:**
+### 2.2 Distance Calculation
 
-| Pregunta | Usuario | Fuerza Popular | Peru Libre |
-|----------|---------|----------------|------------|
-| Q01 (Impuestos mineras) | +1 | -1 | +1 |
-| Q02 (Seguridad) | -1 | +1 | 0 |
-| Q03 (TLCs) | +1 | -1 | +1 |
-| Q04 (Flexibilidad laboral) | -1 | +1 | -1 |
-| Q05 (Estado en energia) | +1 | -1 | +1 |
+**Example with 15 questions:**
+
+| Question | User | Fuerza Popular | Peru Libre |
+|----------|------|----------------|------------|
+| Q01 (Mining taxes) | +1 | -1 | +1 |
+| Q02 (Security) | -1 | +1 | 0 |
+| Q03 (FTAs) | +1 | -1 | +1 |
+| Q04 (Labor flexibility) | -1 | +1 | -1 |
+| Q05 (State role in energy) | +1 | -1 | +1 |
 | ... | ... | ... | ... |
-| Q15 (Descentralizacion) | +1 | 0 | +1 |
+| Q15 (Decentralization) | +1 | 0 | +1 |
 
-**Distancia:** Suma de |posicion_usuario - posicion_partido| para cada pregunta.
+**Distance:** Sum of |user_position - party_position| for each question.
 
-### 2.3 Puntuacion Combinada (Blended Score)
+### 2.3 Blended Score
 
-El algoritmo v3.3 utiliza una puntuacion combinada que considera dos factores:
+The v3.3 algorithm uses a blended score that considers two factors:
 
-1. **Distancia Manhattan (90%):** Que tan cerca estan las respuestas del usuario de las posiciones del partido
-2. **Ajuste por cobertura (10%):** Penalizacion para partidos con pocas posiciones definidas
+1. **Manhattan distance (90%):** How close the user's answers are to the party's positions
+2. **Coverage adjustment (10%):** Penalty for parties with few defined positions
 
-**Por que el ajuste por cobertura:**
+**Why the coverage adjustment:**
 
-Un partido que tiene posicion 0 (sin posicion clara) en muchas preguntas obtendria una distancia artificialmente baja, ya que estaria "cerca de todos". El ajuste penaliza esta ambiguedad para que los partidos con posiciones claras no se vean perjudicados.
+A party with position 0 (no clear position) on many questions would achieve an artificially low distance, as it would be "close to everyone." The adjustment penalizes this ambiguity so that parties with clear positions are not disadvantaged.
 
 ```
-Distancia maxima posible = 2 * numero_preguntas = 2 * 15 = 30
+Maximum possible distance = 2 * number_of_questions = 2 * 15 = 30
 
-Puntuacion combinada = 0.9 * distancia + 0.1 * penalizacion_cobertura
+Blended score = 0.9 * distance + 0.1 * coverage_penalty
 
-Porcentaje = 100 - (puntuacion / maximo * 100)
+Percentage = 100 - (score / maximum * 100)
 
-Ejemplo:
-Partido A: distancia=8, 12 posiciones definidas -> puntuacion baja -> alta afinidad
-Partido B: distancia=6, 4 posiciones definidas -> penalizacion alta -> afinidad ajustada
+Example:
+Party A: distance=8, 12 defined positions -> low score -> high affinity
+Party B: distance=6, 4 defined positions -> high penalty -> adjusted affinity
 ```
 
-**Interpretacion:** Menor puntuacion combinada = mayor compatibilidad real.
+**Interpretation:** Lower blended score = greater true compatibility.
 
-### 2.4 Validacion del Algoritmo
+### 2.4 Algorithm Validation
 
-El algoritmo fue validado con 2 millones de simulaciones:
+The algorithm was validated with 2 million simulations:
 
-| Tipo de Test | Cantidad | Resultado |
-|--------------|----------|-----------|
-| Tests de creyentes | 1,000,000 | 100% precision (9/9 partidos correctos) |
-| Tests aleatorios | 1,000,000 | Ratio de balance 2.72:1 |
+| Test Type | Count | Result |
+|-----------|-------|--------|
+| True believer tests | 1,000,000 | 100% accuracy (9/9 parties correct) |
+| Random tests | 1,000,000 | Balance ratio 2.72:1 |
 
-**Tests de creyentes:** Usuarios simulados que responden exactamente como un partido. El algoritmo debe identificar ese partido como el mas afin.
+**True believer tests:** Simulated users who answer exactly as a party would. The algorithm must identify that party as the top match.
 
-**Tests aleatorios:** Respuestas generadas al azar para verificar que ningun partido sea favorecido sistematicamente. El ratio de balance mide la relacion entre el partido mas y menos seleccionado (ideal: 1:1, aceptable: <3:1).
+**Random tests:** Randomly generated answers to verify that no party is systematically favored. The balance ratio measures the relationship between the most and least selected party (ideal: 1:1, acceptable: <3:1).
 
-**Mejora sobre versiones anteriores:** El ratio de balance mejoro de 7.6:1 (v3.2 Manhattan puro) a 2.72:1 (v3.3 puntuacion combinada).
+**Improvement over previous versions:** The balance ratio improved from 7.6:1 (v3.2 pure Manhattan) to 2.72:1 (v3.3 blended score).
 
 ---
 
-## 3. Sistema de Calibracion (Filtro Ideologico)
+## 3. Calibration System (Ideological Filter)
 
-### 3.1 Proposito
+### 3.1 Purpose
 
-Las preguntas de calibracion NO afectan el calculo de distancia. Sirven para:
-1. Filtrar partidos que el usuario considera fuera de su espectro
-2. Evitar resultados que contradigan la auto-identificacion del usuario
-3. Presentar resultados en dos secciones: "dentro de tu perfil" y "otros"
+Calibration questions do NOT affect the distance calculation. They serve to:
+1. Filter out parties the user considers outside their spectrum
+2. Avoid results that contradict the user's self-identification
+3. Present results in two sections: "within your profile" and "others"
 
-### 3.2 Preguntas de Calibracion
+### 3.2 Calibration Questions
 
-**C1: Eje Economico**
+**C1: Economic Axis**
 ```
-"En temas economicos, ordena del mas al menos identificado:"
-Opciones: Izquierda, Centro, Derecha
-Metodo: Usuario RANKEA 1-2-3
-```
-
-**C2: Eje Social**
-```
-"En temas sociales y culturales, ordena del mas al menos identificado:"
-Opciones: Conservador, Moderado, Progresista
-Metodo: Usuario RANKEA 1-2-3
+"On economic issues, rank from most to least identified with:"
+Options: Left, Center, Right
+Method: User RANKS 1-2-3
 ```
 
-### 3.3 Mapeo Calibracion-Partidos
-
-| Calibracion | Partidos Mapeados |
-|-------------|-------------------|
-| Izquierda (economico) | Peru Libre, Juntos por el Peru |
-| Centro (economico) | Partido Morado, Somos Peru, Alianza para el Progreso |
-| Derecha (economico) | Fuerza Popular, Renovacion Popular, Avanza Pais, Podemos Peru |
-| Conservador (social) | Renovacion Popular, Peru Libre |
-| Moderado (social) | FP, Podemos, APP, Avanza Pais, Somos Peru |
-| Progresista (social) | Partido Morado, Juntos por el Peru |
-
-### 3.4 Logica de Filtrado
-
+**C2: Social Axis**
 ```
-Rank 1 → Filtro primario (mejores matches)
-Rank 2 → Filtro secundario (tambien mostrados)
-Rank 3 → EXCLUIDO de "Dentro de tu perfil"
+"On social and cultural issues, rank from most to least identified with:"
+Options: Conservative, Moderate, Progressive
+Method: User RANKS 1-2-3
 ```
 
-**Ejemplo:**
-- Usuario rankea: Derecha (1), Centro (2), Izquierda (3)
-- Resultado matematico: Peru Libre 80%, Fuerza Popular 65%
-- Display: FP aparece en "Dentro de tu perfil", PL aparece en "Tambien podrias considerar"
+### 3.3 Calibration-to-Party Mapping
+
+| Calibration | Mapped Parties |
+|-------------|----------------|
+| Left (economic) | Peru Libre, Juntos por el Peru |
+| Center (economic) | Partido Morado, Somos Peru, Alianza para el Progreso |
+| Right (economic) | Fuerza Popular, Renovacion Popular, Avanza Pais, Podemos Peru |
+| Conservative (social) | Renovacion Popular, Peru Libre |
+| Moderate (social) | FP, Podemos Peru, APP, Avanza Pais, Somos Peru |
+| Progressive (social) | Partido Morado, Juntos por el Peru |
+
+### 3.4 Filtering Logic
+
+```
+Rank 1 -> Primary filter (best matches)
+Rank 2 -> Secondary filter (also shown)
+Rank 3 -> EXCLUDED from "Within your profile"
+```
+
+**Example:**
+- User ranks: Right (1), Center (2), Left (3)
+- Mathematical result: Peru Libre 80%, Fuerza Popular 65%
+- Display: FP appears under "Within your profile," PL appears under "You might also consider"
 
 ---
 
-## 4. Seleccion de Preguntas
+## 4. Question Selection
 
-### 4.1 Criterios de Inclusion
+### 4.1 Inclusion Criteria
 
-1. **Poder discriminatorio:** La pregunta debe generar variacion entre partidos
-2. **Basada en promesas:** Cada posicion de partido debe tener respaldo documental
-3. **Relevancia electoral:** El tema debe ser importante para votantes peruanos
-4. **Claridad:** Redaccion sin ambiguedad
+1. **Discriminatory power:** The question must generate variation among parties
+2. **Based on promises:** Each party position must have documentary backing
+3. **Electoral relevance:** The topic must be important to Peruvian voters
+4. **Clarity:** Unambiguous wording
 
-### 4.2 Criterios de Exclusion
+### 4.2 Exclusion Criteria
 
-1. **Consenso total:** Si todos los partidos tienen la misma posicion, la pregunta no discrimina
-2. **Datos insuficientes:** Si menos de 5 partidos tienen posicion clara
-3. **Temas secundarios:** Preguntas sobre temas marginales en el debate peruano
+1. **Total consensus:** If all parties share the same position, the question does not discriminate
+2. **Insufficient data:** If fewer than 5 parties have a clear position
+3. **Secondary topics:** Questions about marginal issues in the Peruvian debate
 
-### 4.3 Preguntas Removidas por Consenso
+### 4.3 Questions Removed Due to Consensus
 
-Las siguientes preguntas fueron descartadas porque todos los partidos tenian posicion +1:
+The following questions were discarded because all parties had position +1:
 
-- "Proteger la intangibilidad de la Amazonia"
-- "Garantizar cobertura universal de agua potable"
-- "Eliminar trabas burocraticas para MYPES"
+- "Protect the intangibility of the Amazon"
+- "Guarantee universal drinking water coverage"
+- "Eliminate bureaucratic barriers for MSMEs"
 
-**Referencia:** Ver `quiz_statements.json` campo `removed_consensus_questions`
+**Reference:** See `quiz_statements.json` field `removed_consensus_questions`
 
 ---
 
-## 5. Presentacion de Resultados
+## 5. Results Presentation
 
-### 5.1 Estructura de Display
+### 5.1 Display Structure
 
 ```
 ╔═══════════════════════════════════════════════════════╗
-║ DENTRO DE TU PERFIL:                                  ║
+║ WITHIN YOUR PROFILE:                                  ║
 ║   1. Fuerza Popular         78%                       ║
 ║   2. Avanza Pais            71%                       ║
 ║   3. Renovacion Popular     65%                       ║
 ╠═══════════════════════════════════════════════════════╣
-║ TUS RESPUESTAS SE ALINEAN CON:                        ║
+║ YOUR ANSWERS ALIGN WITH:                              ║
 ║   Peru Libre                82%                       ║
-║   (Este partido esta fuera de tu perfil declarado)    ║
+║   (This party is outside your declared profile)       ║
 ╠═══════════════════════════════════════════════════════╣
-║ ⚠️ Esto NO es una recomendacion de voto.             ║
-║    Compara los planes de gobierno antes de decidir.   ║
+║ This is NOT a voting recommendation.                  ║
+║ Compare the government plans before deciding.         ║
 ╚═══════════════════════════════════════════════════════╝
 ```
 
-### 5.2 Logica de "Ver Detalle"
+### 5.2 "View Details" Logic
 
-Al hacer click en un partido, mostrar:
-- Que preguntas acercaron al usuario a ese partido
-- Que preguntas alejaron al usuario de ese partido
-- Fuente de la posicion del partido (ID de promesa)
-
----
-
-## 6. Validacion Academica
-
-### 6.1 Comparacion con VAAs Establecidas
-
-| VAA | Algoritmo | Escala | Ponderacion |
-|-----|-----------|--------|-------------|
-| Wahl-O-Mat | Manhattan | 3 puntos | Opcional (2x) |
-| Smartvote | Manhattan/Euclidiana | 5 puntos | Opcional |
-| Vote Compass | Likert | 5 puntos | Automatica |
-| **AMPAY** | Manhattan | 3 puntos | Sin ponderacion |
-
-### 6.2 Justificacion de Decisiones
-
-**Escala de 3 puntos (vs 5):**
-- Simplifica la experiencia del usuario
-- Reduce tiempo de completion
-- Adecuado para 15 preguntas (quiz medio)
-
-**Sin ponderacion:**
-- Todas las preguntas tienen igual peso
-- Evita sesgos en la seleccion de "temas importantes"
-- Consistente con Wahl-O-Mat basico
-
-**Balance ideologico (v3.3):**
-- 5 preguntas economic-left coded
-- 4 preguntas economic-right coded
-- 3 preguntas social axis
-- 3 preguntas cross-ideological
-- Orden intercalado: Izq→Der→Izq→Der para prevenir sesgo de aquiescencia
+When clicking on a party, display:
+- Which questions brought the user closer to that party
+- Which questions moved the user away from that party
+- Source of the party's position (promise ID)
 
 ---
 
-## 7. Limitaciones
+## 6. Academic Validation
 
-1. **Simplificacion:** 15 preguntas no capturan la complejidad politica completa
-2. **Posiciones trinarias:** -1/0/+1 no permite matices finos
-3. **Sesgo de disponibilidad:** Solo partidos con promesas documentadas
-4. **Temporal:** Posiciones basadas en planes de gobierno 2021/2026
-5. **Auto-reporte:** Depende de honestidad del usuario en calibracion
-6. **Contexto:** Las posiciones reflejan promesas, no necesariamente acciones
+### 6.1 Comparison with Established VAAs
+
+| VAA | Algorithm | Scale | Weighting |
+|-----|-----------|-------|-----------|
+| Wahl-O-Mat | Manhattan | 3 points | Optional (2x) |
+| Smartvote | Manhattan/Euclidean | 5 points | Optional |
+| Vote Compass | Likert | 5 points | Automatic |
+| **AMPAY** | Manhattan | 3 points | No weighting |
+
+### 6.2 Justification of Design Decisions
+
+**3-point scale (vs. 5):**
+- Simplifies the user experience
+- Reduces completion time
+- Appropriate for 15 questions (medium-length quiz)
+
+**No weighting:**
+- All questions carry equal weight
+- Avoids bias in the selection of "important topics"
+- Consistent with basic Wahl-O-Mat approach
+
+**Ideological balance (v3.3):**
+- 5 economic-left coded questions
+- 4 economic-right coded questions
+- 3 social axis questions
+- 3 cross-ideological questions
+- Interleaved order: Left-Right-Left-Right to prevent acquiescence bias
 
 ---
 
-## 8. Archivos Relacionados
+## 7. Limitations
 
-| Archivo | Contenido |
-|---------|-----------|
-| `data/02_output/quiz_statements.json` | Preguntas y posiciones de partidos |
-| `docs/research/03_QUIZ_ALGORITHM.md` | Investigacion VAA detallada |
-| `docs/research/06_VAA_METHODOLOGY.md` | Comparacion de metodologias VAA |
-
----
-
-## Referencias
-
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+1. **Simplification:** 15 questions do not capture the full complexity of politics
+2. **Trinary positions:** -1/0/+1 does not allow for fine-grained nuance
+3. **Availability bias:** Only parties with documented promises are included
+4. **Temporal:** Positions based on 2021/2026 government plans
+5. **Self-report:** Relies on user honesty in calibration
+6. **Context:** Positions reflect promises, not necessarily actions
 
 ---
 
-*Ultima actualizacion: 2026-01-22 (v3.3 - 15 preguntas balanceadas, algoritmo combinado con ajuste por cobertura)*
+## 8. Related Files
+
+| File | Content |
+|------|---------|
+| `data/02_output/quiz_statements.json` | Questions and party positions |
+| `docs/research/03_QUIZ_ALGORITHM.md` | Detailed VAA research |
+| `docs/research/06_VAA_METHODOLOGY.md` | Comparison of VAA methodologies |
+
+---
+
+## References
+
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)
+
+---
+
+*Last updated: 2026-01-22 (v3.3 - 15 balanced questions, blended algorithm with coverage adjustment)*

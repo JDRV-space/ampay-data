@@ -1,185 +1,185 @@
-# Extraccion de Promesas de Campana
+# Campaign Promise Extraction
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
+**Date:** 2026-01-21
+**Status:** ACTIVE
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-Las promesas de campana se extraen de los Planes de Gobierno registrados ante el JNE. Este documento describe el proceso de extraccion, criterios de clasificacion, y reglas para determinar que constituye una promesa.
+Campaign promises are extracted from Government Plans registered with JNE. This document describes the extraction process, classification criteria, and rules for determining what constitutes a promise.
 
 ---
 
-## 1. Fuente de Datos
+## 1. Data Source
 
-### 1.1 Planes de Gobierno 2021
+### 1.1 2021 Government Plans
 
 ```
-Fuente: JNE Plataforma Historica
+Source: JNE Historical Platform
 URL: https://plataformahistorico.jne.gob.pe/OrganizacionesPoliticas/PlanesGobiernoTrabajo
-Formato: PDF
-Acceso: Enero 2026
+Format: PDF
+Accessed: January 2026
 ```
 
-### 1.2 Planes de Gobierno 2026
+### 1.2 2026 Government Plans
 
 ```
-Fuente: JNE Plataforma Electoral
+Source: JNE Electoral Platform
 URL: https://plataformaelectoral.jne.gob.pe/candidatos/plan-gobierno-trabajo/buscar
-Formato: PDF
-Acceso: Enero 2026
+Format: PDF
+Accessed: January 2026
 ```
 
-### 1.3 Partidos Incluidos
+### 1.3 Included Parties
 
-| Partido | Plan 2021 | Plan 2026 | Notas |
-|---------|-----------|-----------|-------|
-| Fuerza Popular | Si | Si | Principal oposicion |
-| Peru Libre | Si | Si | Partido de gobierno 2021-2026 |
-| Renovacion Popular | Si | Si | - |
-| Avanza Pais | Si | Si | - |
-| Alianza para el Progreso | Si | Si | - |
-| Somos Peru | Si | Si | - |
-| Podemos Peru | Si | Si | - |
-| Juntos por el Peru | Si | Si | - |
-| Partido Morado | Si | Si | - |
+| Party | 2021 Plan | 2026 Plan | Notes |
+|-------|-----------|-----------|-------|
+| Fuerza Popular | Yes | Yes | Main opposition |
+| Peru Libre | Yes | Yes | Governing party 2021-2026 |
+| Renovacion Popular | Yes | Yes | - |
+| Avanza Pais | Yes | Yes | - |
+| Alianza para el Progreso | Yes | Yes | - |
+| Somos Peru | Yes | Yes | - |
+| Podemos Peru | Yes | Yes | - |
+| Juntos por el Peru | Yes | Yes | - |
+| Partido Morado | Yes | Yes | - |
 
 ---
 
-## 2. Proceso de Extraccion
+## 2. Extraction Process
 
-### 2.1 Pipeline de Extraccion
+### 2.1 Extraction Pipeline
 
 ```
 ┌─────────────────────────────────────────┐
-│         PDF PLAN DE GOBIERNO            │
+│         GOVERNMENT PLAN PDF             │
 └────────────────────┬────────────────────┘
                      │
                      ▼
          ┌───────────────────────┐
-         │  DETECCION DE TIPO    │
-         │  (Nativo vs Escaneado)│
+         │  TYPE DETECTION       │
+         │  (Native vs Scanned)  │
          └───────────┬───────────┘
                      │
         ┌────────────┼────────────┐
         │                         │
-   Texto nativo            Escaneado/Imagen
+   Native text             Scanned/Image
         │                         │
         ▼                         ▼
    ┌─────────┐              ┌─────────────┐
    │ PyMuPDF │              │  Tesseract  │
-   │ (rapido)│              │ OCR (spa)   │
+   │ (fast)  │              │ OCR (spa)   │
    └────┬────┘              └──────┬──────┘
         │                          │
         └──────────┬───────────────┘
                    │
                    ▼
          ┌───────────────────────┐
-         │  VALIDACION CALIDAD   │
-         │  (legibilidad > 80%)  │
+         │  QUALITY VALIDATION   │
+         │  (legibility > 80%)   │
          └───────────┬───────────┘
                      │
                 ┌────┴────┐
                 │         │
-           Aprobado    Fallido
+           Passed      Failed
                 │         │
                 ▼         ▼
          ┌─────────┐  ┌─────────────┐
-         │ Extraer │  │ Claude API  │
-         │ promesas│  │ (fallback)  │
+         │ Extract │  │ Claude API  │
+         │ promises│  │ (fallback)  │
          └─────────┘  └─────────────┘
 ```
 
-### 2.2 Herramientas de Extraccion
+### 2.2 Extraction Tools
 
-| Herramienta | Uso | Costo |
-|-------------|-----|-------|
-| **PyMuPDF** | PDFs con texto nativo | Gratis |
-| **Tesseract (spa)** | PDFs escaneados | Gratis |
-| **Claude API** | Layouts complejos, fallback | ~$0.38/50 pags |
+| Tool | Use | Cost |
+|------|-----|------|
+| **PyMuPDF** | PDFs with native text | Free |
+| **Tesseract (spa)** | Scanned PDFs | Free |
+| **Claude API** | Complex layouts, fallback | ~$0.38/50 pages |
 
-### 2.3 Parametros Tesseract
+### 2.3 Tesseract Parameters
 
 ```bash
 tesseract input.pdf output -l spa --psm 6
 ```
 
-- `-l spa`: Modelo de idioma espanol
-- `--psm 6`: Assume bloque de texto uniforme
+- `-l spa`: Spanish language model
+- `--psm 6`: Assume uniform block of text
 
 ---
 
-## 3. Definicion de Promesa
+## 3. Definition of a Promise
 
-### 3.1 Que Constituye una Promesa
+### 3.1 What Constitutes a Promise
 
-Una promesa es una declaracion que cumple TODOS estos criterios:
+A promise is a statement that meets ALL of the following criteria:
 
-| Criterio | Descripcion | Ejemplo |
+| Criterion | Description | Example |
 |----------|-------------|---------|
-| **Especificidad** | Accion concreta, no vaga | "Construir 500 hospitales" vs "Mejorar salud" |
-| **Verificabilidad** | Se puede medir cumplimiento | "Aumentar 10% presupuesto" vs "Priorizar educacion" |
-| **Compromiso** | Lenguaje de obligacion | "Implementaremos" vs "Podriamos considerar" |
-| **Alcance ejecutivo** | Dentro de competencias del cargo | Presidente puede, vs cambio constitucional |
+| **Specificity** | Concrete action, not vague | "Build 500 hospitals" vs. "Improve healthcare" |
+| **Verifiability** | Fulfillment can be measured | "Increase budget by 10%" vs. "Prioritize education" |
+| **Commitment** | Language of obligation | "We will implement" vs. "We might consider" |
+| **Executive scope** | Within the authority of the office | President can do, vs. constitutional change |
 
-### 3.2 Que NO es una Promesa
+### 3.2 What Is NOT a Promise
 
-| Tipo | Ejemplo | Razon |
+| Type | Example | Reason |
 |------|---------|-------|
-| **Aspiracion** | "Sonaremos con un Peru mejor" | No es accion concreta |
-| **Diagnostico** | "El Peru tiene problemas de corrupcion" | Es descripcion, no compromiso |
-| **Valor** | "Creemos en la libertad" | Es ideologia, no promesa |
-| **Condicionado** | "Si hay recursos, mejoraremos X" | Escape clause |
-| **Vago** | "Trabajaremos por el bienestar" | No verificable |
+| **Aspiration** | "We dream of a better Peru" | Not a concrete action |
+| **Diagnosis** | "Peru has corruption problems" | It is a description, not a commitment |
+| **Value statement** | "We believe in freedom" | It is ideology, not a promise |
+| **Conditional** | "If resources are available, we will improve X" | Escape clause |
+| **Vague** | "We will work for well-being" | Not verifiable |
 
-### 3.3 Verbos de Promesa (Indicadores)
+### 3.3 Promise Verbs (Indicators)
 
-**Verbos fuertes (alta confianza):**
-- Implementaremos, crearemos, construiremos
-- Eliminaremos, reduciremos, aumentaremos
-- Garantizaremos, aseguraremos
+**Strong verbs (high confidence):**
+- Implementaremos, crearemos, construiremos (we will implement, create, build)
+- Eliminaremos, reduciremos, aumentaremos (we will eliminate, reduce, increase)
+- Garantizaremos, aseguraremos (we will guarantee, ensure)
 
-**Verbos debiles (requieren contexto):**
-- Promoveremos, fomentaremos, impulsaremos
-- Fortaleceremos, mejoraremos
-- Trabajaremos por, buscaremos
+**Weak verbs (require context):**
+- Promoveremos, fomentaremos, impulsaremos (we will promote, foster, drive)
+- Fortaleceremos, mejoraremos (we will strengthen, improve)
+- Trabajaremos por, buscaremos (we will work toward, seek)
 
 ---
 
-## 4. Reglas de Categorizacion
+## 4. Categorization Rules
 
-### 4.1 Asignacion de Categoria
+### 4.1 Category Assignment
 
-Cada promesa se asigna a UNA categoria principal:
+Each promise is assigned to ONE primary category:
 
 ```
-Prompt para LLM:
-"Clasifica esta promesa en UNA de estas categorias:
+LLM Prompt:
+"Classify this promise into ONE of these categories:
 seguridad, economia, fiscal, social, empleo, educacion, salud, agua, vivienda, transporte, energia, mineria, ambiente, agricultura, justicia
 
-PROMESA: [texto]
+PROMISE: [text]
 
-Reglas:
-1. Elegir la categoria PRINCIPAL
-2. Si cruza categorias, elegir la mas especifica
-3. NUNCA usar 'otros'"
+Rules:
+1. Choose the PRIMARY category
+2. If it crosses categories, choose the most specific one
+3. NEVER use 'other'"
 ```
 
-### 4.2 Manejo de Promesas Multi-Categoria
+### 4.2 Handling Multi-Category Promises
 
-| Promesa | Categorias Posibles | Asignacion | Razon |
-|---------|---------------------|------------|-------|
-| "Construir hospitales en zonas mineras" | salud, mineria | salud | Hospital es el objeto |
-| "Aumentar canon para educacion" | mineria, educacion, fiscal | fiscal | Es transferencia fiscal |
-| "Formalizar MYPES con capacitacion" | economia, empleo, educacion | economia | MYPE es el sujeto |
+| Promise | Possible Categories | Assignment | Reason |
+|---------|---------------------|------------|--------|
+| "Build hospitals in mining areas" | salud (health), mineria (mining) | salud | Hospital is the object |
+| "Increase mining canon for education" | mineria (mining), educacion (education), fiscal | fiscal | It is a fiscal transfer |
+| "Formalize MSMEs with training" | economia (economy), empleo (employment), educacion (education) | economia | MSME is the subject |
 
 ---
 
-## 5. Estructura de Datos
+## 5. Data Structure
 
-### 5.1 Formato de Promesa Extraida
+### 5.1 Extracted Promise Format
 
 ```json
 {
@@ -200,119 +200,119 @@ Reglas:
 }
 ```
 
-### 5.2 Archivo de Salida
+### 5.2 Output File
 
 ```
-data/01_input/promises/[partido]_[anio].json
+data/01_input/promises/[party]_[year].json
 ```
 
 ---
 
-## 6. Control de Calidad
+## 6. Quality Control
 
-### 6.1 Validacion Automatica
+### 6.1 Automated Validation
 
 ```python
-def validar_promesa(promesa):
+def validate_promise(promise):
     checks = []
 
-    # Check 1: Longitud minima
-    checks.append(len(promesa.text) >= 20)
+    # Check 1: Minimum length
+    checks.append(len(promise.text) >= 20)
 
-    # Check 2: Contiene verbo de accion
-    verbos = ['implementar', 'crear', 'construir', 'eliminar', 'aumentar']
-    checks.append(any(v in promesa.text.lower() for v in verbos))
+    # Check 2: Contains action verb
+    verbs = ['implementar', 'crear', 'construir', 'eliminar', 'aumentar']
+    checks.append(any(v in promise.text.lower() for v in verbs))
 
-    # Check 3: No es solo diagnostico
-    diagnosticos = ['el peru tiene', 'existe un problema', 'se observa']
-    checks.append(not any(d in promesa.text.lower() for d in diagnosticos))
+    # Check 3: Not merely a diagnosis
+    diagnoses = ['el peru tiene', 'existe un problema', 'se observa']
+    checks.append(not any(d in promise.text.lower() for d in diagnoses))
 
-    # Check 4: Tiene categoria valida
-    categorias_validas = ['seguridad', 'economia', 'fiscal', ...]
-    checks.append(promesa.category in categorias_validas)
+    # Check 4: Has valid category
+    valid_categories = ['seguridad', 'economia', 'fiscal', ...]
+    checks.append(promise.category in valid_categories)
 
     return all(checks)
 ```
 
-### 6.2 Revision Humana
+### 6.2 Human Review
 
-**Criterios para revision manual:**
-- Promesas con confianza < 0.8
-- Promesas muy cortas (< 30 caracteres)
-- Promesas con multiples categorias posibles
-- Promesas con lenguaje condicionado
+**Criteria for manual review:**
+- Promises with confidence < 0.8
+- Very short promises (< 30 characters)
+- Promises with multiple possible categories
+- Promises with conditional language
 
-### 6.3 Metricas de Calidad
+### 6.3 Quality Metrics
 
-| Metrica | Umbral | Actual |
-|---------|--------|--------|
-| Promesas validas / Total | >= 90% | 94.2% |
-| Categorias correctas | >= 85% | 91.7% |
-| Fuentes verificables | 100% | 100% |
+| Metric | Threshold | Actual |
+|--------|----------|--------|
+| Valid promises / Total | >= 90% | 94.2% |
+| Correct categories | >= 85% | 91.7% |
+| Verifiable sources | 100% | 100% |
 
 ---
 
-## 7. Estadisticas de Extraccion
+## 7. Extraction Statistics
 
-### 7.1 Promesas por Partido (2021)
+### 7.1 Promises by Party (2021)
 
-| Partido | Promesas Extraidas | Promesas Validas |
-|---------|-------------------|------------------|
+| Party | Extracted Promises | Valid Promises |
+|-------|--------------------|----------------|
 | Renovacion Popular | 89 | 84 |
 | Podemos Peru | 71 | 67 |
-| Alianza Progreso | 52 | 49 |
+| Alianza para el Progreso | 52 | 49 |
 | Fuerza Popular | 38 | 35 |
-| Juntos Peru | 35 | 32 |
+| Juntos por el Peru | 35 | 32 |
 | Avanza Pais | 33 | 31 |
 | Peru Libre | 24 | 21 |
 | Somos Peru | 22 | 20 |
 | Partido Morado | 8 | 6 |
 | **TOTAL** | **372** | **345** |
 
-### 7.2 Distribucion por Categoria
+### 7.2 Distribution by Category
 
-| Categoria | Promesas | % Total |
-|-----------|----------|---------|
-| economia | 67 | 19.4% |
+| Category | Promises | % of Total |
+|----------|----------|------------|
+| economia (economy) | 67 | 19.4% |
 | social | 54 | 15.7% |
-| educacion | 48 | 13.9% |
-| salud | 42 | 12.2% |
-| seguridad | 38 | 11.0% |
+| educacion (education) | 48 | 13.9% |
+| salud (health) | 42 | 12.2% |
+| seguridad (security) | 38 | 11.0% |
 | fiscal | 29 | 8.4% |
-| agricultura | 22 | 6.4% |
-| empleo | 18 | 5.2% |
-| transporte | 12 | 3.5% |
-| ambiente | 8 | 2.3% |
-| energia | 4 | 1.2% |
-| agua | 3 | 0.9% |
+| agricultura (agriculture) | 22 | 6.4% |
+| empleo (employment) | 18 | 5.2% |
+| transporte (transport) | 12 | 3.5% |
+| ambiente (environment) | 8 | 2.3% |
+| energia (energy) | 4 | 1.2% |
+| agua (water/sanitation) | 3 | 0.9% |
 
 ---
 
-## 8. Limitaciones
+## 8. Limitations
 
-1. **Calidad de PDFs:** Algunos planes de gobierno son escaneados de baja calidad
-2. **Estructura variable:** No hay formato estandar para planes de gobierno
-3. **Ambiguedad:** Algunas promesas son intencionalmente vagas
-4. **Cambios post-eleccion:** Partidos pueden modificar posiciones despues de registrar plan
-5. **Completitud:** Algunos temas pueden no estar en el plan pero si en discursos
-
----
-
-## 9. Archivos Relacionados
-
-| Archivo | Contenido |
-|---------|-----------|
-| `data/01_input/promises/` | Promesas extraidas por partido |
-| `data/01_input/pdfs/` | PDFs originales de JNE |
-| `scripts/extract_promises.py` | Script de extraccion |
+1. **PDF quality:** Some government plans are low-quality scans
+2. **Variable structure:** There is no standard format for government plans
+3. **Ambiguity:** Some promises are intentionally vague
+4. **Post-election changes:** Parties may modify positions after registering their plan
+5. **Completeness:** Some topics may not appear in the plan but may be present in speeches
 
 ---
 
-## Referencias
+## 9. Related Files
 
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+| File | Content |
+|------|---------|
+| `data/01_input/promises/` | Extracted promises by party |
+| `data/01_input/pdfs/` | Original JNE PDFs |
+| `scripts/extract_promises.py` | Extraction script |
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+## References
+
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)
+
+---
+
+*Last updated: 2026-01-21*

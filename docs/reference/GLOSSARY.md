@@ -1,283 +1,283 @@
-# Glosario de Terminos
+# Glossary of Terms
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Idioma:** Espanol
+**Date:** 2026-01-21
+**Language:** English
 
 ---
 
 ## A
 
 ### AMPAY
-Contradiccion verificable entre una promesa de campana y el comportamiento de votacion de un partido politico. Termino coloquial peruano que significa "atrapar a alguien in fraganti".
+A verifiable contradiction between a campaign promise and the voting behavior of a political party. The term is Peruvian colloquial slang meaning "to catch someone in the act."
 
-### Abstencion
-Voto registrado como "ni a favor ni en contra". En AMPAY, las abstenciones no se cuentan en el calculo de posicion mayoritaria del partido.
+### Abstencion (Abstention)
+A vote recorded as "neither for nor against." In AMPAY, abstentions are not counted in the calculation of a party's majority position.
 
-### Agregacion
-Proceso de combinar votos individuales de congresistas para determinar la posicion del partido como bancada.
+### Agregacion (Aggregation)
+The process of combining individual votes of members of Congress to determine the party's position as a caucus.
 
-### Asunto
-Descripcion oficial del tema sometido a votacion en el Pleno del Congreso.
+### Asunto (Subject Matter)
+The official description of the topic submitted for a vote in the Plenary of Congress.
 
 ---
 
 ## B
 
-### Bancada
-Grupo de congresistas pertenecientes al mismo partido politico o alianza.
+### Bancada (Parliamentary Caucus)
+A group of members of Congress belonging to the same political party or alliance.
 
-### Busqueda directa
-Metodo de deteccion de AMPAYs que busca leyes que IMPLEMENTARIAN una promesa y verifica si el partido voto NO.
+### Busqueda directa (Direct Search)
+An AMPAY detection method that searches for laws that WOULD IMPLEMENT a promise and verifies whether the party voted NO.
 
-### Busqueda inversa
-Metodo de deteccion de AMPAYs que busca leyes que CONTRADICEN una promesa y verifica si el partido voto SI.
+### Busqueda inversa (Inverse Search)
+An AMPAY detection method that searches for laws that CONTRADICT a promise and verifies whether the party voted YES.
 
 ---
 
 ## C
 
-### Calibracion
-Preguntas del quiz que permiten al usuario auto-identificarse ideologicamente para filtrar la presentacion de resultados.
+### Calibracion (Calibration)
+Quiz questions that allow users to self-identify ideologically in order to filter how results are presented.
 
-### Canon
-Transferencia de recursos del gobierno central a gobiernos regionales/locales, principalmente derivada de actividades extractivas (canon minero, canon petrolero).
+### Canon (Canon Revenue Transfer)
+A transfer of resources from the central government to regional and local governments, primarily derived from extractive activities (mining canon, petroleum canon).
 
-### Categoria
-Clasificacion tematica asignada a promesas y votos (ej: salud, economia, seguridad). AMPAY utiliza 15 categorias (14 generales + justicia).
+### Categoria (Category)
+A thematic classification assigned to promises and votes (e.g., health, economy, security). AMPAY uses 15 categories (14 general + justice).
 
-### Cohesion partidaria
-Medida de que tan unificado vota un partido. Alta cohesion = votan igual, baja cohesion = votos divididos.
+### Cohesion partidaria (Party Cohesion)
+A measure of how unified a party votes. High cohesion = they vote the same; low cohesion = split votes.
 
-### Confianza (nivel de)
-Clasificacion de la certeza de un AMPAY: HIGH (alta), MEDIUM (media), LOW (baja).
+### Confianza (Confidence Level)
+The certainty classification of an AMPAY: HIGH, MEDIUM, or LOW.
 
-### Congresista
-Miembro del Congreso de la Republica del Peru, equivalente a diputado o legislador.
+### Congresista (Member of Congress)
+A member of the Congress of the Republic of Peru, equivalent to a representative or legislator.
 
 ---
 
 ## D
 
-### Declarativo (voto)
-Votacion sobre temas simbolicos sin efecto legal real (ej: "Declarar el Dia del X"). Excluidos del analisis AMPAY.
+### Declarativo (Declaratory Vote)
+A vote on symbolic matters with no real legal effect (e.g., "Declare National Day of X"). Excluded from AMPAY analysis.
 
-### Distancia Manhattan
-Metodo matematico para calcular la diferencia entre posiciones de usuario y partidos. Formula: suma de valores absolutos de diferencias.
+### Distancia Manhattan (Manhattan Distance)
+A mathematical method for calculating the difference between user and party positions. Formula: sum of absolute values of differences.
 
 ---
 
 ## E
 
-### Eje economico
-Dimension ideologica que va de izquierda (estatismo, intervencion) a derecha (libre mercado, reduccion del estado).
+### Eje economico (Economic Axis)
+An ideological dimension ranging from left (statism, intervention) to right (free market, reduced state).
 
-### Eje social
-Dimension ideologica que va de conservador (valores tradicionales) a progresista (derechos civiles, diversidad).
+### Eje social (Social Axis)
+An ideological dimension ranging from conservative (traditional values) to progressive (civil rights, diversity).
 
 ### ESSALUD
-Seguro Social de Salud del Peru, entidad publica de seguridad social.
+Peru's Social Health Insurance, a public social security entity.
 
-### Exoneracion
-Beneficio tributario que exime del pago de impuestos. Las exoneraciones son tema frecuente de AMPAYs.
+### Exoneracion (Tax Exemption)
+A tax benefit that exempts from tax payment. Tax exemptions are a frequent subject of AMPAYs.
 
 ---
 
 ## F
 
-### Falso negativo
-AMPAY real que el sistema no detecta (contradiccion perdida).
+### Falso negativo (False Negative)
+A real AMPAY that the system fails to detect (a missed contradiction).
 
-### Falso positivo
-AMPAY detectado por el sistema que no es una contradiccion real.
+### Falso positivo (False Positive)
+An AMPAY detected by the system that is not an actual contradiction.
 
-### Filtrado
-Proceso de excluir votos no sustantivos (declarativos, procedurales) del analisis.
+### Filtrado (Filtering)
+The process of excluding non-substantive votes (declaratory, procedural) from the analysis.
 
 ---
 
 ## G
 
-### Grupo parlamentario
-Denominacion oficial de la bancada de un partido en el Congreso.
+### Grupo parlamentario (Parliamentary Group)
+The official designation for a party's caucus in Congress.
 
 ---
 
 ## I
 
 ### IGV
-Impuesto General a las Ventas, equivalente al IVA en otros paises.
+Impuesto General a las Ventas (General Sales Tax), equivalent to VAT in other countries.
 
 ---
 
 ## J
 
 ### JNE
-Jurado Nacional de Elecciones, entidad que registra planes de gobierno y candidaturas.
+Jurado Nacional de Elecciones (National Elections Jury), the entity responsible for registering government plans and candidacies.
 
 ---
 
 ## K
 
 ### Keywords
-Palabras clave extraidas de promesas para buscar leyes relacionadas.
+Key terms extracted from promises used to search for related legislation.
 
 ---
 
 ## L
 
-### Ley
-Norma aprobada por el Congreso y promulgada por el Ejecutivo.
+### Ley (Law)
+A statute approved by Congress and enacted by the Executive branch.
 
 ---
 
 ## M
 
-### Manhattan (distancia)
-Ver "Distancia Manhattan".
+### Manhattan (distance)
+See "Distancia Manhattan (Manhattan Distance)."
 
-### Match (porcentaje de)
-Resultado del quiz expresado como porcentaje de compatibilidad entre usuario y partido.
+### Match (percentage)
+The quiz result expressed as a percentage of compatibility between the user and a party.
 
 ### MEF
-Ministerio de Economia y Finanzas.
+Ministerio de Economia y Finanzas (Ministry of Economy and Finance).
 
 ### MINEDU
-Ministerio de Educacion.
+Ministerio de Educacion (Ministry of Education).
 
 ### MINSA
-Ministerio de Salud.
+Ministerio de Salud (Ministry of Health).
 
-### Mocion
-Propuesta presentada ante el Pleno que no es proyecto de ley (ej: mocion de censura, mocion de interpelacion).
+### Mocion (Motion)
+A proposal presented to the Plenary that is not a bill (e.g., motion of censure, motion of interpellation).
 
 ### MYPE
-Micro y Pequena Empresa.
+Micro y Pequena Empresa (Micro and Small Enterprise).
 
 ---
 
 ## N
 
-### NO (voto)
-Voto en contra de una propuesta legislativa.
+### NO (vote)
+A vote against a legislative proposal.
 
 ---
 
 ## O
 
 ### ONP
-Oficina de Normalizacion Previsional, entidad que administra el sistema publico de pensiones.
+Oficina de Normalizacion Previsional (Social Security Normalization Office), the entity that administers Peru's public pension system.
 
 ### Open Politica
-Organizacion de la sociedad civil que recopila y publica datos de votaciones del Congreso peruano.
+A civil society organization that collects and publishes voting data from the Peruvian Congress.
 
 ---
 
 ## P
 
-### Patron de votacion
-Tendencia de un partido a votar de manera consistente en cierta direccion sobre un tema.
+### Patron de votacion (Voting Pattern)
+A party's tendency to consistently vote in a particular direction on a topic.
 
-### Plan de gobierno
-Documento obligatorio que los partidos registran ante el JNE con sus propuestas para el periodo de gobierno.
+### Plan de gobierno (Government Plan)
+A mandatory document that parties register with the JNE containing their proposals for the governing period.
 
-### Pleno
-Sesion del Congreso con todos los congresistas, donde se votan leyes y otras decisiones.
+### Pleno (Plenary Session)
+A session of Congress with all members present, where laws and other decisions are voted upon.
 
-### Posicion (de partido)
-Clasificacion del comportamiento de un partido: SI, NO, DIVIDIDO, o AUSENTE.
+### Posicion (Party Position)
+The classification of a party's behavior: YES, NO, DIVIDED, or ABSENT.
 
-### Procedural (voto)
-Votacion sobre mecanica legislativa sin contenido politico (ej: aprobar agenda, orden del dia). Excluidos del analisis.
+### Procedural (Procedural Vote)
+A vote on legislative mechanics without political content (e.g., approving the agenda, order of business). Excluded from the analysis.
 
-### Promesa
-Compromiso especifico y verificable contenido en un plan de gobierno.
+### Promesa (Promise)
+A specific and verifiable commitment contained in a government plan.
 
-### Proyecto de ley
-Propuesta legislativa antes de ser aprobada.
+### Proyecto de ley (Bill)
+A legislative proposal before it is approved.
 
 ---
 
 ## Q
 
 ### Quiz
-Herramienta interactiva de AMPAY que permite a usuarios descubrir que partidos se alinean con sus posiciones.
+An interactive AMPAY tool that enables users to discover which parties align with their positions.
 
 ---
 
 ## R
 
 ### Ranking
-Metodo de input donde el usuario ordena opciones de mas a menos preferido (1-2-3).
+An input method in which the user orders options from most to least preferred (1-2-3).
 
 ### Ratio
-Proporcion de votos en una direccion respecto al total (ej: ratio de NO = votos NO / total votos).
+The proportion of votes in one direction relative to the total (e.g., NO ratio = NO votes / total votes).
 
-### Regalias
-Pagos que realizan empresas extractivas al Estado por el uso de recursos naturales.
+### Regalias (Royalties)
+Payments made by extractive companies to the State for the use of natural resources.
 
 ---
 
 ## S
 
-### SI (voto)
-Voto a favor de una propuesta legislativa.
+### SI (vote)
+A vote in favor of a legislative proposal.
 
 ### SIS
-Seguro Integral de Salud, programa que brinda cobertura a poblacion vulnerable.
+Seguro Integral de Salud (Comprehensive Health Insurance), a program that provides coverage to vulnerable populations.
 
 ### Slug
-Identificador unico de un partido en formato URL-friendly (ej: fuerza_popular, peru_libre).
+A unique party identifier in URL-friendly format (e.g., fuerza_popular, peru_libre).
 
 ### Sparkline
-Mini-grafica que muestra tendencia en poco espacio, usada para visualizar patrones de votacion.
+A miniature chart that shows a trend in a small space, used to visualize voting patterns.
 
 ### SUNAT
-Superintendencia Nacional de Aduanas y de Administracion Tributaria.
+Superintendencia Nacional de Aduanas y de Administracion Tributaria (National Superintendency of Customs and Tax Administration).
 
-### Sustantivo (voto)
-Votacion con impacto politico real sobre legislacion. Unico tipo incluido en analisis AMPAY.
+### Sustantivo (Substantive Vote)
+A vote with real political impact on legislation. The only type included in AMPAY analysis.
 
 ---
 
 ## T
 
-### Transfuga
-Congresista que cambia de bancada durante la legislatura.
+### Transfuga (Party Switcher)
+A member of Congress who changes caucus affiliation during the legislative term.
 
 ### TLC
-Tratado de Libre Comercio.
+Tratado de Libre Comercio (Free Trade Agreement).
 
 ---
 
 ## U
 
-### Umbral
-Porcentaje minimo para clasificar un resultado (ej: >= 60% NO = AMPAY).
+### Umbral (Threshold)
+The minimum percentage required to classify a result (e.g., >= 60% NO = AMPAY).
 
 ---
 
 ## V
 
 ### VAA
-Voting Advice Application, herramienta que ayuda a votantes a identificar partidos afines. AMPAY es un VAA.
+Voting Advice Application, a tool that helps voters identify compatible parties. AMPAY is a VAA.
 
-### Validacion
-Proceso de verificar que un AMPAY detectado es correcto antes de publicarlo.
+### Validacion (Validation)
+The process of verifying that a detected AMPAY is correct before publication.
 
-### Verificabilidad
-Caracteristica de una promesa que permite determinar si fue cumplida o no.
+### Verificabilidad (Verifiability)
+A characteristic of a promise that allows determination of whether it was fulfilled.
 
-### Voto
-Expresion de decision de un congresista: SI, NO, ABSTENCION, o AUSENTE.
+### Voto (Vote)
+The expression of a member of Congress's decision: YES, NO, ABSTENTION, or ABSENT.
 
 ---
 
 ## W
 
 ### Wahl-O-Mat
-VAA aleman de referencia que utiliza distancia Manhattan, modelo para AMPAY.
+A German VAA that uses Manhattan distance, serving as a reference model for AMPAY.
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+*Last updated: 2026-01-21*

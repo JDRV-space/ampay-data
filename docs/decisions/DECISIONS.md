@@ -395,11 +395,11 @@ Every AMPAY shows:
 └─────────────────────────────────────────────────┘
 ```
 
-**Transparencia de datos:**
-- Datos gubernamentales de fuentes publicas
-- Metodologia completamente documentada
-- Fuentes verificables
-- Pagina de metodologia explica todo el proceso
+**Data Transparency:**
+- Government data sourced from public records
+- Fully documented methodology
+- Verifiable sources
+- Methodology page explains the entire process
 
 ---
 

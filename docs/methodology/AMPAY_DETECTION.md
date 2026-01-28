@@ -1,50 +1,50 @@
-# Deteccion de AMPAYs: Metodologia v5
+# AMPAY Detection: Methodology v5
 
 **Version:** 5.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
-**Reemplaza:** v4 (busqueda dual), v3 (busqueda directa), v2 (agregacion por categoria)
+**Date:** 2026-01-21
+**Status:** ACTIVE
+**Supersedes:** v4 (dual search), v3 (direct search), v2 (category aggregation)
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-Un **AMPAY** es una contradiccion verificable entre una promesa de campana y el comportamiento de votacion del partido en el Congreso. La deteccion utiliza busqueda dual (directa + inversa) sobre leyes especificas.
+An **AMPAY** is a verifiable contradiction between a campaign promise and the party's voting behavior in Congress. Detection employs dual search (direct + inverse) over specific legislation.
 
 ---
 
-## 1. Definicion de AMPAY
+## 1. Definition of AMPAY
 
-### 1.1 Que es un AMPAY
+### 1.1 What Is an AMPAY
 
 ```
-AMPAY = Partido voto de manera contraria a su promesa de campana
+AMPAY = A party voted contrary to its campaign promise
 ```
 
-**Tipos de AMPAY:**
+**Types of AMPAY:**
 
-| Tipo | Descripcion | Ejemplo |
+| Type | Description | Example |
 |------|-------------|---------|
-| **Tipo A (Directo)** | Partido voto NO en leyes que implementarian su promesa | Prometio "aumentar presupuesto educacion", voto NO en ley de aumento |
-| **Tipo B (Inverso)** | Partido voto SI en leyes que contradicen su promesa | Prometio "eliminar exoneraciones", voto SI en ley que las extiende |
+| **Type A (Direct)** | Party voted NO on legislation that would implement its promise | Promised "increase education budget," voted NO on increase bill |
+| **Type B (Inverse)** | Party voted YES on legislation that contradicts its promise | Promised "eliminate exemptions," voted YES on bill extending them |
 
-### 1.2 Que NO es un AMPAY
+### 1.2 What Is NOT an AMPAY
 
-- Un solo voto aislado (patron requerido, minimo 3 leyes)
-- Voto por razones procedimentales documentadas
-- Promesa vaga sin leyes relacionadas identificables
-- Datos insuficientes (< 3 leyes encontradas)
+- A single isolated vote (a pattern is required; minimum 3 laws)
+- A vote cast for documented procedural reasons
+- A vague promise with no identifiable related legislation
+- Insufficient data (fewer than 3 laws found)
 
 ---
 
-## 2. Proceso de Deteccion
+## 2. Detection Process
 
-### 2.1 Diagrama de Flujo
+### 2.1 Flow Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                     PROMESA DE CAMPANA                          │
-│  "Implementar reforma tributaria con universalidad"             │
+│                       CAMPAIGN PROMISE                           │
+│  "Implement tax reform based on universality"                    │
 └─────────────────────────────┬───────────────────────────────────┘
                               │
                               ▼
@@ -52,121 +52,121 @@ AMPAY = Partido voto de manera contraria a su promesa de campana
          │                                         │
          ▼                                         ▼
 ┌─────────────────────┐               ┌─────────────────────┐
-│   BUSQUEDA A        │               │   BUSQUEDA B        │
-│   (Directa)         │               │   (Inversa)         │
+│   SEARCH A          │               │   SEARCH B          │
+│   (Direct)          │               │   (Inverse)         │
 │                     │               │                     │
-│ Leyes que           │               │ Leyes que           │
-│ IMPLEMENTAN         │               │ CONTRADICEN         │
-│ la promesa          │               │ la promesa          │
+│ Laws that           │               │ Laws that           │
+│ IMPLEMENT           │               │ CONTRADICT          │
+│ the promise         │               │ the promise         │
 └──────────┬──────────┘               └──────────┬──────────┘
            │                                     │
            ▼                                     ▼
 ┌─────────────────────┐               ┌─────────────────────┐
-│ ¿Partido voto NO    │               │ ¿Partido voto SI    │
-│  en estas leyes?    │               │  en estas leyes?    │
+│ Did the party vote  │               │ Did the party vote  │
+│ NO on these laws?   │               │ YES on these laws?  │
 └──────────┬──────────┘               └──────────┬──────────┘
            │                                     │
            ▼                                     ▼
     ┌──────┴──────┐                       ┌──────┴──────┐
-    │ >= 60% NO   │                       │ >= 60% SI   │
+    │ >= 60% NO   │                       │ >= 60% YES  │
     │ = AMPAY (A) │                       │ = AMPAY (B) │
     └─────────────┘                       └─────────────┘
 ```
 
-### 2.2 Paso 1: Extraccion de Keywords
+### 2.2 Step 1: Keyword Extraction
 
-De cada promesa, extraer terminos buscables:
+From each promise, extract searchable terms:
 
 ```
-Promesa: "Formalizar un millon de nuevas MYPES"
-Partido: Fuerza Popular
+Promise: "Formalize one million new MSMEs"
+Party: Fuerza Popular
 ID: FP-2021-002
 
-Keywords extraidos:
-├── Sustantivos: mype, mypes, micro empresa, pequena empresa
-├── Verbos: formalizar, formalizacion
-├── Sinonimos: microempresa, emprendimiento
-└── Tecnicismos: RUC, RUS, regimen especial
+Extracted keywords:
+├── Nouns: mype, mypes, micro empresa, pequena empresa
+├── Verbs: formalizar, formalizacion
+├── Synonyms: microempresa, emprendimiento
+└── Technical terms: RUC, RUS, regimen especial
 ```
 
-### 2.3 Paso 2: Busqueda Dual
+### 2.3 Step 2: Dual Search
 
-**Busqueda A (Directa):**
-- Encontrar leyes que IMPLEMENTARIAN la promesa
-- Verificar si el partido voto NO
+**Search A (Direct):**
+- Find laws that WOULD IMPLEMENT the promise
+- Check whether the party voted NO
 
-**Busqueda B (Inversa):**
-- Encontrar leyes que CONTRADICEN la promesa
-- Verificar si el partido voto SI
+**Search B (Inverse):**
+- Find laws that CONTRADICT the promise
+- Check whether the party voted YES
 
 ```bash
-# Ejemplo busqueda para "universalidad tributaria"
+# Example search for "tax universality"
 
-# Busqueda A: Leyes que eliminan exoneraciones (implementan)
+# Search A: Laws that eliminate exemptions (implement the promise)
 jq '.votes[] | select(.asunto | contains("eliminar exoneracion"))'
 
-# Busqueda B: Leyes que extienden exoneraciones (contradicen)
+# Search B: Laws that extend exemptions (contradict the promise)
 jq '.votes[] | select(.asunto | contains("prorrogar") or contains("extender exoneracion"))'
 ```
 
-### 2.4 Paso 3: Calculo de Ratios
+### 2.4 Step 3: Ratio Calculation
 
-**Ratio Directo:**
+**Direct Ratio:**
 ```
-NO_votes_en_leyes_implementadoras / Total_leyes_implementadoras
->= 60% = AMPAY (TIPO A)
-```
-
-**Ratio Inverso:**
-```
-SI_votes_en_leyes_contradictorias / Total_leyes_contradictorias
->= 60% = AMPAY (TIPO B)
+NO_votes_on_implementing_laws / Total_implementing_laws
+>= 60% = AMPAY (TYPE A)
 ```
 
-### 2.5 Paso 4: Matriz de Decision
+**Inverse Ratio:**
+```
+YES_votes_on_contradictory_laws / Total_contradictory_laws
+>= 60% = AMPAY (TYPE B)
+```
 
-| Busqueda A | Busqueda B | Veredicto Final |
-|------------|------------|-----------------|
-| AMPAY | AMPAY | **AMPAY (fuerte)** |
-| AMPAY | NO | **AMPAY (directo)** |
-| NO | AMPAY | **AMPAY (inverso)** |
+### 2.5 Step 4: Decision Matrix
+
+| Search A | Search B | Final Verdict |
+|----------|----------|---------------|
+| AMPAY | AMPAY | **AMPAY (strong)** |
+| AMPAY | NO | **AMPAY (direct)** |
+| NO | AMPAY | **AMPAY (inverse)** |
 | NO | NO | NO AMPAY |
-| INSUF | AMPAY | **AMPAY (inverso)** |
-| AMPAY | INSUF | **AMPAY (directo)** |
-| INSUF | INSUF | DATOS INSUFICIENTES |
+| INSUF | AMPAY | **AMPAY (inverse)** |
+| AMPAY | INSUF | **AMPAY (direct)** |
+| INSUF | INSUF | INSUFFICIENT DATA |
 
 ---
 
-## 3. Umbrales y Filtros
+## 3. Thresholds and Filters
 
-### 3.1 Umbrales de Clasificacion
+### 3.1 Classification Thresholds
 
-| Porcentaje | Estado | Accion |
+| Percentage | Status | Action |
 |------------|--------|--------|
-| >= 60% | **AMPAY** | Publicar con revision manual |
-| 40-59% | **POTENCIAL AMPAY** | Requiere revision detallada |
-| < 40% | **NO AMPAY** | No publicar |
-| < 3 leyes | **DATOS INSUFICIENTES** | No evaluar |
+| >= 60% | **AMPAY** | Publish with manual review |
+| 40-59% | **POTENTIAL AMPAY** | Requires detailed review |
+| < 40% | **NO AMPAY** | Do not publish |
+| < 3 laws | **INSUFFICIENT DATA** | Do not evaluate |
 
-### 3.2 Filtros Aplicados
+### 3.2 Applied Filters
 
-1. **Solo votos sustantivos:** Excluir declarativos y procedimentales
-2. **Relevancia semantica:** La ley debe relacionarse directamente con la promesa
-3. **Verificacion humana:** Cada AMPAY revisado antes de publicar
+1. **Substantive votes only:** Exclude declarative and procedural votes
+2. **Semantic relevance:** The law must directly relate to the promise
+3. **Human verification:** Each AMPAY reviewed before publication
 
 ---
 
-## 4. Niveles de Confianza
+## 4. Confidence Levels
 
-### 4.1 Sistema de Confianza
+### 4.1 Confidence System
 
-| Nivel | Criterios | Accion |
-|-------|-----------|--------|
-| **HIGH** | >= 60% ratio + >= 5 leyes + clara conexion semantica | Auto-publicar con flag |
-| **MEDIUM** | >= 60% ratio + 3-4 leyes O conexion semantica debil | Revision obligatoria |
-| **LOW** | 40-59% ratio O datos limitados | No publicar sin investigacion adicional |
+| Level | Criteria | Action |
+|-------|----------|--------|
+| **HIGH** | >= 60% ratio + >= 5 laws + clear semantic connection | Auto-publish with flag |
+| **MEDIUM** | >= 60% ratio + 3-4 laws OR weak semantic connection | Mandatory review |
+| **LOW** | 40-59% ratio OR limited data | Do not publish without further investigation |
 
-### 4.2 Ejemplos de Clasificacion
+### 4.2 Classification Examples
 
 **AMPAY-001 (HIGH):**
 ```json
@@ -196,138 +196,138 @@ SI_votes_en_leyes_contradictorias / Total_leyes_contradictorias
 
 ---
 
-## 5. Revision Manual
+## 5. Manual Review
 
-### 5.1 Checklist de Verificacion
+### 5.1 Verification Checklist
 
-Antes de publicar cualquier AMPAY:
+Before publishing any AMPAY:
 
-- [ ] ¿La promesa es verificable y especifica?
-- [ ] ¿Las leyes encontradas se relacionan directamente con la promesa?
-- [ ] ¿El partido tuvo oportunidad real de votar (quorum)?
-- [ ] ¿Existe contexto adicional que explique el voto?
-- [ ] ¿El ratio cumple el umbral (>= 60%)?
-- [ ] ¿Hay al menos 3 leyes analizadas?
+- [ ] Is the promise verifiable and specific?
+- [ ] Are the identified laws directly related to the promise?
+- [ ] Did the party have a genuine opportunity to vote (quorum)?
+- [ ] Is there additional context that explains the vote?
+- [ ] Does the ratio meet the threshold (>= 60%)?
+- [ ] Were at least 3 laws analyzed?
 
-### 5.2 Proceso de Revision
+### 5.2 Review Process
 
 ```
-1. Analista revisa AMPAY automatico
-2. Verifica fuentes (PDF de promesa, acta de votacion)
-3. Confirma conexion semantica promesa-ley
-4. Documenta reasoning
-5. Aprueba o rechaza
-6. Si aprobado, entra a publicacion
+1. Analyst reviews automated AMPAY
+2. Verifies sources (promise PDF, voting record)
+3. Confirms semantic connection between promise and law
+4. Documents reasoning
+5. Approves or rejects
+6. If approved, enters publication queue
 ```
 
-### 5.3 Documentacion de Rechazo
+### 5.3 Rejection Documentation
 
-Si un AMPAY potencial es rechazado, documentar:
-- Razon del rechazo
-- Evidencia que lo descarta
-- Fecha de revision
-- Revisor responsable
+If a potential AMPAY is rejected, document:
+- Reason for rejection
+- Evidence disqualifying it
+- Date of review
+- Responsible reviewer
 
 ---
 
-## 6. Evolucion de la Metodologia
+## 6. Methodology Evolution
 
-### 6.1 Historia de Versiones
+### 6.1 Version History
 
-| Version | Problema Identificado | Solucion Implementada |
-|---------|----------------------|----------------------|
-| v1 | Comparacion voto-por-voto sin patron | Agregacion por categoria |
-| v2 | Agregacion perdio especificidad | Busqueda por keywords especificos |
-| v3 | Solo buscaba leyes de apoyo | Agrego busqueda inversa |
-| v4 | Busqueda dual incompleta | Matriz de decision completa |
-| v5 | Umbrales arbitrarios | Sistema de confianza calibrado |
+| Version | Problem Identified | Solution Implemented |
+|---------|-------------------|---------------------|
+| v1 | Vote-by-vote comparison with no pattern | Category aggregation |
+| v2 | Aggregation lost specificity | Search by specific keywords |
+| v3 | Only searched for supporting laws | Added inverse search |
+| v4 | Incomplete dual search | Complete decision matrix |
+| v5 | Arbitrary thresholds | Calibrated confidence system |
 
 ### 6.2 v3 vs v4 vs v5
 
-| Aspecto | v3 | v4 | v5 |
+| Aspect | v3 | v4 | v5 |
 |---------|----|----|----|-
-| Direccion busqueda | Solo directa | Directa + inversa | Directa + inversa |
-| Umbral AMPAY | 60% NO | 60% cualquier direccion | 60% + confianza |
-| Leyes minimas | 3 | 3 | 3 con ajuste por tipo |
-| Revision humana | No | Parcial | Obligatoria |
-| Nivel confianza | No | No | Si |
+| Search direction | Direct only | Direct + inverse | Direct + inverse |
+| AMPAY threshold | 60% NO | 60% either direction | 60% + confidence |
+| Minimum laws | 3 | 3 | 3 with type adjustment |
+| Human review | No | Partial | Mandatory |
+| Confidence level | No | No | Yes |
 
 ---
 
-## 7. Ejemplos Documentados
+## 7. Documented Examples
 
-### 7.1 AMPAY Confirmado (Tipo B - Inverso)
+### 7.1 Confirmed AMPAY (Type B - Inverse)
 
 ```
 ID: AMPAY-001
-Partido: Fuerza Popular
-Promesa: "Implementar reforma tributaria con principio de universalidad"
+Party: Fuerza Popular
+Promise: "Implement tax reform based on the principle of universality"
 
-Busqueda A (Directa):
-- Leyes encontradas: 0
-- Estado: DATOS INSUFICIENTES
+Search A (Direct):
+- Laws found: 0
+- Status: INSUFFICIENT DATA
 
-Busqueda B (Inversa):
+Search B (Inverse):
 - Keywords: "prorrogar exoneracion", "extender beneficio", "regimen especial"
-- Leyes encontradas: 6
-  1. PL 3740 - Prorrogar apendices IGV → FP voto SI
-  2. PL 3195 - Devolucion IGV mineras/hidrocarburos → FP voto SI
-  3. PL 3195 - Segunda votacion → FP voto SI
-  4. PL 6473 - Prorrogar exoneracion valores → FP voto SI
-  5. PL 3155 - Regimenes especiales depreciacion → FP voto SI
-  6. PL 3671 - Incentivos fiscales fondos → FP voto SI
-- SI votes: 6/6 = 100%
-- Estado: AMPAY
+- Laws found: 6
+  1. PL 3740 - Extend IGV appendices -> FP voted YES
+  2. PL 3195 - IGV refund for mining/hydrocarbons -> FP voted YES
+  3. PL 3195 - Second vote -> FP voted YES
+  4. PL 6473 - Extend securities exemption -> FP voted YES
+  5. PL 3155 - Special depreciation regimes -> FP voted YES
+  6. PL 3671 - Fund fiscal incentives -> FP voted YES
+- YES votes: 6/6 = 100%
+- Status: AMPAY
 
-Veredicto: AMPAY (TIPO B - INVERSO)
-Confianza: HIGH
-Reasoning: FP prometio universalidad tributaria pero voto SI en 6/6 leyes que extienden regimenes especiales.
+Verdict: AMPAY (TYPE B - INVERSE)
+Confidence: HIGH
+Reasoning: FP promised tax universality but voted YES on 6/6 laws extending special regimes.
 ```
 
-### 7.2 NO AMPAY (Patron de Apoyo)
+### 7.2 NO AMPAY (Support Pattern)
 
 ```
 ID: NO-AMPAY-FP-002
-Partido: Fuerza Popular
-Promesa: "Formalizar un millon de nuevas MYPES"
+Party: Fuerza Popular
+Promise: "Formalize one million new MSMEs"
 
-Busqueda A (Directa):
+Search A (Direct):
 - Keywords: "mype", "micro empresa", "formalizacion"
-- Leyes encontradas: 26
-- FP voto SI: 26/26 = 100%
-- Estado: NO AMPAY
+- Laws found: 26
+- FP voted YES: 26/26 = 100%
+- Status: NO AMPAY
 
-Veredicto: NO AMPAY
-Reasoning: FP apoyo consistentemente legislacion MYPE.
+Verdict: NO AMPAY
+Reasoning: FP consistently supported MSME legislation.
 ```
 
 ---
 
-## 8. Limitaciones
+## 8. Limitations
 
-1. **Disponibilidad de datos:** Solo analiza periodo 2021-07 a 2024-07
-2. **Ausencias:** No distingue entre ausencia justificada y evasion
-3. **Contexto legislativo:** No captura negociaciones previas o compromisos
-4. **Complejidad legal:** Leyes con multiples articulos pueden tener aspectos positivos y negativos
-5. **Cambio de partido:** Congresistas transfugas afectan conteo por partido
-
----
-
-## 9. Archivos Relacionados
-
-| Archivo | Contenido |
-|---------|-----------|
-| `data/02_output/ampays.json` | AMPAYs confirmados |
-| `data/02_output/AMPAY_CONFIRMED_2021.json` | Detalle de evidencia |
-| `docs/methodology/archive/METHODOLOGY_V*.md` | Versiones anteriores |
+1. **Data availability:** Analysis covers only the period 2021-07 to 2024-07
+2. **Absences:** Does not distinguish between justified absences and strategic evasion
+3. **Legislative context:** Does not capture prior negotiations or compromises
+4. **Legal complexity:** Laws with multiple articles may contain both positive and negative provisions
+5. **Party switching:** Legislators who switched parties affect per-party tallies
 
 ---
 
-## Referencias
+## 9. Related Files
 
-Para ver todas las referencias academicas y fuentes utilizadas en AMPAY, consulta el documento centralizado:
-[Bibliografia y Fuentes](/referencia/fuentes)
+| File | Content |
+|------|---------|
+| `data/02_output/ampays.json` | Confirmed AMPAYs |
+| `data/02_output/AMPAY_CONFIRMED_2021.json` | Evidence detail |
+| `docs/methodology/archive/METHODOLOGY_V*.md` | Previous versions |
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+## References
+
+For all academic references and sources used in AMPAY, see the centralized document:
+[Bibliography and Sources](/referencia/fuentes)
+
+---
+
+*Last updated: 2026-01-21*

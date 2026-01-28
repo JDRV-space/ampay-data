@@ -1,438 +1,438 @@
-# Definiciones de Categorias
+# Category Definitions
 
 **Version:** 1.0
-**Fecha:** 2026-01-21
-**Estado:** ACTIVO
+**Date:** 2026-01-21
+**Status:** ACTIVE
 
 ---
 
-## Resumen Ejecutivo
+## Executive Summary
 
-Este documento define las 15 categorias tematicas utilizadas para clasificar promesas de campana y votos parlamentarios en AMPAY (14 categorias generales + justicia).
-
----
-
-## 1. Lista de Categorias
-
-| # | Slug | Nombre Display | Icono Sugerido |
-|---|------|----------------|----------------|
-| 1 | `seguridad` | Seguridad | shield |
-| 2 | `economia` | Economia | trending-up |
-| 3 | `fiscal` | Fiscal | calculator |
-| 4 | `social` | Social | users |
-| 5 | `empleo` | Empleo | briefcase |
-| 6 | `educacion` | Educacion | graduation-cap |
-| 7 | `salud` | Salud | heart-pulse |
-| 8 | `agricultura` | Agricultura | plant |
-| 9 | `agua` | Agua/Saneamiento | droplet |
-| 10 | `vivienda` | Vivienda | house |
-| 11 | `transporte` | Transporte | truck |
-| 12 | `energia` | Energia | lightning |
-| 13 | `mineria` | Mineria | mountain |
-| 14 | `ambiente` | Ambiente | tree |
+This document defines the 15 thematic categories used to classify campaign promises and parliamentary votes in AMPAY (14 general categories + justicia).
 
 ---
 
-## 2. Definiciones Detalladas
+## 1. Category List
 
-### 2.1 Seguridad
+| # | Slug | Display Name | Suggested Icon |
+|---|------|--------------|----------------|
+| 1 | `seguridad` | Seguridad (Security) | shield |
+| 2 | `economia` | Economia (Economy) | trending-up |
+| 3 | `fiscal` | Fiscal (Fiscal Policy) | calculator |
+| 4 | `social` | Social (Social Welfare) | users |
+| 5 | `empleo` | Empleo (Employment) | briefcase |
+| 6 | `educacion` | Educacion (Education) | graduation-cap |
+| 7 | `salud` | Salud (Health) | heart-pulse |
+| 8 | `agricultura` | Agricultura (Agriculture) | plant |
+| 9 | `agua` | Agua/Saneamiento (Water/Sanitation) | droplet |
+| 10 | `vivienda` | Vivienda (Housing) | house |
+| 11 | `transporte` | Transporte (Transportation) | truck |
+| 12 | `energia` | Energia (Energy) | lightning |
+| 13 | `mineria` | Mineria (Mining) | mountain |
+| 14 | `ambiente` | Ambiente (Environment) | tree |
+
+---
+
+## 2. Detailed Definitions
+
+### 2.1 Seguridad (Security)
 
 **Slug:** `seguridad`
 
-**Alcance:**
-- Seguridad ciudadana
+**Scope:**
+- Public safety
 - Policia Nacional del Peru (PNP)
-- Sistema penitenciario / carceles
-- Narcotrafico y crimen organizado
-- Terrorismo y remanentes SL/MRTA
-- Violencia domestica y genero
-- Emergencias y desastres
+- Penitentiary system / prisons
+- Drug trafficking and organized crime
+- Terrorism and Sendero Luminoso/MRTA remnants
+- Domestic and gender-based violence
+- Emergencies and disasters
 
-**Keywords tipicos:**
+**Typical keywords:**
 ```
 PNP, policia, seguridad ciudadana, narcotrafico, crimen,
 penal, carcel, terrorismo, VRAEM, delincuencia, robo,
 extorsion, secuestro, homicidio, emergencia
 ```
 
-**NO incluye:**
-- Seguridad alimentaria (→ social)
-- Seguridad laboral (→ empleo)
-- Ciberseguridad pura (→ economia/otros)
+**Does NOT include:**
+- Food security (-> social)
+- Workplace safety (-> empleo)
+- Pure cybersecurity (-> economia/other)
 
 ---
 
-### 2.2 Economia
+### 2.2 Economia (Economy)
 
 **Slug:** `economia`
 
-**Alcance:**
-- Politica comercial y TLCs
-- MYPES y emprendimiento
-- Inversion privada nacional y extranjera
-- Competitividad y productividad
-- Mercados y regulacion economica
-- Comercio exterior
-- Turismo
-- Industria manufacturera
+**Scope:**
+- Trade policy and free trade agreements
+- MSMEs and entrepreneurship
+- Domestic and foreign private investment
+- Competitiveness and productivity
+- Markets and economic regulation
+- Foreign trade
+- Tourism
+- Manufacturing industry
 
-**Keywords tipicos:**
+**Typical keywords:**
 ```
 MYPE, SUNAT, TLC, exportacion, importacion, aranceles,
 inversion, competitividad, mercado, industria, turismo,
 emprendimiento, empresa, comercio, produccion
 ```
 
-**NO incluye:**
-- Impuestos especificos (→ fiscal)
-- Mineria (→ mineria)
-- Agricultura (→ agricultura)
+**Does NOT include:**
+- Specific taxes (-> fiscal)
+- Mining (-> mineria)
+- Agriculture (-> agricultura)
 
 ---
 
-### 2.3 Fiscal
+### 2.3 Fiscal (Fiscal Policy)
 
 **Slug:** `fiscal`
 
-**Alcance:**
-- Presupuesto publico
-- Impuestos y tributos
-- Deuda publica
-- Gasto corriente
-- Deficit fiscal
-- Transferencias a gobiernos regionales/locales
-- Exoneraciones tributarias
-- Canon y regalias (distribucion)
+**Scope:**
+- Public budget
+- Taxes and levies
+- Public debt
+- Current expenditure
+- Fiscal deficit
+- Transfers to regional/local governments
+- Tax exemptions
+- Canon and royalties (distribution)
 
-**Keywords tipicos:**
+**Typical keywords:**
 ```
 presupuesto, MEF, deficit, credito suplementario,
 impuesto, IGV, IR, exoneracion, tributario, fiscal,
 gasto, deuda, endeudamiento, tesoro, canon, regalias
 ```
 
-**NO incluye:**
-- Presupuestos sectoriales especificos (→ categoria del sector)
-- Mineria como actividad (→ mineria)
+**Does NOT include:**
+- Specific sectoral budgets (-> corresponding sector category)
+- Mining as an activity (-> mineria)
 
 ---
 
-### 2.4 Social
+### 2.4 Social (Social Welfare)
 
 **Slug:** `social`
 
-**Alcance:**
-- Programas sociales (Juntos, Pension 65, Qali Warma, Cuna Mas)
-- Lucha contra la pobreza
-- Bonos y transferencias directas
-- Sistema de pensiones (ONP, AFP)
-- Proteccion social
-- Discapacidad
-- Adulto mayor
-- Primera infancia
+**Scope:**
+- Social programs (Juntos, Pension 65, Qali Warma, Cuna Mas)
+- Poverty reduction
+- Cash transfers and direct subsidies
+- Pension system (ONP, AFP)
+- Social protection
+- Disability
+- Elderly population
+- Early childhood
 
-**Keywords tipicos:**
+**Typical keywords:**
 ```
 pension, ONP, AFP, bono, Qali Warma, Cuna Mas, Juntos,
 Pension 65, pobreza, programa social, subsidio, MIDIS,
 discapacidad, adulto mayor, vulnerable
 ```
 
-**NO incluye:**
-- Empleo formal (→ empleo)
-- Salud especifica (→ salud)
-- Educacion formal (→ educacion)
+**Does NOT include:**
+- Formal employment (-> empleo)
+- Specific health matters (-> salud)
+- Formal education (-> educacion)
 
 ---
 
-### 2.5 Empleo
+### 2.5 Empleo (Employment)
 
 **Slug:** `empleo`
 
-**Alcance:**
-- Derechos laborales
-- Salario minimo
-- Formalizacion laboral
-- Sindicatos y negociacion colectiva
-- Seguridad y salud en el trabajo
-- Tercerizacion
-- CTS, gratificaciones, vacaciones
-- Desempleo
+**Scope:**
+- Labor rights
+- Minimum wage
+- Labor formalization
+- Unions and collective bargaining
+- Occupational health and safety
+- Outsourcing
+- CTS, gratifications, vacations
+- Unemployment
 
-**Keywords tipicos:**
+**Typical keywords:**
 ```
 laboral, SUNAFIL, salario minimo, CTS, gratificacion,
 trabajador, empleo, contrato, despido, sindicato,
 tercerizacion, informalidad, trabajo, vacaciones
 ```
 
-**NO incluye:**
-- Empleo publico/funcionarios (→ justicia/otros)
-- Empleo agricola especifico (→ agricultura)
+**Does NOT include:**
+- Public employment / civil servants (-> justicia/other)
+- Specific agricultural employment (-> agricultura)
 
 ---
 
-### 2.6 Educacion
+### 2.6 Educacion (Education)
 
 **Slug:** `educacion`
 
-**Alcance:**
-- Educacion basica (inicial, primaria, secundaria)
-- Educacion superior universitaria y tecnica
-- Calidad educativa
-- Docentes y magisterio
-- Becas (Beca 18, etc.)
-- Infraestructura educativa
-- Curriculo y contenidos
-- SUNEDU y acreditacion
+**Scope:**
+- Basic education (preschool, primary, secondary)
+- University and technical higher education
+- Educational quality
+- Teachers and the teaching profession
+- Scholarships (Beca 18, etc.)
+- Educational infrastructure
+- Curriculum and content
+- SUNEDU and accreditation
 
-**Keywords tipicos:**
+**Typical keywords:**
 ```
 MINEDU, educacion, universidad, docente, beca, SUNEDU,
 escuela, colegio, estudiante, magisterio, curriculo,
 inicial, primaria, secundaria, superior, tecnico
 ```
 
-**NO incluye:**
-- Capacitacion laboral puntual (→ empleo)
-- Investigacion cientifica pura (→ economia/otros)
+**Does NOT include:**
+- Specific job training (-> empleo)
+- Pure scientific research (-> economia/other)
 
 ---
 
-### 2.7 Salud
+### 2.7 Salud (Health)
 
 **Slug:** `salud`
 
-**Alcance:**
-- Sistema de salud publico (MINSA)
+**Scope:**
+- Public health system (MINSA)
 - ESSALUD
 - SIS (Seguro Integral de Salud)
-- Hospitales y centros de salud
-- Medicamentos y farmacias
-- Enfermedades especificas (anemia, TBC, VIH)
-- Salud mental
-- Vacunacion
+- Hospitals and health centers
+- Medicines and pharmacies
+- Specific diseases (anemia, TB, HIV)
+- Mental health
+- Vaccination
 
-**Keywords tipicos:**
+**Typical keywords:**
 ```
 MINSA, ESSALUD, SIS, hospital, medico, salud, vacuna,
 medicamento, farmacia, anemia, TBC, enfermedad,
 tratamiento, atencion, emergencia medica
 ```
 
-**NO incluye:**
-- Seguridad alimentaria/nutricion general (→ social)
-- Agua potable (→ agua)
+**Does NOT include:**
+- Food security / general nutrition (-> social)
+- Drinking water (-> agua)
 
 ---
 
-### 2.8 Agua/Saneamiento
+### 2.8 Agua/Saneamiento (Water/Sanitation)
 
 **Slug:** `agua`
 
-**Alcance:**
-- Agua potable y acceso
-- Saneamiento y alcantarillado
-- SEDAPAL y empresas de agua
-- Tratamiento de aguas residuales
-- Infraestructura hidrica urbana
+**Scope:**
+- Drinking water and access
+- Sanitation and sewerage
+- SEDAPAL and water utilities
+- Wastewater treatment
+- Urban hydraulic infrastructure
 
-**Keywords tipicos:**
+**Typical keywords:**
 ```
 SEDAPAL, saneamiento, alcantarillado, desague, agua potable,
 acueducto, tratamiento aguas, hidrico, abastecimiento
 ```
 
-**NO incluye:**
-- Riego agricola (→ agricultura)
-- Represas para energia (→ energia)
-- Inundaciones (→ seguridad/ambiente)
+**Does NOT include:**
+- Agricultural irrigation (-> agricultura)
+- Dams for energy (-> energia)
+- Flooding (-> seguridad/ambiente)
 
 ---
 
-### 2.9 Vivienda
+### 2.9 Vivienda (Housing)
 
 **Slug:** `vivienda`
 
-**Alcance:**
-- Deficit habitacional
-- Programas de vivienda (Techo Propio, Mi Vivienda)
-- Urbanismo y planificacion
-- Titulacion y formalizacion de predios
+**Scope:**
+- Housing deficit
+- Housing programs (Techo Propio, Mi Vivienda)
+- Urban planning
+- Land titling and property formalization
 - COFOPRI
-- Construccion de viviendas sociales
+- Social housing construction
 
-**Keywords tipicos:**
+**Typical keywords:**
 ```
 vivienda, COFOPRI, Techo Propio, Mi Vivienda, urbanismo,
 construccion, habilitacion urbana, predio, titulo,
 habitacional, inmobiliario
 ```
 
-**NO incluye:**
-- Infraestructura de transporte (→ transporte)
-- Espacios publicos (→ ambiente/otros)
+**Does NOT include:**
+- Transportation infrastructure (-> transporte)
+- Public spaces (-> ambiente/other)
 
 ---
 
-### 2.10 Transporte
+### 2.10 Transporte (Transportation)
 
 **Slug:** `transporte`
 
-**Alcance:**
-- Carreteras y vias
-- Puertos y aeropuertos
-- Ferrocarriles
-- Transporte publico urbano
-- MTC y regulacion
-- Peajes y concesiones viales
-- Aviacion civil
+**Scope:**
+- Highways and roads
+- Ports and airports
+- Railways
+- Urban public transit
+- MTC and regulation
+- Tolls and road concessions
+- Civil aviation
 
-**Keywords tipicos:**
+**Typical keywords:**
 ```
 MTC, carretera, aeropuerto, puerto, ferrocarril, transporte,
 via, peaje, concesion vial, metro, corredor, aviacion,
 infraestructura vial
 ```
 
-**NO incluye:**
-- Vehiculos electricos (→ energia/ambiente)
-- Logistica privada (→ economia)
+**Does NOT include:**
+- Electric vehicles (-> energia/ambiente)
+- Private logistics (-> economia)
 
 ---
 
-### 2.11 Energia
+### 2.11 Energia (Energy)
 
 **Slug:** `energia`
 
-**Alcance:**
-- Electricidad y distribucion
-- Gas natural (Camisea, etc.)
-- Petroleo e hidrocarburos
-- Energias renovables (solar, eolica, hidroelectrica)
+**Scope:**
+- Electricity and distribution
+- Natural gas (Camisea, etc.)
+- Petroleum and hydrocarbons
+- Renewable energy (solar, wind, hydroelectric)
 - PetroPeru
 - OSINERGMIN
-- Tarifas energeticas
+- Energy tariffs
 
-**Keywords tipicos:**
+**Typical keywords:**
 ```
 OSINERGMIN, electricidad, gas, petroleo, hidrocarburo,
 energia renovable, solar, eolica, PetroPeru, Camisea,
 tarifa electrica, generacion, distribucion
 ```
 
-**NO incluye:**
-- Mineria de carbon (→ mineria)
-- Biocombustibles agricolas (→ agricultura)
+**Does NOT include:**
+- Coal mining (-> mineria)
+- Agricultural biofuels (-> agricultura)
 
 ---
 
-### 2.12 Mineria
+### 2.12 Mineria (Mining)
 
 **Slug:** `mineria`
 
-**Alcance:**
-- Mineria formal (gran, mediana, pequena)
-- Mineria informal y artesanal
-- Canon y regalias mineras (origen)
-- Conflictos mineros
+**Scope:**
+- Formal mining (large, medium, small-scale)
+- Informal and artisanal mining
+- Mining canon and royalties (origin)
+- Mining conflicts
 - MINEM
-- Concesiones mineras
-- Exploracion y explotacion
+- Mining concessions
+- Exploration and exploitation
 
-**Keywords tipicos:**
+**Typical keywords:**
 ```
 MINEM, mineria, canon minero, regalias mineras, concesion minera,
 exploracion, explotacion, mineral, cobre, oro, plata, zinc,
 formalizacion minera, minero artesanal
 ```
 
-**NO incluye:**
-- Impacto ambiental de mineria (→ ambiente si es tema principal)
-- Distribucion del canon (→ fiscal)
+**Does NOT include:**
+- Environmental impact of mining (-> ambiente if it is the primary issue)
+- Canon distribution (-> fiscal)
 
 ---
 
-### 2.13 Ambiente
+### 2.13 Ambiente (Environment)
 
 **Slug:** `ambiente`
 
-**Alcance:**
-- Proteccion ambiental
-- Areas naturales protegidas
-- Deforestacion y reforestacion
-- Contaminacion y remediacion
-- Residuos solidos y reciclaje
-- Cambio climatico
-- MINAM y SERNANP
-- Consulta previa
-- Biodiversidad
+**Scope:**
+- Environmental protection
+- Natural protected areas
+- Deforestation and reforestation
+- Pollution and remediation
+- Solid waste and recycling
+- Climate change
+- MINAM and SERNANP
+- Prior consultation
+- Biodiversity
 
-**Keywords tipicos:**
+**Typical keywords:**
 ```
 MINAM, SERNANP, area protegida, deforestacion, contaminacion,
 ambiental, residuos, reciclaje, cambio climatico, biodiversidad,
 conservacion, ecosistema, EIA, impacto ambiental
 ```
 
-**NO incluye:**
-- Mineria ilegal como crimen (→ seguridad)
-- Agricultura sostenible (→ agricultura)
+**Does NOT include:**
+- Illegal mining as crime (-> seguridad)
+- Sustainable agriculture (-> agricultura)
 
 ---
 
-## 3. Categoria Especial: Justicia/Anticorrupcion
+## 3. Special Category: Justicia/Anticorrupcion (Justice/Anti-corruption)
 
 **Slug:** `justicia`
 
-**Uso:** Solo para AMPAYs relacionados con sistema de justicia y anticorrupcion. NO se usa para categorizacion general de votos.
+**Usage:** Only for AMPAYs related to the justice system and anti-corruption. NOT used for general vote categorization.
 
-**Alcance:**
-- Sistema judicial
-- Poder Judicial y Ministerio Publico
-- Anticorrupcion
-- Transparencia
-- Reforma constitucional
-- Sistema electoral
-
----
-
-## 4. Categorias Excluidas
-
-| Categoria | Razon de Exclusion |
-|-----------|-------------------|
-| `digitalizacion` | Es transversal, cruza todas las categorias |
-| `genero` | Es transversal, se refleja en varias categorias |
-| `descentralizacion` | Se refleja en fiscal y otras |
-| `otros` | No permitido, forzar clasificacion |
+**Scope:**
+- Judicial system
+- Judiciary and Public Prosecutor's Office
+- Anti-corruption
+- Transparency
+- Constitutional reform
+- Electoral system
 
 ---
 
-## 5. Reglas de Asignacion
+## 4. Excluded Categories
 
-### 5.1 Principio General
-
-**Una categoria por item.** Si un tema cruza categorias, elegir la MAS ESPECIFICA.
-
-### 5.2 Jerarquia de Decision
-
-1. ¿Hay categoria con match exacto? → Usar esa
-2. ¿Hay multiples matches? → Elegir la del OBJETO principal
-3. ¿No hay match claro? → Revisar keywords expandidos
-4. ¿Sigue ambiguo? → IA + revision humana
-
-### 5.3 Ejemplos de Resolucion
-
-| Tema | Categorias Posibles | Asignacion | Razon |
-|------|---------------------|------------|-------|
-| "Presupuesto de salud 2024" | fiscal, salud | **salud** | Presupuesto sectorial |
-| "Canon minero para educacion" | mineria, educacion, fiscal | **fiscal** | Es transferencia fiscal |
-| "Empleo en sector agricola" | empleo, agricultura | **agricultura** | Sector especifico |
-| "Violencia contra la mujer" | seguridad, social | **seguridad** | Es tema de seguridad |
+| Category | Reason for Exclusion |
+|----------|---------------------|
+| `digitalizacion` | Cross-cutting; spans all categories |
+| `genero` | Cross-cutting; reflected across multiple categories |
+| `descentralizacion` | Reflected in fiscal and other categories |
+| `otros` | Not permitted; classification must be forced |
 
 ---
 
-## 6. Mapeo a Estandares Externos
+## 5. Assignment Rules
+
+### 5.1 General Principle
+
+**One category per item.** If a topic crosses categories, choose the MOST SPECIFIC one.
+
+### 5.2 Decision Hierarchy
+
+1. Is there a category with an exact match? -> Use that one
+2. Are there multiple matches? -> Choose the one corresponding to the PRIMARY subject
+3. Is there no clear match? -> Review expanded keywords
+4. Still ambiguous? -> AI + human review
+
+### 5.3 Resolution Examples
+
+| Topic | Possible Categories | Assignment | Reason |
+|-------|---------------------|------------|--------|
+| "2024 health budget" | fiscal, salud | **salud** | Sectoral budget |
+| "Mining canon for education" | mineria, educacion, fiscal | **fiscal** | Fiscal transfer |
+| "Employment in agriculture" | empleo, agricultura | **agricultura** | Specific sector |
+| "Violence against women" | seguridad, social | **seguridad** | Security issue |
+
+---
+
+## 6. Mapping to External Standards
 
 ### 6.1 Manifesto Project (MARPOR)
 
@@ -449,12 +449,12 @@ conservacion, ecosistema, EIA, impacto ambiental
 
 ---
 
-## 7. Estadisticas de Uso
+## 7. Usage Statistics
 
-### 7.1 Distribucion en Votos (2,226 votos sustantivos)
+### 7.1 Distribution Across Votes (2,226 substantive votes)
 
-| Categoria | Votos | % |
-|-----------|-------|---|
+| Category | Votes | % |
+|----------|-------|---|
 | economia | 412 | 18.5% |
 | seguridad | 298 | 13.4% |
 | salud | 258 | 11.6% |
@@ -471,4 +471,4 @@ conservacion, ecosistema, EIA, impacto ambiental
 
 ---
 
-*Ultima actualizacion: 2026-01-21*
+*Last updated: 2026-01-21*
